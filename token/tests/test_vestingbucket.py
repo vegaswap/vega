@@ -328,3 +328,19 @@ def test_claim_second(accounts, vestingmath, token):
     vestingbucket.addClaim(a2, 2000)
     with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
         vestingbucket.addClaim(a2, 2000)
+
+
+def test_claimaddress(accounts, vestingmath, token):
+
+    cliff = 0
+    total = 10000
+    period = 6
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, period, total, {'from': accounts[0]})
+    assert vestingbucket.totalAmount() == total
+
+    a = accounts[0]
+    a2 = accounts[1]
+    token.transfer(vestingbucket, 10000)
+    vestingbucket.addClaim(a2, 2000, {'from': a})
+    assert vestingbucket.claimAddresses(0) == a2.address
