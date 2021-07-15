@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from os import terminal_size
-from brownie import VegaToken, VestingMath, VegaMaster, BasicBucket, accounts
+from brownie import VegaToken, VestingMath, VegaMaster, accounts
 
 import time
 

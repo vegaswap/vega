@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from brownie import VegaToken, VestingMath, VegaMaster, BasicBucket, accounts
+from brownie import VegaToken, VestingMath, VegaMaster, VestingBucket, accounts
 
 import time
 
@@ -19,11 +19,11 @@ def main():
     # print (master.depositAmount())
 
     print("# buckets ", master.num_buckets())
-    b = BasicBucket.at(master.buckets(0))
+    b = VestingBucket.at(master.buckets(0))
 
     total = 0
     for i in range(master.num_buckets()):
-        b = BasicBucket.at(master.buckets(i))
+        b = VestingBucket.at(master.buckets(i))
         x = token.balanceOf(b)
         p = round(x/master.lockedSupply(), 3)
         total += x
@@ -38,7 +38,7 @@ def main():
     rp = rest/master.maxSupply()
     print("rest ", rest/10**18, rp)
 
-    #b = BasicBucket.at(master.buckets(i))
+    #b = VestingBucket.at(master.buckets(i))
 
     #print("lockedSupply ", token.lockedSupply()/10**18)
 

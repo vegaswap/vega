@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from brownie import chain, VegaToken, VestingMath, VegaMaster, VestingBucket, BasicBucket, accounts
+from brownie import chain, VegaToken, VestingMath, VegaMaster, VestingBucket, accounts
 
 import time
 

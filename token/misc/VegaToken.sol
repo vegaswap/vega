@@ -11,6 +11,7 @@ import "./IERC20.sol";
 // total supply: erc20 convention. since all tokens are created at genesis total supply is max supply
 // circulating supply: number of tokens in public circulation (not vested)
 
+//require(!paused(), "ERC20Pausable: token transfer while paused");
 contract VegaToken is IERC20 {
     uint8 public constant DECIMALS = 18;
 
@@ -33,6 +34,19 @@ contract VegaToken is IERC20 {
 
     //locked supply of vega
     //uint256 private _lockedSupply;
+
+    event TransferCirculate(
+        address indexed from,
+        address indexed to,
+        uint256 value
+    );
+    event TransferLocking(
+        address indexed from,
+        address indexed to,
+        uint256 value
+    );
+
+    //event TransferVested(address indexed from, address indexed to, uint256 value);
 
     /// construct token and genesis mint
     constructor() {
@@ -67,6 +81,14 @@ contract VegaToken is IERC20 {
         return _totalSupply;
     }
 
+    // function circulatingSupply() public view virtual returns (uint256) {
+    //     return _circSupply;
+    // }
+
+    // function lockedSupply() public view virtual returns (uint256) {
+    //     return _lockedSupply;
+    // }
+
     function balanceOf(address account)
         public
         view
@@ -76,6 +98,25 @@ contract VegaToken is IERC20 {
     {
         return _balances[account];
     }
+
+    //transfer to recipient, which will be vested, supply will go out of circulation
+    // function transferToVested(address recipient, uint256 amount)
+    //     public
+    //     virtual
+    //     onlyOwner
+    // {
+    //     //TODO!
+    //     //get the vesting bucket make sure we have access
+    //     _transfer(msg.sender, recipient, amount);
+    //     //emit TransferLocking()
+    //     _lockedSupply += amount;
+    // }
+
+    // //transfer to recipient from vesting
+    // function transferCirculating(address recipient, uint256 amount) public virtual onlyOwner {
+    //     //_transfer(msg.sender, recipient, amount);
+    //     //_circSupply += amount
+    // }
 
     /**
      *
@@ -183,8 +224,6 @@ contract VegaToken is IERC20 {
             senderBalance >= amount,
             "ERC20: transfer amount exceeds balance"
         );
-
-        //https://docs.soliditylang.org/en/v0.8.0/control-structures.html#checked-or-unchecked-arithmetic
         unchecked {
             _balances[sender] = senderBalance - amount;
         }

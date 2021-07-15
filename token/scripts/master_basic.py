@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from brownie import VegaToken, VestingMath, VegaMaster, VestingConstants, VestingBucket, BasicBucket, accounts
+from brownie import VegaToken, VestingMath, VegaMaster, VestingConstants, VestingBucket, accounts
 
 import time
 import pdb
@@ -145,7 +145,7 @@ def main():
 
     # total = 0
     # for i in range(master.bucket_num()):
-    #     b = BasicBucket.at(master.buckets(i))
+    #     
     #     x = token.balanceOf(b)
     #     p = round(x/master.lockedSupply(), 3)
     #     total += x

@@ -4,7 +4,6 @@ pragma solidity ^0.8.5;
 
 import "./VegaToken.sol";
 import "./Ownable.sol";
-import "./BasicBucket.sol";
 import "./VestingBucket.sol";
 import "./VestingConstants.sol";
 
@@ -63,11 +62,6 @@ contract VegaMaster is Ownable {
         bucket_num += 1;
         transferToVested(address(vbucket), amount);
         //return true
-    }
-
-    //TODO!
-    function claimableAmount() public returns (uint256) {
-        return 0;
     }
 
     function transferToVested(address recipient, uint256 amount) private {
