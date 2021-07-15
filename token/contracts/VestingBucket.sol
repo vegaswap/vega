@@ -43,7 +43,10 @@ contract VestingBucket is AbstractBucket {
     event Withdrawal(address indexed addr, uint256 amount);
 
     modifier onlyRefOwner() {
-        require(msg.sender == refowner, "Ownable: caller is not the owner");
+        require(
+            msg.sender == refowner || msg.sender == owner(),
+            "Ownable: caller is not the refowner"
+        );
         _;
     }
 
@@ -51,10 +54,8 @@ contract VestingBucket is AbstractBucket {
         address _VEGA_TOKEN_ADDRESS,
         uint256 _cliffTime,
         uint256 _numPeriods,
-        uint256 _totalAmount,
-        address _refowner
+        uint256 _totalAmount
     ) AbstractBucket(_VEGA_TOKEN_ADDRESS) {
-        refowner = _refowner;
         cliffTime = _cliffTime;
         numPeriods = _numPeriods;
         totalAmount = _totalAmount;
@@ -70,6 +71,10 @@ contract VestingBucket is AbstractBucket {
         totalClaimAmount = 0;
         numClaims = 0;
         //claimAddresses =
+    }
+
+    function setRefowner(address _refowner) public onlyOwner {
+        refowner = _refowner;
     }
 
     //linear vesting claim

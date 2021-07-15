@@ -2,10 +2,11 @@
   "contracts": {
     "AbstractBucket": "e0c1b4dc4a2c7a5edbf0a1b88b55fc75ea669395",
     "BasicBucket": "1a1b42a203f3153a24287eef0a24ef9cd6cf4f4f",
-    "VegaMaster": "462bf8412ace1f18a96301641d29bd9109c2da93",
+    "Util": "73df0a6f5d0123eb2b2db0faf62b602aa77c123a",
+    "VegaMaster": "eb37bd840313286353129f1834594891a9a1fb6e",
     "VegaToken": "469d4e6777c82f09c0ab33db4307bd1da7c46a8c",
-    "VestingBucket": "6817a90f1dd7ac7599debe242bae9eb212bd846f",
-    "VestingConstants": "a85f25571367cdc52e9a98bd04a5884bf8e92eeb",
+    "VestingBucket": "c37cb0003d5365bbbd516380454f12cb422aa031",
+    "VestingConstants": "08d4360d7e6d07e475998204877037f9542b37d2",
     "VestingMath": "1971fc2698a28ee48b91385e7c8dee5fa28c83df"
   },
   "tests": {
@@ -35,11 +36,10 @@
         "VegaMaster",
         "VegaToken",
         "VestingBucket",
-        "VestingConstants",
         "VestingMath"
       ],
       "results": "..",
-      "sha1": "e71dbaf44c03bfa5875da3af7406d7e20d4d6112",
+      "sha1": "19374d7432cf266d5c46b2c857b9c36370d78c2e",
       "txhash": []
     },
     "tests/test_transfer.py": {
@@ -85,11 +85,11 @@
         "VestingMath"
       ],
       "results": ".......",
-      "sha1": "f8563035206e911d0acff8f9f12c992e4bbb414f",
+      "sha1": "16752926087076293dfba1ae7b6e9ff1a006ed6d",
       "txhash": [
-        "2c511b183060fa187621a47a01c357230daa0e18",
-        "9d78a6bc4a6a5b9c1af57b31a0f21c0b96ef03f2",
-        "fd3c7cf039f7ac2784621c3832bf8c87797805f0"
+        "58945afa1267ea37b8ac987d5e59da44d7661876",
+        "917b6f683553437c2b632f91b7d732fb498f48dc",
+        "e9678a370fc99558055b8a1e9f66c257c707b27d"
       ]
     },
     "tests/test_vestingmath.py": {
@@ -128,15 +128,6 @@
         ]
       }
     },
-    "2c511b183060fa187621a47a01c357230daa0e18": {
-      "VestingBucket": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
     "402a7735c9855b59415061d8f64932e08b133f6a": {
       "VegaToken": {
         "5": [
@@ -153,6 +144,18 @@
             25,
             26
           ]
+        ]
+      }
+    },
+    "58945afa1267ea37b8ac987d5e59da44d7661876": {
+      "VestingBucket": {
+        "6": [
+          [
+            12,
+            13
+          ],
+          [],
+          []
         ]
       }
     },
@@ -180,12 +183,12 @@
         ]
       }
     },
-    "9d78a6bc4a6a5b9c1af57b31a0f21c0b96ef03f2": {
+    "917b6f683553437c2b632f91b7d732fb498f48dc": {
       "VestingBucket": {
         "6": [
           [
-            11,
-            12
+            12,
+            13
           ],
           [],
           []
@@ -259,13 +262,10 @@
         ]
       }
     },
-    "fd3c7cf039f7ac2784621c3832bf8c87797805f0": {
+    "e9678a370fc99558055b8a1e9f66c257c707b27d": {
       "VestingBucket": {
         "6": [
-          [
-            11,
-            12
-          ],
+          [],
           [],
           []
         ]

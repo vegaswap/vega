@@ -96,7 +96,7 @@
         166
       ],
       "VegaToken": [
-        720
+        723
       ]
     },
     "id": 59,
@@ -133,7 +133,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 59,
-        "sourceUnit": 721,
+        "sourceUnit": 724,
         "src": "88:25:1",
         "symbolAliases": [],
         "unitAlias": ""

@@ -312,7 +312,7 @@ def test_claimother(accounts, vestingmath, token):
     a = accounts[0]
     a2 = accounts[1]
     token.transfer(vestingbucket, 10000)
-    with brownie.reverts("Ownable: caller is not the owner"):
+    with brownie.reverts("Ownable: caller is not the refowner"):
         vestingbucket.addClaim(a2, 2000, {'from': a2})
 
 

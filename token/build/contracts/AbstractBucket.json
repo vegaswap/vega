@@ -94,7 +94,7 @@
         166
       ],
       "VegaToken": [
-        720
+        723
       ]
     },
     "id": 43,
@@ -131,7 +131,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 43,
-        "sourceUnit": 721,
+        "sourceUnit": 724,
         "src": "81:25:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -205,7 +205,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VegaToken_$720",
+              "typeIdentifier": "t_contract$_VegaToken_$723",
               "typeString": "contract VegaToken"
             },
             "typeName": {
@@ -215,13 +215,13 @@
                 "id": 8,
                 "name": "VegaToken",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 720,
+                "referencedDeclaration": 723,
                 "src": "305:9:0"
               },
-              "referencedDeclaration": 720,
+              "referencedDeclaration": 723,
               "src": "305:9:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VegaToken_$720",
+                "typeIdentifier": "t_contract$_VegaToken_$723",
                 "typeString": "contract VegaToken"
               }
             },
@@ -276,7 +276,7 @@
                       "referencedDeclaration": 10,
                       "src": "423:10:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VegaToken_$720",
+                        "typeIdentifier": "t_contract$_VegaToken_$723",
                         "typeString": "contract VegaToken"
                       }
                     },
@@ -308,10 +308,10 @@
                         "name": "VegaToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 720,
+                        "referencedDeclaration": 723,
                         "src": "436:9:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_VegaToken_$720_$",
+                          "typeIdentifier": "t_type$_t_contract$_VegaToken_$723_$",
                           "typeString": "type(contract VegaToken)"
                         }
                       },
@@ -326,13 +326,13 @@
                       "src": "436:30:0",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_VegaToken_$720",
+                        "typeIdentifier": "t_contract$_VegaToken_$723",
                         "typeString": "contract VegaToken"
                       }
                     },
                     "src": "423:43:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_VegaToken_$720",
+                      "typeIdentifier": "t_contract$_VegaToken_$723",
                       "typeString": "contract VegaToken"
                     }
                   },

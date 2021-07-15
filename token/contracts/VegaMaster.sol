@@ -46,21 +46,23 @@ contract VegaMaster is Ownable {
         string memory name,
         uint256 periods,
         uint256 amount
-    ) public onlyOwner returns (bool) {
+    ) public onlyOwner {
         //uint8 DECIMALS = vega_token.decimals();
         //uint256 bal = vega_token.balanceOf(address(this));
         VestingBucket vbucket = new VestingBucket(
             vega_token_address,
             block.timestamp + cliff,
             periods,
-            amount,
-            msg.sender
+            amount
         );
+        //refowner of vbucket is owner of master
+        vbucket.setRefowner(owner());
         vbucket.setName(name);
         //require(bucket_num < num_buckets, "bucket num too large");
         buckets[bucket_num] = address(vbucket);
         bucket_num += 1;
         transferToVested(address(vbucket), amount);
+        //return true
     }
 
     //TODO!
