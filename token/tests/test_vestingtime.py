@@ -110,25 +110,68 @@ def test_claimendadd(accounts, vestingmath, token):
     assert vestingbucket.totalWithdrawnAmount() == 100
     assert vestingbucket.claims(ca)['claimAddress'] == ca
     assert vestingbucket.claims(ca)['claimAddress'] == a2
-    #!!??
-    assert vestingbucket.claims(ca)['withdrawnAmount'] == 0
+    assert vestingbucket.claims(ca)['withdrawnAmount'] == 100
     assert after-before == 100
 
-    n = 1
-    chain.mine(timestamp=cliff+DFP*n)
+    for n in range(1,10):
+        chain.mine(timestamp=cliff+DFP*n)
+        before = token.balanceOf(a2)
+        vestingbucket.vestClaimMax(a2, {'from': a})
+        after = token.balanceOf(a2)
+        assert vestingbucket.totalWithdrawnAmount() == 100*n
+        assert after-before == 100
+
+    after = token.balanceOf(a2)
+    assert after == 1000
+    
+    assert token.balanceOf(vestingbucket) == 0
+
+
+def test_claimendadd(accounts, vestingmath, token):
+    # test vest at end of the time
+    a = accounts[0]
+    a2 = accounts[1]
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1050
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    token.transfer(vestingbucket, total)
+    vestingbucket.addClaim(a2, total,{'from': a})
+    chain.mine(timestamp=cliff)
+
     before = token.balanceOf(a2)
     vestingbucket.vestClaimMax(a2, {'from': a})
     after = token.balanceOf(a2)
-    #??
-    assert after-before == 200
-    
+    ca = vestingbucket.claimAddresses(0)
+    assert vestingbucket.totalWithdrawnAmount() == 105
+    assert vestingbucket.claims(ca)['claimAddress'] == ca
+    assert vestingbucket.claims(ca)['claimAddress'] == a2
+    assert vestingbucket.claims(ca)['withdrawnAmount'] == 105
+    assert after-before == 105
 
-    # for n in range(4):
-    #     chain.mine(timestamp=cliff+DFP*n)
-    #     before = token.balanceOf(a)
-    #     vestingbucket.vestClaimMax(a, {'from': a})
-    #     after = token.balanceOf(a)
-    #     assert after-before == 100
+    for n in range(1,9):
+        chain.mine(timestamp=cliff+DFP*n)
+        before = token.balanceOf(a2)
+        vestingbucket.vestClaimMax(a2, {'from': a})
+        after = token.balanceOf(a2)
+        assert after-before == 105
+
+    #assert token.balanceOf(vestingbucket) == 33
+
+    chain.mine(timestamp=cliff+DFP*11)
+    before = token.balanceOf(a2)
+    vestingbucket.vestClaimMax(a2, {'from': a})
+    after = token.balanceOf(a2)
+    assert after-before == 105
+
+    assert after == 1050
+    
+    assert token.balanceOf(vestingbucket) == 0
+
+
 
 
     #x = vestingbucket.getVestableAmountAll()
