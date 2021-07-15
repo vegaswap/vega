@@ -58,22 +58,81 @@ def test_timetravel(accounts, vestingmath, token):
     assert untilend == 20 * DFP    
     chain.mine(timestamp=untilend)
 
-    #current = vestingbucket.getCurrentTime()
-    current = chain.time()
-    #assert current == vestingbucket.endTime()
 
-    # assert current == calc_endtime
-
-    # endtime = vestingbucket.endTime()
-    #assert  >= endtime
-    #assert chain.time() == calc_endtime
-
-    # vestingbucket.getVestedAmount()
-
-
-def test_claimend():
+def test_claimend(accounts, vestingmath, token):
     # test vest at end of the time
-    pass
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1000
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    chain.sleep(DFP*2+1)
+    ct = vestingbucket.getCurrentTime()
+    assert vestingbucket.endTime()-ct==11*DFP
+
+def test_claimendodd(accounts, vestingmath, token):
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1011
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    claimed = 0
+    ct = vestingbucket.getCurrentTime()
+    assert vestingbucket.endTime()-ct==12*DFP
+
+def test_claimendadd(accounts, vestingmath, token):
+    # test vest at end of the time
+    a = accounts[0]
+    a2 = accounts[1]
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1000
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    #assert vestingbucket.endTime()-ct==11*DFP
+
+    token.transfer(vestingbucket, 1000)
+    vestingbucket.addClaim(a2, 1000,{'from': a})
+    chain.mine(timestamp=cliff)
+
+    #tt = vestingbucket.vestClaimMax(a, {'from': a})
+    before = token.balanceOf(a2)
+    vestingbucket.vestClaimMax(a2, {'from': a})
+    after = token.balanceOf(a2)
+    #assert tt > 0 
+    ca = vestingbucket.claimAddresses(0)
+    assert vestingbucket.totalWithdrawnAmount() == 100
+    assert vestingbucket.claims(ca)['claimAddress'] == ca
+    assert vestingbucket.claims(ca)['claimAddress'] == a2
+    #!!??
+    assert vestingbucket.claims(ca)['withdrawnAmount'] == 0
+    assert after-before == 100
+
+    n = 1
+    chain.mine(timestamp=cliff+DFP*n)
+    before = token.balanceOf(a2)
+    vestingbucket.vestClaimMax(a2, {'from': a})
+    after = token.balanceOf(a2)
+    #??
+    assert after-before == 200
+    
+
+    # for n in range(4):
+    #     chain.mine(timestamp=cliff+DFP*n)
+    #     before = token.balanceOf(a)
+    #     vestingbucket.vestClaimMax(a, {'from': a})
+    #     after = token.balanceOf(a)
+    #     assert after-before == 100
+
+
+    #x = vestingbucket.getVestableAmountAll()
+    #assert x == 100
 
     # endtime = vestingbucket.endTime()
     # assert chain.time() > endtime
