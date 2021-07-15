@@ -56,7 +56,10 @@ contract VestingBucket is AbstractBucket {
         uint256 _numPeriods,
         uint256 _totalAmount
     ) AbstractBucket(_VEGA_TOKEN_ADDRESS) {
-        require(_cliffTime > block.timestamp, "VESTINGBUCKET cliff must be in the future");
+        require(
+            _cliffTime > block.timestamp,
+            "VESTINGBUCKET cliff must be in the future"
+        );
         cliffTime = _cliffTime;
         numPeriods = _numPeriods;
         totalAmount = _totalAmount;
@@ -186,19 +189,12 @@ contract VestingBucket is AbstractBucket {
     }
 
     //owner calls all claims
-    function allClaim(address _claimAddress) public returns (uint256) {
-        require(msg.sender == owner());
-
+    function allClaim() public onlyOwner {
         //for every claim
-        //Claim memory claim = claims[i];
-        //vestClaimMax()
-
-        //uint256 total = 0;
-        Claim memory claim;
         uint256 i = 0;
         for (i = 0; i < numClaims; i++) {
-            address _ca = claimAddresses[i];
-            claim = claims[_ca];
+            address ca = claimAddresses[i];
+            vestClaimMax(ca);
             //uint256 vestableAmount = getVestedAmount(claim);
             //total += vestableAmount;
         }
