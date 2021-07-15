@@ -171,65 +171,63 @@ def test_claimendadd(accounts, vestingmath, token):
     
     assert token.balanceOf(vestingbucket) == 0
 
-
-
-
     #x = vestingbucket.getVestableAmountAll()
-    #assert x == 100
-
-    # endtime = vestingbucket.endTime()
-    # assert chain.time() > endtime
-
-    # calculated_total = vestingmath.getVestedAmountTS(
-    #     chain.time(),
-    #     cliff,
-    #     endtime,
-    #     amountPerPeriod,
-    #     total
-    # )
-
-    # assert calculated_total == total
-
-    # assert vestingbucket.getCurrentTime() == chain.time()
-
-    # assert vestingbucket.getVestedAmount(
-    #     claim1) == 0  # claim1d['claimTotalAmount']
-
-    # # amountPerPeriod = total / period
-    # # endtime = vestingbucket.endTime()
-    # # r = vestingmath.getVestedAmount(cliff, endtime, amountPerPeriod, total)
-    # # assert r == 0
-
-    # chain.sleep(endtime - chain.time() + 1)
-
-    # endtime = vestingbucket.endTime()
-    # r = vestingmath.getVestedAmount(cliff, endtime, amountPerPeriod, total)
-    # # BUG??
-    # assert r == 0
-
-    # x = vestingbucket.getVestableAmount(a2)
-    # #assert x == 2000
-
-    # z = vestingbucket.getCurrentTime()
-    # chain.sleep(ts+10000)
-    # #assert chain.time()
-    # assert z == 0
-
-    # before = token.balanceOf(vestingbucket)
-    # withdrawn = vestingbucket.vestClaimMax.call(a2, 2000, {'from': a2})
-    # assert withdrawn == 100
-    # after = token.balanceOf(vestingbucket)
-    # dif = after - before
-    # assert dif == 1
 
 
-def test_lastround(accounts, vestingmath, token):
-    # test non round periods and the last withdraw
-    #assert False
-    pass
 
-
-def test_claimall(accounts, vestingmath, token):
+def test_claimalltwo(accounts, vestingmath, token):
     # test allClaim
-    #assert False
-    pass
+    a = accounts[0]
+    a2 = accounts[1]
+    a3 = accounts[2]
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1000
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    token.transfer(vestingbucket, 1000)
+    vestingbucket.addClaim(a2, 600,{'from': a})
+    vestingbucket.addClaim(a3, 400,{'from': a})
+    chain.mine(timestamp=cliff)    
+
+    for n in range(0,10):
+        chain.mine(timestamp=cliff+DFP*n)        
+        vestingbucket.vestClaimMax(a2, {'from': a2})
+        vestingbucket.vestClaimMax(a3, {'from': a3})
+        assert vestingbucket.totalWithdrawnAmount() == 100*(n+1)       
+
+    after = token.balanceOf(a2)
+    assert after == 600
+
+    after = token.balanceOf(a3)
+    assert after == 400
+    
+    assert token.balanceOf(vestingbucket) == 0
+
+
+def test_unlcaimed(accounts, vestingmath, token):
+    #test if claim misses a period
+    a = accounts[0]
+    a2 = accounts[1]
+    a3 = accounts[2]
+    DFP = vestingmath.DEFAULT_PERIOD()
+    cliff = int(time.time()) + 1 * DFP
+    numperiods = 10
+    total = 1000
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, numperiods, total, {'from': accounts[0]})
+    
+    token.transfer(vestingbucket, 1000)
+    vestingbucket.addClaim(a2, 1000,{'from': a})
+    chain.mine(timestamp=cliff)    
+
+    n = 5
+    chain.mine(timestamp=cliff+DFP*n)        
+    before = token.balanceOf(a2)
+    vestingbucket.vestClaimMax(a2, {'from': a2})
+    after = token.balanceOf(a2)
+    assert after - before == 600
+    
+    assert token.balanceOf(vestingbucket) == 400
