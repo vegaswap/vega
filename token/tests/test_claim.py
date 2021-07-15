@@ -10,16 +10,19 @@ days30 = days*30
 
 def test_addall(accounts, vestingmath, token):
 
-    cliff = 0
+    cliff = chain.time()+1
+    DFP = vestingmath.DEFAULT_PERIOD()
     total = 1000
-    period = 6
+    periods = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, periods, total, {'from': accounts[0]})
     assert token.balanceOf(vestingbucket) == 0
     assert vestingbucket.totalAmount() == total
 
     token.transfer(vestingbucket, 2000)
     assert token.balanceOf(vestingbucket) == 2000
+
+    chain.mine(timestamp=cliff+DFP*periods)
 
     tc = 0
     import random

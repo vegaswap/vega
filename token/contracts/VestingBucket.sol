@@ -25,7 +25,7 @@ contract VestingBucket is AbstractBucket {
     mapping(address => Claim) public claims;
     address[] public claimAddresses;
     uint256 public totalClaimAmount;
-    uint256 totalWithdrawnAmount;
+    uint256 public totalWithdrawnAmount;
 
     //unix time when vesting starts
     uint256 public cliffTime;
@@ -162,7 +162,7 @@ contract VestingBucket is AbstractBucket {
         if (!claims[_claimAddress].isAdded)
             revert("VESTINGBUCKET: claim does not exist");
 
-        Claim memory claim = claims[_claimAddress];
+        Claim storage claim = claims[_claimAddress];
 
         uint256 vestableAmount = getVestedAmount(claim);
 
