@@ -25,6 +25,11 @@ def test_basic(accounts, vestingmath, token):
     a2 = accounts[1]
     token.transfer(vestingbucket, 1000)
     assert token.balanceOf(vestingbucket) == 1000
+
+    # cant claim more than total
+    with brownie.reverts("VESTINGBUCKET: can not claim more than total"):
+        vestingbucket.addClaim(a2, 2000)
+
     vestingbucket.addClaim(a2, 1000)
 
     rclaim = vestingbucket.claims(a2).dict()
@@ -33,13 +38,8 @@ def test_basic(accounts, vestingmath, token):
     assert rclaim['claimTotalAmount'] == 1000
 
     before = token.balanceOf(a2)
-    #withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
-    #withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
+
     vestingbucket.vestClaimMax(a2, {'from': a2})
-    # tx = withdrawtx.info()
-    # assert tx.events != None
-    # TODO check events withdrawal
-    #assert withdrawn == 1000
 
     assert token.balanceOf(vestingbucket) == 0
     assert token.balanceOf(a2) == 1000
@@ -47,12 +47,6 @@ def test_basic(accounts, vestingmath, token):
     after = token.balanceOf(a2)
     dif = after - before
     assert dif == 1000
-
-    # cant claim more than total
-    try:
-        vestingbucket.addClaim(a2, 33000)
-    except Exception as e:
-        assert e != None
 
 
 def test_twoclaims(accounts, vestingmath, token):
@@ -70,6 +64,9 @@ def test_twoclaims(accounts, vestingmath, token):
     token.transfer(vestingbucket, 1000)
     assert token.balanceOf(vestingbucket) == 1000
     vestingbucket.addClaim(a2, 600)
+    with brownie.reverts('VESTINGBUCKET: claim at this address already exists'):
+        vestingbucket.addClaim(a2, 400)
+
     vestingbucket.addClaim(a3, 400)
 
     vestingbucket.vestClaimMax(a2, {'from': a2})
@@ -80,49 +77,7 @@ def test_twoclaims(accounts, vestingmath, token):
     assert token.balanceOf(a3) == 400
 
 
-def test_timetravel(accounts, vestingmath, token):
-
-    DFP = vestingmath.DEFAULT_PERIOD()
-    assert DFP == 2592000
-    # ts = 100
-    cliff = int(time.time()) + 10 * DFP
-    total = 1000
-    period = DFP
-    amountPerPeriod = 100  # total/period
-
-    numperiods = 10
-
-    x = vestingmath.ceildiv(total, amountPerPeriod)
-    assert x == 10
-    end = cliff + period * x
-    assert end == cliff + DFP * 10
-
-    calc_endtime = vestingmath.getEndTime(
-        cliff, amountPerPeriod, total)
-    assert calc_endtime == cliff + 10 * DFP
-
-    # _cliffTime +
-    # (DEFAULT_PERIOD * (ceildiv(_totalAmount, _amountPerPeriod)))
-
-    assert amountPerPeriod == 100
-
-    vestingbucket = VestingBucket.deploy(
-        token, cliff, numperiods, total, {'from': accounts[0]})
-    assert vestingbucket.totalAmount() == total
-    now = int(time.time())
-    untilend = vestingbucket.endTime() - now
-    #assert untilend == 20 * DFP
-    # chain.sleep(ts+10000)
-    # breaks
-    # chain.mine(timestamp=untilend+1)
-
-    # assert vestingbucket.getCurrentTime() == chain.time()
-
-    # endtime = vestingbucket.endTime()
-    # assert chain.time() > endtime
-
-
-def test_cliff(accounts, vestingmath, token):
+def test_cliff(accounts, token):
 
     ts = 100
     cliff = int(time.time()) + ts
@@ -148,8 +103,7 @@ def test_cliff(accounts, vestingmath, token):
 
     ca1 = vestingbucket.claimAddresses(0)
 
-    claim1 = vestingbucket.claims(ca1)  # ['claimAddress'])
-    # ca1['claimAddress']
+    claim1 = vestingbucket.claims(ca1)
     claim1d = claim1.dict()
 
     assert claim1d['claimAddress'] == a2
@@ -161,56 +115,6 @@ def test_cliff(accounts, vestingmath, token):
     after = token.balanceOf(vestingbucket)
     dif = after - before
     assert dif == 0
-
-    now = int(time.time())
-    untilend = vestingbucket.endTime() - now
-    # chain.sleep(ts+10000)
-    chain.sleep(untilend+1)
-
-    # endtime = vestingbucket.endTime()
-    # assert chain.time() > endtime
-
-    # calculated_total = vestingmath.getVestedAmountTS(
-    #     chain.time(),
-    #     cliff,
-    #     endtime,
-    #     amountPerPeriod,
-    #     total
-    # )
-
-    # assert calculated_total == total
-
-    # assert vestingbucket.getCurrentTime() == chain.time()
-
-    # assert vestingbucket.getVestedAmount(
-    #     claim1) == 0  # claim1d['claimTotalAmount']
-
-    # # amountPerPeriod = total / period
-    # # endtime = vestingbucket.endTime()
-    # # r = vestingmath.getVestedAmount(cliff, endtime, amountPerPeriod, total)
-    # # assert r == 0
-
-    # chain.sleep(endtime - chain.time() + 1)
-
-    # endtime = vestingbucket.endTime()
-    # r = vestingmath.getVestedAmount(cliff, endtime, amountPerPeriod, total)
-    # # BUG??
-    # assert r == 0
-
-    # x = vestingbucket.getVestableAmount(a2)
-    # #assert x == 2000
-
-    # z = vestingbucket.getCurrentTime()
-    # chain.sleep(ts+10000)
-    # #assert chain.time()
-    # assert z == 0
-
-    # before = token.balanceOf(vestingbucket)
-    # withdrawn = vestingbucket.vestClaimMax.call(a2, 2000, {'from': a2})
-    # assert withdrawn == 100
-    # after = token.balanceOf(vestingbucket)
-    # dif = after - before
-    # assert dif == 1
 
 
 def test_addall(accounts, vestingmath, token):
@@ -229,7 +133,6 @@ def test_addall(accounts, vestingmath, token):
     tc = 0
     import random
     for i in range(1, 6):
-        # r = random.randint(1, 1000)
         amount = 200
         vestingbucket.addClaim(accounts[i], amount)
         tc += amount
@@ -250,15 +153,11 @@ def test_addall(accounts, vestingmath, token):
 
     assert token.balanceOf(vestingbucket) == 1000
 
-    # TODO test circulating is 1000
-    # TODO test locked is 1000
-
 
 def test_vestableall(accounts, vestingmath, token):
 
     ts = 0
     cliff = int(time.time()) + ts
-    # cliff = ct
     total = 1000
     period = 1
     vestingbucket = VestingBucket.deploy(
@@ -269,13 +168,12 @@ def test_vestableall(accounts, vestingmath, token):
     ct = vestingbucket.getCurrentTime()
     assert ct > 1625902477
 
-    endtime = vestingmath.getEndTime(cliff, 500, 1000)
-    print(ct, ct, endtime, 500, 1000)
-    # z = vestingmath.getVestedAmountTS(ct, 0, endtime, 500, 1000)
-    # z = vestingmath.getVestedAmount(0, endtime, 500, 1000)
-    # assert z == 1000
-
     blocktime = 1625902745
+
+    endtime = vestingmath.getEndTime(cliff, 500, 1000)
+    z = vestingmath.getVestedAmountTSX(blocktime, ct, 0, endtime, 500, 1)
+    assert z == 500
+    
     cliffTime = 1625902745
     endtime = 1631086745
     amountPerPeriod = 500
@@ -286,13 +184,11 @@ def test_vestableall(accounts, vestingmath, token):
 
     assert timeSinceCliff == 0
 
-    # r1 = vestingmath.getVestedAmount(
-    #     cliffTime, endtime, amountPerPeriod, totalAmount)
+    r1 = vestingmath.getVestedAmountTSX(blocktime, cliffTime, endtime, amountPerPeriod, totalAmount, 1)
 
-    # assert r1 == 500
-
-    # va = vestingbucket.getVestableAmountAll()
-    # assert va == 10000
+    assert r1 == 500
+    va = vestingbucket.getVestableAmountAll()
+    assert va == totalAmount
 
 
 def test_claimother(accounts, vestingmath, token):
@@ -307,26 +203,15 @@ def test_claimother(accounts, vestingmath, token):
 
     blackhat_account = accounts[3]
     before = token.balanceOf(vestingbucket)
-    reverts = False
-    try:
+    with brownie.reverts('VESTINGBUCKET: can only call from claimaddress or owner'):
         vestingbucket.vestClaimMax(
             a, {'from': blackhat_account})
-    except:
-        reverts = True
-
-    assert reverts
-
+    
     after = token.balanceOf(vestingbucket)
     assert after == before
+   
 
-    # a = accounts[0]
-    # a2 = accounts[1]
-    # token.transfer(vestingbucket, 10000)
-    # with brownie.reverts("Ownable: caller is not the owner"):
-    #     vestingbucket.addClaim(a2, 2000, {'from': a2})
-
-
-def test_claimother(accounts, vestingmath, token):
+def test_claimother2(accounts, vestingmath, token):
 
     cliff = 0
     total = 10000
@@ -370,3 +255,12 @@ def test_claimaddress(accounts, vestingmath, token):
     token.transfer(vestingbucket, 10000)
     vestingbucket.addClaim(a2, 2000, {'from': a})
     assert vestingbucket.claimAddresses(0) == a2.address
+
+
+#withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
+#withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
+
+# tx = withdrawtx.info()
+# assert tx.events != None
+# TODO check events withdrawal
+#assert withdrawn == 1000
