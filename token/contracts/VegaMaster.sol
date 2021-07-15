@@ -1,0 +1,117 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.5;
+
+import "./VegaToken.sol";
+import "./Ownable.sol";
+import "./BasicBucket.sol";
+import "./VestingBucket.sol";
+import "./VestingConstants.sol";
+
+// master distributes tokens to buckets
+// main token handler
+// bucket allocation is defined in VestingConstants
+contract VegaMaster is Ownable {
+    VegaToken public vega_token;
+    address public vega_token_address;
+
+    uint256 private _circSupply;
+
+    //locked supply of vega
+    uint256 private _lockedSupply;
+
+    //uint256 public depositAmount;
+    //uint256 public vestedAmount;
+
+    address[] public buckets;
+    uint256 public bucket_num;
+
+    event Debug(string msg);
+
+    constructor() {
+        vega_token = new VegaToken();
+
+        _lockedSupply = 0;
+        _circSupply = 0;
+
+        vega_token_address = address(vega_token);
+
+        bucket_num = 0;
+
+        buckets = new address[](20);
+    }
+
+    function addVestingBucket(
+        uint256 cliff,
+        string memory name,
+        uint256 periods,
+        uint256 amount
+    ) public onlyOwner returns (bool) {
+        //uint8 DECIMALS = vega_token.decimals();
+        //uint256 bal = vega_token.balanceOf(address(this));
+        VestingBucket vbucket = new VestingBucket(
+            vega_token_address,
+            block.timestamp + cliff,
+            periods,
+            amount,
+            msg.sender
+        );
+        vbucket.setName(name);
+        //require(bucket_num < num_buckets, "bucket num too large");
+        buckets[bucket_num] = address(vbucket);
+        bucket_num += 1;
+        transferToVested(address(vbucket), amount);
+    }
+
+    //TODO!
+    function claimableAmount() public returns (uint256) {
+        return 0;
+    }
+
+    function transferToVested(address recipient, uint256 amount) private {
+        bool success = vega_token.transfer(address(recipient), amount);
+        require(success, "transfer failed");
+        _lockedSupply += amount;
+    }
+
+    function circSupply() public view returns (uint256) {
+        return _circSupply;
+    }
+
+    function lockedSupply() public view returns (uint256) {
+        return _lockedSupply;
+    }
+
+    function maxSupply() public view returns (uint256) {
+        return vega_token.MAX_SUPPLY();
+    }
+
+    function releaseAll() public onlyOwner {
+        //
+    }
+
+    // Call at cliffTime/periodTime to release tokens to tokenholders
+    // @dev: we pay for the fee
+    // TODO: multi call maybe
+    // function release() external payable onlyOwner {
+    //     VestingSchedule storage vestingSchedule;
+    //     uint256 i = 0;
+    //     uint256 newTotalWithdrawn = 0;
+    //     for (i = 0; i < registeredAddresses.length; i++) {
+    //         vestingSchedule = vestingSchedules[registeredAddresses[i]];
+    //         newTotalWithdrawn = _release(vestingSchedule);
+    //         vestingSchedule.withdrawnAmount = newTotalWithdrawn;
+    //     }
+    // }
+
+    // function circulatingSupply() public returns (uint256) {
+    //     how much is circulating
+    // }
+
+    //     function depositTokens(uint256 amount) public { //onlyowner
+    //         //check approve
+    //         //require(VegaToken.allowance()>amount);
+    //         vega_token.transferFrom(msg.sender, address(this), amount);
+    //         depositAmount += amount;
+    //         emit Deposit(msg.sender, amount);
+}

@@ -1,0 +1,133 @@
+{
+  "abi": [],
+  "allSourcePaths": {
+    "9": "contracts/util.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/util.sol",
+    "exportedSymbols": {
+      "Util": [
+        1410
+      ]
+    },
+    "id": 1411,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1410,
+        "linearizedBaseContracts": [
+          1410
+        ],
+        "name": "Util",
+        "nameLocation": "9:4:9",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1411,
+        "src": "0:694:9",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:695:9"
+  },
+  "bytecode": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122062ab1ffea4875a7a2fe3c6e36bd7b392040de8394efd76cf63aa6ba6f2b8bf6c64736f6c63430008050033",
+  "bytecodeSha1": "73df0a6f5d0123eb2b2db0faf62b602aa77c123a",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.5+commit.a4f2e591"
+  },
+  "contractName": "Util",
+  "coverageMap": {
+    "branches": {
+      "9": {}
+    },
+    "statements": {
+      "9": {}
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "6080604052600080fdfea264697066735822122062ab1ffea4875a7a2fe3c6e36bd7b392040de8394efd76cf63aa6ba6f2b8bf6c64736f6c63430008050033",
+  "deployedSourceMap": "0:694:9:-:0;;;;;",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    0,
+    694
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH3 0xAB1FFE LOG4 DUP8 GAS PUSH27 0x2FE3C6E36BD7B392040DE8394EFD76CF63AA6BA6F2B8BF6C64736F PUSH13 0x63430008050033000000000000 ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        694
+      ],
+      "op": "PUSH1",
+      "path": "9",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        0,
+        694
+      ],
+      "op": "PUSH1",
+      "path": "9",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        0,
+        694
+      ],
+      "op": "MSTORE",
+      "path": "9"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        0,
+        694
+      ],
+      "op": "PUSH1",
+      "path": "9",
+      "value": "0x0"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        0,
+        694
+      ],
+      "op": "DUP1",
+      "path": "9"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        0,
+        694
+      ],
+      "op": "REVERT",
+      "path": "9"
+    }
+  },
+  "sha1": "f38e681743a4713ed5b28dd767e3e518f08e2888",
+  "source": "contract Util {\n    // function uint2str(uint256 _i)\n    //     internal\n    //     pure\n    //     returns (string memory _uintAsString)\n    // {\n    //     if (_i == 0) {\n    //         return \"0\";\n    //     }\n    //     uint256 j = _i;\n    //     uint256 len;\n    //     while (j != 0) {\n    //         len++;\n    //         j /= 10;\n    //     }\n    //     bytes memory bstr = new bytes(len);\n    //     uint256 k = len;\n    //     while (_i != 0) {\n    //         k = k - 1;\n    //         uint8 temp = (48 + uint8(_i - (_i / 10) * 10));\n    //         bytes1 b1 = bytes1(temp);\n    //         bstr[k] = b1;\n    //         _i /= 10;\n    //     }\n    //     return string(bstr);\n    // }\n}\n",
+  "sourceMap": "0:694:9:-:0;;;;;;;;;;;;;;;;;;;",
+  "sourcePath": "contracts/util.sol",
+  "type": "contract"
+}
