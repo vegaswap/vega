@@ -42,7 +42,7 @@ contract VegaMaster is Ownable {
     }
 
     function addVestingBucket(
-        uint256 cliff,
+        uint256 cliffOffset,
         string memory name,
         uint256 periods,
         uint256 amount
@@ -51,7 +51,7 @@ contract VegaMaster is Ownable {
         //uint256 bal = vega_token.balanceOf(address(this));
         VestingBucket vbucket = new VestingBucket(
             vega_token_address,
-            block.timestamp + cliff,
+            block.timestamp + cliffOffset,
             periods,
             amount
         );

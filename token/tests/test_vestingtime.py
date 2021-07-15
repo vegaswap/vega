@@ -8,8 +8,25 @@ days = 60*60*24
 days30 = days*30
 
 
+def test_timetravel_basic(accounts, vestingmath, token):
+    current = chain.time()
+    zz = 100000
+    chain.sleep(zz)
+    current2 = chain.time()
+    assert current2 - current == zz
+
+    vbucket = VestingBucket.deploy(
+        token, current2+100, 1, 100, {'from': accounts[0]})
+    assert vbucket.getCurrentTime() == current2
+
+    #assert vbucket.endTime() == 0    
+
+    #end = vestingbucket.endTime()
+
+
 def test_timetravel(accounts, vestingmath, token):
 
+    current = chain.time()
     DFP = vestingmath.DEFAULT_PERIOD()
     assert DFP == 2592000
     cliff = int(time.time()) + 10 * DFP
@@ -27,22 +44,29 @@ def test_timetravel(accounts, vestingmath, token):
     calc_endtime = vestingmath.getEndTime(
         cliff, amountPerPeriod, total)
     assert calc_endtime == cliff + 10 * DFP
+    
+
+    assert calc_endtime > current 
 
     assert amountPerPeriod == 100
 
     vestingbucket = VestingBucket.deploy(
         token, cliff, numperiods, total, {'from': accounts[0]})
     assert vestingbucket.totalAmount() == total
-    now = int(time.time())
-    untilend = vestingbucket.endTime() - now
-    #assert untilend == 20 * DFP
-    # chain.sleep(ts+10000)
-    # breaks
-    chain.mine(timestamp=untilend+1)
-    assert vestingbucket.getCurrentTime() == chain.time()
 
-    endtime = vestingbucket.endTime()
-    assert chain.time() >= endtime
+    untilend = vestingbucket.endTime() - current
+    assert untilend == 20 * DFP    
+    chain.mine(timestamp=untilend)
+
+    #current = vestingbucket.getCurrentTime()
+    current = chain.time()
+    #assert current == vestingbucket.endTime()
+
+    # assert current == calc_endtime
+
+    # endtime = vestingbucket.endTime()
+    #assert  >= endtime
+    #assert chain.time() == calc_endtime
 
     # vestingbucket.getVestedAmount()
 
