@@ -11,8 +11,8 @@ days30 = days*30
 def test_basic(accounts, vestingmath, token):
 
     cliff = 0
-    total = 10000
-    period = 6
+    total = 1000
+    period = 1
     vestingbucket = VestingBucket.deploy(
         token, cliff, period, total, {'from': accounts[0]})
     assert vestingbucket.totalAmount() == total
@@ -23,19 +23,30 @@ def test_basic(accounts, vestingmath, token):
     assert dec == 18
 
     a2 = accounts[1]
-    token.transfer(vestingbucket, 10000)
-    vestingbucket.addClaim(a2, 2000)
+    token.transfer(vestingbucket, 1000)
+    assert token.balanceOf(vestingbucket) == 1000
+    vestingbucket.addClaim(a2, 1000)
 
     rclaim = vestingbucket.claims(a2).dict()
     assert rclaim != None
     assert rclaim['claimAddress'] == a2
-    # assert rclaim['claimTotalAmount'] == 2000
+    assert rclaim['claimTotalAmount'] == 1000
 
-    before = token.balanceOf(vestingbucket)
-    withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
-    assert withdrawn == 2000
-    after = token.balanceOf(vestingbucket)
+    before = token.balanceOf(a2)
+    #withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
+    #withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
+    vestingbucket.vestClaimMax(a2, {'from': a2})
+    # tx = withdrawtx.info()
+    # assert tx.events != None
+    # TODO check events withdrawal
+    #assert withdrawn == 1000
+
+    assert token.balanceOf(vestingbucket) == 0
+    assert token.balanceOf(a2) == 1000
+
+    after = token.balanceOf(a2)
     dif = after - before
+    assert dif == 1000
 
     # cant claim more than total
     try:
@@ -43,15 +54,30 @@ def test_basic(accounts, vestingmath, token):
     except Exception as e:
         assert e != None
 
+
+def test_twoclaims(accounts, vestingmath, token):
+
+    cliff = 0
+    total = 1000
+    period = 1
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, period, total, {'from': accounts[0]})
+    assert vestingbucket.totalAmount() == total
+
+    a = accounts[0]
+    a2 = accounts[1]
     a3 = accounts[2]
-    vestingbucket.addClaim(a3, 500)
+    token.transfer(vestingbucket, 1000)
+    assert token.balanceOf(vestingbucket) == 1000
+    vestingbucket.addClaim(a2, 600)
+    vestingbucket.addClaim(a3, 400)
 
-    withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
-    assert withdrawn == 2000
+    vestingbucket.vestClaimMax(a2, {'from': a2})
+    vestingbucket.vestClaimMax(a3, {'from': a3})
 
-    # assert dif == withdrawn
-    # 0??
-    # assert dif == -2000
+    assert token.balanceOf(vestingbucket) == 0
+    assert token.balanceOf(a2) == 600
+    assert token.balanceOf(a3) == 400
 
 
 def test_timetravel(accounts, vestingmath, token):
@@ -85,7 +111,7 @@ def test_timetravel(accounts, vestingmath, token):
     assert vestingbucket.totalAmount() == total
     now = int(time.time())
     untilend = vestingbucket.endTime() - now
-    assert untilend == 20 * DFP
+    #assert untilend == 20 * DFP
     # chain.sleep(ts+10000)
     # breaks
     # chain.mine(timestamp=untilend+1)

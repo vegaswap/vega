@@ -137,19 +137,6 @@ contract VestingBucket is AbstractBucket {
         );
 
         return amount;
-
-        // uint256 total = 0;
-        // Claim memory claim;
-        // uint256 i = 0;
-        // for (i = 0; i < claimAddresses.length; i++) {
-        //     //claim = claims[i];
-        //     address _ca = claimAddresses[i];
-        //     claim = claims[_ca];
-        //     uint256 vestableAmount = getVestedAmount(claim);
-        //     total += vestableAmount;
-        // }
-
-        // return total;
     }
 
     function getVestableAmount(address _claimAddress)
@@ -164,38 +151,33 @@ contract VestingBucket is AbstractBucket {
 
     //vest the claim. this vests the maximum possible
     function vestClaimMax(address _claimAddress) public returns (uint256) {
-        //BUG! TODO!
-        //TODO! throw error String
-        //check if claims exists
-
-        //isAdded!
         require(
-            msg.sender == _claimAddress || msg.sender == owner(),
+            msg.sender == _claimAddress ||
+                msg.sender == owner() ||
+                msg.sender == refowner,
             "VESTINGBUCKET: can only call from claimaddress or owner"
         );
 
         if (!claims[_claimAddress].isAdded)
             revert("VESTINGBUCKET: claim does not exist");
 
-        // require(
-        //     claimAddresses[_claimAddress].exists,
-        //     "_claimAddress does not exist."
-        // );
-
         Claim memory claim = claims[_claimAddress];
 
         uint256 vestableAmount = getVestedAmount(claim);
 
         uint256 withdrawAmount = vestableAmount - claim.withdrawnAmount;
-        uint256 willwithdraw = claim.withdrawnAmount + withdrawAmount;
-        require(willwithdraw <= claim.claimTotalAmount);
+        uint256 totalAfterwithdraw = claim.withdrawnAmount + withdrawAmount;
+        require(totalAfterwithdraw <= claim.claimTotalAmount);
 
         //TODO! edge case
         //  if (vestingSchedule.totalWithdrawnAmount + withdrawableAmount > vestingSchedule.totalAmount) {
         //   withdrawableAmount = vestingSchedule.totalAmount - vestingSchedule.totalWithdrawnAmount;
         // }
 
-        require(vega_token.transfer(claim.claimAddress, withdrawAmount));
+        require(
+            vega_token.transfer(_claimAddress, withdrawAmount),
+            "transfer failed"
+        );
         emit Withdrawal(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
         totalWithdrawnAmount += withdrawAmount;
@@ -209,6 +191,16 @@ contract VestingBucket is AbstractBucket {
         //for every claim
         //Claim memory claim = claims[i];
         //vestClaimMax()
+
+        //uint256 total = 0;
+        Claim memory claim;
+        uint256 i = 0;
+        for (i = 0; i < numClaims; i++) {
+            address _ca = claimAddresses[i];
+            claim = claims[_ca];
+            //uint256 vestableAmount = getVestedAmount(claim);
+            //total += vestableAmount;
+        }
     }
 
     // function depositOwner() public onlyOwner {
