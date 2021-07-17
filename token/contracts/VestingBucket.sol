@@ -40,7 +40,9 @@ contract VestingBucket is AbstractBucket {
     uint256 public numClaims;
 
     //TODO deposit
-    event Withdrawal(address indexed addr, uint256 amount);
+    event DepositOwner(address indexed addr, uint256 amount);
+    event WithdrawClaim(address indexed addr, uint256 amount);
+    event WithdrawOwner(uint256 amount);
 
     modifier onlyRefOwner() {
         require(
@@ -57,7 +59,7 @@ contract VestingBucket is AbstractBucket {
         uint256 _totalAmount
     ) AbstractBucket(_VEGA_TOKEN_ADDRESS) {
         require(
-            _cliffTime > block.timestamp,
+            _cliffTime >= block.timestamp,
             "VESTINGBUCKET cliff must be in the future"
         );
         cliffTime = _cliffTime;
@@ -93,6 +95,8 @@ contract VestingBucket is AbstractBucket {
             totalClaimAmount + _claimTotalAmount <= totalAmount,
             "VESTINGBUCKET: can not claim more than total"
         );
+
+        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
 
         //TODO! add prechecks
 
@@ -171,9 +175,14 @@ contract VestingBucket is AbstractBucket {
 
         uint256 withdrawAmount = vestableAmount - claim.withdrawnAmount;
         uint256 totalAfterwithdraw = claim.withdrawnAmount + withdrawAmount;
-        require(totalAfterwithdraw <= claim.claimTotalAmount);
+        require(
+            totalAfterwithdraw <= claim.claimTotalAmount,
+            "VESTINGBUCKET: can not withdraw more than total"
+        );
 
-        //TODO! edge case
+        require(withdrawAmount > 0, "VESTINGBUCKET: no amount claimed");
+
+        //edge case is handled in vesting math
         //  if (vestingSchedule.totalWithdrawnAmount + withdrawableAmount > vestingSchedule.totalAmount) {
         //   withdrawableAmount = vestingSchedule.totalAmount - vestingSchedule.totalWithdrawnAmount;
         // }
@@ -182,14 +191,15 @@ contract VestingBucket is AbstractBucket {
             vega_token.transfer(_claimAddress, withdrawAmount),
             "transfer failed"
         );
-        emit Withdrawal(claim.claimAddress, withdrawAmount);
+        emit WithdrawClaim(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
         totalWithdrawnAmount += withdrawAmount;
+
         return withdrawAmount;
     }
 
     //owner calls all claims
-    function allClaim() public onlyOwner {
+    function allClaim() public onlyRefOwner {
         //for every claim
         uint256 i = 0;
         for (i = 0; i < numClaims; i++) {
@@ -200,11 +210,29 @@ contract VestingBucket is AbstractBucket {
         }
     }
 
-    // function depositOwner() public onlyOwner {
+    //pro forma functions
 
+    //remove claim is not implemented, if there is issues need to use new address
+    // function removeClaim(address _claimAddress) public onlyRefOwner {
+    //     claims[_claimAddress] = zero
+    //     numClaims -= 1;
     // }
 
-    // function withdrawOwner(uint256 amount) public onlyOwner {
-    //     require(vega_token.transfer(msg.sender, amount));
+    // function depositOwner(uint256 amount) public onlyOwner {
+    //     //require(approve)
+    //     bool transferSuccess = vega_token.transferFrom(
+    //         msg.sender,
+    //         address(this),
+    //         amount
+    //     );
+    //     require(transferSuccess, "VESTINGBUCKET: deposit failed");
+    //     emit DepositOwner(msg.sender, amount);
+    // }
+
+    // function withdrawOwner(uint256 amount) public onlyRefOwner {
+    //     //check existing claims
+    //     bool transferSuccess = vega_token.transfer(msg.sender, amount);
+    //     require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
+    //     emit WithdrawOwner(amount);
     // }
 }

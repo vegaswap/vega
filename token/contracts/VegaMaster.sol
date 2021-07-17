@@ -7,13 +7,11 @@ import "./Ownable.sol";
 import "./VestingBucket.sol";
 import "./VestingConstants.sol";
 
-import {VestingConstants} from "./VestingConstants.sol";
-
 // master distributes tokens to buckets
 // main token handler
 // bucket allocation is defined in VestingConstants
 contract VegaMaster is Ownable {
-    using VestingConstants for *;
+    //using VestingConstants for *;
 
     VegaToken public vega_token;
     address public vega_token_address;

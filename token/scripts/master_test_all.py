@@ -97,9 +97,9 @@ def main():
 
     vestingmath = VestingMath.deploy({"from": mainAccount})
 
-    # master = deploy_allocate(mainAccount)
-    master_address = "0xDae02e4fE488952cFB8c95177154D188647a0146"
-    master = VegaMaster.at(master_address)
+    master = deploy_allocate(mainAccount)
+    # master_address = "0xDae02e4fE488952cFB8c95177154D188647a0146"
+    # aster = VegaMaster.at(master_address)
     token = VegaToken.at(master.vega_token())
     print("master ", master)
 
@@ -123,6 +123,15 @@ def main():
     # forward one month
     n = 2
     chain.mine(timestamp=now + DFP * n + 1)
+
+    # ADD CLAIM
+    # for i in range(1, 11):
+    #     vbucket = VestingBucket.at(master.buckets(i))
+    #     tc = vbucket.totalAmount()
+    #     amount = tc  # 5000000 * 10 ** 18
+    #     # print(vbucket.numClaims())
+    #     # print(vbucket.totalClaimAmount())
+    #     vbucket.addClaim(testaccount, amount, {"from": mainAccount})
 
     # vest all claims
     for i in range(1, 11):
@@ -161,14 +170,6 @@ def main():
 
     ta = token.balanceOf(testaccount)
     print(ta)
-
-    # for i in range(1, 11):
-    #     vbucket = VestingBucket.at(master.buckets(i))
-    #     tc = vbucket.totalAmount()
-    #     amount = tc  # 5000000 * 10 ** 18
-    #     # print(vbucket.numClaims())
-    #     # print(vbucket.totalClaimAmount())
-    #     vbucket.addClaim(testaccount, amount, {"from": mainAccount})
 
     # vbucket = VestingBucket.at(master.buckets(0))
     # claimed = vbucket.totalClaimAmount() / 10 ** 18

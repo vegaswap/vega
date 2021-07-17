@@ -278,6 +278,44 @@ def test_claimaddress(accounts, vestingmath, token):
     assert vestingbucket.claimAddresses(0) == a2.address
 
 
+def test_returnarg(accounts, vestingmath, token):
+
+    cliff = chain.time() + 100
+    total = 1000
+    period = 6
+    vestingbucket = VestingBucket.deploy(
+        token, cliff, period, total, {"from": accounts[0]}
+    )
+    assert token.balanceOf(vestingbucket) == 0
+    assert vestingbucket.totalAmount() == total
+
+    token.transfer(vestingbucket, 2000)
+    assert token.balanceOf(vestingbucket) == 2000
+
+    tc = 0
+
+    for i in range(1, 6):
+        amount = 200
+        vestingbucket.addClaim(accounts[i], amount)
+        tc += amount
+
+    zz = 1000000000
+    chain.sleep(zz)
+
+    total = 0
+    for i in range(1, 6):
+        a = accounts[i]
+        # print(vestingbucket, type(vestingbucket))
+        # vestingbucket.functions.vestClaimMax(a, {"from": a}).transact()
+        # result_vested = vestingbucket.vestClaimMax(a, {"from": a}).call()
+        # result_vested = vestingbucket.vestClaimMax(a, {"from": a}).transact()
+        result_vested = vestingbucket.vestClaimMax(a, {"from": a})
+        assert dict(result_vested) == 0
+        assert result_vested == 200
+
+    assert token.balanceOf(vestingbucket) == 1000
+
+
 # withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
 # withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
 

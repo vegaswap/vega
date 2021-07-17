@@ -1,3 +1,14 @@
+from brownie import (
+    VegaToken,
+    VestingMath,
+    VegaMaster,
+    VestingConstants,
+    VestingBucket,
+    accounts,
+    chain,
+)
+
+
 def allocate(master, token, vconstants, mainAccount):
     print("allocate to buckets")
 
