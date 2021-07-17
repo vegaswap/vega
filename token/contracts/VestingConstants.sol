@@ -7,6 +7,11 @@ library VestingConstants {
     uint256 constant K = 10**3;
     uint256 constant M = 10**6;
 
+    //multiple is 1/price
+    uint256 public constant seedMultiple = 125; //0.008$
+    uint256 public constant privateMultiple = 100; //0.01$
+    uint256 public constant publicMultiple = 84; //0.0119$
+
     //1000M supply allocate to 11 buckets
     //total amounts, no decimals
     uint256 public constant seedAmount = 12 * M + 500 * K;

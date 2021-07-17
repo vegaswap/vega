@@ -7,12 +7,18 @@ import "./Ownable.sol";
 import "./VestingBucket.sol";
 import "./VestingConstants.sol";
 
+import {VestingConstants} from "./VestingConstants.sol";
+
 // master distributes tokens to buckets
 // main token handler
 // bucket allocation is defined in VestingConstants
 contract VegaMaster is Ownable {
+    using VestingConstants for *;
+
     VegaToken public vega_token;
     address public vega_token_address;
+
+    //VestingConstants public vestingConstants;
 
     uint256 private _circSupply;
 
@@ -46,8 +52,6 @@ contract VegaMaster is Ownable {
         uint256 periods,
         uint256 amount
     ) public onlyOwner {
-        //uint8 DECIMALS = vega_token.decimals();
-        //uint256 bal = vega_token.balanceOf(address(this));
         VestingBucket vbucket = new VestingBucket(
             vega_token_address,
             block.timestamp + cliffOffset,
