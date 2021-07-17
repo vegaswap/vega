@@ -4,17 +4,18 @@ import brownie
 from brownie import chain, VegaToken, VestingBucket, accounts
 import time
 
-days = 60*60*24
-days30 = days*30
+days = 60 * 60 * 24
+days30 = days * 30
 
 
 def test_basic(accounts, vestingmath, token):
 
-    cliff = chain.time()+100
+    cliff = chain.time() + 100
     total = 1000
     period = 1
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     a = accounts[0]
@@ -37,12 +38,12 @@ def test_basic(accounts, vestingmath, token):
 
     rclaim = vestingbucket.claims(a2).dict()
     assert rclaim != None
-    assert rclaim['claimAddress'] == a2
-    assert rclaim['claimTotalAmount'] == 1000
+    assert rclaim["claimAddress"] == a2
+    assert rclaim["claimTotalAmount"] == 1000
 
     before = token.balanceOf(a2)
 
-    vestingbucket.vestClaimMax(a2, {'from': a2})
+    vestingbucket.vestClaimMax(a2, {"from": a2})
 
     assert token.balanceOf(vestingbucket) == 0
     assert token.balanceOf(a2) == 1000
@@ -54,11 +55,12 @@ def test_basic(accounts, vestingmath, token):
 
 def test_twoclaims(accounts, vestingmath, token):
 
-    cliff = chain.time()+100
+    cliff = chain.time() + 100
     total = 1000
     period = 1
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     a = accounts[0]
@@ -67,7 +69,7 @@ def test_twoclaims(accounts, vestingmath, token):
     token.transfer(vestingbucket, 1000)
     assert token.balanceOf(vestingbucket) == 1000
     vestingbucket.addClaim(a2, 600)
-    with brownie.reverts('VESTINGBUCKET: claim at this address already exists'):
+    with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
         vestingbucket.addClaim(a2, 400)
 
     vestingbucket.addClaim(a3, 400)
@@ -75,8 +77,8 @@ def test_twoclaims(accounts, vestingmath, token):
     zz = 100000
     chain.sleep(zz)
 
-    vestingbucket.vestClaimMax(a2, {'from': a2})
-    vestingbucket.vestClaimMax(a3, {'from': a3})
+    vestingbucket.vestClaimMax(a2, {"from": a2})
+    vestingbucket.vestClaimMax(a3, {"from": a3})
 
     assert token.balanceOf(vestingbucket) == 0
     assert token.balanceOf(a2) == 600
@@ -86,15 +88,16 @@ def test_twoclaims(accounts, vestingmath, token):
 def test_cliff(accounts, token):
 
     ts = 100
-    cliff = chain.time()+ts
+    cliff = chain.time() + ts
     total = 10000
     period = 10
-    amountPerPeriod = total/period
+    amountPerPeriod = total / period
 
     assert amountPerPeriod == 1000
 
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     a = accounts[0]
@@ -112,11 +115,11 @@ def test_cliff(accounts, token):
     claim1 = vestingbucket.claims(ca1)
     claim1d = claim1.dict()
 
-    assert claim1d['claimAddress'] == a2
+    assert claim1d["claimAddress"] == a2
 
     # cant withdraw while cliff
     before = token.balanceOf(vestingbucket)
-    withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
+    withdrawn = vestingbucket.vestClaimMax.call(a2, {"from": a2})
     assert withdrawn == 0
     after = token.balanceOf(vestingbucket)
     dif = after - before
@@ -125,11 +128,12 @@ def test_cliff(accounts, token):
 
 def test_addall(accounts, vestingmath, token):
 
-    cliff = chain.time()+100
+    cliff = chain.time() + 100
     total = 1000
     period = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert token.balanceOf(vestingbucket) == 0
     assert vestingbucket.totalAmount() == total
 
@@ -138,6 +142,7 @@ def test_addall(accounts, vestingmath, token):
 
     tc = 0
     import random
+
     for i in range(1, 6):
         amount = 200
         vestingbucket.addClaim(accounts[i], amount)
@@ -149,8 +154,7 @@ def test_addall(accounts, vestingmath, token):
     total = 0
     for i in range(1, 6):
         a = accounts[i]
-        vestingbucket.vestClaimMax(
-            a, {'from': a})
+        vestingbucket.vestClaimMax(a, {"from": a})
         assert token.balanceOf(a) == 200
 
     assert token.balanceOf(vestingbucket) == 1000
@@ -166,11 +170,12 @@ def test_addall(accounts, vestingmath, token):
 def test_vestableall(accounts, vestingmath, token):
 
     ts = 0
-    cliff = chain.time()+1
+    cliff = chain.time() + 1
     total = 1000
     period = 1
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
 
     assert vestingbucket.totalAmount() == total
 
@@ -182,7 +187,7 @@ def test_vestableall(accounts, vestingmath, token):
     endtime = vestingmath.getEndTime(cliff, 500, 1000)
     z = vestingmath.getVestedAmountTSX(blocktime, ct, 0, endtime, 500, 1)
     assert z == 500
-    
+
     cliffTime = 1625902745
     endtime = 1631086745
     amountPerPeriod = 500
@@ -193,10 +198,12 @@ def test_vestableall(accounts, vestingmath, token):
 
     assert timeSinceCliff == 0
 
-    r1 = vestingmath.getVestedAmountTSX(blocktime, cliffTime, endtime, amountPerPeriod, totalAmount, 1)
+    r1 = vestingmath.getVestedAmountTSX(
+        blocktime, cliffTime, endtime, amountPerPeriod, totalAmount, 1
+    )
 
     assert r1 == 500
-    
+
     # chain.sleep(endtime-chain.time()+1)
     # va = vestingbucket.getVestableAmountAll()
     # assert va == totalAmount
@@ -205,47 +212,49 @@ def test_vestableall(accounts, vestingmath, token):
 def test_claimother(accounts, vestingmath, token):
 
     a = accounts[0]
-    cliff = chain.time()+1
+    cliff = chain.time() + 1
     total = 10000
     period = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     blackhat_account = accounts[3]
     before = token.balanceOf(vestingbucket)
-    with brownie.reverts('VESTINGBUCKET: can only call from claimaddress or owner'):
-        vestingbucket.vestClaimMax(
-            a, {'from': blackhat_account})
-    
+    with brownie.reverts("VESTINGBUCKET: can only call from claimaddress or owner"):
+        vestingbucket.vestClaimMax(a, {"from": blackhat_account})
+
     after = token.balanceOf(vestingbucket)
     assert after == before
-   
+
 
 def test_claimother2(accounts, vestingmath, token):
 
-    cliff = chain.time()+1
+    cliff = chain.time() + 1
     total = 10000
     period = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     a = accounts[0]
     a2 = accounts[1]
     token.transfer(vestingbucket, 10000)
     with brownie.reverts("Ownable: caller is not the refowner"):
-        vestingbucket.addClaim(a2, 2000, {'from': a2})
+        vestingbucket.addClaim(a2, 2000, {"from": a2})
 
 
 def test_claim_second(accounts, vestingmath, token):
     a = accounts[0]
     a2 = accounts[1]
-    cliff = chain.time()+1
+    cliff = chain.time() + 1
     total = 10000
     period = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
 
     vestingbucket.addClaim(a2, 2000)
     with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
@@ -254,24 +263,25 @@ def test_claim_second(accounts, vestingmath, token):
 
 def test_claimaddress(accounts, vestingmath, token):
 
-    cliff = chain.time()+1
+    cliff = chain.time() + 1
     total = 10000
     period = 6
     vestingbucket = VestingBucket.deploy(
-        token, cliff, period, total, {'from': accounts[0]})
+        token, cliff, period, total, {"from": accounts[0]}
+    )
     assert vestingbucket.totalAmount() == total
 
     a = accounts[0]
     a2 = accounts[1]
     token.transfer(vestingbucket, 10000)
-    vestingbucket.addClaim(a2, 2000, {'from': a})
+    vestingbucket.addClaim(a2, 2000, {"from": a})
     assert vestingbucket.claimAddresses(0) == a2.address
 
 
-#withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
-#withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
+# withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
+# withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
 
 # tx = withdrawtx.info()
 # assert tx.events != None
 # TODO check events withdrawal
-#assert withdrawn == 1000
+# assert withdrawn == 1000

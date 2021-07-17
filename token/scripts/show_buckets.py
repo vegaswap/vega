@@ -21,17 +21,16 @@ def main():
     # print (master.depositAmount())
 
     print("# buckets ", master.bucket_num())
-    # b = VestingBucket.at(master.buckets(0))
 
-    # total = 0
-    # for i in range(master.num_buckets()):
-    #     b = VestingBucket.at(master.buckets(i))
-    #     x = token.balanceOf(b)
-    #     p = round(x / master.lockedSupply(), 3)
-    #     total += x
-    #     print(i, b.name(), x / 10 ** 18, p)
+    total = 0
+    for i in range(master.bucket_num()):
+        b = VestingBucket.at(master.buckets(i))
+        x = token.balanceOf(b)
+        p = round(x / master.lockedSupply(), 3)
+        total += x
+        print(i, b.name(), x / 10 ** 18, p)
 
-    # print("\ntotal ", total)
+    print("\ntotal ", total)
 
     # l = master.lockedSupply() / 10 ** 18
     # lp = master.lockedSupply() / master.maxSupply()
