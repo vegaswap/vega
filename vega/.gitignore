@@ -1,2 +1,3 @@
 build/contracts
 scripts/__pycache__
+vega/tests/__pycache__
