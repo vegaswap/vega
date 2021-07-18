@@ -84,6 +84,10 @@ contract VegaMaster is Ownable {
         return vega_token.MAX_SUPPLY();
     }
 
+    function crossChainMint() public onlyOwner {}
+
+    function crossChainBurn() public onlyOwner {}
+
     // Call at cliffTime/periodTime to release tokens to tokenholders
     // @dev: we pay for the fee
     // TODO: multi call maybe

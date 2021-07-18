@@ -1,0 +1,760 @@
+{
+  "coverage": {
+    "VegaMaster": {
+      "branches": {
+        "VegaMaster.transferToVested": [
+          1,
+          0,
+          1
+        ]
+      },
+      "statements": {
+        "VegaMaster.addVestingBucket": [
+          5,
+          5
+        ],
+        "VegaMaster.circSupply": [
+          0,
+          1
+        ],
+        "VegaMaster.lockedSupply": [
+          0,
+          1
+        ],
+        "VegaMaster.maxSupply": [
+          0,
+          1
+        ],
+        "VegaMaster.transferToVested": [
+          2,
+          2
+        ]
+      },
+      "totals": {
+        "branches": [
+          1,
+          0,
+          1
+        ],
+        "statements": [
+          7,
+          10
+        ]
+      }
+    },
+    "VegaToken": {
+      "branches": {
+        "VegaToken._approve": [
+          2,
+          0,
+          2
+        ],
+        "VegaToken._transfer": [
+          3,
+          1,
+          3
+        ],
+        "VegaToken.transferFrom": [
+          1,
+          1,
+          1
+        ]
+      },
+      "statements": {
+        "VegaToken._approve": [
+          4,
+          4
+        ],
+        "VegaToken._transfer": [
+          6,
+          6
+        ],
+        "VegaToken.allowance": [
+          1,
+          1
+        ],
+        "VegaToken.approve": [
+          2,
+          2
+        ],
+        "VegaToken.balanceOf": [
+          1,
+          1
+        ],
+        "VegaToken.name": [
+          1,
+          1
+        ],
+        "VegaToken.symbol": [
+          1,
+          1
+        ],
+        "VegaToken.totalSupply": [
+          1,
+          1
+        ],
+        "VegaToken.transfer": [
+          1,
+          1
+        ],
+        "VegaToken.transferFrom": [
+          4,
+          4
+        ]
+      },
+      "totals": {
+        "branches": [
+          6,
+          2,
+          6
+        ],
+        "statements": [
+          22,
+          22
+        ]
+      }
+    },
+    "VestingBucket": {
+      "branches": {
+        "VestingBucket.addClaim": [
+          0,
+          0,
+          1
+        ],
+        "VestingBucket.vestClaimMax": [
+          6,
+          3,
+          7
+        ]
+      },
+      "statements": {
+        "VestingBucket.addClaim": [
+          5,
+          7
+        ],
+        "VestingBucket.allClaim": [
+          1,
+          2
+        ],
+        "VestingBucket.getCurrentTime": [
+          1,
+          1
+        ],
+        "VestingBucket.getVestedAmount": [
+          1,
+          1
+        ],
+        "VestingBucket.setRefowner": [
+          0,
+          1
+        ],
+        "VestingBucket.vestClaimMax": [
+          7,
+          8
+        ]
+      },
+      "totals": {
+        "branches": [
+          6,
+          3,
+          8
+        ],
+        "statements": [
+          15,
+          20
+        ]
+      }
+    },
+    "VestingConstants": {
+      "branches": {},
+      "statements": {},
+      "totals": {
+        "branches": [
+          0,
+          0,
+          0
+        ],
+        "statements": [
+          0,
+          0
+        ]
+      }
+    },
+    "VestingMath": {
+      "branches": {
+        "VestingMath.ceildiv": [
+          1,
+          1,
+          1
+        ],
+        "VestingMath.getVestedAmountTSX": [
+          3,
+          3,
+          3
+        ]
+      },
+      "statements": {
+        "VestingMath.ceildiv": [
+          2,
+          2
+        ],
+        "VestingMath.getEndTime": [
+          2,
+          2
+        ],
+        "VestingMath.getVestedAmountTS": [
+          1,
+          1
+        ],
+        "VestingMath.getVestedAmountTSX": [
+          4,
+          4
+        ]
+      },
+      "totals": {
+        "branches": [
+          4,
+          4,
+          4
+        ],
+        "statements": [
+          9,
+          9
+        ]
+      }
+    }
+  },
+  "highlights": {
+    "branches": {
+      "VegaMaster": {
+        "3": [
+          [
+            1814,
+            1821,
+            "yellow",
+            ""
+          ]
+        ],
+        "4": [],
+        "5": [],
+        "7": []
+      },
+      "VegaToken": {
+        "4": [
+          [
+            3909,
+            3935,
+            "green",
+            ""
+          ],
+          [
+            6006,
+            6025,
+            "yellow",
+            ""
+          ],
+          [
+            6084,
+            6105,
+            "yellow",
+            ""
+          ],
+          [
+            4738,
+            4758,
+            "yellow",
+            ""
+          ],
+          [
+            4818,
+            4841,
+            "yellow",
+            ""
+          ],
+          [
+            4964,
+            4987,
+            "green",
+            ""
+          ]
+        ]
+      },
+      "VestingBucket": {
+        "5": [
+          [
+            4679,
+            4706,
+            "green",
+            ""
+          ],
+          [
+            4726,
+            4747,
+            "green",
+            ""
+          ],
+          [
+            4767,
+            4789,
+            "green",
+            ""
+          ],
+          [
+            4886,
+            4915,
+            "orange",
+            ""
+          ],
+          [
+            5268,
+            5312,
+            "yellow",
+            ""
+          ],
+          [
+            5404,
+            5422,
+            "red",
+            ""
+          ],
+          [
+            5761,
+            5811,
+            "yellow",
+            ""
+          ],
+          [
+            1459,
+            1481,
+            "red",
+            ""
+          ]
+        ],
+        "7": []
+      },
+      "VestingConstants": {
+        "6": []
+      },
+      "VestingMath": {
+        "7": [
+          [
+            361,
+            367,
+            "green",
+            ""
+          ],
+          [
+            1335,
+            1355,
+            "green",
+            ""
+          ],
+          [
+            1439,
+            1460,
+            "green",
+            ""
+          ],
+          [
+            1718,
+            1749,
+            "green",
+            ""
+          ]
+        ]
+      }
+    },
+    "statements": {
+      "VegaMaster": {
+        "3": [
+          [
+            1949,
+            1967,
+            "red",
+            ""
+          ],
+          [
+            2044,
+            2064,
+            "red",
+            ""
+          ],
+          [
+            1367,
+            1395,
+            "green",
+            ""
+          ],
+          [
+            1405,
+            1426,
+            "green",
+            ""
+          ],
+          [
+            1505,
+            1543,
+            "green",
+            ""
+          ],
+          [
+            1553,
+            1568,
+            "green",
+            ""
+          ],
+          [
+            1578,
+            1620,
+            "green",
+            ""
+          ],
+          [
+            2138,
+            2168,
+            "red",
+            ""
+          ],
+          [
+            1806,
+            1841,
+            "green",
+            ""
+          ],
+          [
+            1851,
+            1874,
+            "green",
+            ""
+          ]
+        ],
+        "4": [],
+        "5": [],
+        "7": []
+      },
+      "VegaToken": {
+        "4": [
+          [
+            1692,
+            1704,
+            "green",
+            ""
+          ],
+          [
+            1990,
+            2009,
+            "green",
+            ""
+          ],
+          [
+            2159,
+            2184,
+            "green",
+            ""
+          ],
+          [
+            1789,
+            1803,
+            "green",
+            ""
+          ],
+          [
+            2775,
+            2809,
+            "green",
+            ""
+          ],
+          [
+            3089,
+            3126,
+            "green",
+            ""
+          ],
+          [
+            3136,
+            3147,
+            "green",
+            ""
+          ],
+          [
+            3773,
+            3809,
+            "green",
+            ""
+          ],
+          [
+            3888,
+            4001,
+            "green",
+            ""
+          ],
+          [
+            4035,
+            4090,
+            "green",
+            ""
+          ],
+          [
+            4111,
+            4122,
+            "green",
+            ""
+          ],
+          [
+            2497,
+            2537,
+            "green",
+            ""
+          ],
+          [
+            5998,
+            6066,
+            "green",
+            ""
+          ],
+          [
+            6076,
+            6144,
+            "green",
+            ""
+          ],
+          [
+            6155,
+            6191,
+            "green",
+            ""
+          ],
+          [
+            6201,
+            6238,
+            "green",
+            ""
+          ],
+          [
+            4730,
+            4800,
+            "green",
+            ""
+          ],
+          [
+            4810,
+            4881,
+            "green",
+            ""
+          ],
+          [
+            4943,
+            5051,
+            "green",
+            ""
+          ],
+          [
+            5192,
+            5234,
+            "green",
+            ""
+          ],
+          [
+            5254,
+            5284,
+            "green",
+            ""
+          ],
+          [
+            5295,
+            5335,
+            "green",
+            ""
+          ]
+        ]
+      },
+      "VestingBucket": {
+        "5": [
+          [
+            3545,
+            3567,
+            "green",
+            ""
+          ],
+          [
+            4658,
+            4870,
+            "green",
+            ""
+          ],
+          [
+            4929,
+            4974,
+            "red",
+            ""
+          ],
+          [
+            5247,
+            5385,
+            "green",
+            ""
+          ],
+          [
+            5396,
+            5459,
+            "green",
+            ""
+          ],
+          [
+            5740,
+            5852,
+            "green",
+            ""
+          ],
+          [
+            5862,
+            5916,
+            "green",
+            ""
+          ],
+          [
+            5926,
+            5965,
+            "green",
+            ""
+          ],
+          [
+            5975,
+            6013,
+            "green",
+            ""
+          ],
+          [
+            2389,
+            2409,
+            "red",
+            ""
+          ],
+          [
+            6244,
+            6260,
+            "red",
+            ""
+          ],
+          [
+            6181,
+            6184,
+            "green",
+            ""
+          ],
+          [
+            3710,
+            3930,
+            "green",
+            ""
+          ],
+          [
+            2614,
+            2675,
+            "green",
+            ""
+          ],
+          [
+            2686,
+            2828,
+            "green",
+            ""
+          ],
+          [
+            2839,
+            2909,
+            "red",
+            ""
+          ],
+          [
+            3018,
+            3254,
+            "green",
+            ""
+          ],
+          [
+            3318,
+            3352,
+            "green",
+            ""
+          ],
+          [
+            3362,
+            3399,
+            "green",
+            ""
+          ],
+          [
+            3409,
+            3423,
+            "red",
+            ""
+          ]
+        ],
+        "7": []
+      },
+      "VestingConstants": {
+        "6": []
+      },
+      "VestingMath": {
+        "7": [
+          [
+            383,
+            395,
+            "green",
+            ""
+          ],
+          [
+            426,
+            450,
+            "green",
+            ""
+          ],
+          [
+            1357,
+            1375,
+            "green",
+            ""
+          ],
+          [
+            1462,
+            1470,
+            "green",
+            ""
+          ],
+          [
+            1765,
+            1783,
+            "green",
+            ""
+          ],
+          [
+            1804,
+            1828,
+            "green",
+            ""
+          ],
+          [
+            2055,
+            2279,
+            "green",
+            ""
+          ],
+          [
+            656,
+            741,
+            "green",
+            ""
+          ],
+          [
+            912,
+            1079,
+            "green",
+            ""
+          ]
+        ]
+      }
+    }
+  },
+  "sha1": {}
+}

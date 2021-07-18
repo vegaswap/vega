@@ -47,10 +47,9 @@ def test_endtime(accounts, vestingmath, token, master):
         now + vconstants.seedCliff(), bucketAmountPerPeriod, vconstants.seedAmount()
     )
 
-    assert (endTime - now) / DFP == 6
+    assert (endTime - now) / DFP == 7
 
     dif = vbucket.endTime() - now
-    # should be 6??
-    assert dif / DFP == 7
+    assert int(dif / DFP) == 7
     # assert vbucket.endTime() == 0
     # assert 18144000/2592000

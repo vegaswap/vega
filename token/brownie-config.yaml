@@ -24,11 +24,14 @@ dependencies:
   - OpenZeppelin/openzeppelin-contracts@4.1.0
   - OpenZeppelin/openzeppelin-contracts-upgradeable@4.1.0
 
+#dev_deployment_artifacts: true
+
 networks:
     default: development
     #default: bsc-main #mainnet
     development:
         host: https://127.0.0.1:8545
+        
         gas_limit: max
         gas_buffer: 1
         gas_price: 0

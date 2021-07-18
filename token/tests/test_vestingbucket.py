@@ -121,8 +121,9 @@ def test_cliff(accounts, token):
 
     # cant withdraw while cliff
     before = token.balanceOf(vestingbucket)
-    withdrawn = vestingbucket.vestClaimMax.call(a2, {"from": a2})
-    assert withdrawn == 0
+    with brownie.reverts("VESTINGBUCKET: no amount claimed"):
+        vestingbucket.vestClaimMax.call(a2, {"from": a2})
+
     after = token.balanceOf(vestingbucket)
     dif = after - before
     assert dif == 0
