@@ -69,24 +69,24 @@ contract VegaMaster is Ownable {
     function transferToVested(address recipient, uint256 amount) private {
         bool success = vega_token.transfer(address(recipient), amount);
         require(success, "transfer failed");
-        _lockedSupply += amount;
+        //_lockedSupply += amount;
     }
 
-    function circSupply() public view returns (uint256) {
-        return _circSupply;
-    }
+    // function circSupply() public view returns (uint256) {
+    //     return _circSupply;
+    // }
 
-    function lockedSupply() public view returns (uint256) {
-        return _lockedSupply;
-    }
+    // function lockedSupply() public view returns (uint256) {
+    //     return _lockedSupply;
+    // }
 
     function maxSupply() public view returns (uint256) {
         return vega_token.MAX_SUPPLY();
     }
 
-    function crossChainMint() public onlyOwner {}
+    // function crossChainMint() public onlyOwner {}
 
-    function crossChainBurn() public onlyOwner {}
+    // function crossChainBurn() public onlyOwner {}
 
     // Call at cliffTime/periodTime to release tokens to tokenholders
     // @dev: we pay for the fee
@@ -101,15 +101,4 @@ contract VegaMaster is Ownable {
     //         vestingSchedule.withdrawnAmount = newTotalWithdrawn;
     //     }
     // }
-
-    // function circulatingSupply() public returns (uint256) {
-    //     how much is circulating
-    // }
-
-    //     function depositTokens(uint256 amount) public { //onlyowner
-    //         //check approve
-    //         //require(VegaToken.allowance()>amount);
-    //         vega_token.transferFrom(msg.sender, address(this), amount);
-    //         depositAmount += amount;
-    //         emit Deposit(msg.sender, amount);
 }

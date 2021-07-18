@@ -1,3 +1,4 @@
+.DS_STORE
 token/build
 activate/
 bin/
@@ -5,3 +6,4 @@ env/
 lib/
 venv/
 token/tests/__pycache__
+.vscode/
