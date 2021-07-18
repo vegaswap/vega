@@ -3,6 +3,8 @@ import brownie
 
 from brownie import chain, VegaToken, VestingBucket, accounts
 import time
+from collections import OrderedDict
+
 
 days = 60 * 60 * 24
 days30 = days * 30
@@ -305,13 +307,11 @@ def test_returnarg(accounts, vestingmath, token):
     total = 0
     for i in range(1, 6):
         a = accounts[i]
-        # print(vestingbucket, type(vestingbucket))
-        # vestingbucket.functions.vestClaimMax(a, {"from": a}).transact()
-        # result_vested = vestingbucket.vestClaimMax(a, {"from": a}).call()
-        # result_vested = vestingbucket.vestClaimMax(a, {"from": a}).transact()
         result_vested = vestingbucket.vestClaimMax(a, {"from": a})
-        assert dict(result_vested) == 0
-        assert result_vested == 200
+        assert result_vested.events != 0
+        assert result_vested.events[0]["value"] == 200
+
+        # assert result_vested == 200
 
     assert token.balanceOf(vestingbucket) == 1000
 

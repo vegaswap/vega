@@ -11,8 +11,9 @@ library VestingMath {
         uint256 t = a % m;
         if (t == 0) {
             return a / m;
+        } else {
+            return (a + (m - t)) / m;
         }
-        return (a + (m - t)) / m;
     }
 
     function getEndTime(

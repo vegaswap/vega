@@ -32,10 +32,22 @@ def test_endtime(accounts, vestingmath, token, master):
     vbucket = VestingBucket.at(master.buckets(0))
     print("vbucket ", vbucket)
 
-    assert vconstants.seedPeriods() == 6
-    assert vconstants.seedAmount() == 12500000
+    periods = vconstants.seedPeriods()
+    assert periods == 6
+    totalAmount = vconstants.seedAmount()
+    assert totalAmount == 12500000
     DFP = vconstants.DEFAULT_PERIOD()
     assert DFP == 2592000
+
+    bucketAmountPerPeriod = 12500000 / periods
+    cd = vestingmath.ceildiv(totalAmount, bucketAmountPerPeriod)
+    assert cd == 7
+
+    endTime = vestingmath.getEndTime(
+        now + vconstants.seedCliff(), bucketAmountPerPeriod, vconstants.seedAmount()
+    )
+
+    assert (endTime - now) / DFP == 6
 
     dif = vbucket.endTime() - now
     # should be 6??

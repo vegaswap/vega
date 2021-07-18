@@ -158,7 +158,7 @@ contract VestingBucket is AbstractBucket {
     }
 
     //vest the claim. this vests the maximum possible
-    function vestClaimMax(address _claimAddress) public returns (uint256) {
+    function vestClaimMax(address _claimAddress) public {
         require(
             msg.sender == _claimAddress ||
                 msg.sender == owner() ||
@@ -194,8 +194,6 @@ contract VestingBucket is AbstractBucket {
         emit WithdrawClaim(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
         totalWithdrawnAmount += withdrawAmount;
-
-        return withdrawAmount;
     }
 
     //owner calls all claims
