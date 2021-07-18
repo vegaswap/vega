@@ -12,7 +12,6 @@ import "./VestingMath.sol";
 //vesting in equal parts per time
 //e.g. 6 months, 1/6 equal
 contract VestingBucket is AbstractBucket {
-    address refowner;
     //a claim towards this bucket by an addreess
     struct Claim {
         address claimAddress;
@@ -44,14 +43,6 @@ contract VestingBucket is AbstractBucket {
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
-    modifier onlyRefOwner() {
-        require(
-            msg.sender == refowner || msg.sender == owner(),
-            "Ownable: caller is not the refowner"
-        );
-        _;
-    }
-
     constructor(
         address _VEGA_TOKEN_ADDRESS,
         uint256 _cliffTime,
@@ -77,10 +68,6 @@ contract VestingBucket is AbstractBucket {
         totalClaimAmount = 0;
         numClaims = 0;
         //claimAddresses =
-    }
-
-    function setRefowner(address _refowner) public onlyOwner {
-        refowner = _refowner;
     }
 
     //linear vesting claim
@@ -162,7 +149,7 @@ contract VestingBucket is AbstractBucket {
         require(
             msg.sender == _claimAddress ||
                 msg.sender == owner() ||
-                msg.sender == refowner,
+                msg.sender == refOwner(),
             "VESTINGBUCKET: can only call from claimaddress or owner"
         );
 
@@ -208,6 +195,14 @@ contract VestingBucket is AbstractBucket {
         }
     }
 
+    //allow withdraws which are not claimed
+    function withdrawOwner(uint256 amount) public onlyRefOwner {
+        //check existing claims
+        bool transferSuccess = vega_token.transfer(msg.sender, amount);
+        require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
+        emit WithdrawOwner(amount);
+    }
+
     //pro forma functions
 
     //remove claim is not implemented, if there is issues need to use new address
@@ -225,12 +220,5 @@ contract VestingBucket is AbstractBucket {
     //     );
     //     require(transferSuccess, "VESTINGBUCKET: deposit failed");
     //     emit DepositOwner(msg.sender, amount);
-    // }
-
-    // function withdrawOwner(uint256 amount) public onlyRefOwner {
-    //     //check existing claims
-    //     bool transferSuccess = vega_token.transfer(msg.sender, amount);
-    //     require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
-    //     emit WithdrawOwner(amount);
     // }
 }
