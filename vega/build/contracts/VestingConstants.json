@@ -1,0 +1,7205 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DEFAULT_PERIOD",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "advisorsPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "advisoryAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "advisoryCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ecoAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ecoCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ecoPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liqAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liqCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "liqPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lpgrantsAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lpgrantsCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lpgrantsPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lprewardsAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lprewardsPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lpwRewardsCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "privateAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "privateCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "privateMultiple",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "privatePeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "publicAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "publicCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "publicMultiple",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "publicPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "seedAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "seedCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "seedMultiple",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "seedPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "teamAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "teamCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "teamPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "trademiningAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "trademiningCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "trademiningPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryCliff",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "treasuryPeriods",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "6": "contracts/VestingConstants.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/VestingConstants.sol",
+    "exportedSymbols": {
+      "VestingConstants": [
+        1246
+      ]
+    },
+    "id": 1247,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1094,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 1246,
+        "linearizedBaseContracts": [
+          1246
+        ],
+        "name": "VestingConstants",
+        "nameLocation": "68:16:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "functionSelector": "780e7893",
+            "id": 1097,
+            "mutability": "constant",
+            "name": "DEFAULT_PERIOD",
+            "nameLocation": "115:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "91:48:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1095,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "91:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3330",
+              "id": 1096,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "132:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2592000_by_1",
+                "typeString": "int_const 2592000"
+              },
+              "value": "30"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "id": 1102,
+            "mutability": "constant",
+            "name": "K",
+            "nameLocation": "163:1:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "146:26:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1098,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "146:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_rational_1000_by_1",
+                "typeString": "int_const 1000"
+              },
+              "id": 1101,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3130",
+                "id": 1099,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "167:2:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_10_by_1",
+                  "typeString": "int_const 10"
+                },
+                "value": "10"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "**",
+              "rightExpression": {
+                "hexValue": "33",
+                "id": 1100,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "171:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_3_by_1",
+                  "typeString": "int_const 3"
+                },
+                "value": "3"
+              },
+              "src": "167:5:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000_by_1",
+                "typeString": "int_const 1000"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 1107,
+            "mutability": "constant",
+            "name": "M",
+            "nameLocation": "195:1:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "178:26:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1103,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "178:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_rational_1000000_by_1",
+                "typeString": "int_const 1000000"
+              },
+              "id": 1106,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3130",
+                "id": 1104,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "199:2:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_10_by_1",
+                  "typeString": "int_const 10"
+                },
+                "value": "10"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "**",
+              "rightExpression": {
+                "hexValue": "36",
+                "id": 1105,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "203:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_6_by_1",
+                  "typeString": "int_const 6"
+                },
+                "value": "6"
+              },
+              "src": "199:5:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000000_by_1",
+                "typeString": "int_const 1000000"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "functionSelector": "f0be9b9f",
+            "id": 1110,
+            "mutability": "constant",
+            "name": "seedMultiple",
+            "nameLocation": "261:12:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "237:42:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1108,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "237:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "313235",
+              "id": 1109,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "276:3:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_125_by_1",
+                "typeString": "int_const 125"
+              },
+              "value": "125"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "86e0e392",
+            "id": 1113,
+            "mutability": "constant",
+            "name": "privateMultiple",
+            "nameLocation": "318:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "294:45:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1111,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "294:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "313030",
+              "id": 1112,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "336:3:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_100_by_1",
+                "typeString": "int_const 100"
+              },
+              "value": "100"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "2b2a3737",
+            "id": 1116,
+            "mutability": "constant",
+            "name": "publicMultiple",
+            "nameLocation": "377:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "353:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1114,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "353:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3834",
+              "id": 1115,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "394:2:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_84_by_1",
+                "typeString": "int_const 84"
+              },
+              "value": "84"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "c5774a3f",
+            "id": 1125,
+            "mutability": "constant",
+            "name": "seedAmount",
+            "nameLocation": "512:10:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "488:53:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1117,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "488:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1124,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "commonType": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "id": 1120,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "leftExpression": {
+                  "hexValue": "3132",
+                  "id": 1118,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "525:2:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_12_by_1",
+                    "typeString": "int_const 12"
+                  },
+                  "value": "12"
+                },
+                "nodeType": "BinaryOperation",
+                "operator": "*",
+                "rightExpression": {
+                  "id": 1119,
+                  "name": "M",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1107,
+                  "src": "530:1:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "src": "525:6:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "+",
+              "rightExpression": {
+                "commonType": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "id": 1123,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "leftExpression": {
+                  "hexValue": "353030",
+                  "id": 1121,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "534:3:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_500_by_1",
+                    "typeString": "int_const 500"
+                  },
+                  "value": "500"
+                },
+                "nodeType": "BinaryOperation",
+                "operator": "*",
+                "rightExpression": {
+                  "id": 1122,
+                  "name": "K",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1102,
+                  "src": "540:1:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "src": "534:7:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "525:16:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "546dd883",
+            "id": 1130,
+            "mutability": "constant",
+            "name": "privateAmount",
+            "nameLocation": "571:13:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "547:46:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1126,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "547:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1129,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3635",
+                "id": 1127,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "587:2:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_65_by_1",
+                  "typeString": "int_const 65"
+                },
+                "value": "65"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1128,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "592:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "587:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "a27a9e7f",
+            "id": 1141,
+            "mutability": "constant",
+            "name": "publicAmount",
+            "nameLocation": "623:12:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "599:61:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1131,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "599:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1140,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "commonType": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "id": 1138,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "leftExpression": {
+                  "commonType": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "id": 1134,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "leftExpression": {
+                    "hexValue": "3136",
+                    "id": 1132,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "638:2:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_16_by_1",
+                      "typeString": "int_const 16"
+                    },
+                    "value": "16"
+                  },
+                  "nodeType": "BinaryOperation",
+                  "operator": "*",
+                  "rightExpression": {
+                    "id": 1133,
+                    "name": "M",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1107,
+                    "src": "643:1:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "src": "638:6:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "nodeType": "BinaryOperation",
+                "operator": "+",
+                "rightExpression": {
+                  "commonType": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "id": 1137,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "leftExpression": {
+                    "hexValue": "363636",
+                    "id": 1135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "647:3:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_666_by_1",
+                      "typeString": "int_const 666"
+                    },
+                    "value": "666"
+                  },
+                  "nodeType": "BinaryOperation",
+                  "operator": "*",
+                  "rightExpression": {
+                    "id": 1136,
+                    "name": "K",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1102,
+                    "src": "653:1:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "src": "647:7:6",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "src": "638:16:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "+",
+              "rightExpression": {
+                "hexValue": "363637",
+                "id": 1139,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "657:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_667_by_1",
+                  "typeString": "int_const 667"
+                },
+                "value": "667"
+              },
+              "src": "638:22:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "d3145f08",
+            "id": 1146,
+            "mutability": "constant",
+            "name": "liqAmount",
+            "nameLocation": "690:9:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "666:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1142,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "666:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1145,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "313530",
+                "id": 1143,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "702:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_150_by_1",
+                  "typeString": "int_const 150"
+                },
+                "value": "150"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1144,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "708:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "702:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "6b4cd109",
+            "id": 1151,
+            "mutability": "constant",
+            "name": "lprewardsAmount",
+            "nameLocation": "739:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "715:49:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1147,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "715:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1150,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "323030",
+                "id": 1148,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "757:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_200_by_1",
+                  "typeString": "int_const 200"
+                },
+                "value": "200"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1149,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "763:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "757:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "013296e1",
+            "id": 1156,
+            "mutability": "constant",
+            "name": "lpgrantsAmount",
+            "nameLocation": "794:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "770:47:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1152,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "770:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1155,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3530",
+                "id": 1153,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "811:2:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_50_by_1",
+                  "typeString": "int_const 50"
+                },
+                "value": "50"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1154,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "816:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "811:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "2da452a4",
+            "id": 1161,
+            "mutability": "constant",
+            "name": "ecoAmount",
+            "nameLocation": "847:9:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "823:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1157,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "823:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1160,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "313030",
+                "id": 1158,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "859:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_100_by_1",
+                  "typeString": "int_const 100"
+                },
+                "value": "100"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1159,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "865:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "859:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "8824f00b",
+            "id": 1166,
+            "mutability": "constant",
+            "name": "trademiningAmount",
+            "nameLocation": "896:17:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "872:51:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1162,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "872:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1165,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "323030",
+                "id": 1163,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "916:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_200_by_1",
+                  "typeString": "int_const 200"
+                },
+                "value": "200"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1164,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "922:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "916:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "70439385",
+            "id": 1171,
+            "mutability": "constant",
+            "name": "teamAmount",
+            "nameLocation": "953:10:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "929:44:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1167,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "929:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1170,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "313530",
+                "id": 1168,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "966:3:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_150_by_1",
+                  "typeString": "int_const 150"
+                },
+                "value": "150"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1169,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "972:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "966:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "62afd79f",
+            "id": 1176,
+            "mutability": "constant",
+            "name": "advisoryAmount",
+            "nameLocation": "1003:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "979:47:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1172,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "979:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "commonType": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              },
+              "id": 1175,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "lValueRequested": false,
+              "leftExpression": {
+                "hexValue": "3530",
+                "id": 1173,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "kind": "number",
+                "lValueRequested": false,
+                "nodeType": "Literal",
+                "src": "1020:2:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_rational_50_by_1",
+                  "typeString": "int_const 50"
+                },
+                "value": "50"
+              },
+              "nodeType": "BinaryOperation",
+              "operator": "*",
+              "rightExpression": {
+                "id": 1174,
+                "name": "M",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 1107,
+                "src": "1025:1:6",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "src": "1020:6:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "368acb09",
+            "id": 1179,
+            "mutability": "constant",
+            "name": "treasuryAmount",
+            "nameLocation": "1083:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1059:48:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1177,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1059:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "35383333333333",
+              "id": 1178,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1100:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5833333_by_1",
+                "typeString": "int_const 5833333"
+              },
+              "value": "5833333"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "5bacfddb",
+            "id": 1182,
+            "mutability": "constant",
+            "name": "seedCliff",
+            "nameLocation": "1151:9:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1127:42:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1180,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1127:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 1181,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1163:6:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "e789fd7f",
+            "id": 1185,
+            "mutability": "constant",
+            "name": "privateCliff",
+            "nameLocation": "1205:12:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1181:45:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1183,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1181:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 1184,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1220:6:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "dcc91480",
+            "id": 1188,
+            "mutability": "constant",
+            "name": "publicCliff",
+            "nameLocation": "1256:11:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1232:44:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1186,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1232:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "30",
+              "id": 1187,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1270:6:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "06e6446c",
+            "id": 1191,
+            "mutability": "constant",
+            "name": "liqCliff",
+            "nameLocation": "1306:8:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1282:42:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1189,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1282:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3330",
+              "id": 1190,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1317:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2592000_by_1",
+                "typeString": "int_const 2592000"
+              },
+              "value": "30"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "c81ae9ee",
+            "id": 1194,
+            "mutability": "constant",
+            "name": "lpwRewardsCliff",
+            "nameLocation": "1354:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1330:49:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1192,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1330:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3330",
+              "id": 1193,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1372:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2592000_by_1",
+                "typeString": "int_const 2592000"
+              },
+              "value": "30"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "a406e51a",
+            "id": 1197,
+            "mutability": "constant",
+            "name": "lpgrantsCliff",
+            "nameLocation": "1409:13:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1385:47:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1195,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1385:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3630",
+              "id": 1196,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1425:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5184000_by_1",
+                "typeString": "int_const 5184000"
+              },
+              "value": "60"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "08f35b26",
+            "id": 1200,
+            "mutability": "constant",
+            "name": "ecoCliff",
+            "nameLocation": "1462:8:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1438:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1198,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1438:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "313230",
+              "id": 1199,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1473:8:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_10368000_by_1",
+                "typeString": "int_const 10368000"
+              },
+              "value": "120"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "4e761f9e",
+            "id": 1203,
+            "mutability": "constant",
+            "name": "trademiningCliff",
+            "nameLocation": "1511:16:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1487:50:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1201,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1487:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3130",
+              "id": 1202,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1530:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_864000_by_1",
+                "typeString": "int_const 864000"
+              },
+              "value": "10"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "3879c9f3",
+            "id": 1206,
+            "mutability": "constant",
+            "name": "teamCliff",
+            "nameLocation": "1567:9:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1543:44:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1204,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1543:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "313830",
+              "id": 1205,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1579:8:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_15552000_by_1",
+                "typeString": "int_const 15552000"
+              },
+              "value": "180"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "a26b3ca7",
+            "id": 1209,
+            "mutability": "constant",
+            "name": "advisoryCliff",
+            "nameLocation": "1617:13:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1593:47:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1207,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1593:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3630",
+              "id": 1208,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1633:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_5184000_by_1",
+                "typeString": "int_const 5184000"
+              },
+              "value": "60"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "272f8b62",
+            "id": 1212,
+            "mutability": "constant",
+            "name": "treasuryCliff",
+            "nameLocation": "1670:13:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1646:47:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1210,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1646:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3330",
+              "id": 1211,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1686:7:6",
+              "subdenomination": "days",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2592000_by_1",
+                "typeString": "int_const 2592000"
+              },
+              "value": "30"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "11385082",
+            "id": 1215,
+            "mutability": "constant",
+            "name": "seedPeriods",
+            "nameLocation": "1740:11:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1716:39:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1213,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1716:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "36",
+              "id": 1214,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1754:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_6_by_1",
+                "typeString": "int_const 6"
+              },
+              "value": "6"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "8057f332",
+            "id": 1218,
+            "mutability": "constant",
+            "name": "privatePeriods",
+            "nameLocation": "1785:14:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1761:42:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1216,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1761:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "36",
+              "id": 1217,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1802:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_6_by_1",
+                "typeString": "int_const 6"
+              },
+              "value": "6"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "a2cbc624",
+            "id": 1221,
+            "mutability": "constant",
+            "name": "publicPeriods",
+            "nameLocation": "1833:13:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1809:41:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1219,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1809:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 1220,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1849:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "c51ce9ad",
+            "id": 1224,
+            "mutability": "constant",
+            "name": "liqPeriods",
+            "nameLocation": "1880:10:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1856:38:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1222,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1856:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "32",
+              "id": 1223,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1893:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_2_by_1",
+                "typeString": "int_const 2"
+              },
+              "value": "2"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "db00d838",
+            "id": 1227,
+            "mutability": "constant",
+            "name": "lprewardsPeriods",
+            "nameLocation": "1924:16:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1900:44:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1225,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1900:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 1226,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1943:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "cfcb12f0",
+            "id": 1230,
+            "mutability": "constant",
+            "name": "lpgrantsPeriods",
+            "nameLocation": "1974:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1950:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1228,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1950:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 1229,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1992:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "00ee0ec8",
+            "id": 1233,
+            "mutability": "constant",
+            "name": "ecoPeriods",
+            "nameLocation": "2023:10:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "1999:38:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1231,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1999:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "36",
+              "id": 1232,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2036:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_6_by_1",
+                "typeString": "int_const 6"
+              },
+              "value": "6"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "8df46565",
+            "id": 1236,
+            "mutability": "constant",
+            "name": "trademiningPeriods",
+            "nameLocation": "2067:18:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "2043:46:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1234,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2043:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 1235,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2088:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "e93aa588",
+            "id": 1239,
+            "mutability": "constant",
+            "name": "teamPeriods",
+            "nameLocation": "2119:11:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "2095:40:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1237,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2095:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3132",
+              "id": 1238,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2133:2:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_12_by_1",
+                "typeString": "int_const 12"
+              },
+              "value": "12"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "342965dd",
+            "id": 1242,
+            "mutability": "constant",
+            "name": "advisorsPeriods",
+            "nameLocation": "2165:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "2141:44:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1240,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2141:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "3132",
+              "id": 1241,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2183:2:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_12_by_1",
+                "typeString": "int_const 12"
+              },
+              "value": "12"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": true,
+            "functionSelector": "763f7f32",
+            "id": 1245,
+            "mutability": "constant",
+            "name": "treasuryPeriods",
+            "nameLocation": "2215:15:6",
+            "nodeType": "VariableDeclaration",
+            "scope": 1246,
+            "src": "2191:43:6",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1243,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2191:7:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "31",
+              "id": 1244,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "2233:1:6",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 1247,
+        "src": "60:2177:6",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:2203:6"
+  },
+  "bytecode": "61042361003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106102305760003560e01c8063780e78931161013a578063c51ce9ad116100c2578063db00d83811610086578063db00d838146102d1578063dcc91480146102a9578063e789fd7f146102a9578063e93aa5881461027b578063f0be9b9f146102fb57600080fd5b8063c51ce9ad146102eb578063c5774a3f146102f3578063c81ae9ee14610257578063cfcb12f0146102d1578063d3145f08146102b957600080fd5b80638df46565116101095780638df46565146102d1578063a26b3ca7146102d9578063a27a9e7f146102e3578063a2cbc624146102d1578063a406e51a146102d957600080fd5b8063780e7893146102575780638057f3321461023557806386e0e392146102c95780638824f00b146102b157600080fd5b8063368acb09116101bd5780635bacfddb1161018c5780635bacfddb146102a957806362afd79f1461024f5780636b4cd109146102b157806370439385146102b9578063763f7f32146102c157600080fd5b8063368acb09146102835780633879c9f31461028d5780634e761f9e14610297578063546dd883146102a157600080fd5b806311385082116102045780631138508214610235578063272f8b62146102575780632b2a37371461026b5780632da452a414610273578063342965dd1461027b57600080fd5b8062ee0ec814610235578063013296e11461024f57806306e6446c1461025757806308f35b2614610261575b600080fd5b61023d600681565b60405190815260200160405180910390f35b61023d610303565b61023d62278d0081565b61023d629e340081565b61023d605481565b61023d610314565b61023d600c81565b61023d6259027581565b61023d62ed4e0081565b61023d620d2f0081565b61023d610322565b61023d600081565b61023d610330565b61023d61033e565b61023d600181565b61023d606481565b61023d600381565b61023d624f1a0081565b61023d61034c565b61023d600281565b61023d61037e565b61023d607d81565b610311620f424060326103b8565b81565b610311620f424060646103b8565b610311620f424060416103b8565b610311620f424060c86103b8565b610311620f424060966103b8565b61035a6103e861029a6103b8565b610368620f424060106103b8565b61037291906103a0565b6103119061029b6103a0565b61038c6103e86101f46103b8565b61039a620f4240600c6103b8565b61031191905b600082198211156103b3576103b36103d7565b500190565b60008160001904831182151516156103d2576103d26103d7565b500290565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ba087b1796704824a51e55d172473babb483296878ac8a0a6913ca3de0fd18ed64736f6c63430008050033",
+  "bytecodeSha1": "efcbe2661704ce24c62536bee58969901f7acdf1",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.5+commit.a4f2e591"
+  },
+  "contractName": "VestingConstants",
+  "coverageMap": {
+    "branches": {
+      "6": {}
+    },
+    "statements": {
+      "6": {}
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "73000000000000000000000000000000000000000030146080604052600436106102305760003560e01c8063780e78931161013a578063c51ce9ad116100c2578063db00d83811610086578063db00d838146102d1578063dcc91480146102a9578063e789fd7f146102a9578063e93aa5881461027b578063f0be9b9f146102fb57600080fd5b8063c51ce9ad146102eb578063c5774a3f146102f3578063c81ae9ee14610257578063cfcb12f0146102d1578063d3145f08146102b957600080fd5b80638df46565116101095780638df46565146102d1578063a26b3ca7146102d9578063a27a9e7f146102e3578063a2cbc624146102d1578063a406e51a146102d957600080fd5b8063780e7893146102575780638057f3321461023557806386e0e392146102c95780638824f00b146102b157600080fd5b8063368acb09116101bd5780635bacfddb1161018c5780635bacfddb146102a957806362afd79f1461024f5780636b4cd109146102b157806370439385146102b9578063763f7f32146102c157600080fd5b8063368acb09146102835780633879c9f31461028d5780634e761f9e14610297578063546dd883146102a157600080fd5b806311385082116102045780631138508214610235578063272f8b62146102575780632b2a37371461026b5780632da452a414610273578063342965dd1461027b57600080fd5b8062ee0ec814610235578063013296e11461024f57806306e6446c1461025757806308f35b2614610261575b600080fd5b61023d600681565b60405190815260200160405180910390f35b61023d610303565b61023d62278d0081565b61023d629e340081565b61023d605481565b61023d610314565b61023d600c81565b61023d6259027581565b61023d62ed4e0081565b61023d620d2f0081565b61023d610322565b61023d600081565b61023d610330565b61023d61033e565b61023d600181565b61023d606481565b61023d600381565b61023d624f1a0081565b61023d61034c565b61023d600281565b61023d61037e565b61023d607d81565b610311620f424060326103b8565b81565b610311620f424060646103b8565b610311620f424060416103b8565b610311620f424060c86103b8565b610311620f424060966103b8565b61035a6103e861029a6103b8565b610368620f424060106103b8565b61037291906103a0565b6103119061029b6103a0565b61038c6103e86101f46103b8565b61039a620f4240600c6103b8565b61031191905b600082198211156103b3576103b36103d7565b500190565b60008160001904831182151516156103d2576103d26103d7565b500290565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220ba087b1796704824a51e55d172473babb483296878ac8a0a6913ca3de0fd18ed64736f6c63430008050033",
+  "deployedSourceMap": "60:2177:6:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1999:38;;2036:1;1999:38;;;;;168:25:8;;;156:2;141:18;1999:38:6;;;;;;;770:47;;;:::i;1282:42::-;;1317:7;1282:42;;1438:43;;1473:8;1438:43;;353;;394:2;353:43;;823;;;:::i;2141:44::-;;2183:2;2141:44;;1059:48;;1100:7;1059:48;;1543:44;;1579:8;1543:44;;1487:50;;1530:7;1487:50;;547:46;;;:::i;1127:42::-;;1163:6;1127:42;;715:49;;;:::i;929:44::-;;;:::i;2191:43::-;;2233:1;2191:43;;294:45;;336:3;294:45;;2043:46;;2088:1;2043:46;;1593:47;;1633:7;1593:47;;599:61;;;:::i;1856:38::-;;1893:1;1856:38;;488:53;;;:::i;237:42::-;;276:3;237:42;;770:47;811:6;199:5;811:2;:6;:::i;:::-;770:47;:::o;823:43::-;859:7;199:5;859:3;:7;:::i;547:46::-;587:6;199:5;587:2;:6;:::i;715:49::-;757:7;199:5;757:3;:7;:::i;929:44::-;966:7;199:5;966:3;:7;:::i;599:61::-;647:7;167:5;647:3;:7;:::i;:::-;638:6;199:5;638:2;:6;:::i;:::-;:16;;;;:::i;:::-;:22;;657:3;638:22;:::i;488:53::-;534:7;167:5;534:3;:7;:::i;:::-;525:6;199:5;525:2;:6;:::i;:::-;:16;;;204:128:8;244:3;275:1;271:6;268:1;265:13;262:2;;;281:18;;:::i;:::-;-1:-1:-1;317:9:8;;252:80::o;337:168::-;377:7;443:1;439;435:6;431:14;428:1;425:21;420:1;413:9;406:17;402:45;399:2;;;450:18;;:::i;:::-;-1:-1:-1;490:9:8;;389:116::o;510:127::-;571:10;566:3;562:20;559:1;552:31;602:4;599:1;592:15;626:4;623:1;616:15",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    60,
+    2237
+  ],
+  "opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x230 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x780E7893 GT PUSH2 0x13A JUMPI DUP1 PUSH4 0xC51CE9AD GT PUSH2 0xC2 JUMPI DUP1 PUSH4 0xDB00D838 GT PUSH2 0x86 JUMPI DUP1 PUSH4 0xDB00D838 EQ PUSH2 0x2D1 JUMPI DUP1 PUSH4 0xDCC91480 EQ PUSH2 0x2A9 JUMPI DUP1 PUSH4 0xE789FD7F EQ PUSH2 0x2A9 JUMPI DUP1 PUSH4 0xE93AA588 EQ PUSH2 0x27B JUMPI DUP1 PUSH4 0xF0BE9B9F EQ PUSH2 0x2FB JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0xC51CE9AD EQ PUSH2 0x2EB JUMPI DUP1 PUSH4 0xC5774A3F EQ PUSH2 0x2F3 JUMPI DUP1 PUSH4 0xC81AE9EE EQ PUSH2 0x257 JUMPI DUP1 PUSH4 0xCFCB12F0 EQ PUSH2 0x2D1 JUMPI DUP1 PUSH4 0xD3145F08 EQ PUSH2 0x2B9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x8DF46565 GT PUSH2 0x109 JUMPI DUP1 PUSH4 0x8DF46565 EQ PUSH2 0x2D1 JUMPI DUP1 PUSH4 0xA26B3CA7 EQ PUSH2 0x2D9 JUMPI DUP1 PUSH4 0xA27A9E7F EQ PUSH2 0x2E3 JUMPI DUP1 PUSH4 0xA2CBC624 EQ PUSH2 0x2D1 JUMPI DUP1 PUSH4 0xA406E51A EQ PUSH2 0x2D9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x780E7893 EQ PUSH2 0x257 JUMPI DUP1 PUSH4 0x8057F332 EQ PUSH2 0x235 JUMPI DUP1 PUSH4 0x86E0E392 EQ PUSH2 0x2C9 JUMPI DUP1 PUSH4 0x8824F00B EQ PUSH2 0x2B1 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x368ACB09 GT PUSH2 0x1BD JUMPI DUP1 PUSH4 0x5BACFDDB GT PUSH2 0x18C JUMPI DUP1 PUSH4 0x5BACFDDB EQ PUSH2 0x2A9 JUMPI DUP1 PUSH4 0x62AFD79F EQ PUSH2 0x24F JUMPI DUP1 PUSH4 0x6B4CD109 EQ PUSH2 0x2B1 JUMPI DUP1 PUSH4 0x70439385 EQ PUSH2 0x2B9 JUMPI DUP1 PUSH4 0x763F7F32 EQ PUSH2 0x2C1 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x368ACB09 EQ PUSH2 0x283 JUMPI DUP1 PUSH4 0x3879C9F3 EQ PUSH2 0x28D JUMPI DUP1 PUSH4 0x4E761F9E EQ PUSH2 0x297 JUMPI DUP1 PUSH4 0x546DD883 EQ PUSH2 0x2A1 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH4 0x11385082 GT PUSH2 0x204 JUMPI DUP1 PUSH4 0x11385082 EQ PUSH2 0x235 JUMPI DUP1 PUSH4 0x272F8B62 EQ PUSH2 0x257 JUMPI DUP1 PUSH4 0x2B2A3737 EQ PUSH2 0x26B JUMPI DUP1 PUSH4 0x2DA452A4 EQ PUSH2 0x273 JUMPI DUP1 PUSH4 0x342965DD EQ PUSH2 0x27B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH3 0xEE0EC8 EQ PUSH2 0x235 JUMPI DUP1 PUSH4 0x13296E1 EQ PUSH2 0x24F JUMPI DUP1 PUSH4 0x6E6446C EQ PUSH2 0x257 JUMPI DUP1 PUSH4 0x8F35B26 EQ PUSH2 0x261 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x23D PUSH1 0x6 DUP2 JUMP JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x23D PUSH2 0x303 JUMP JUMPDEST PUSH2 0x23D PUSH3 0x278D00 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH3 0x9E3400 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH1 0x54 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x314 JUMP JUMPDEST PUSH2 0x23D PUSH1 0xC DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH3 0x590275 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH3 0xED4E00 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH3 0xD2F00 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x322 JUMP JUMPDEST PUSH2 0x23D PUSH1 0x0 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x330 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x33E JUMP JUMPDEST PUSH2 0x23D PUSH1 0x1 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH1 0x64 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH1 0x3 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH3 0x4F1A00 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x34C JUMP JUMPDEST PUSH2 0x23D PUSH1 0x2 DUP2 JUMP JUMPDEST PUSH2 0x23D PUSH2 0x37E JUMP JUMPDEST PUSH2 0x23D PUSH1 0x7D DUP2 JUMP JUMPDEST PUSH2 0x311 PUSH3 0xF4240 PUSH1 0x32 PUSH2 0x3B8 JUMP JUMPDEST DUP2 JUMP JUMPDEST PUSH2 0x311 PUSH3 0xF4240 PUSH1 0x64 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x311 PUSH3 0xF4240 PUSH1 0x41 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x311 PUSH3 0xF4240 PUSH1 0xC8 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x311 PUSH3 0xF4240 PUSH1 0x96 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x35A PUSH2 0x3E8 PUSH2 0x29A PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x368 PUSH3 0xF4240 PUSH1 0x10 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x372 SWAP2 SWAP1 PUSH2 0x3A0 JUMP JUMPDEST PUSH2 0x311 SWAP1 PUSH2 0x29B PUSH2 0x3A0 JUMP JUMPDEST PUSH2 0x38C PUSH2 0x3E8 PUSH2 0x1F4 PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x39A PUSH3 0xF4240 PUSH1 0xC PUSH2 0x3B8 JUMP JUMPDEST PUSH2 0x311 SWAP2 SWAP1 JUMPDEST PUSH1 0x0 DUP3 NOT DUP3 GT ISZERO PUSH2 0x3B3 JUMPI PUSH2 0x3B3 PUSH2 0x3D7 JUMP JUMPDEST POP ADD SWAP1 JUMP JUMPDEST PUSH1 0x0 DUP2 PUSH1 0x0 NOT DIV DUP4 GT DUP3 ISZERO ISZERO AND ISZERO PUSH2 0x3D2 JUMPI PUSH2 0x3D2 PUSH2 0x3D7 JUMP JUMPDEST POP MUL SWAP1 JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x11 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xBA ADDMOD PUSH28 0x1796704824A51E55D172473BABB483296878AC8A0A6913CA3DE0FD18 0xED PUSH5 0x736F6C6343 STOP ADDMOD SDIV STOP CALLER ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH20",
+      "path": "6",
+      "value": "0x0"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "ADDRESS",
+      "path": "6"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "23": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x80"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x40"
+    },
+    "27": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "MSTORE",
+      "path": "6"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x4"
+    },
+    "30": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "CALLDATASIZE",
+      "path": "6"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "LT",
+      "path": "6"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x230"
+    },
+    "35": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "36": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "CALLDATALOAD",
+      "path": "6"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0xE0"
+    },
+    "41": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "SHR",
+      "path": "6"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x780E7893"
+    },
+    "48": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "49": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x13A"
+    },
+    "52": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "54": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xC51CE9AD"
+    },
+    "59": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "60": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0xC2"
+    },
+    "63": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xDB00D838"
+    },
+    "70": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "71": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x86"
+    },
+    "74": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "76": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xDB00D838"
+    },
+    "81": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "82": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D1"
+    },
+    "85": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "86": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "87": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xDCC91480"
+    },
+    "92": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "93": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2A9"
+    },
+    "96": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "97": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "98": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xE789FD7F"
+    },
+    "103": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "104": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2A9"
+    },
+    "107": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "108": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "109": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xE93AA588"
+    },
+    "114": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "115": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x27B"
+    },
+    "118": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "119": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "120": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xF0BE9B9F"
+    },
+    "125": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "126": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2FB"
+    },
+    "129": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "130": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "132": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "133": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "134": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "135": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "136": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xC51CE9AD"
+    },
+    "141": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "142": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2EB"
+    },
+    "145": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "146": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "147": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xC5774A3F"
+    },
+    "152": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "153": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2F3"
+    },
+    "156": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "157": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "158": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xC81AE9EE"
+    },
+    "163": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "164": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x257"
+    },
+    "167": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "168": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "169": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xCFCB12F0"
+    },
+    "174": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "175": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D1"
+    },
+    "178": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "179": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "180": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xD3145F08"
+    },
+    "185": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "186": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2B9"
+    },
+    "189": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "190": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "192": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "193": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "194": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "195": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "196": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x8DF46565"
+    },
+    "201": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "202": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x109"
+    },
+    "205": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "206": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "207": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x8DF46565"
+    },
+    "212": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "213": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D1"
+    },
+    "216": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "217": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "218": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xA26B3CA7"
+    },
+    "223": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "224": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D9"
+    },
+    "227": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "228": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "229": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xA27A9E7F"
+    },
+    "234": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "235": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2E3"
+    },
+    "238": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "239": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "240": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xA2CBC624"
+    },
+    "245": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "246": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D1"
+    },
+    "249": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "250": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "251": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0xA406E51A"
+    },
+    "256": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "257": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2D9"
+    },
+    "260": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "261": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "263": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "264": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "265": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "266": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "267": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x780E7893"
+    },
+    "272": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "273": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x257"
+    },
+    "276": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "277": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "278": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x8057F332"
+    },
+    "283": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "284": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x235"
+    },
+    "287": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "288": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "289": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x86E0E392"
+    },
+    "294": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "295": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2C9"
+    },
+    "298": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "299": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "300": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x8824F00B"
+    },
+    "305": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "306": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2B1"
+    },
+    "309": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "310": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "312": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "313": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "314": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "315": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "316": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x368ACB09"
+    },
+    "321": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "322": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x1BD"
+    },
+    "325": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "326": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "327": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x5BACFDDB"
+    },
+    "332": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "333": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x18C"
+    },
+    "336": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "337": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "338": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x5BACFDDB"
+    },
+    "343": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "344": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2A9"
+    },
+    "347": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "348": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "349": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x62AFD79F"
+    },
+    "354": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "355": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x24F"
+    },
+    "358": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "359": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "360": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x6B4CD109"
+    },
+    "365": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "366": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2B1"
+    },
+    "369": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "370": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "371": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x70439385"
+    },
+    "376": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "377": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2B9"
+    },
+    "380": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "381": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "382": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x763F7F32"
+    },
+    "387": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "388": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2C1"
+    },
+    "391": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "392": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "394": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "395": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "396": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "397": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "398": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x368ACB09"
+    },
+    "403": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "404": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x283"
+    },
+    "407": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "408": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "409": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x3879C9F3"
+    },
+    "414": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "415": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x28D"
+    },
+    "418": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "419": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "420": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x4E761F9E"
+    },
+    "425": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "426": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x297"
+    },
+    "429": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "430": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "431": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x546DD883"
+    },
+    "436": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "437": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x2A1"
+    },
+    "440": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "441": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "443": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "444": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "445": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "446": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "447": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x11385082"
+    },
+    "452": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "GT",
+      "path": "6"
+    },
+    "453": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x204"
+    },
+    "456": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "457": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "458": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x11385082"
+    },
+    "463": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "464": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x235"
+    },
+    "467": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "468": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "469": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x272F8B62"
+    },
+    "474": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "475": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x257"
+    },
+    "478": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "479": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "480": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x2B2A3737"
+    },
+    "485": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "486": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x26B"
+    },
+    "489": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "490": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "491": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x2DA452A4"
+    },
+    "496": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "497": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x273"
+    },
+    "500": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "501": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "502": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x342965DD"
+    },
+    "507": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "508": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x27B"
+    },
+    "511": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "512": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "514": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "515": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "516": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "517": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "518": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xEE0EC8"
+    },
+    "522": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "523": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x235"
+    },
+    "526": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "527": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "528": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x13296E1"
+    },
+    "533": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "534": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x24F"
+    },
+    "537": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "538": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "539": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x6E6446C"
+    },
+    "544": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "545": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x257"
+    },
+    "548": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "549": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "550": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH4",
+      "path": "6",
+      "value": "0x8F35B26"
+    },
+    "555": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "EQ",
+      "path": "6"
+    },
+    "556": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x261"
+    },
+    "559": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPI",
+      "path": "6"
+    },
+    "560": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "561": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "563": {
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "564": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        60,
+        2237
+      ],
+      "op": "REVERT",
+      "path": "6"
+    },
+    "565": {
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "566": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "569": {
+      "offset": [
+        2036,
+        2037
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x6"
+    },
+    "571": {
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "572": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "573": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "574": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x40"
+    },
+    "576": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "MLOAD",
+      "path": "6"
+    },
+    "577": {
+      "op": "SWAP1"
+    },
+    "578": {
+      "op": "DUP2"
+    },
+    "579": {
+      "op": "MSTORE"
+    },
+    "580": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "582": {
+      "op": "ADD"
+    },
+    "583": {
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x40"
+    },
+    "585": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "MLOAD",
+      "path": "6"
+    },
+    "586": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "DUP1",
+      "path": "6"
+    },
+    "587": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "SWAP2",
+      "path": "6"
+    },
+    "588": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "SUB",
+      "path": "6"
+    },
+    "589": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "SWAP1",
+      "path": "6"
+    },
+    "590": {
+      "fn": null,
+      "offset": [
+        1999,
+        2037
+      ],
+      "op": "RETURN",
+      "path": "6"
+    },
+    "591": {
+      "offset": [
+        770,
+        817
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "592": {
+      "fn": null,
+      "offset": [
+        770,
+        817
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "595": {
+      "fn": null,
+      "offset": [
+        770,
+        817
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x303"
+    },
+    "598": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        770,
+        817
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "599": {
+      "offset": [
+        1282,
+        1324
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "600": {
+      "fn": null,
+      "offset": [
+        1282,
+        1324
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "603": {
+      "offset": [
+        1317,
+        1324
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0x278D00"
+    },
+    "607": {
+      "offset": [
+        1282,
+        1324
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "608": {
+      "fn": null,
+      "offset": [
+        1282,
+        1324
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "609": {
+      "offset": [
+        1438,
+        1481
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "610": {
+      "fn": null,
+      "offset": [
+        1438,
+        1481
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "613": {
+      "offset": [
+        1473,
+        1481
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0x9E3400"
+    },
+    "617": {
+      "offset": [
+        1438,
+        1481
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "618": {
+      "fn": null,
+      "offset": [
+        1438,
+        1481
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "619": {
+      "offset": [
+        353,
+        396
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "620": {
+      "fn": null,
+      "offset": [
+        353,
+        396
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "623": {
+      "offset": [
+        394,
+        396
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x54"
+    },
+    "625": {
+      "offset": [
+        353,
+        396
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "626": {
+      "fn": null,
+      "offset": [
+        353,
+        396
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "627": {
+      "offset": [
+        823,
+        866
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "628": {
+      "fn": null,
+      "offset": [
+        823,
+        866
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "631": {
+      "fn": null,
+      "offset": [
+        823,
+        866
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x314"
+    },
+    "634": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        823,
+        866
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "635": {
+      "offset": [
+        2141,
+        2185
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "636": {
+      "fn": null,
+      "offset": [
+        2141,
+        2185
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "639": {
+      "offset": [
+        2183,
+        2185
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0xC"
+    },
+    "641": {
+      "offset": [
+        2141,
+        2185
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "642": {
+      "fn": null,
+      "offset": [
+        2141,
+        2185
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "643": {
+      "offset": [
+        1059,
+        1107
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "644": {
+      "fn": null,
+      "offset": [
+        1059,
+        1107
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "647": {
+      "offset": [
+        1100,
+        1107
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0x590275"
+    },
+    "651": {
+      "offset": [
+        1059,
+        1107
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "652": {
+      "fn": null,
+      "offset": [
+        1059,
+        1107
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "653": {
+      "offset": [
+        1543,
+        1587
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "654": {
+      "fn": null,
+      "offset": [
+        1543,
+        1587
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "657": {
+      "offset": [
+        1579,
+        1587
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xED4E00"
+    },
+    "661": {
+      "offset": [
+        1543,
+        1587
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "662": {
+      "fn": null,
+      "offset": [
+        1543,
+        1587
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "663": {
+      "offset": [
+        1487,
+        1537
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "664": {
+      "fn": null,
+      "offset": [
+        1487,
+        1537
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "667": {
+      "offset": [
+        1530,
+        1537
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xD2F00"
+    },
+    "671": {
+      "offset": [
+        1487,
+        1537
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "672": {
+      "fn": null,
+      "offset": [
+        1487,
+        1537
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "673": {
+      "offset": [
+        547,
+        593
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "674": {
+      "fn": null,
+      "offset": [
+        547,
+        593
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "677": {
+      "fn": null,
+      "offset": [
+        547,
+        593
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x322"
+    },
+    "680": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        547,
+        593
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "681": {
+      "offset": [
+        1127,
+        1169
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "682": {
+      "fn": null,
+      "offset": [
+        1127,
+        1169
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "685": {
+      "offset": [
+        1163,
+        1169
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x0"
+    },
+    "687": {
+      "offset": [
+        1127,
+        1169
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "688": {
+      "fn": null,
+      "offset": [
+        1127,
+        1169
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "689": {
+      "offset": [
+        715,
+        764
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "690": {
+      "fn": null,
+      "offset": [
+        715,
+        764
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "693": {
+      "fn": null,
+      "offset": [
+        715,
+        764
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x330"
+    },
+    "696": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        715,
+        764
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "697": {
+      "offset": [
+        929,
+        973
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "698": {
+      "fn": null,
+      "offset": [
+        929,
+        973
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "701": {
+      "fn": null,
+      "offset": [
+        929,
+        973
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x33E"
+    },
+    "704": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        929,
+        973
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "705": {
+      "offset": [
+        2191,
+        2234
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "706": {
+      "fn": null,
+      "offset": [
+        2191,
+        2234
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "709": {
+      "offset": [
+        2233,
+        2234
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x1"
+    },
+    "711": {
+      "offset": [
+        2191,
+        2234
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "712": {
+      "fn": null,
+      "offset": [
+        2191,
+        2234
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "713": {
+      "offset": [
+        294,
+        339
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "714": {
+      "fn": null,
+      "offset": [
+        294,
+        339
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "717": {
+      "offset": [
+        336,
+        339
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x64"
+    },
+    "719": {
+      "offset": [
+        294,
+        339
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "720": {
+      "fn": null,
+      "offset": [
+        294,
+        339
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "721": {
+      "offset": [
+        2043,
+        2089
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "722": {
+      "fn": null,
+      "offset": [
+        2043,
+        2089
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "725": {
+      "offset": [
+        2088,
+        2089
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x3"
+    },
+    "727": {
+      "offset": [
+        2043,
+        2089
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "728": {
+      "fn": null,
+      "offset": [
+        2043,
+        2089
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "729": {
+      "offset": [
+        1593,
+        1640
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "730": {
+      "fn": null,
+      "offset": [
+        1593,
+        1640
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "733": {
+      "offset": [
+        1633,
+        1640
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0x4F1A00"
+    },
+    "737": {
+      "offset": [
+        1593,
+        1640
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "738": {
+      "fn": null,
+      "offset": [
+        1593,
+        1640
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "739": {
+      "offset": [
+        599,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "740": {
+      "fn": null,
+      "offset": [
+        599,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "743": {
+      "fn": null,
+      "offset": [
+        599,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x34C"
+    },
+    "746": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        599,
+        660
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "747": {
+      "offset": [
+        1856,
+        1894
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "748": {
+      "fn": null,
+      "offset": [
+        1856,
+        1894
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "751": {
+      "offset": [
+        1893,
+        1894
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x2"
+    },
+    "753": {
+      "offset": [
+        1856,
+        1894
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "754": {
+      "fn": null,
+      "offset": [
+        1856,
+        1894
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "755": {
+      "offset": [
+        488,
+        541
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "756": {
+      "fn": null,
+      "offset": [
+        488,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "759": {
+      "fn": null,
+      "offset": [
+        488,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x37E"
+    },
+    "762": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        488,
+        541
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "763": {
+      "offset": [
+        237,
+        279
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "764": {
+      "fn": null,
+      "offset": [
+        237,
+        279
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x23D"
+    },
+    "767": {
+      "offset": [
+        276,
+        279
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x7D"
+    },
+    "769": {
+      "offset": [
+        237,
+        279
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "770": {
+      "fn": null,
+      "offset": [
+        237,
+        279
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "771": {
+      "offset": [
+        770,
+        817
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "772": {
+      "offset": [
+        811,
+        817
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "775": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "779": {
+      "offset": [
+        811,
+        813
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x32"
+    },
+    "781": {
+      "offset": [
+        811,
+        817
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "784": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        811,
+        817
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "785": {
+      "fn": null,
+      "offset": [
+        811,
+        817
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "786": {
+      "offset": [
+        770,
+        817
+      ],
+      "op": "DUP2",
+      "path": "6"
+    },
+    "787": {
+      "fn": null,
+      "jump": "o",
+      "offset": [
+        770,
+        817
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "788": {
+      "offset": [
+        823,
+        866
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "789": {
+      "offset": [
+        859,
+        866
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "792": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "796": {
+      "offset": [
+        859,
+        862
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x64"
+    },
+    "798": {
+      "offset": [
+        859,
+        866
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "801": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        859,
+        866
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "802": {
+      "offset": [
+        547,
+        593
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "803": {
+      "offset": [
+        587,
+        593
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "806": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "810": {
+      "offset": [
+        587,
+        589
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x41"
+    },
+    "812": {
+      "offset": [
+        587,
+        593
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "815": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        587,
+        593
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "816": {
+      "offset": [
+        715,
+        764
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "817": {
+      "offset": [
+        757,
+        764
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "820": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "824": {
+      "offset": [
+        757,
+        760
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0xC8"
+    },
+    "826": {
+      "offset": [
+        757,
+        764
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "829": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        757,
+        764
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "830": {
+      "offset": [
+        929,
+        973
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "831": {
+      "offset": [
+        966,
+        973
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "834": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "838": {
+      "offset": [
+        966,
+        969
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x96"
+    },
+    "840": {
+      "offset": [
+        966,
+        973
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "843": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        966,
+        973
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "844": {
+      "offset": [
+        599,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "845": {
+      "offset": [
+        647,
+        654
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x35A"
+    },
+    "848": {
+      "offset": [
+        167,
+        172
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3E8"
+    },
+    "851": {
+      "offset": [
+        647,
+        650
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x29A"
+    },
+    "854": {
+      "offset": [
+        647,
+        654
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "857": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        647,
+        654
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "858": {
+      "fn": null,
+      "offset": [
+        647,
+        654
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "859": {
+      "offset": [
+        638,
+        644
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x368"
+    },
+    "862": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "866": {
+      "offset": [
+        638,
+        640
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0x10"
+    },
+    "868": {
+      "offset": [
+        638,
+        644
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "871": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        638,
+        644
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "872": {
+      "fn": null,
+      "offset": [
+        638,
+        644
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "873": {
+      "offset": [
+        638,
+        654
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x372"
+    },
+    "876": {
+      "fn": null,
+      "offset": [
+        638,
+        654
+      ],
+      "op": "SWAP2",
+      "path": "6"
+    },
+    "877": {
+      "fn": null,
+      "offset": [
+        638,
+        654
+      ],
+      "op": "SWAP1",
+      "path": "6"
+    },
+    "878": {
+      "fn": null,
+      "offset": [
+        638,
+        654
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3A0"
+    },
+    "881": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        638,
+        654
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "882": {
+      "fn": null,
+      "offset": [
+        638,
+        654
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "883": {
+      "offset": [
+        638,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "886": {
+      "fn": null,
+      "offset": [
+        638,
+        660
+      ],
+      "op": "SWAP1",
+      "path": "6"
+    },
+    "887": {
+      "offset": [
+        657,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x29B"
+    },
+    "890": {
+      "offset": [
+        638,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3A0"
+    },
+    "893": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        638,
+        660
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "894": {
+      "offset": [
+        488,
+        541
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "895": {
+      "offset": [
+        534,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x38C"
+    },
+    "898": {
+      "offset": [
+        167,
+        172
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3E8"
+    },
+    "901": {
+      "offset": [
+        534,
+        537
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x1F4"
+    },
+    "904": {
+      "offset": [
+        534,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "907": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        534,
+        541
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "908": {
+      "fn": null,
+      "offset": [
+        534,
+        541
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "909": {
+      "offset": [
+        525,
+        531
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x39A"
+    },
+    "912": {
+      "offset": [
+        199,
+        204
+      ],
+      "op": "PUSH3",
+      "path": "6",
+      "value": "0xF4240"
+    },
+    "916": {
+      "offset": [
+        525,
+        527
+      ],
+      "op": "PUSH1",
+      "path": "6",
+      "value": "0xC"
+    },
+    "918": {
+      "offset": [
+        525,
+        531
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x3B8"
+    },
+    "921": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        525,
+        531
+      ],
+      "op": "JUMP",
+      "path": "6"
+    },
+    "922": {
+      "fn": null,
+      "offset": [
+        525,
+        531
+      ],
+      "op": "JUMPDEST",
+      "path": "6"
+    },
+    "923": {
+      "offset": [
+        525,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "6",
+      "value": "0x311"
+    },
+    "926": {
+      "fn": null,
+      "offset": [
+        525,
+        541
+      ],
+      "op": "SWAP2",
+      "path": "6"
+    },
+    "927": {
+      "fn": null,
+      "offset": [
+        525,
+        541
+      ],
+      "op": "SWAP1",
+      "path": "6"
+    },
+    "928": {
+      "op": "JUMPDEST"
+    },
+    "929": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "931": {
+      "op": "DUP3"
+    },
+    "932": {
+      "op": "NOT"
+    },
+    "933": {
+      "op": "DUP3"
+    },
+    "934": {
+      "op": "GT"
+    },
+    "935": {
+      "op": "ISZERO"
+    },
+    "936": {
+      "op": "PUSH2",
+      "value": "0x3B3"
+    },
+    "939": {
+      "op": "JUMPI"
+    },
+    "940": {
+      "op": "PUSH2",
+      "value": "0x3B3"
+    },
+    "943": {
+      "op": "PUSH2",
+      "value": "0x3D7"
+    },
+    "946": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "947": {
+      "op": "JUMPDEST"
+    },
+    "948": {
+      "op": "POP"
+    },
+    "949": {
+      "op": "ADD"
+    },
+    "950": {
+      "op": "SWAP1"
+    },
+    "951": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "952": {
+      "op": "JUMPDEST"
+    },
+    "953": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "955": {
+      "op": "DUP2"
+    },
+    "956": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "958": {
+      "op": "NOT"
+    },
+    "959": {
+      "op": "DIV"
+    },
+    "960": {
+      "op": "DUP4"
+    },
+    "961": {
+      "op": "GT"
+    },
+    "962": {
+      "op": "DUP3"
+    },
+    "963": {
+      "op": "ISZERO"
+    },
+    "964": {
+      "op": "ISZERO"
+    },
+    "965": {
+      "op": "AND"
+    },
+    "966": {
+      "op": "ISZERO"
+    },
+    "967": {
+      "op": "PUSH2",
+      "value": "0x3D2"
+    },
+    "970": {
+      "op": "JUMPI"
+    },
+    "971": {
+      "op": "PUSH2",
+      "value": "0x3D2"
+    },
+    "974": {
+      "op": "PUSH2",
+      "value": "0x3D7"
+    },
+    "977": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "978": {
+      "op": "JUMPDEST"
+    },
+    "979": {
+      "op": "POP"
+    },
+    "980": {
+      "op": "MUL"
+    },
+    "981": {
+      "op": "SWAP1"
+    },
+    "982": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "983": {
+      "op": "JUMPDEST"
+    },
+    "984": {
+      "op": "PUSH4",
+      "value": "0x4E487B71"
+    },
+    "989": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "991": {
+      "op": "SHL"
+    },
+    "992": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "994": {
+      "op": "MSTORE"
+    },
+    "995": {
+      "op": "PUSH1",
+      "value": "0x11"
+    },
+    "997": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "999": {
+      "op": "MSTORE"
+    },
+    "1000": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "1002": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1004": {
+      "op": "REVERT"
+    }
+  },
+  "sha1": "4080538a0e4fa07b61e8734750684c67883c1c70",
+  "source": "// // SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\nlibrary VestingConstants {\n    uint256 public constant DEFAULT_PERIOD = 30 days;\n\n    uint256 constant K = 10**3;\n    uint256 constant M = 10**6;\n\n    //multiple is 1/price\n    uint256 public constant seedMultiple = 125; //0.008$\n    uint256 public constant privateMultiple = 100; //0.01$\n    uint256 public constant publicMultiple = 84; //0.0119$\n\n    //1000M supply allocate to 11 buckets\n    //total amounts, no decimals\n    uint256 public constant seedAmount = 12 * M + 500 * K;\n    uint256 public constant privateAmount = 65 * M;\n    uint256 public constant publicAmount = 16 * M + 666 * K + 667;\n    uint256 public constant liqAmount = 150 * M;\n    uint256 public constant lprewardsAmount = 200 * M;\n    uint256 public constant lpgrantsAmount = 50 * M;\n    uint256 public constant ecoAmount = 100 * M;\n    uint256 public constant trademiningAmount = 200 * M;\n    uint256 public constant teamAmount = 150 * M;\n    uint256 public constant advisoryAmount = 50 * M;\n    //treasury is the rest\n    uint256 public constant treasuryAmount = 5833333;\n\n    //cliffs\n    uint256 public constant seedCliff = 0 days; //33%\n    uint256 public constant privateCliff = 0 days;\n    uint256 public constant publicCliff = 0 days;\n    uint256 public constant liqCliff = 30 days;\n    uint256 public constant lpwRewardsCliff = 30 days;\n    uint256 public constant lpgrantsCliff = 60 days;\n    uint256 public constant ecoCliff = 120 days;\n    uint256 public constant trademiningCliff = 10 days;\n    uint256 public constant teamCliff = 180 days;\n    uint256 public constant advisoryCliff = 60 days;\n    uint256 public constant treasuryCliff = 30 days;\n\n    //durations\n    uint256 public constant seedPeriods = 6;\n    uint256 public constant privatePeriods = 6;\n    uint256 public constant publicPeriods = 3;\n    uint256 public constant liqPeriods = 2;\n    uint256 public constant lprewardsPeriods = 3;\n    uint256 public constant lpgrantsPeriods = 3;\n    uint256 public constant ecoPeriods = 6;\n    uint256 public constant trademiningPeriods = 3;\n    uint256 public constant teamPeriods = 12;\n    uint256 public constant advisorsPeriods = 12;\n    uint256 public constant treasuryPeriods = 1;\n}\n",
+  "sourceMap": "60:2177:6:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;60:2177:6;;;;;;;;;;;;;;;;;",
+  "sourcePath": "contracts/VestingConstants.sol",
+  "type": "library"
+}

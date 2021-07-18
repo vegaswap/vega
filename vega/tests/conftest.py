@@ -33,9 +33,15 @@ def master(VegaMaster, accounts):
 
 
 @pytest.fixture(scope="module")
-def vestingmath(VestingMath, token, accounts):
-    master = VestingMath.deploy({"from": accounts[0]})
-    return master
+def vestingmath(VestingMath, accounts):
+    vmath = VestingMath.deploy({"from": accounts[0]})
+    return vmath
+
+
+@pytest.fixture(scope="module")
+def vconstants(VestingConstants, accounts):
+    vconstants = VestingConstants.deploy({"from": accounts[0]})
+    return vconstants
 
 
 def allocate(master, token, vconstants, mainAccount):
@@ -53,10 +59,10 @@ def allocate(master, token, vconstants, mainAccount):
         vconstants.teamAmount(),
         vconstants.advisoryAmount(),
     ]
-    print(amounts)
-    print(sum(amounts))
-    rest = token.totalSupply() / 10 ** 18 - sum(amounts)
-    print("rest ", rest)
+    # print(amounts)
+    # print(sum(amounts))
+    # rest = token.totalSupply() / 10 ** 18 - sum(amounts)
+    # print("rest ", rest)
 
     # now = getCurrentTime
     now = chain.time()
@@ -149,6 +155,16 @@ def allocate(master, token, vconstants, mainAccount):
         vconstants.treasuryAmount() * (10 ** DECIMALS),
         {"from": mainAccount},
     )
+
+
+@pytest.fixture(scope="module")
+def master_allocated(vestingmath, master, token, vconstants, accounts):
+    assert vestingmath != None
+    mainAccount = accounts[0]
+    # master_contract = VegaMaster.deploy({"from": mainAccount})
+
+    allocate(master, token, vconstants, mainAccount)
+    return master
 
 
 # @pytest.fixture(scope="module")
