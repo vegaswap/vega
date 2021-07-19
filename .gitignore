@@ -5,5 +5,8 @@ bin/
 env/
 lib/
 venv/
-token/tests/__pycache__
+vega/tests/__pycache__/
+vega/build/
 .vscode/
+*.pyc
+
