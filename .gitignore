@@ -1,5 +1,6 @@
 .DS_STORE
-token/build
+vega/tests/__pycache__
+vega/build
 activate/
 bin/
 env/
