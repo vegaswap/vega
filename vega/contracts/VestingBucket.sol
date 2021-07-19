@@ -104,7 +104,7 @@ contract VestingBucket is AbstractBucket {
     function getVestedAmount(Claim memory claim) public view returns (uint256) {
         uint256 blocktime = block.timestamp;
         return
-            VestingMath.getVestedAmountTS(
+            VestingMath.getVestedAmount(
                 blocktime,
                 cliffTime,
                 endTime,

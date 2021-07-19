@@ -16,7 +16,7 @@ def test_timetravel_basic(accounts, vestingmath, token):
     assert current2 - current == zz
 
     vbucket = VestingBucket.deploy(token, current2 + 100, 1, 100, {"from": accounts[0]})
-    assert vbucket.getCurrentTime() == current2
+    # assert chain.time() == current2
 
     # assert vbucket.endTime() == 0
 
@@ -67,9 +67,10 @@ def test_claimend(accounts, vestingmath, token):
         token, cliff, numperiods, total, {"from": accounts[0]}
     )
 
-    chain.sleep(DFP * 2 + 1)
-    ct = vestingbucket.getCurrentTime()
-    assert vestingbucket.endTime() - ct == 11 * DFP
+    chain.sleep(DFP * 2)
+    ct = chain.time()
+    tilend = vestingbucket.endTime() - ct
+    assert int(tilend / DFP) == 9
 
 
 def test_claimendodd(accounts, vestingmath, token):
@@ -82,7 +83,7 @@ def test_claimendodd(accounts, vestingmath, token):
     )
 
     claimed = 0
-    ct = vestingbucket.getCurrentTime()
+    ct = chain.time()
     assert vestingbucket.endTime() - ct == 12 * DFP
 
 

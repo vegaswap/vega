@@ -4,8 +4,8 @@ import brownie
 from brownie import chain, VestingMath, accounts
 import time
 
-days = 60*60*24
-days30 = days*30
+days = 60 * 60 * 24
+days30 = days * 30
 
 
 def test_basic(accounts, vestingmath, token):
@@ -21,8 +21,8 @@ def test_basic(accounts, vestingmath, token):
 
     assert vestingmath.DEFAULT_PERIOD() == days30
 
-    #t1 = int(time.time() + 5 * days)
-    #assert controller.getEndTime(t1, 10, 100) == t1 * 10 * days30
+    # t1 = int(time.time() + 5 * days)
+    # assert controller.getEndTime(t1, 10, 100) == t1 * 10 * days30
     assert vestingmath.getEndTime(0, 10, 100) == 10 * days30
 
     t1 = int(time.time())
@@ -30,52 +30,128 @@ def test_basic(accounts, vestingmath, token):
 
 
 def test_vest(vestingmath):
+
+    period = vestingmath.DEFAULT_PERIOD()
+    assert period == 60 * 60 * 24 * 30
+
     blocktime = 1001
     cliff = 900
-    endtime = 3000
+    # endtime = 3000
+    endtime = blocktime + 20 * period
     amountPerPeriod = 10
     total = 200
-    period = 100
-    amount = vestingmath.getVestedAmountTSX(
-        blocktime, cliff, endtime, amountPerPeriod, total, period)
-    assert amount == 20
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerPeriod, total
+    )
+    assert amount == amountPerPeriod
+
+    blocktime = endtime
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerPeriod, total
+    )
+    assert amount == total
 
     blocktime = 999
     cliff = 900
     endtime = 3000
-    period = 100
     amountPerTerminalPeriod = 10
     total = 200
-    amount = vestingmath.getVestedAmountTSX(
-        blocktime, cliff, endtime, amountPerTerminalPeriod, total, period)
-    assert amount == 10
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
+    assert amount == amountPerTerminalPeriod
 
     blocktime = 800
     cliff = 900
     endtime = 3000
-    period = 100
     amountPerTerminalPeriod = 10
     total = 200
-    amount = vestingmath.getVestedAmountTSX(
-        blocktime, cliff, endtime, amountPerTerminalPeriod, total, period)
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
     assert amount == 0
 
-    blocktime = 1010
+    blocktime = 901
     cliff = 900
     endtime = 3000
-    period = 100
-    amountPerTerminalPeriod = 13
+    amountPerTerminalPeriod = 10
     total = 200
-    amount = vestingmath.getVestedAmountTSX(
-        blocktime, cliff, endtime, amountPerTerminalPeriod, total, period)
-    assert amount == 26
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
+    assert amount == 10
 
-    blocktime = 2900
     cliff = 900
+    blocktime = cliff + 20 * period
     endtime = 3000
-    period = 100
+    amountPerTerminalPeriod = 10
+    total = 200
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
+    assert amount == total
+
+    cliff = 900
+    blocktime = cliff + 20 * period
+    endtime = 3000
     amountPerTerminalPeriod = 13
     total = 200
-    amount = vestingmath.getVestedAmountTSX(
-        blocktime, cliff, endtime, amountPerTerminalPeriod, total, period)
-    assert amount == 200
+    amount = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
+    assert amount == total
+
+    cliff = 900
+    period = 60 * 60 * 24 * 30
+    endtime = cliff + 20 * period
+    amountPerPeriod = 13
+    total = 200
+    from vestingmath import getVestedAmount
+
+    # assert period ==
+
+    for n in range(0, 14):
+        blocktime = cliff + n * period
+        v = getVestedAmount(blocktime, cliff, endtime, amountPerPeriod, total, period)
+        assert v == amountPerTerminalPeriod * (n + 1)
+
+    n = 15
+    blocktime = cliff + n * period
+    v = getVestedAmount(blocktime, cliff, endtime, amountPerPeriod, total, period)
+    assert v == 200
+
+    ######
+
+    for n in range(0, 14):
+        blocktime = cliff + n * period
+        v = vestingmath.getVestedAmount(
+            blocktime, cliff, endtime, amountPerTerminalPeriod, total
+        )
+        assert v == amountPerTerminalPeriod * (n + 1)
+
+    n = 15
+    blocktime = cliff + n * period
+    v = vestingmath.getVestedAmount(
+        blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    )
+    assert v == 200
+
+    # cliff = 900
+    # blocktime = cliff + 2 * period
+    # endtime = 3000
+    # amountPerTerminalPeriod = 13
+    # total = 200
+    # amount = vestingmath.getVestedAmount(
+    #     blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    # )
+    # assert amount == 2 * amountPerTerminalPeriod
+
+    # blocktime = 2900
+    # cliff = 900
+    # endtime = 3000
+    # amountPerTerminalPeriod = 13
+    # total = 200
+    # amount = vestingmath.getVestedAmount(
+    #     blocktime, cliff, endtime, amountPerTerminalPeriod, total
+    # )
+    # assert amount == 200

@@ -42,14 +42,14 @@ library VestingMath {
             );
     }
 
-    function getVestedAmountTSX(
+    function getVestedAmountPeriod(
         uint256 blocktime,
         uint256 cliffTime,
         uint256 endTime,
         uint256 amountPerPeriod,
         uint256 totalAmount,
         uint256 period
-    ) public pure returns (uint256) {
+    ) private pure returns (uint256) {
         if (blocktime >= endTime) return totalAmount;
 
         // returns 0 if cliffTime is not reached
@@ -66,7 +66,7 @@ library VestingMath {
         return potentialReturned;
     }
 
-    function getVestedAmountTS(
+    function getVestedAmount(
         uint256 blocktime,
         uint256 cliffTime,
         uint256 endTime,
@@ -74,7 +74,7 @@ library VestingMath {
         uint256 totalAmount
     ) public pure returns (uint256) {
         return
-            getVestedAmountTSX(
+            getVestedAmountPeriod(
                 blocktime,
                 cliffTime,
                 endTime,
