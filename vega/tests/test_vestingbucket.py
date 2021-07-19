@@ -317,6 +317,28 @@ def test_returnarg(accounts, vestingmath, token):
     assert token.balanceOf(vestingbucket) == 1000
 
 
+def test_claimbeforecliff(accounts, vestingmath, token):
+
+    cliff = chain.time() + 100
+    total = 1000
+    period = 6
+    a = accounts[0]
+    vestingbucket = VestingBucket.deploy(token, cliff, period, total, {"from": a})
+    assert token.balanceOf(vestingbucket) == 0
+    assert vestingbucket.totalAmount() == total
+
+    token.transfer(vestingbucket, 2000)
+    assert token.balanceOf(vestingbucket) == 2000
+
+    amount = total
+
+    vestingbucket.addClaim(accounts[1], amount)
+
+    with brownie.reverts("VESTINGBUCKET: no amount claimed"):
+        result_vested = vestingbucket.vestClaimMax(accounts[1], {"from": a})
+        assert result_vested.events != 0
+
+
 # withdrawn = vestingbucket.vestClaimMax.call(a2, {'from': a2})
 # withdrawtx = vestingbucket.vestClaimMax(a2, {'from': a2})
 
