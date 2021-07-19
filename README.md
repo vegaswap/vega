@@ -1,10 +1,5 @@
-# install
+# vegaswap
 
-```
-python3.9.4
-pip3
-pip3 install -r requirements.txt
-```
+vega/ - smart contracts and test
 
-./activate.sh
-brownie test
+active.sh - active the virtual env

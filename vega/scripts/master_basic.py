@@ -100,7 +100,7 @@ def main():
     # assert untilend == 20 * DFP
     chain.mine(timestamp=untilend)
 
-    # vestingmath.getVestedAmountTSX(now, )
+    # vestingmath.getVestedAmountXXX(now, )
 
     ca = vbucket.claimAddresses(0)
     claim = vbucket.claims(ca)

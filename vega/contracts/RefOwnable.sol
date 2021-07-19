@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.5;
 
-//ownable which allows for pas through ownership
+//RefOwnable allows for two ownerships
 //the primary owner is the master contract
 //the refowner is the owner of the master contract
 abstract contract RefOwnable {
