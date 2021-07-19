@@ -36,7 +36,6 @@ contract VestingBucket is AbstractBucket {
     //how much per period. since its linear this is calculated
     uint256 public bucketAmountPerPeriod;
     uint256 public endTime;
-    uint256 public numClaims;
 
     //TODO deposit
     event DepositOwner(address indexed addr, uint256 amount);
@@ -66,7 +65,6 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
-        numClaims = 0;
         //claimAddresses =
     }
 
@@ -78,12 +76,12 @@ contract VestingBucket is AbstractBucket {
         if (claims[_claimAddress].isAdded)
             revert("VESTINGBUCKET: claim at this address already exists");
 
+        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
+
         require(
             totalClaimAmount + _claimTotalAmount <= totalAmount,
             "VESTINGBUCKET: can not claim more than total"
         );
-
-        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
 
         //TODO! add prechecks
 
@@ -100,12 +98,7 @@ contract VestingBucket is AbstractBucket {
         //claimAddresses[numClaims] = _claimAddress;
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
-        numClaims += 1;
         //amountPerPeriod: amountPerPeriod
-    }
-
-    function getCurrentTime() public view returns (uint256) {
-        return block.timestamp;
     }
 
     function getVestedAmount(Claim memory claim) public view returns (uint256) {
@@ -118,20 +111,6 @@ contract VestingBucket is AbstractBucket {
                 claim.amountPerPeriod,
                 claim.claimTotalAmount
             );
-    }
-
-    function getVestableAmountAll() public view returns (uint256) {
-        uint256 blocktime = block.timestamp;
-
-        uint256 amount = VestingMath.getVestedAmountTS(
-            blocktime,
-            cliffTime,
-            endTime,
-            bucketAmountPerPeriod,
-            totalAmount
-        );
-
-        return amount;
     }
 
     function getVestableAmount(address _claimAddress)
@@ -187,7 +166,7 @@ contract VestingBucket is AbstractBucket {
     function allClaim() public onlyRefOwner {
         //for every claim
         uint256 i = 0;
-        for (i = 0; i < numClaims; i++) {
+        for (i = 0; i < claimAddresses.length; i++) {
             address ca = claimAddresses[i];
             vestClaimMax(ca);
             //uint256 vestableAmount = getVestedAmount(claim);
