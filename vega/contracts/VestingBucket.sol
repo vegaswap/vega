@@ -36,7 +36,6 @@ contract VestingBucket is AbstractBucket {
     //how much per period. since its linear this is calculated
     uint256 public bucketAmountPerPeriod;
     uint256 public endTime;
-    uint256 public numClaims;
 
     //TODO deposit
     event DepositOwner(address indexed addr, uint256 amount);
@@ -66,7 +65,6 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
-        numClaims = 0;
         //claimAddresses =
     }
 
@@ -100,7 +98,6 @@ contract VestingBucket is AbstractBucket {
         //claimAddresses[numClaims] = _claimAddress;
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
-        numClaims += 1;
         //amountPerPeriod: amountPerPeriod
     }
 
@@ -187,7 +184,7 @@ contract VestingBucket is AbstractBucket {
     function allClaim() public onlyRefOwner {
         //for every claim
         uint256 i = 0;
-        for (i = 0; i < numClaims; i++) {
+        for (i = 0; i < claimAddresses.length; i++) {
             address ca = claimAddresses[i];
             vestClaimMax(ca);
             //uint256 vestableAmount = getVestedAmount(claim);
