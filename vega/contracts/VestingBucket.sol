@@ -78,12 +78,12 @@ contract VestingBucket is AbstractBucket {
         if (claims[_claimAddress].isAdded)
             revert("VESTINGBUCKET: claim at this address already exists");
 
+        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
+
         require(
             totalClaimAmount + _claimTotalAmount <= totalAmount,
             "VESTINGBUCKET: can not claim more than total"
         );
-
-        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
 
         //TODO! add prechecks
 
