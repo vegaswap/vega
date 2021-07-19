@@ -11,12 +11,7 @@ contract AbstractBucket is RefOwnable {
     VegaToken public vega_token;
     uint256 public registerTime;
 
-    address private _owner;
-    address private _refOwner;
-
     constructor(address _VEGA_TOKEN_ADDRESS) {
-        _owner = msg.sender;
-
         vega_token = VegaToken(_VEGA_TOKEN_ADDRESS);
         registerTime = block.timestamp;
     }
