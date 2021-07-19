@@ -101,10 +101,6 @@ contract VestingBucket is AbstractBucket {
         //amountPerPeriod: amountPerPeriod
     }
 
-    function getCurrentTime() public view returns (uint256) {
-        return block.timestamp;
-    }
-
     function getVestedAmount(Claim memory claim) public view returns (uint256) {
         uint256 blocktime = block.timestamp;
         return
@@ -115,20 +111,6 @@ contract VestingBucket is AbstractBucket {
                 claim.amountPerPeriod,
                 claim.claimTotalAmount
             );
-    }
-
-    function getVestableAmountAll() public view returns (uint256) {
-        uint256 blocktime = block.timestamp;
-
-        uint256 amount = VestingMath.getVestedAmountTS(
-            blocktime,
-            cliffTime,
-            endTime,
-            bucketAmountPerPeriod,
-            totalAmount
-        );
-
-        return amount;
     }
 
     function getVestableAmount(address _claimAddress)
