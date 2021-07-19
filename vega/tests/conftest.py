@@ -157,7 +157,13 @@ def allocate(master, token, vconstants, mainAccount):
     )
 
 
-# def claims(master, token, vconstants, mainAccount):
+# def mock_claims(master, token, vconstants, mainAccount):
+
+#     n = master_allocated.bucket_num()
+#     assert n == 11
+#     for i in range(n):
+#         b = VestingBucket.at(master_allocated.buckets(i))
+#         b.addClaim()
 
 
 @pytest.fixture(scope="module")

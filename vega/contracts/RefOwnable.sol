@@ -12,9 +12,12 @@ abstract contract RefOwnable {
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
-    constructor(address refowner) {
+    constructor() {
         _owner = msg.sender;
-        _refOwner = refowner;
+    }
+
+    function setRefOwner(address _refowner) public onlyOwner {
+        _refOwner = _refowner;
     }
 
     /**
@@ -22,6 +25,10 @@ abstract contract RefOwnable {
      */
     function owner() public view virtual returns (address) {
         return _owner;
+    }
+
+    function refOwner() public view virtual returns (address) {
+        return _refOwner;
     }
 
     /**
@@ -33,7 +40,6 @@ abstract contract RefOwnable {
     }
 
     modifier onlyRefOwner() {
-        //require(owner() == msg.sender, "Ownable: caller is not the owner");
         require(
             msg.sender == _refOwner || msg.sender == _owner,
             "RefOwnable: caller is not the owner of refowner"
