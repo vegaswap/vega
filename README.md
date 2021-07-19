@@ -2,4 +2,4 @@
 
 vega/ - smart contracts and test
 
-active.sh - active the virtual env
+activate.sh - active the virtual env

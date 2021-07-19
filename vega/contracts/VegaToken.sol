@@ -11,6 +11,7 @@ import "./IERC20.sol";
 // total supply: erc20 convention. since all tokens are created at genesis total supply is max supply
 // circulating supply: number of tokens in public circulation (not vested)
 
+// simplified from https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.1/contracts/token/ERC20/ERC20.sol
 contract VegaToken is IERC20 {
     uint8 public constant DECIMALS = 18;
 

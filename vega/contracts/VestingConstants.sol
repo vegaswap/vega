@@ -1,12 +1,14 @@
 // // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
+// the constants for vesting schedule and tokeneconomics
 library VestingConstants {
     uint256 public constant DEFAULT_PERIOD = 30 days;
 
     uint256 constant K = 10**3;
     uint256 constant M = 10**6;
 
+    //funding prices
     //multiple is 1/price
     uint256 public constant seedMultiple = 125; //0.008$
     uint256 public constant privateMultiple = 100; //0.01$
