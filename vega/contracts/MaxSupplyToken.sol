@@ -4,24 +4,24 @@ pragma solidity ^0.8.5;
 import "./IERC20.sol";
 
 // Max Supply token
+
 // max supply is minted at genesis
-// erc20 standard has no convention for circulating supply, this will be handled elsewhere
-// _MAX_SUPPLY: number of tokens that will ever exist (cap)
-// total supply: the erc20 standard function
-// no mint function, all the supply will be generated and transferred at constructor
+// deployer is assumed to be a smart contract which distributes tokens programmatically
+// erc20 standard has no conventions for circulating supply
+// adapted from OZ
 contract MaxSupplyToken is IERC20 {
+    //original deployer, no special rights
+    address private deployer;
+
     uint8 public constant DECIMALS = 18;
 
     string private _name;
     string private _symbol;
 
-    address private deployer;
-
     mapping(address => uint256) private balances;
 
     mapping(address => mapping(address => uint256)) private allowances;
 
-    //erc20 standard
     uint256 private _totalSupply;
 
     /// construct token and genesis mint
@@ -82,9 +82,6 @@ contract MaxSupplyToken is IERC20 {
         return true;
     }
 
-    /**
-     * @dev See {IERC20-allowance}.
-     */
     function allowance(address orig, address spender)
         public
         view
@@ -95,13 +92,6 @@ contract MaxSupplyToken is IERC20 {
         return allowances[orig][spender];
     }
 
-    /**
-     * @dev See {IERC20-approve}.
-     *
-     * Requirements:
-     *
-     * - `spender` cannot be the zero address.
-     */
     function approve(address orig, uint256 amount)
         public
         virtual
@@ -120,8 +110,6 @@ contract MaxSupplyToken is IERC20 {
      *
      * Requirements:
      *
-     * - `sender` and `recipient` cannot be the zero address.
-     * - `sender` must have a balance of at least `amount`.
      * - the caller must have allowance for ``sender``'s tokens of at least
      * `amount`.
      */
@@ -130,6 +118,7 @@ contract MaxSupplyToken is IERC20 {
         address recipient,
         uint256 amount
     ) public virtual override returns (bool) {
+        //OZ does transfer even though check for allownace comes later
         _transfer(sender, recipient, amount);
 
         uint256 currentAllowance = allowances[sender][msg.sender];
@@ -187,7 +176,6 @@ contract MaxSupplyToken is IERC20 {
      * Emits an {Approval} event.
      *
      * Requirements:
-     * https://ethereum.stackexchange.com/questions/13523/what-is-the-zero-account-as-described-by-the-solidity-docs
      * - `owner` cannot be the zero address.
      * - `spender` cannot be the zero address.
      */
