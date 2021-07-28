@@ -4,34 +4,14 @@ pragma solidity ^0.8.5;
 import "./IERC20.sol";
 
 // Max Supply token
-// simplified from Openzeppelin
-// https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/release-v4.1/contracts/token/ERC20/ERC20.sol
-
-// function balanceOf(address account) public view virtual override returns (uint256) {
-// function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
-// function allowance(address owner, address spender) public view virtual override returns (uint256) {
-// function approve(address spender, uint256 amount) public virtual override returns (bool) {
-// function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
-// function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
-// function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
-// function _transfer(address sender, address recipient, uint256 amount) internal virtual {
-// function _mint(address account, uint256 amount) internal virtual {
-// function _burn(address account, uint256 amount) internal virtual {
-// function _approve(address owner, address spender, uint256 amount) internal virtual {
-// function _beforeTokenTransfer(address from, address to, uint256 amount) internal virtual { }
-
-// remove mint and burn
-// remove _beforeTokenTransfer
-
-// max supply is minted at genesis and allocated to buckets
-// since erc20 standard has no conventions for circulating and total supply we define
-// max supply: number of tokens that will ever exist (cap)
+// max supply is minted at genesis
+// erc20 standard has no convention for circulating supply, this will be handled elsewhere
+// _MAX_SUPPLY: number of tokens that will ever exist (cap)
 // total supply: the erc20 standard function
-//instead of mint function all the supply will be generated and transferred at constructor
+// no mint function, all the supply will be generated and transferred at constructor
 contract MaxSupplyToken is IERC20 {
     uint8 public constant DECIMALS = 18;
 
-    uint256 public MAX_SUPPLY;
     string private _name;
     string private _symbol;
 
@@ -44,12 +24,6 @@ contract MaxSupplyToken is IERC20 {
     //erc20 standard
     uint256 private _totalSupply;
 
-    //circulating supply
-    //uint256 private _circSupply;
-
-    //locked supply
-    //uint256 private _lockedSupply;
-
     /// construct token and genesis mint
     constructor(
         uint256 _MAX_SUPPLY,
@@ -59,14 +33,10 @@ contract MaxSupplyToken is IERC20 {
         deployer = msg.sender;
         _name = __name;
         _symbol = __symbol;
-        //require(account != address(0), "ERC20: mint to the zero address");
         // create the max supply once, all other calls are transfers
-        MAX_SUPPLY = _MAX_SUPPLY;
-        _totalSupply = MAX_SUPPLY;
-        balances[deployer] = MAX_SUPPLY;
-        emit Transfer(address(0), deployer, MAX_SUPPLY);
-        //_circSupply = 0;
-        //_lockedSupply = MAX_SUPPLY;
+        _totalSupply = _MAX_SUPPLY;
+        balances[deployer] = _MAX_SUPPLY;
+        emit Transfer(address(0), deployer, _MAX_SUPPLY);
     }
 
     function name() public view virtual returns (string memory) {
@@ -202,7 +172,6 @@ contract MaxSupplyToken is IERC20 {
         );
 
         //OZ unchecked
-        //https://docs.soliditylang.org/en/v0.8.0/control-structures.html#checked-or-unchecked-arithmetic
         balances[sender] -= amount;
         balances[recipient] += amount;
 
