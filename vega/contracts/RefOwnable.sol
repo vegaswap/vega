@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.5;
 
-//RefOwnable allows for two ownerships
+//RefOwnable allows for two owners
 //the primary owner is the master contract
 //the refowner is the owner of the master contract
 abstract contract RefOwnable {

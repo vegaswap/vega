@@ -2,8 +2,7 @@
 
 pragma solidity ^0.8.5;
 
-//basic ownable
-
+// basic ownable contract
 abstract contract Ownable {
     address private _owner;
 
