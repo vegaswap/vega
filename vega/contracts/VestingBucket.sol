@@ -38,7 +38,7 @@ contract VestingBucket is AbstractBucket {
     uint256 public endTime;
 
     //TODO deposit
-    event DepositOwner(address indexed addr, uint256 amount);
+    //event DepositOwner(address indexed addr, uint256 amount);
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
@@ -65,7 +65,6 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
-        //claimAddresses =
     }
 
     //linear vesting claim
@@ -95,7 +94,6 @@ contract VestingBucket is AbstractBucket {
             isAdded: true
         });
 
-        //claimAddresses[numClaims] = _claimAddress;
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
         //amountPerPeriod: amountPerPeriod
@@ -176,7 +174,7 @@ contract VestingBucket is AbstractBucket {
 
     //allow withdraws which are not claimed
     function withdrawOwner(uint256 amount) public onlyRefOwner {
-        //check existing claims
+        //todo: could add check against existing claims
         bool transferSuccess = vega_token.transfer(msg.sender, amount);
         require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
         emit WithdrawOwner(amount);
