@@ -41,7 +41,7 @@ abstract contract RefOwnable {
     modifier onlyRefOwner() {
         require(
             msg.sender == _refOwner || msg.sender == _owner,
-            "RefOwnable: caller is not the owner of refowner"
+            "RefOwnable: caller is not the owner or refowner"
         );
         _;
     }

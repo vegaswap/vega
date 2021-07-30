@@ -155,7 +155,7 @@ contract VestingBucket is AbstractBucket {
 
         require(
             vega_token.transfer(_claimAddress, withdrawAmount),
-            "transfer failed"
+            "VESTINGBUCKET: transfer failed"
         );
         emit WithdrawClaim(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
