@@ -1,9 +1,9 @@
-// // SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
-//math relating to vesting schedules
-//vesting happens linearly after cliff
-//note: due to rounding the last period might vest only small amount of tokens
+// math relating to vesting schedules
+// vesting happens linearly after cliff
+// note: due to rounding the last period might vest only small amount of tokens
 library VestingMath {
     uint256 public constant DEFAULT_PERIOD = 30 days;
 

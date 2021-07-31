@@ -6,11 +6,11 @@ import "./Ownable.sol";
 import "./VegaToken.sol";
 import "./VestingMath.sol";
 
-//bucket with vesting of multiple addresses
-//claims and
-//claim addresses have claims towards the bucket
-//vesting in equal parts per time
-//e.g. 6 months, 1/6 equal
+// bucket with vesting of multiple addresses
+// claims and
+// claim addresses have claims towards the bucket
+// vesting in equal parts per time
+// e.g. 6 months, 1/6 equal
 contract VestingBucket is AbstractBucket {
     //a claim towards this bucket by an addreess
     struct Claim {

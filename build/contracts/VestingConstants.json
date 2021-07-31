@@ -483,21 +483,21 @@
     }
   ],
   "allSourcePaths": {
-    "8": "contracts/VestingConstants.sol"
+    "9": "contracts/VestingConstants.sol"
   },
   "ast": {
     "absolutePath": "contracts/VestingConstants.sol",
     "exportedSymbols": {
       "VestingConstants": [
-        1271
+        1536
       ]
     },
-    "id": 1272,
+    "id": 1537,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1119,
+        "id": 1384,
         "literals": [
           "solidity",
           "^",
@@ -505,7 +505,7 @@
           ".5"
         ],
         "nodeType": "PragmaDirective",
-        "src": "35:23:8"
+        "src": "35:23:9"
       },
       {
         "abstract": false,
@@ -513,24 +513,24 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 1271,
+        "id": 1536,
         "linearizedBaseContracts": [
-          1271
+          1536
         ],
         "name": "VestingConstants",
-        "nameLocation": "125:16:8",
+        "nameLocation": "125:16:9",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
             "functionSelector": "780e7893",
-            "id": 1122,
+            "id": 1387,
             "mutability": "constant",
             "name": "DEFAULT_PERIOD",
-            "nameLocation": "172:14:8",
+            "nameLocation": "172:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "148:48:8",
+            "scope": 1536,
+            "src": "148:48:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -538,10 +538,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1120,
+              "id": 1385,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "148:7:8",
+              "src": "148:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -549,14 +549,14 @@
             },
             "value": {
               "hexValue": "3330",
-              "id": 1121,
+              "id": 1386,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "189:7:8",
+              "src": "189:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2592000_by_1",
@@ -568,13 +568,13 @@
           },
           {
             "constant": true,
-            "id": 1127,
+            "id": 1392,
             "mutability": "constant",
             "name": "K",
-            "nameLocation": "220:1:8",
+            "nameLocation": "220:1:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "203:26:8",
+            "scope": 1536,
+            "src": "203:26:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -582,10 +582,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1123,
+              "id": 1388,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "203:7:8",
+              "src": "203:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -596,21 +596,21 @@
                 "typeIdentifier": "t_rational_1000_by_1",
                 "typeString": "int_const 1000"
               },
-              "id": 1126,
+              "id": 1391,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3130",
-                "id": 1124,
+                "id": 1389,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "224:2:8",
+                "src": "224:2:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_10_by_1",
                   "typeString": "int_const 10"
@@ -621,21 +621,21 @@
               "operator": "**",
               "rightExpression": {
                 "hexValue": "33",
-                "id": 1125,
+                "id": 1390,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "228:1:8",
+                "src": "228:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_3_by_1",
                   "typeString": "int_const 3"
                 },
                 "value": "3"
               },
-              "src": "224:5:8",
+              "src": "224:5:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1000_by_1",
                 "typeString": "int_const 1000"
@@ -645,13 +645,13 @@
           },
           {
             "constant": true,
-            "id": 1132,
+            "id": 1397,
             "mutability": "constant",
             "name": "M",
-            "nameLocation": "252:1:8",
+            "nameLocation": "252:1:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "235:26:8",
+            "scope": 1536,
+            "src": "235:26:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -659,10 +659,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1128,
+              "id": 1393,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "235:7:8",
+              "src": "235:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -673,21 +673,21 @@
                 "typeIdentifier": "t_rational_1000000_by_1",
                 "typeString": "int_const 1000000"
               },
-              "id": 1131,
+              "id": 1396,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3130",
-                "id": 1129,
+                "id": 1394,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "256:2:8",
+                "src": "256:2:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_10_by_1",
                   "typeString": "int_const 10"
@@ -698,21 +698,21 @@
               "operator": "**",
               "rightExpression": {
                 "hexValue": "36",
-                "id": 1130,
+                "id": 1395,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "260:1:8",
+                "src": "260:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_6_by_1",
                   "typeString": "int_const 6"
                 },
                 "value": "6"
               },
-              "src": "256:5:8",
+              "src": "256:5:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1000000_by_1",
                 "typeString": "int_const 1000000"
@@ -723,13 +723,13 @@
           {
             "constant": true,
             "functionSelector": "f0be9b9f",
-            "id": 1135,
+            "id": 1400,
             "mutability": "constant",
             "name": "seedMultiple",
-            "nameLocation": "339:12:8",
+            "nameLocation": "339:12:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "315:42:8",
+            "scope": 1536,
+            "src": "315:42:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -737,10 +737,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1133,
+              "id": 1398,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "315:7:8",
+              "src": "315:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -748,14 +748,14 @@
             },
             "value": {
               "hexValue": "313235",
-              "id": 1134,
+              "id": 1399,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "354:3:8",
+              "src": "354:3:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_125_by_1",
                 "typeString": "int_const 125"
@@ -767,13 +767,13 @@
           {
             "constant": true,
             "functionSelector": "86e0e392",
-            "id": 1138,
+            "id": 1403,
             "mutability": "constant",
             "name": "privateMultiple",
-            "nameLocation": "396:15:8",
+            "nameLocation": "396:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "372:45:8",
+            "scope": 1536,
+            "src": "372:45:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -781,10 +781,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1136,
+              "id": 1401,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "372:7:8",
+              "src": "372:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -792,14 +792,14 @@
             },
             "value": {
               "hexValue": "313030",
-              "id": 1137,
+              "id": 1402,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "414:3:8",
+              "src": "414:3:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100_by_1",
                 "typeString": "int_const 100"
@@ -811,13 +811,13 @@
           {
             "constant": true,
             "functionSelector": "2b2a3737",
-            "id": 1141,
+            "id": 1406,
             "mutability": "constant",
             "name": "publicMultiple",
-            "nameLocation": "455:14:8",
+            "nameLocation": "455:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "431:43:8",
+            "scope": 1536,
+            "src": "431:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -825,10 +825,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1139,
+              "id": 1404,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "431:7:8",
+              "src": "431:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -836,14 +836,14 @@
             },
             "value": {
               "hexValue": "3834",
-              "id": 1140,
+              "id": 1405,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "472:2:8",
+              "src": "472:2:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_84_by_1",
                 "typeString": "int_const 84"
@@ -855,13 +855,13 @@
           {
             "constant": true,
             "functionSelector": "c5774a3f",
-            "id": 1150,
+            "id": 1415,
             "mutability": "constant",
             "name": "seedAmount",
-            "nameLocation": "590:10:8",
+            "nameLocation": "590:10:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "566:53:8",
+            "scope": 1536,
+            "src": "566:53:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -869,10 +869,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1142,
+              "id": 1407,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "566:7:8",
+              "src": "566:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -883,7 +883,7 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1149,
+              "id": 1414,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -893,21 +893,21 @@
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 },
-                "id": 1145,
+                "id": 1410,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "lValueRequested": false,
                 "leftExpression": {
                   "hexValue": "3132",
-                  "id": 1143,
+                  "id": 1408,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "603:2:8",
+                  "src": "603:2:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_12_by_1",
                     "typeString": "int_const 12"
@@ -917,18 +917,18 @@
                 "nodeType": "BinaryOperation",
                 "operator": "*",
                 "rightExpression": {
-                  "id": 1144,
+                  "id": 1409,
                   "name": "M",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1132,
-                  "src": "608:1:8",
+                  "referencedDeclaration": 1397,
+                  "src": "608:1:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   }
                 },
-                "src": "603:6:8",
+                "src": "603:6:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -941,21 +941,21 @@
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 },
-                "id": 1148,
+                "id": 1413,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "lValueRequested": false,
                 "leftExpression": {
                   "hexValue": "353030",
-                  "id": 1146,
+                  "id": 1411,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "612:3:8",
+                  "src": "612:3:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_500_by_1",
                     "typeString": "int_const 500"
@@ -965,24 +965,24 @@
                 "nodeType": "BinaryOperation",
                 "operator": "*",
                 "rightExpression": {
-                  "id": 1147,
+                  "id": 1412,
                   "name": "K",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1127,
-                  "src": "618:1:8",
+                  "referencedDeclaration": 1392,
+                  "src": "618:1:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   }
                 },
-                "src": "612:7:8",
+                "src": "612:7:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "603:16:8",
+              "src": "603:16:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -993,13 +993,13 @@
           {
             "constant": true,
             "functionSelector": "546dd883",
-            "id": 1155,
+            "id": 1420,
             "mutability": "constant",
             "name": "privateAmount",
-            "nameLocation": "649:13:8",
+            "nameLocation": "649:13:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "625:46:8",
+            "scope": 1536,
+            "src": "625:46:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1007,10 +1007,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1151,
+              "id": 1416,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "625:7:8",
+              "src": "625:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1021,21 +1021,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1154,
+              "id": 1419,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3635",
-                "id": 1152,
+                "id": 1417,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "665:2:8",
+                "src": "665:2:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_65_by_1",
                   "typeString": "int_const 65"
@@ -1045,18 +1045,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1153,
+                "id": 1418,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "670:1:8",
+                "referencedDeclaration": 1397,
+                "src": "670:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "665:6:8",
+              "src": "665:6:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1067,13 +1067,13 @@
           {
             "constant": true,
             "functionSelector": "a27a9e7f",
-            "id": 1166,
+            "id": 1431,
             "mutability": "constant",
             "name": "publicAmount",
-            "nameLocation": "701:12:8",
+            "nameLocation": "701:12:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "677:61:8",
+            "scope": 1536,
+            "src": "677:61:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1081,10 +1081,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1156,
+              "id": 1421,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "677:7:8",
+              "src": "677:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1095,7 +1095,7 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1165,
+              "id": 1430,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1105,7 +1105,7 @@
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 },
-                "id": 1163,
+                "id": 1428,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
@@ -1115,21 +1115,21 @@
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   },
-                  "id": 1159,
+                  "id": 1424,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "lValueRequested": false,
                   "leftExpression": {
                     "hexValue": "3136",
-                    "id": 1157,
+                    "id": 1422,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "716:2:8",
+                    "src": "716:2:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_16_by_1",
                       "typeString": "int_const 16"
@@ -1139,18 +1139,18 @@
                   "nodeType": "BinaryOperation",
                   "operator": "*",
                   "rightExpression": {
-                    "id": 1158,
+                    "id": 1423,
                     "name": "M",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1132,
-                    "src": "721:1:8",
+                    "referencedDeclaration": 1397,
+                    "src": "721:1:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "src": "716:6:8",
+                  "src": "716:6:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -1163,21 +1163,21 @@
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   },
-                  "id": 1162,
+                  "id": 1427,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "lValueRequested": false,
                   "leftExpression": {
                     "hexValue": "363636",
-                    "id": 1160,
+                    "id": 1425,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "725:3:8",
+                    "src": "725:3:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_666_by_1",
                       "typeString": "int_const 666"
@@ -1187,24 +1187,24 @@
                   "nodeType": "BinaryOperation",
                   "operator": "*",
                   "rightExpression": {
-                    "id": 1161,
+                    "id": 1426,
                     "name": "K",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1127,
-                    "src": "731:1:8",
+                    "referencedDeclaration": 1392,
+                    "src": "731:1:9",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "src": "725:7:8",
+                  "src": "725:7:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
                   }
                 },
-                "src": "716:16:8",
+                "src": "716:16:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -1214,21 +1214,21 @@
               "operator": "+",
               "rightExpression": {
                 "hexValue": "363637",
-                "id": 1164,
+                "id": 1429,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "735:3:8",
+                "src": "735:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_667_by_1",
                   "typeString": "int_const 667"
                 },
                 "value": "667"
               },
-              "src": "716:22:8",
+              "src": "716:22:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1239,13 +1239,13 @@
           {
             "constant": true,
             "functionSelector": "d3145f08",
-            "id": 1171,
+            "id": 1436,
             "mutability": "constant",
             "name": "liqAmount",
-            "nameLocation": "768:9:8",
+            "nameLocation": "768:9:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "744:43:8",
+            "scope": 1536,
+            "src": "744:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1253,10 +1253,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1167,
+              "id": 1432,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "744:7:8",
+              "src": "744:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1267,21 +1267,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1170,
+              "id": 1435,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "313530",
-                "id": 1168,
+                "id": 1433,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "780:3:8",
+                "src": "780:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_150_by_1",
                   "typeString": "int_const 150"
@@ -1291,18 +1291,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1169,
+                "id": 1434,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "786:1:8",
+                "referencedDeclaration": 1397,
+                "src": "786:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "780:7:8",
+              "src": "780:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1313,13 +1313,13 @@
           {
             "constant": true,
             "functionSelector": "6b4cd109",
-            "id": 1176,
+            "id": 1441,
             "mutability": "constant",
             "name": "lprewardsAmount",
-            "nameLocation": "817:15:8",
+            "nameLocation": "817:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "793:49:8",
+            "scope": 1536,
+            "src": "793:49:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1327,10 +1327,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1172,
+              "id": 1437,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "793:7:8",
+              "src": "793:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1341,21 +1341,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1175,
+              "id": 1440,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "323030",
-                "id": 1173,
+                "id": 1438,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "835:3:8",
+                "src": "835:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_200_by_1",
                   "typeString": "int_const 200"
@@ -1365,18 +1365,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1174,
+                "id": 1439,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "841:1:8",
+                "referencedDeclaration": 1397,
+                "src": "841:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "835:7:8",
+              "src": "835:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1387,13 +1387,13 @@
           {
             "constant": true,
             "functionSelector": "013296e1",
-            "id": 1181,
+            "id": 1446,
             "mutability": "constant",
             "name": "lpgrantsAmount",
-            "nameLocation": "872:14:8",
+            "nameLocation": "872:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "848:47:8",
+            "scope": 1536,
+            "src": "848:47:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1401,10 +1401,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1177,
+              "id": 1442,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "848:7:8",
+              "src": "848:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1415,21 +1415,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1180,
+              "id": 1445,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3530",
-                "id": 1178,
+                "id": 1443,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "889:2:8",
+                "src": "889:2:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_50_by_1",
                   "typeString": "int_const 50"
@@ -1439,18 +1439,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1179,
+                "id": 1444,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "894:1:8",
+                "referencedDeclaration": 1397,
+                "src": "894:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "889:6:8",
+              "src": "889:6:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1461,13 +1461,13 @@
           {
             "constant": true,
             "functionSelector": "2da452a4",
-            "id": 1186,
+            "id": 1451,
             "mutability": "constant",
             "name": "ecoAmount",
-            "nameLocation": "925:9:8",
+            "nameLocation": "925:9:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "901:43:8",
+            "scope": 1536,
+            "src": "901:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1475,10 +1475,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1182,
+              "id": 1447,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "901:7:8",
+              "src": "901:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1489,21 +1489,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1185,
+              "id": 1450,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "313030",
-                "id": 1183,
+                "id": 1448,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "937:3:8",
+                "src": "937:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_100_by_1",
                   "typeString": "int_const 100"
@@ -1513,18 +1513,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1184,
+                "id": 1449,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "943:1:8",
+                "referencedDeclaration": 1397,
+                "src": "943:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "937:7:8",
+              "src": "937:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1535,13 +1535,13 @@
           {
             "constant": true,
             "functionSelector": "8824f00b",
-            "id": 1191,
+            "id": 1456,
             "mutability": "constant",
             "name": "trademiningAmount",
-            "nameLocation": "974:17:8",
+            "nameLocation": "974:17:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "950:51:8",
+            "scope": 1536,
+            "src": "950:51:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1549,10 +1549,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1187,
+              "id": 1452,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "950:7:8",
+              "src": "950:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1563,21 +1563,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1190,
+              "id": 1455,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "323030",
-                "id": 1188,
+                "id": 1453,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "994:3:8",
+                "src": "994:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_200_by_1",
                   "typeString": "int_const 200"
@@ -1587,18 +1587,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1189,
+                "id": 1454,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "1000:1:8",
+                "referencedDeclaration": 1397,
+                "src": "1000:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "994:7:8",
+              "src": "994:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1609,13 +1609,13 @@
           {
             "constant": true,
             "functionSelector": "70439385",
-            "id": 1196,
+            "id": 1461,
             "mutability": "constant",
             "name": "teamAmount",
-            "nameLocation": "1031:10:8",
+            "nameLocation": "1031:10:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1007:44:8",
+            "scope": 1536,
+            "src": "1007:44:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1623,10 +1623,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1192,
+              "id": 1457,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1007:7:8",
+              "src": "1007:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1637,21 +1637,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1195,
+              "id": 1460,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "313530",
-                "id": 1193,
+                "id": 1458,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "1044:3:8",
+                "src": "1044:3:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_150_by_1",
                   "typeString": "int_const 150"
@@ -1661,18 +1661,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1194,
+                "id": 1459,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "1050:1:8",
+                "referencedDeclaration": 1397,
+                "src": "1050:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "1044:7:8",
+              "src": "1044:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1683,13 +1683,13 @@
           {
             "constant": true,
             "functionSelector": "62afd79f",
-            "id": 1201,
+            "id": 1466,
             "mutability": "constant",
             "name": "advisoryAmount",
-            "nameLocation": "1081:14:8",
+            "nameLocation": "1081:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1057:47:8",
+            "scope": 1536,
+            "src": "1057:47:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1697,10 +1697,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1197,
+              "id": 1462,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1057:7:8",
+              "src": "1057:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1711,21 +1711,21 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 1200,
+              "id": 1465,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
                 "hexValue": "3530",
-                "id": 1198,
+                "id": 1463,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "1098:2:8",
+                "src": "1098:2:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_50_by_1",
                   "typeString": "int_const 50"
@@ -1735,18 +1735,18 @@
               "nodeType": "BinaryOperation",
               "operator": "*",
               "rightExpression": {
-                "id": 1199,
+                "id": 1464,
                 "name": "M",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 1132,
-                "src": "1103:1:8",
+                "referencedDeclaration": 1397,
+                "src": "1103:1:9",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "1098:6:8",
+              "src": "1098:6:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1757,13 +1757,13 @@
           {
             "constant": true,
             "functionSelector": "368acb09",
-            "id": 1204,
+            "id": 1469,
             "mutability": "constant",
             "name": "treasuryAmount",
-            "nameLocation": "1161:14:8",
+            "nameLocation": "1161:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1137:48:8",
+            "scope": 1536,
+            "src": "1137:48:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1771,10 +1771,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1202,
+              "id": 1467,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1137:7:8",
+              "src": "1137:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1782,14 +1782,14 @@
             },
             "value": {
               "hexValue": "35383333333333",
-              "id": 1203,
+              "id": 1468,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1178:7:8",
+              "src": "1178:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_5833333_by_1",
                 "typeString": "int_const 5833333"
@@ -1801,13 +1801,13 @@
           {
             "constant": true,
             "functionSelector": "5bacfddb",
-            "id": 1207,
+            "id": 1472,
             "mutability": "constant",
             "name": "seedCliff",
-            "nameLocation": "1229:9:8",
+            "nameLocation": "1229:9:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1205:42:8",
+            "scope": 1536,
+            "src": "1205:42:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1815,10 +1815,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1205,
+              "id": 1470,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1205:7:8",
+              "src": "1205:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1826,14 +1826,14 @@
             },
             "value": {
               "hexValue": "30",
-              "id": 1206,
+              "id": 1471,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1241:6:8",
+              "src": "1241:6:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -1846,13 +1846,13 @@
           {
             "constant": true,
             "functionSelector": "e789fd7f",
-            "id": 1210,
+            "id": 1475,
             "mutability": "constant",
             "name": "privateCliff",
-            "nameLocation": "1283:12:8",
+            "nameLocation": "1283:12:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1259:45:8",
+            "scope": 1536,
+            "src": "1259:45:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1860,10 +1860,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1208,
+              "id": 1473,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1259:7:8",
+              "src": "1259:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1871,14 +1871,14 @@
             },
             "value": {
               "hexValue": "30",
-              "id": 1209,
+              "id": 1474,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1298:6:8",
+              "src": "1298:6:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -1891,13 +1891,13 @@
           {
             "constant": true,
             "functionSelector": "dcc91480",
-            "id": 1213,
+            "id": 1478,
             "mutability": "constant",
             "name": "publicCliff",
-            "nameLocation": "1334:11:8",
+            "nameLocation": "1334:11:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1310:44:8",
+            "scope": 1536,
+            "src": "1310:44:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1905,10 +1905,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1211,
+              "id": 1476,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1310:7:8",
+              "src": "1310:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1916,14 +1916,14 @@
             },
             "value": {
               "hexValue": "30",
-              "id": 1212,
+              "id": 1477,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1348:6:8",
+              "src": "1348:6:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -1936,13 +1936,13 @@
           {
             "constant": true,
             "functionSelector": "06e6446c",
-            "id": 1216,
+            "id": 1481,
             "mutability": "constant",
             "name": "liqCliff",
-            "nameLocation": "1384:8:8",
+            "nameLocation": "1384:8:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1360:42:8",
+            "scope": 1536,
+            "src": "1360:42:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1950,10 +1950,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1214,
+              "id": 1479,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1360:7:8",
+              "src": "1360:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1961,14 +1961,14 @@
             },
             "value": {
               "hexValue": "3330",
-              "id": 1215,
+              "id": 1480,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1395:7:8",
+              "src": "1395:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2592000_by_1",
@@ -1981,13 +1981,13 @@
           {
             "constant": true,
             "functionSelector": "c81ae9ee",
-            "id": 1219,
+            "id": 1484,
             "mutability": "constant",
             "name": "lpwRewardsCliff",
-            "nameLocation": "1432:15:8",
+            "nameLocation": "1432:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1408:49:8",
+            "scope": 1536,
+            "src": "1408:49:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1995,10 +1995,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1217,
+              "id": 1482,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1408:7:8",
+              "src": "1408:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2006,14 +2006,14 @@
             },
             "value": {
               "hexValue": "3330",
-              "id": 1218,
+              "id": 1483,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1450:7:8",
+              "src": "1450:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2592000_by_1",
@@ -2026,13 +2026,13 @@
           {
             "constant": true,
             "functionSelector": "a406e51a",
-            "id": 1222,
+            "id": 1487,
             "mutability": "constant",
             "name": "lpgrantsCliff",
-            "nameLocation": "1487:13:8",
+            "nameLocation": "1487:13:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1463:47:8",
+            "scope": 1536,
+            "src": "1463:47:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2040,10 +2040,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1220,
+              "id": 1485,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1463:7:8",
+              "src": "1463:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2051,14 +2051,14 @@
             },
             "value": {
               "hexValue": "3630",
-              "id": 1221,
+              "id": 1486,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1503:7:8",
+              "src": "1503:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_5184000_by_1",
@@ -2071,13 +2071,13 @@
           {
             "constant": true,
             "functionSelector": "08f35b26",
-            "id": 1225,
+            "id": 1490,
             "mutability": "constant",
             "name": "ecoCliff",
-            "nameLocation": "1540:8:8",
+            "nameLocation": "1540:8:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1516:43:8",
+            "scope": 1536,
+            "src": "1516:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2085,10 +2085,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1223,
+              "id": 1488,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1516:7:8",
+              "src": "1516:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2096,14 +2096,14 @@
             },
             "value": {
               "hexValue": "313230",
-              "id": 1224,
+              "id": 1489,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1551:8:8",
+              "src": "1551:8:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_10368000_by_1",
@@ -2116,13 +2116,13 @@
           {
             "constant": true,
             "functionSelector": "4e761f9e",
-            "id": 1228,
+            "id": 1493,
             "mutability": "constant",
             "name": "trademiningCliff",
-            "nameLocation": "1589:16:8",
+            "nameLocation": "1589:16:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1565:50:8",
+            "scope": 1536,
+            "src": "1565:50:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2130,10 +2130,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1226,
+              "id": 1491,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1565:7:8",
+              "src": "1565:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2141,14 +2141,14 @@
             },
             "value": {
               "hexValue": "3130",
-              "id": 1227,
+              "id": 1492,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1608:7:8",
+              "src": "1608:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_864000_by_1",
@@ -2161,13 +2161,13 @@
           {
             "constant": true,
             "functionSelector": "3879c9f3",
-            "id": 1231,
+            "id": 1496,
             "mutability": "constant",
             "name": "teamCliff",
-            "nameLocation": "1645:9:8",
+            "nameLocation": "1645:9:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1621:44:8",
+            "scope": 1536,
+            "src": "1621:44:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2175,10 +2175,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1229,
+              "id": 1494,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1621:7:8",
+              "src": "1621:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2186,14 +2186,14 @@
             },
             "value": {
               "hexValue": "313830",
-              "id": 1230,
+              "id": 1495,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1657:8:8",
+              "src": "1657:8:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_15552000_by_1",
@@ -2206,13 +2206,13 @@
           {
             "constant": true,
             "functionSelector": "a26b3ca7",
-            "id": 1234,
+            "id": 1499,
             "mutability": "constant",
             "name": "advisoryCliff",
-            "nameLocation": "1695:13:8",
+            "nameLocation": "1695:13:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1671:47:8",
+            "scope": 1536,
+            "src": "1671:47:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2220,10 +2220,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1232,
+              "id": 1497,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1671:7:8",
+              "src": "1671:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2231,14 +2231,14 @@
             },
             "value": {
               "hexValue": "3630",
-              "id": 1233,
+              "id": 1498,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1711:7:8",
+              "src": "1711:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_5184000_by_1",
@@ -2251,13 +2251,13 @@
           {
             "constant": true,
             "functionSelector": "272f8b62",
-            "id": 1237,
+            "id": 1502,
             "mutability": "constant",
             "name": "treasuryCliff",
-            "nameLocation": "1748:13:8",
+            "nameLocation": "1748:13:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1724:47:8",
+            "scope": 1536,
+            "src": "1724:47:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2265,10 +2265,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1235,
+              "id": 1500,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1724:7:8",
+              "src": "1724:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2276,14 +2276,14 @@
             },
             "value": {
               "hexValue": "3330",
-              "id": 1236,
+              "id": 1501,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1764:7:8",
+              "src": "1764:7:9",
               "subdenomination": "days",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2592000_by_1",
@@ -2296,13 +2296,13 @@
           {
             "constant": true,
             "functionSelector": "11385082",
-            "id": 1240,
+            "id": 1505,
             "mutability": "constant",
             "name": "seedPeriods",
-            "nameLocation": "1818:11:8",
+            "nameLocation": "1818:11:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1794:39:8",
+            "scope": 1536,
+            "src": "1794:39:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2310,10 +2310,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1238,
+              "id": 1503,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1794:7:8",
+              "src": "1794:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2321,14 +2321,14 @@
             },
             "value": {
               "hexValue": "36",
-              "id": 1239,
+              "id": 1504,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1832:1:8",
+              "src": "1832:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6_by_1",
                 "typeString": "int_const 6"
@@ -2340,13 +2340,13 @@
           {
             "constant": true,
             "functionSelector": "8057f332",
-            "id": 1243,
+            "id": 1508,
             "mutability": "constant",
             "name": "privatePeriods",
-            "nameLocation": "1863:14:8",
+            "nameLocation": "1863:14:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1839:42:8",
+            "scope": 1536,
+            "src": "1839:42:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2354,10 +2354,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1241,
+              "id": 1506,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1839:7:8",
+              "src": "1839:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2365,14 +2365,14 @@
             },
             "value": {
               "hexValue": "36",
-              "id": 1242,
+              "id": 1507,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1880:1:8",
+              "src": "1880:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6_by_1",
                 "typeString": "int_const 6"
@@ -2384,13 +2384,13 @@
           {
             "constant": true,
             "functionSelector": "a2cbc624",
-            "id": 1246,
+            "id": 1511,
             "mutability": "constant",
             "name": "publicPeriods",
-            "nameLocation": "1911:13:8",
+            "nameLocation": "1911:13:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1887:41:8",
+            "scope": 1536,
+            "src": "1887:41:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2398,10 +2398,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1244,
+              "id": 1509,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1887:7:8",
+              "src": "1887:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2409,14 +2409,14 @@
             },
             "value": {
               "hexValue": "33",
-              "id": 1245,
+              "id": 1510,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1927:1:8",
+              "src": "1927:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3_by_1",
                 "typeString": "int_const 3"
@@ -2428,13 +2428,13 @@
           {
             "constant": true,
             "functionSelector": "c51ce9ad",
-            "id": 1249,
+            "id": 1514,
             "mutability": "constant",
             "name": "liqPeriods",
-            "nameLocation": "1958:10:8",
+            "nameLocation": "1958:10:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1934:38:8",
+            "scope": 1536,
+            "src": "1934:38:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2442,10 +2442,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1247,
+              "id": 1512,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1934:7:8",
+              "src": "1934:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2453,14 +2453,14 @@
             },
             "value": {
               "hexValue": "32",
-              "id": 1248,
+              "id": 1513,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1971:1:8",
+              "src": "1971:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2_by_1",
                 "typeString": "int_const 2"
@@ -2472,13 +2472,13 @@
           {
             "constant": true,
             "functionSelector": "db00d838",
-            "id": 1252,
+            "id": 1517,
             "mutability": "constant",
             "name": "lprewardsPeriods",
-            "nameLocation": "2002:16:8",
+            "nameLocation": "2002:16:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "1978:44:8",
+            "scope": 1536,
+            "src": "1978:44:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2486,10 +2486,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1250,
+              "id": 1515,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1978:7:8",
+              "src": "1978:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2497,14 +2497,14 @@
             },
             "value": {
               "hexValue": "33",
-              "id": 1251,
+              "id": 1516,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2021:1:8",
+              "src": "2021:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3_by_1",
                 "typeString": "int_const 3"
@@ -2516,13 +2516,13 @@
           {
             "constant": true,
             "functionSelector": "cfcb12f0",
-            "id": 1255,
+            "id": 1520,
             "mutability": "constant",
             "name": "lpgrantsPeriods",
-            "nameLocation": "2052:15:8",
+            "nameLocation": "2052:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2028:43:8",
+            "scope": 1536,
+            "src": "2028:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2530,10 +2530,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1253,
+              "id": 1518,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2028:7:8",
+              "src": "2028:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2541,14 +2541,14 @@
             },
             "value": {
               "hexValue": "33",
-              "id": 1254,
+              "id": 1519,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2070:1:8",
+              "src": "2070:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3_by_1",
                 "typeString": "int_const 3"
@@ -2560,13 +2560,13 @@
           {
             "constant": true,
             "functionSelector": "00ee0ec8",
-            "id": 1258,
+            "id": 1523,
             "mutability": "constant",
             "name": "ecoPeriods",
-            "nameLocation": "2101:10:8",
+            "nameLocation": "2101:10:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2077:38:8",
+            "scope": 1536,
+            "src": "2077:38:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2574,10 +2574,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1256,
+              "id": 1521,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2077:7:8",
+              "src": "2077:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2585,14 +2585,14 @@
             },
             "value": {
               "hexValue": "36",
-              "id": 1257,
+              "id": 1522,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2114:1:8",
+              "src": "2114:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6_by_1",
                 "typeString": "int_const 6"
@@ -2604,13 +2604,13 @@
           {
             "constant": true,
             "functionSelector": "8df46565",
-            "id": 1261,
+            "id": 1526,
             "mutability": "constant",
             "name": "trademiningPeriods",
-            "nameLocation": "2145:18:8",
+            "nameLocation": "2145:18:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2121:46:8",
+            "scope": 1536,
+            "src": "2121:46:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2618,10 +2618,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1259,
+              "id": 1524,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2121:7:8",
+              "src": "2121:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2629,14 +2629,14 @@
             },
             "value": {
               "hexValue": "33",
-              "id": 1260,
+              "id": 1525,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2166:1:8",
+              "src": "2166:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3_by_1",
                 "typeString": "int_const 3"
@@ -2648,13 +2648,13 @@
           {
             "constant": true,
             "functionSelector": "e93aa588",
-            "id": 1264,
+            "id": 1529,
             "mutability": "constant",
             "name": "teamPeriods",
-            "nameLocation": "2197:11:8",
+            "nameLocation": "2197:11:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2173:40:8",
+            "scope": 1536,
+            "src": "2173:40:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2662,10 +2662,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1262,
+              "id": 1527,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2173:7:8",
+              "src": "2173:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2673,14 +2673,14 @@
             },
             "value": {
               "hexValue": "3132",
-              "id": 1263,
+              "id": 1528,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2211:2:8",
+              "src": "2211:2:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_12_by_1",
                 "typeString": "int_const 12"
@@ -2692,13 +2692,13 @@
           {
             "constant": true,
             "functionSelector": "342965dd",
-            "id": 1267,
+            "id": 1532,
             "mutability": "constant",
             "name": "advisorsPeriods",
-            "nameLocation": "2243:15:8",
+            "nameLocation": "2243:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2219:44:8",
+            "scope": 1536,
+            "src": "2219:44:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2706,10 +2706,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1265,
+              "id": 1530,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2219:7:8",
+              "src": "2219:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2717,14 +2717,14 @@
             },
             "value": {
               "hexValue": "3132",
-              "id": 1266,
+              "id": 1531,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2261:2:8",
+              "src": "2261:2:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_12_by_1",
                 "typeString": "int_const 12"
@@ -2736,13 +2736,13 @@
           {
             "constant": true,
             "functionSelector": "763f7f32",
-            "id": 1270,
+            "id": 1535,
             "mutability": "constant",
             "name": "treasuryPeriods",
-            "nameLocation": "2293:15:8",
+            "nameLocation": "2293:15:9",
             "nodeType": "VariableDeclaration",
-            "scope": 1271,
-            "src": "2269:43:8",
+            "scope": 1536,
+            "src": "2269:43:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2750,10 +2750,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 1268,
+              "id": 1533,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "2269:7:8",
+              "src": "2269:7:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2761,14 +2761,14 @@
             },
             "value": {
               "hexValue": "31",
-              "id": 1269,
+              "id": 1534,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2311:1:8",
+              "src": "2311:1:9",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
@@ -2778,12 +2778,12 @@
             "visibility": "public"
           }
         ],
-        "scope": 1272,
-        "src": "117:2198:8",
+        "scope": 1537,
+        "src": "117:2198:9",
         "usedErrors": []
       }
     ],
-    "src": "35:2281:8"
+    "src": "35:2281:9"
   },
   "bytecode": "61042361003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106102305760003560e01c8063780e78931161013a578063c51ce9ad116100c2578063db00d83811610086578063db00d838146102d1578063dcc91480146102a9578063e789fd7f146102a9578063e93aa5881461027b578063f0be9b9f146102fb57600080fd5b8063c51ce9ad146102eb578063c5774a3f146102f3578063c81ae9ee14610257578063cfcb12f0146102d1578063d3145f08146102b957600080fd5b80638df46565116101095780638df46565146102d1578063a26b3ca7146102d9578063a27a9e7f146102e3578063a2cbc624146102d1578063a406e51a146102d957600080fd5b8063780e7893146102575780638057f3321461023557806386e0e392146102c95780638824f00b146102b157600080fd5b8063368acb09116101bd5780635bacfddb1161018c5780635bacfddb146102a957806362afd79f1461024f5780636b4cd109146102b157806370439385146102b9578063763f7f32146102c157600080fd5b8063368acb09146102835780633879c9f31461028d5780634e761f9e14610297578063546dd883146102a157600080fd5b806311385082116102045780631138508214610235578063272f8b62146102575780632b2a37371461026b5780632da452a414610273578063342965dd1461027b57600080fd5b8062ee0ec814610235578063013296e11461024f57806306e6446c1461025757806308f35b2614610261575b600080fd5b61023d600681565b60405190815260200160405180910390f35b61023d610303565b61023d62278d0081565b61023d629e340081565b61023d605481565b61023d610314565b61023d600c81565b61023d6259027581565b61023d62ed4e0081565b61023d620d2f0081565b61023d610322565b61023d600081565b61023d610330565b61023d61033e565b61023d600181565b61023d606481565b61023d600381565b61023d624f1a0081565b61023d61034c565b61023d600281565b61023d61037e565b61023d607d81565b610311620f424060326103b8565b81565b610311620f424060646103b8565b610311620f424060416103b8565b610311620f424060c86103b8565b610311620f424060966103b8565b61035a6103e861029a6103b8565b610368620f424060106103b8565b61037291906103a0565b6103119061029b6103a0565b61038c6103e86101f46103b8565b61039a620f4240600c6103b8565b61031191905b600082198211156103b3576103b36103d7565b500190565b60008160001904831182151516156103d2576103d26103d7565b500290565b634e487b7160e01b600052601160045260246000fdfea264697066735822122084d23643e3457c8b1b8c7848e16b93a93593f6dcdec3fb8bc6f55ebae9082def64736f6c63430008050033",
   "bytecodeSha1": "efcbe2661704ce24c62536bee58969901f7acdf1",
@@ -2798,15 +2798,15 @@
   "contractName": "VestingConstants",
   "coverageMap": {
     "branches": {
-      "8": {}
+      "9": {}
     },
     "statements": {
-      "8": {}
+      "9": {}
     }
   },
   "dependencies": [],
   "deployedBytecode": "73000000000000000000000000000000000000000030146080604052600436106102305760003560e01c8063780e78931161013a578063c51ce9ad116100c2578063db00d83811610086578063db00d838146102d1578063dcc91480146102a9578063e789fd7f146102a9578063e93aa5881461027b578063f0be9b9f146102fb57600080fd5b8063c51ce9ad146102eb578063c5774a3f146102f3578063c81ae9ee14610257578063cfcb12f0146102d1578063d3145f08146102b957600080fd5b80638df46565116101095780638df46565146102d1578063a26b3ca7146102d9578063a27a9e7f146102e3578063a2cbc624146102d1578063a406e51a146102d957600080fd5b8063780e7893146102575780638057f3321461023557806386e0e392146102c95780638824f00b146102b157600080fd5b8063368acb09116101bd5780635bacfddb1161018c5780635bacfddb146102a957806362afd79f1461024f5780636b4cd109146102b157806370439385146102b9578063763f7f32146102c157600080fd5b8063368acb09146102835780633879c9f31461028d5780634e761f9e14610297578063546dd883146102a157600080fd5b806311385082116102045780631138508214610235578063272f8b62146102575780632b2a37371461026b5780632da452a414610273578063342965dd1461027b57600080fd5b8062ee0ec814610235578063013296e11461024f57806306e6446c1461025757806308f35b2614610261575b600080fd5b61023d600681565b60405190815260200160405180910390f35b61023d610303565b61023d62278d0081565b61023d629e340081565b61023d605481565b61023d610314565b61023d600c81565b61023d6259027581565b61023d62ed4e0081565b61023d620d2f0081565b61023d610322565b61023d600081565b61023d610330565b61023d61033e565b61023d600181565b61023d606481565b61023d600381565b61023d624f1a0081565b61023d61034c565b61023d600281565b61023d61037e565b61023d607d81565b610311620f424060326103b8565b81565b610311620f424060646103b8565b610311620f424060416103b8565b610311620f424060c86103b8565b610311620f424060966103b8565b61035a6103e861029a6103b8565b610368620f424060106103b8565b61037291906103a0565b6103119061029b6103a0565b61038c6103e86101f46103b8565b61039a620f4240600c6103b8565b61031191905b600082198211156103b3576103b36103d7565b500190565b60008160001904831182151516156103d2576103d26103d7565b500290565b634e487b7160e01b600052601160045260246000fdfea264697066735822122084d23643e3457c8b1b8c7848e16b93a93593f6dcdec3fb8bc6f55ebae9082def64736f6c63430008050033",
-  "deployedSourceMap": "117:2198:8:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2077:38;;2114:1;2077:38;;;;;168:25:10;;;156:2;141:18;2077:38:8;;;;;;;848:47;;;:::i;1360:42::-;;1395:7;1360:42;;1516:43;;1551:8;1516:43;;431;;472:2;431:43;;901;;;:::i;2219:44::-;;2261:2;2219:44;;1137:48;;1178:7;1137:48;;1621:44;;1657:8;1621:44;;1565:50;;1608:7;1565:50;;625:46;;;:::i;1205:42::-;;1241:6;1205:42;;793:49;;;:::i;1007:44::-;;;:::i;2269:43::-;;2311:1;2269:43;;372:45;;414:3;372:45;;2121:46;;2166:1;2121:46;;1671:47;;1711:7;1671:47;;677:61;;;:::i;1934:38::-;;1971:1;1934:38;;566:53;;;:::i;315:42::-;;354:3;315:42;;848:47;889:6;256:5;889:2;:6;:::i;:::-;848:47;:::o;901:43::-;937:7;256:5;937:3;:7;:::i;625:46::-;665:6;256:5;665:2;:6;:::i;793:49::-;835:7;256:5;835:3;:7;:::i;1007:44::-;1044:7;256:5;1044:3;:7;:::i;677:61::-;725:7;224:5;725:3;:7;:::i;:::-;716:6;256:5;716:2;:6;:::i;:::-;:16;;;;:::i;:::-;:22;;735:3;716:22;:::i;566:53::-;612:7;224:5;612:3;:7;:::i;:::-;603:6;256:5;603:2;:6;:::i;:::-;:16;;;204:128:10;244:3;275:1;271:6;268:1;265:13;262:2;;;281:18;;:::i;:::-;-1:-1:-1;317:9:10;;252:80::o;337:168::-;377:7;443:1;439;435:6;431:14;428:1;425:21;420:1;413:9;406:17;402:45;399:2;;;450:18;;:::i;:::-;-1:-1:-1;490:9:10;;389:116::o;510:127::-;571:10;566:3;562:20;559:1;552:31;602:4;599:1;592:15;626:4;623:1;616:15",
+  "deployedSourceMap": "117:2198:9:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2077:38;;2114:1;2077:38;;;;;168:25:11;;;156:2;141:18;2077:38:9;;;;;;;848:47;;;:::i;1360:42::-;;1395:7;1360:42;;1516:43;;1551:8;1516:43;;431;;472:2;431:43;;901;;;:::i;2219:44::-;;2261:2;2219:44;;1137:48;;1178:7;1137:48;;1621:44;;1657:8;1621:44;;1565:50;;1608:7;1565:50;;625:46;;;:::i;1205:42::-;;1241:6;1205:42;;793:49;;;:::i;1007:44::-;;;:::i;2269:43::-;;2311:1;2269:43;;372:45;;414:3;372:45;;2121:46;;2166:1;2121:46;;1671:47;;1711:7;1671:47;;677:61;;;:::i;1934:38::-;;1971:1;1934:38;;566:53;;;:::i;315:42::-;;354:3;315:42;;848:47;889:6;256:5;889:2;:6;:::i;:::-;848:47;:::o;901:43::-;937:7;256:5;937:3;:7;:::i;625:46::-;665:6;256:5;665:2;:6;:::i;793:49::-;835:7;256:5;835:3;:7;:::i;1007:44::-;1044:7;256:5;1044:3;:7;:::i;677:61::-;725:7;224:5;725:3;:7;:::i;:::-;716:6;256:5;716:2;:6;:::i;:::-;:16;;;;:::i;:::-;:22;;735:3;716:22;:::i;566:53::-;612:7;224:5;612:3;:7;:::i;:::-;603:6;256:5;603:2;:6;:::i;:::-;:16;;;204:128:11;244:3;275:1;271:6;268:1;265:13;262:2;;;281:18;;:::i;:::-;-1:-1:-1;317:9:11;;252:80::o;337:168::-;377:7;443:1;439;435:6;431:14;428:1;425:21;420:1;413:9;406:17;402:45;399:2;;;450:18;;:::i;:::-;-1:-1:-1;490:9:11;;389:116::o;510:127::-;571:10;566:3;562:20;559:1;552:31;602:4;599:1;592:15;626:4;623:1;616:15",
   "language": "Solidity",
   "natspec": {
     "kind": "dev",
@@ -2825,7 +2825,7 @@
         2315
       ],
       "op": "PUSH20",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "21": {
@@ -2835,7 +2835,7 @@
         2315
       ],
       "op": "ADDRESS",
-      "path": "8"
+      "path": "9"
     },
     "22": {
       "fn": null,
@@ -2844,7 +2844,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "23": {
       "fn": null,
@@ -2853,7 +2853,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x80"
     },
     "25": {
@@ -2863,7 +2863,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x40"
     },
     "27": {
@@ -2873,7 +2873,7 @@
         2315
       ],
       "op": "MSTORE",
-      "path": "8"
+      "path": "9"
     },
     "28": {
       "fn": null,
@@ -2882,7 +2882,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x4"
     },
     "30": {
@@ -2892,7 +2892,7 @@
         2315
       ],
       "op": "CALLDATASIZE",
-      "path": "8"
+      "path": "9"
     },
     "31": {
       "fn": null,
@@ -2901,7 +2901,7 @@
         2315
       ],
       "op": "LT",
-      "path": "8"
+      "path": "9"
     },
     "32": {
       "fn": null,
@@ -2910,7 +2910,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x230"
     },
     "35": {
@@ -2920,7 +2920,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "36": {
       "fn": null,
@@ -2929,7 +2929,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "38": {
@@ -2939,7 +2939,7 @@
         2315
       ],
       "op": "CALLDATALOAD",
-      "path": "8"
+      "path": "9"
     },
     "39": {
       "fn": null,
@@ -2948,7 +2948,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0xE0"
     },
     "41": {
@@ -2958,7 +2958,7 @@
         2315
       ],
       "op": "SHR",
-      "path": "8"
+      "path": "9"
     },
     "42": {
       "fn": null,
@@ -2967,7 +2967,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "43": {
       "fn": null,
@@ -2976,7 +2976,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x780E7893"
     },
     "48": {
@@ -2986,7 +2986,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "49": {
       "fn": null,
@@ -2995,7 +2995,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x13A"
     },
     "52": {
@@ -3005,7 +3005,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "53": {
       "fn": null,
@@ -3014,7 +3014,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "54": {
       "fn": null,
@@ -3023,7 +3023,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xC51CE9AD"
     },
     "59": {
@@ -3033,7 +3033,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "60": {
       "fn": null,
@@ -3042,7 +3042,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0xC2"
     },
     "63": {
@@ -3052,7 +3052,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "64": {
       "fn": null,
@@ -3061,7 +3061,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "65": {
       "fn": null,
@@ -3070,7 +3070,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xDB00D838"
     },
     "70": {
@@ -3080,7 +3080,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "71": {
       "fn": null,
@@ -3089,7 +3089,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x86"
     },
     "74": {
@@ -3099,7 +3099,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "75": {
       "fn": null,
@@ -3108,7 +3108,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "76": {
       "fn": null,
@@ -3117,7 +3117,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xDB00D838"
     },
     "81": {
@@ -3127,7 +3127,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "82": {
       "fn": null,
@@ -3136,7 +3136,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D1"
     },
     "85": {
@@ -3146,7 +3146,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "86": {
       "fn": null,
@@ -3155,7 +3155,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "87": {
       "fn": null,
@@ -3164,7 +3164,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xDCC91480"
     },
     "92": {
@@ -3174,7 +3174,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "93": {
       "fn": null,
@@ -3183,7 +3183,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2A9"
     },
     "96": {
@@ -3193,7 +3193,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "97": {
       "fn": null,
@@ -3202,7 +3202,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "98": {
       "fn": null,
@@ -3211,7 +3211,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xE789FD7F"
     },
     "103": {
@@ -3221,7 +3221,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "104": {
       "fn": null,
@@ -3230,7 +3230,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2A9"
     },
     "107": {
@@ -3240,7 +3240,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "108": {
       "fn": null,
@@ -3249,7 +3249,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "109": {
       "fn": null,
@@ -3258,7 +3258,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xE93AA588"
     },
     "114": {
@@ -3268,7 +3268,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "115": {
       "fn": null,
@@ -3277,7 +3277,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x27B"
     },
     "118": {
@@ -3287,7 +3287,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "119": {
       "fn": null,
@@ -3296,7 +3296,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "120": {
       "fn": null,
@@ -3305,7 +3305,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xF0BE9B9F"
     },
     "125": {
@@ -3315,7 +3315,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "126": {
       "fn": null,
@@ -3324,7 +3324,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2FB"
     },
     "129": {
@@ -3334,7 +3334,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "130": {
       "fn": null,
@@ -3343,7 +3343,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "132": {
@@ -3353,7 +3353,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "133": {
       "fn": null,
@@ -3362,7 +3362,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "134": {
       "fn": null,
@@ -3371,7 +3371,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "135": {
       "fn": null,
@@ -3380,7 +3380,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "136": {
       "fn": null,
@@ -3389,7 +3389,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xC51CE9AD"
     },
     "141": {
@@ -3399,7 +3399,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "142": {
       "fn": null,
@@ -3408,7 +3408,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2EB"
     },
     "145": {
@@ -3418,7 +3418,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "146": {
       "fn": null,
@@ -3427,7 +3427,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "147": {
       "fn": null,
@@ -3436,7 +3436,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xC5774A3F"
     },
     "152": {
@@ -3446,7 +3446,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "153": {
       "fn": null,
@@ -3455,7 +3455,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2F3"
     },
     "156": {
@@ -3465,7 +3465,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "157": {
       "fn": null,
@@ -3474,7 +3474,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "158": {
       "fn": null,
@@ -3483,7 +3483,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xC81AE9EE"
     },
     "163": {
@@ -3493,7 +3493,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "164": {
       "fn": null,
@@ -3502,7 +3502,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x257"
     },
     "167": {
@@ -3512,7 +3512,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "168": {
       "fn": null,
@@ -3521,7 +3521,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "169": {
       "fn": null,
@@ -3530,7 +3530,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xCFCB12F0"
     },
     "174": {
@@ -3540,7 +3540,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "175": {
       "fn": null,
@@ -3549,7 +3549,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D1"
     },
     "178": {
@@ -3559,7 +3559,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "179": {
       "fn": null,
@@ -3568,7 +3568,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "180": {
       "fn": null,
@@ -3577,7 +3577,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xD3145F08"
     },
     "185": {
@@ -3587,7 +3587,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "186": {
       "fn": null,
@@ -3596,7 +3596,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2B9"
     },
     "189": {
@@ -3606,7 +3606,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "190": {
       "fn": null,
@@ -3615,7 +3615,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "192": {
@@ -3625,7 +3625,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "193": {
       "fn": null,
@@ -3634,7 +3634,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "194": {
       "fn": null,
@@ -3643,7 +3643,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "195": {
       "fn": null,
@@ -3652,7 +3652,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "196": {
       "fn": null,
@@ -3661,7 +3661,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x8DF46565"
     },
     "201": {
@@ -3671,7 +3671,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "202": {
       "fn": null,
@@ -3680,7 +3680,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x109"
     },
     "205": {
@@ -3690,7 +3690,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "206": {
       "fn": null,
@@ -3699,7 +3699,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "207": {
       "fn": null,
@@ -3708,7 +3708,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x8DF46565"
     },
     "212": {
@@ -3718,7 +3718,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "213": {
       "fn": null,
@@ -3727,7 +3727,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D1"
     },
     "216": {
@@ -3737,7 +3737,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "217": {
       "fn": null,
@@ -3746,7 +3746,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "218": {
       "fn": null,
@@ -3755,7 +3755,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xA26B3CA7"
     },
     "223": {
@@ -3765,7 +3765,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "224": {
       "fn": null,
@@ -3774,7 +3774,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D9"
     },
     "227": {
@@ -3784,7 +3784,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "228": {
       "fn": null,
@@ -3793,7 +3793,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "229": {
       "fn": null,
@@ -3802,7 +3802,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xA27A9E7F"
     },
     "234": {
@@ -3812,7 +3812,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "235": {
       "fn": null,
@@ -3821,7 +3821,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2E3"
     },
     "238": {
@@ -3831,7 +3831,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "239": {
       "fn": null,
@@ -3840,7 +3840,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "240": {
       "fn": null,
@@ -3849,7 +3849,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xA2CBC624"
     },
     "245": {
@@ -3859,7 +3859,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "246": {
       "fn": null,
@@ -3868,7 +3868,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D1"
     },
     "249": {
@@ -3878,7 +3878,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "250": {
       "fn": null,
@@ -3887,7 +3887,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "251": {
       "fn": null,
@@ -3896,7 +3896,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0xA406E51A"
     },
     "256": {
@@ -3906,7 +3906,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "257": {
       "fn": null,
@@ -3915,7 +3915,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2D9"
     },
     "260": {
@@ -3925,7 +3925,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "261": {
       "fn": null,
@@ -3934,7 +3934,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "263": {
@@ -3944,7 +3944,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "264": {
       "fn": null,
@@ -3953,7 +3953,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "265": {
       "fn": null,
@@ -3962,7 +3962,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "266": {
       "fn": null,
@@ -3971,7 +3971,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "267": {
       "fn": null,
@@ -3980,7 +3980,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x780E7893"
     },
     "272": {
@@ -3990,7 +3990,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "273": {
       "fn": null,
@@ -3999,7 +3999,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x257"
     },
     "276": {
@@ -4009,7 +4009,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "277": {
       "fn": null,
@@ -4018,7 +4018,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "278": {
       "fn": null,
@@ -4027,7 +4027,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x8057F332"
     },
     "283": {
@@ -4037,7 +4037,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "284": {
       "fn": null,
@@ -4046,7 +4046,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x235"
     },
     "287": {
@@ -4056,7 +4056,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "288": {
       "fn": null,
@@ -4065,7 +4065,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "289": {
       "fn": null,
@@ -4074,7 +4074,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x86E0E392"
     },
     "294": {
@@ -4084,7 +4084,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "295": {
       "fn": null,
@@ -4093,7 +4093,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2C9"
     },
     "298": {
@@ -4103,7 +4103,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "299": {
       "fn": null,
@@ -4112,7 +4112,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "300": {
       "fn": null,
@@ -4121,7 +4121,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x8824F00B"
     },
     "305": {
@@ -4131,7 +4131,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "306": {
       "fn": null,
@@ -4140,7 +4140,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2B1"
     },
     "309": {
@@ -4150,7 +4150,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "310": {
       "fn": null,
@@ -4159,7 +4159,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "312": {
@@ -4169,7 +4169,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "313": {
       "fn": null,
@@ -4178,7 +4178,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "314": {
       "fn": null,
@@ -4187,7 +4187,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "315": {
       "fn": null,
@@ -4196,7 +4196,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "316": {
       "fn": null,
@@ -4205,7 +4205,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x368ACB09"
     },
     "321": {
@@ -4215,7 +4215,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "322": {
       "fn": null,
@@ -4224,7 +4224,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x1BD"
     },
     "325": {
@@ -4234,7 +4234,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "326": {
       "fn": null,
@@ -4243,7 +4243,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "327": {
       "fn": null,
@@ -4252,7 +4252,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x5BACFDDB"
     },
     "332": {
@@ -4262,7 +4262,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "333": {
       "fn": null,
@@ -4271,7 +4271,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x18C"
     },
     "336": {
@@ -4281,7 +4281,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "337": {
       "fn": null,
@@ -4290,7 +4290,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "338": {
       "fn": null,
@@ -4299,7 +4299,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x5BACFDDB"
     },
     "343": {
@@ -4309,7 +4309,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "344": {
       "fn": null,
@@ -4318,7 +4318,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2A9"
     },
     "347": {
@@ -4328,7 +4328,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "348": {
       "fn": null,
@@ -4337,7 +4337,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "349": {
       "fn": null,
@@ -4346,7 +4346,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x62AFD79F"
     },
     "354": {
@@ -4356,7 +4356,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "355": {
       "fn": null,
@@ -4365,7 +4365,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x24F"
     },
     "358": {
@@ -4375,7 +4375,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "359": {
       "fn": null,
@@ -4384,7 +4384,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "360": {
       "fn": null,
@@ -4393,7 +4393,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x6B4CD109"
     },
     "365": {
@@ -4403,7 +4403,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "366": {
       "fn": null,
@@ -4412,7 +4412,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2B1"
     },
     "369": {
@@ -4422,7 +4422,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "370": {
       "fn": null,
@@ -4431,7 +4431,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "371": {
       "fn": null,
@@ -4440,7 +4440,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x70439385"
     },
     "376": {
@@ -4450,7 +4450,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "377": {
       "fn": null,
@@ -4459,7 +4459,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2B9"
     },
     "380": {
@@ -4469,7 +4469,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "381": {
       "fn": null,
@@ -4478,7 +4478,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "382": {
       "fn": null,
@@ -4487,7 +4487,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x763F7F32"
     },
     "387": {
@@ -4497,7 +4497,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "388": {
       "fn": null,
@@ -4506,7 +4506,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2C1"
     },
     "391": {
@@ -4516,7 +4516,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "392": {
       "fn": null,
@@ -4525,7 +4525,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "394": {
@@ -4535,7 +4535,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "395": {
       "fn": null,
@@ -4544,7 +4544,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "396": {
       "fn": null,
@@ -4553,7 +4553,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "397": {
       "fn": null,
@@ -4562,7 +4562,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "398": {
       "fn": null,
@@ -4571,7 +4571,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x368ACB09"
     },
     "403": {
@@ -4581,7 +4581,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "404": {
       "fn": null,
@@ -4590,7 +4590,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x283"
     },
     "407": {
@@ -4600,7 +4600,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "408": {
       "fn": null,
@@ -4609,7 +4609,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "409": {
       "fn": null,
@@ -4618,7 +4618,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x3879C9F3"
     },
     "414": {
@@ -4628,7 +4628,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "415": {
       "fn": null,
@@ -4637,7 +4637,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x28D"
     },
     "418": {
@@ -4647,7 +4647,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "419": {
       "fn": null,
@@ -4656,7 +4656,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "420": {
       "fn": null,
@@ -4665,7 +4665,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x4E761F9E"
     },
     "425": {
@@ -4675,7 +4675,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "426": {
       "fn": null,
@@ -4684,7 +4684,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x297"
     },
     "429": {
@@ -4694,7 +4694,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "430": {
       "fn": null,
@@ -4703,7 +4703,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "431": {
       "fn": null,
@@ -4712,7 +4712,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x546DD883"
     },
     "436": {
@@ -4722,7 +4722,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "437": {
       "fn": null,
@@ -4731,7 +4731,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x2A1"
     },
     "440": {
@@ -4741,7 +4741,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "441": {
       "fn": null,
@@ -4750,7 +4750,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "443": {
@@ -4760,7 +4760,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "444": {
       "fn": null,
@@ -4769,7 +4769,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "445": {
       "fn": null,
@@ -4778,7 +4778,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "446": {
       "fn": null,
@@ -4787,7 +4787,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "447": {
       "fn": null,
@@ -4796,7 +4796,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x11385082"
     },
     "452": {
@@ -4806,7 +4806,7 @@
         2315
       ],
       "op": "GT",
-      "path": "8"
+      "path": "9"
     },
     "453": {
       "fn": null,
@@ -4815,7 +4815,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x204"
     },
     "456": {
@@ -4825,7 +4825,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "457": {
       "fn": null,
@@ -4834,7 +4834,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "458": {
       "fn": null,
@@ -4843,7 +4843,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x11385082"
     },
     "463": {
@@ -4853,7 +4853,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "464": {
       "fn": null,
@@ -4862,7 +4862,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x235"
     },
     "467": {
@@ -4872,7 +4872,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "468": {
       "fn": null,
@@ -4881,7 +4881,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "469": {
       "fn": null,
@@ -4890,7 +4890,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x272F8B62"
     },
     "474": {
@@ -4900,7 +4900,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "475": {
       "fn": null,
@@ -4909,7 +4909,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x257"
     },
     "478": {
@@ -4919,7 +4919,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "479": {
       "fn": null,
@@ -4928,7 +4928,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "480": {
       "fn": null,
@@ -4937,7 +4937,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x2B2A3737"
     },
     "485": {
@@ -4947,7 +4947,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "486": {
       "fn": null,
@@ -4956,7 +4956,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x26B"
     },
     "489": {
@@ -4966,7 +4966,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "490": {
       "fn": null,
@@ -4975,7 +4975,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "491": {
       "fn": null,
@@ -4984,7 +4984,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x2DA452A4"
     },
     "496": {
@@ -4994,7 +4994,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "497": {
       "fn": null,
@@ -5003,7 +5003,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x273"
     },
     "500": {
@@ -5013,7 +5013,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "501": {
       "fn": null,
@@ -5022,7 +5022,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "502": {
       "fn": null,
@@ -5031,7 +5031,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x342965DD"
     },
     "507": {
@@ -5041,7 +5041,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "508": {
       "fn": null,
@@ -5050,7 +5050,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x27B"
     },
     "511": {
@@ -5060,7 +5060,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "512": {
       "fn": null,
@@ -5069,7 +5069,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "514": {
@@ -5079,7 +5079,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "515": {
       "fn": null,
@@ -5088,7 +5088,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "516": {
       "fn": null,
@@ -5097,7 +5097,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "517": {
       "fn": null,
@@ -5106,7 +5106,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "518": {
       "fn": null,
@@ -5115,7 +5115,7 @@
         2315
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xEE0EC8"
     },
     "522": {
@@ -5125,7 +5125,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "523": {
       "fn": null,
@@ -5134,7 +5134,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x235"
     },
     "526": {
@@ -5144,7 +5144,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "527": {
       "fn": null,
@@ -5153,7 +5153,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "528": {
       "fn": null,
@@ -5162,7 +5162,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x13296E1"
     },
     "533": {
@@ -5172,7 +5172,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "534": {
       "fn": null,
@@ -5181,7 +5181,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x24F"
     },
     "537": {
@@ -5191,7 +5191,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "538": {
       "fn": null,
@@ -5200,7 +5200,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "539": {
       "fn": null,
@@ -5209,7 +5209,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x6E6446C"
     },
     "544": {
@@ -5219,7 +5219,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "545": {
       "fn": null,
@@ -5228,7 +5228,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x257"
     },
     "548": {
@@ -5238,7 +5238,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "549": {
       "fn": null,
@@ -5247,7 +5247,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "550": {
       "fn": null,
@@ -5256,7 +5256,7 @@
         2315
       ],
       "op": "PUSH4",
-      "path": "8",
+      "path": "9",
       "value": "0x8F35B26"
     },
     "555": {
@@ -5266,7 +5266,7 @@
         2315
       ],
       "op": "EQ",
-      "path": "8"
+      "path": "9"
     },
     "556": {
       "fn": null,
@@ -5275,7 +5275,7 @@
         2315
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x261"
     },
     "559": {
@@ -5285,7 +5285,7 @@
         2315
       ],
       "op": "JUMPI",
-      "path": "8"
+      "path": "9"
     },
     "560": {
       "fn": null,
@@ -5294,7 +5294,7 @@
         2315
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "561": {
       "fn": null,
@@ -5303,7 +5303,7 @@
         2315
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "563": {
@@ -5313,7 +5313,7 @@
         2315
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "564": {
       "first_revert": true,
@@ -5323,7 +5323,7 @@
         2315
       ],
       "op": "REVERT",
-      "path": "8"
+      "path": "9"
     },
     "565": {
       "offset": [
@@ -5331,7 +5331,7 @@
         2115
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "566": {
       "fn": null,
@@ -5340,7 +5340,7 @@
         2115
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "569": {
@@ -5349,7 +5349,7 @@
         2115
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x6"
     },
     "571": {
@@ -5358,7 +5358,7 @@
         2115
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "572": {
       "fn": null,
@@ -5367,7 +5367,7 @@
         2115
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "573": {
       "fn": null,
@@ -5376,7 +5376,7 @@
         2115
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "574": {
       "fn": null,
@@ -5385,7 +5385,7 @@
         2115
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x40"
     },
     "576": {
@@ -5395,7 +5395,7 @@
         2115
       ],
       "op": "MLOAD",
-      "path": "8"
+      "path": "9"
     },
     "577": {
       "op": "SWAP1"
@@ -5419,7 +5419,7 @@
         2115
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x40"
     },
     "585": {
@@ -5429,7 +5429,7 @@
         2115
       ],
       "op": "MLOAD",
-      "path": "8"
+      "path": "9"
     },
     "586": {
       "fn": null,
@@ -5438,7 +5438,7 @@
         2115
       ],
       "op": "DUP1",
-      "path": "8"
+      "path": "9"
     },
     "587": {
       "fn": null,
@@ -5447,7 +5447,7 @@
         2115
       ],
       "op": "SWAP2",
-      "path": "8"
+      "path": "9"
     },
     "588": {
       "fn": null,
@@ -5456,7 +5456,7 @@
         2115
       ],
       "op": "SUB",
-      "path": "8"
+      "path": "9"
     },
     "589": {
       "fn": null,
@@ -5465,7 +5465,7 @@
         2115
       ],
       "op": "SWAP1",
-      "path": "8"
+      "path": "9"
     },
     "590": {
       "fn": null,
@@ -5474,7 +5474,7 @@
         2115
       ],
       "op": "RETURN",
-      "path": "8"
+      "path": "9"
     },
     "591": {
       "offset": [
@@ -5482,7 +5482,7 @@
         895
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "592": {
       "fn": null,
@@ -5491,7 +5491,7 @@
         895
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "595": {
@@ -5501,7 +5501,7 @@
         895
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x303"
     },
     "598": {
@@ -5512,7 +5512,7 @@
         895
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "599": {
       "offset": [
@@ -5520,7 +5520,7 @@
         1402
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "600": {
       "fn": null,
@@ -5529,7 +5529,7 @@
         1402
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "603": {
@@ -5538,7 +5538,7 @@
         1402
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0x278D00"
     },
     "607": {
@@ -5547,7 +5547,7 @@
         1402
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "608": {
       "fn": null,
@@ -5556,7 +5556,7 @@
         1402
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "609": {
       "offset": [
@@ -5564,7 +5564,7 @@
         1559
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "610": {
       "fn": null,
@@ -5573,7 +5573,7 @@
         1559
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "613": {
@@ -5582,7 +5582,7 @@
         1559
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0x9E3400"
     },
     "617": {
@@ -5591,7 +5591,7 @@
         1559
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "618": {
       "fn": null,
@@ -5600,7 +5600,7 @@
         1559
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "619": {
       "offset": [
@@ -5608,7 +5608,7 @@
         474
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "620": {
       "fn": null,
@@ -5617,7 +5617,7 @@
         474
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "623": {
@@ -5626,7 +5626,7 @@
         474
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x54"
     },
     "625": {
@@ -5635,7 +5635,7 @@
         474
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "626": {
       "fn": null,
@@ -5644,7 +5644,7 @@
         474
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "627": {
       "offset": [
@@ -5652,7 +5652,7 @@
         944
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "628": {
       "fn": null,
@@ -5661,7 +5661,7 @@
         944
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "631": {
@@ -5671,7 +5671,7 @@
         944
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x314"
     },
     "634": {
@@ -5682,7 +5682,7 @@
         944
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "635": {
       "offset": [
@@ -5690,7 +5690,7 @@
         2263
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "636": {
       "fn": null,
@@ -5699,7 +5699,7 @@
         2263
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "639": {
@@ -5708,7 +5708,7 @@
         2263
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0xC"
     },
     "641": {
@@ -5717,7 +5717,7 @@
         2263
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "642": {
       "fn": null,
@@ -5726,7 +5726,7 @@
         2263
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "643": {
       "offset": [
@@ -5734,7 +5734,7 @@
         1185
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "644": {
       "fn": null,
@@ -5743,7 +5743,7 @@
         1185
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "647": {
@@ -5752,7 +5752,7 @@
         1185
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0x590275"
     },
     "651": {
@@ -5761,7 +5761,7 @@
         1185
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "652": {
       "fn": null,
@@ -5770,7 +5770,7 @@
         1185
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "653": {
       "offset": [
@@ -5778,7 +5778,7 @@
         1665
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "654": {
       "fn": null,
@@ -5787,7 +5787,7 @@
         1665
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "657": {
@@ -5796,7 +5796,7 @@
         1665
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xED4E00"
     },
     "661": {
@@ -5805,7 +5805,7 @@
         1665
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "662": {
       "fn": null,
@@ -5814,7 +5814,7 @@
         1665
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "663": {
       "offset": [
@@ -5822,7 +5822,7 @@
         1615
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "664": {
       "fn": null,
@@ -5831,7 +5831,7 @@
         1615
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "667": {
@@ -5840,7 +5840,7 @@
         1615
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xD2F00"
     },
     "671": {
@@ -5849,7 +5849,7 @@
         1615
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "672": {
       "fn": null,
@@ -5858,7 +5858,7 @@
         1615
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "673": {
       "offset": [
@@ -5866,7 +5866,7 @@
         671
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "674": {
       "fn": null,
@@ -5875,7 +5875,7 @@
         671
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "677": {
@@ -5885,7 +5885,7 @@
         671
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x322"
     },
     "680": {
@@ -5896,7 +5896,7 @@
         671
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "681": {
       "offset": [
@@ -5904,7 +5904,7 @@
         1247
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "682": {
       "fn": null,
@@ -5913,7 +5913,7 @@
         1247
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "685": {
@@ -5922,7 +5922,7 @@
         1247
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x0"
     },
     "687": {
@@ -5931,7 +5931,7 @@
         1247
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "688": {
       "fn": null,
@@ -5940,7 +5940,7 @@
         1247
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "689": {
       "offset": [
@@ -5948,7 +5948,7 @@
         842
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "690": {
       "fn": null,
@@ -5957,7 +5957,7 @@
         842
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "693": {
@@ -5967,7 +5967,7 @@
         842
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x330"
     },
     "696": {
@@ -5978,7 +5978,7 @@
         842
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "697": {
       "offset": [
@@ -5986,7 +5986,7 @@
         1051
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "698": {
       "fn": null,
@@ -5995,7 +5995,7 @@
         1051
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "701": {
@@ -6005,7 +6005,7 @@
         1051
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x33E"
     },
     "704": {
@@ -6016,7 +6016,7 @@
         1051
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "705": {
       "offset": [
@@ -6024,7 +6024,7 @@
         2312
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "706": {
       "fn": null,
@@ -6033,7 +6033,7 @@
         2312
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "709": {
@@ -6042,7 +6042,7 @@
         2312
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x1"
     },
     "711": {
@@ -6051,7 +6051,7 @@
         2312
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "712": {
       "fn": null,
@@ -6060,7 +6060,7 @@
         2312
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "713": {
       "offset": [
@@ -6068,7 +6068,7 @@
         417
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "714": {
       "fn": null,
@@ -6077,7 +6077,7 @@
         417
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "717": {
@@ -6086,7 +6086,7 @@
         417
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x64"
     },
     "719": {
@@ -6095,7 +6095,7 @@
         417
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "720": {
       "fn": null,
@@ -6104,7 +6104,7 @@
         417
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "721": {
       "offset": [
@@ -6112,7 +6112,7 @@
         2167
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "722": {
       "fn": null,
@@ -6121,7 +6121,7 @@
         2167
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "725": {
@@ -6130,7 +6130,7 @@
         2167
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x3"
     },
     "727": {
@@ -6139,7 +6139,7 @@
         2167
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "728": {
       "fn": null,
@@ -6148,7 +6148,7 @@
         2167
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "729": {
       "offset": [
@@ -6156,7 +6156,7 @@
         1718
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "730": {
       "fn": null,
@@ -6165,7 +6165,7 @@
         1718
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "733": {
@@ -6174,7 +6174,7 @@
         1718
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0x4F1A00"
     },
     "737": {
@@ -6183,7 +6183,7 @@
         1718
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "738": {
       "fn": null,
@@ -6192,7 +6192,7 @@
         1718
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "739": {
       "offset": [
@@ -6200,7 +6200,7 @@
         738
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "740": {
       "fn": null,
@@ -6209,7 +6209,7 @@
         738
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "743": {
@@ -6219,7 +6219,7 @@
         738
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x34C"
     },
     "746": {
@@ -6230,7 +6230,7 @@
         738
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "747": {
       "offset": [
@@ -6238,7 +6238,7 @@
         1972
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "748": {
       "fn": null,
@@ -6247,7 +6247,7 @@
         1972
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "751": {
@@ -6256,7 +6256,7 @@
         1972
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x2"
     },
     "753": {
@@ -6265,7 +6265,7 @@
         1972
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "754": {
       "fn": null,
@@ -6274,7 +6274,7 @@
         1972
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "755": {
       "offset": [
@@ -6282,7 +6282,7 @@
         619
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "756": {
       "fn": null,
@@ -6291,7 +6291,7 @@
         619
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "759": {
@@ -6301,7 +6301,7 @@
         619
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x37E"
     },
     "762": {
@@ -6312,7 +6312,7 @@
         619
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "763": {
       "offset": [
@@ -6320,7 +6320,7 @@
         357
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "764": {
       "fn": null,
@@ -6329,7 +6329,7 @@
         357
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x23D"
     },
     "767": {
@@ -6338,7 +6338,7 @@
         357
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x7D"
     },
     "769": {
@@ -6347,7 +6347,7 @@
         357
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "770": {
       "fn": null,
@@ -6356,7 +6356,7 @@
         357
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "771": {
       "offset": [
@@ -6364,7 +6364,7 @@
         895
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "772": {
       "offset": [
@@ -6372,7 +6372,7 @@
         895
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "775": {
@@ -6381,7 +6381,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "779": {
@@ -6390,7 +6390,7 @@
         891
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x32"
     },
     "781": {
@@ -6399,7 +6399,7 @@
         895
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "784": {
@@ -6410,7 +6410,7 @@
         895
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "785": {
       "fn": null,
@@ -6419,7 +6419,7 @@
         895
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "786": {
       "offset": [
@@ -6427,7 +6427,7 @@
         895
       ],
       "op": "DUP2",
-      "path": "8"
+      "path": "9"
     },
     "787": {
       "fn": null,
@@ -6437,7 +6437,7 @@
         895
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "788": {
       "offset": [
@@ -6445,7 +6445,7 @@
         944
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "789": {
       "offset": [
@@ -6453,7 +6453,7 @@
         944
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "792": {
@@ -6462,7 +6462,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "796": {
@@ -6471,7 +6471,7 @@
         940
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x64"
     },
     "798": {
@@ -6480,7 +6480,7 @@
         944
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "801": {
@@ -6491,7 +6491,7 @@
         944
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "802": {
       "offset": [
@@ -6499,7 +6499,7 @@
         671
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "803": {
       "offset": [
@@ -6507,7 +6507,7 @@
         671
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "806": {
@@ -6516,7 +6516,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "810": {
@@ -6525,7 +6525,7 @@
         667
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x41"
     },
     "812": {
@@ -6534,7 +6534,7 @@
         671
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "815": {
@@ -6545,7 +6545,7 @@
         671
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "816": {
       "offset": [
@@ -6553,7 +6553,7 @@
         842
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "817": {
       "offset": [
@@ -6561,7 +6561,7 @@
         842
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "820": {
@@ -6570,7 +6570,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "824": {
@@ -6579,7 +6579,7 @@
         838
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0xC8"
     },
     "826": {
@@ -6588,7 +6588,7 @@
         842
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "829": {
@@ -6599,7 +6599,7 @@
         842
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "830": {
       "offset": [
@@ -6607,7 +6607,7 @@
         1051
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "831": {
       "offset": [
@@ -6615,7 +6615,7 @@
         1051
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "834": {
@@ -6624,7 +6624,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "838": {
@@ -6633,7 +6633,7 @@
         1047
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x96"
     },
     "840": {
@@ -6642,7 +6642,7 @@
         1051
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "843": {
@@ -6653,7 +6653,7 @@
         1051
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "844": {
       "offset": [
@@ -6661,7 +6661,7 @@
         738
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "845": {
       "offset": [
@@ -6669,7 +6669,7 @@
         732
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x35A"
     },
     "848": {
@@ -6678,7 +6678,7 @@
         229
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3E8"
     },
     "851": {
@@ -6687,7 +6687,7 @@
         728
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x29A"
     },
     "854": {
@@ -6696,7 +6696,7 @@
         732
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "857": {
@@ -6707,7 +6707,7 @@
         732
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "858": {
       "fn": null,
@@ -6716,7 +6716,7 @@
         732
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "859": {
       "offset": [
@@ -6724,7 +6724,7 @@
         722
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x368"
     },
     "862": {
@@ -6733,7 +6733,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "866": {
@@ -6742,7 +6742,7 @@
         718
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0x10"
     },
     "868": {
@@ -6751,7 +6751,7 @@
         722
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "871": {
@@ -6762,7 +6762,7 @@
         722
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "872": {
       "fn": null,
@@ -6771,7 +6771,7 @@
         722
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "873": {
       "offset": [
@@ -6779,7 +6779,7 @@
         732
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x372"
     },
     "876": {
@@ -6789,7 +6789,7 @@
         732
       ],
       "op": "SWAP2",
-      "path": "8"
+      "path": "9"
     },
     "877": {
       "fn": null,
@@ -6798,7 +6798,7 @@
         732
       ],
       "op": "SWAP1",
-      "path": "8"
+      "path": "9"
     },
     "878": {
       "fn": null,
@@ -6807,7 +6807,7 @@
         732
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3A0"
     },
     "881": {
@@ -6818,7 +6818,7 @@
         732
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "882": {
       "fn": null,
@@ -6827,7 +6827,7 @@
         732
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "883": {
       "offset": [
@@ -6835,7 +6835,7 @@
         738
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "886": {
@@ -6845,7 +6845,7 @@
         738
       ],
       "op": "SWAP1",
-      "path": "8"
+      "path": "9"
     },
     "887": {
       "offset": [
@@ -6853,7 +6853,7 @@
         738
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x29B"
     },
     "890": {
@@ -6862,7 +6862,7 @@
         738
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3A0"
     },
     "893": {
@@ -6873,7 +6873,7 @@
         738
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "894": {
       "offset": [
@@ -6881,7 +6881,7 @@
         619
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "895": {
       "offset": [
@@ -6889,7 +6889,7 @@
         619
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x38C"
     },
     "898": {
@@ -6898,7 +6898,7 @@
         229
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3E8"
     },
     "901": {
@@ -6907,7 +6907,7 @@
         615
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x1F4"
     },
     "904": {
@@ -6916,7 +6916,7 @@
         619
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "907": {
@@ -6927,7 +6927,7 @@
         619
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "908": {
       "fn": null,
@@ -6936,7 +6936,7 @@
         619
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "909": {
       "offset": [
@@ -6944,7 +6944,7 @@
         609
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x39A"
     },
     "912": {
@@ -6953,7 +6953,7 @@
         261
       ],
       "op": "PUSH3",
-      "path": "8",
+      "path": "9",
       "value": "0xF4240"
     },
     "916": {
@@ -6962,7 +6962,7 @@
         605
       ],
       "op": "PUSH1",
-      "path": "8",
+      "path": "9",
       "value": "0xC"
     },
     "918": {
@@ -6971,7 +6971,7 @@
         609
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x3B8"
     },
     "921": {
@@ -6982,7 +6982,7 @@
         609
       ],
       "op": "JUMP",
-      "path": "8"
+      "path": "9"
     },
     "922": {
       "fn": null,
@@ -6991,7 +6991,7 @@
         609
       ],
       "op": "JUMPDEST",
-      "path": "8"
+      "path": "9"
     },
     "923": {
       "offset": [
@@ -6999,7 +6999,7 @@
         619
       ],
       "op": "PUSH2",
-      "path": "8",
+      "path": "9",
       "value": "0x311"
     },
     "926": {
@@ -7009,7 +7009,7 @@
         619
       ],
       "op": "SWAP2",
-      "path": "8"
+      "path": "9"
     },
     "927": {
       "fn": null,
@@ -7018,7 +7018,7 @@
         619
       ],
       "op": "SWAP1",
-      "path": "8"
+      "path": "9"
     },
     "928": {
       "op": "JUMPDEST"
@@ -7199,7 +7199,7 @@
   },
   "sha1": "1d1948dbd01f9e67105d6d2b88ad562ca55cd63d",
   "source": "// // SPDX-License-Identifier: MIT\npragma solidity ^0.8.5;\n\n// the constants for vesting schedule and tokeneconomics\nlibrary VestingConstants {\n    uint256 public constant DEFAULT_PERIOD = 30 days;\n\n    uint256 constant K = 10**3;\n    uint256 constant M = 10**6;\n\n    //funding prices\n    //multiple is 1/price\n    uint256 public constant seedMultiple = 125; //0.008$\n    uint256 public constant privateMultiple = 100; //0.01$\n    uint256 public constant publicMultiple = 84; //0.0119$\n\n    //1000M supply allocate to 11 buckets\n    //total amounts, no decimals\n    uint256 public constant seedAmount = 12 * M + 500 * K;\n    uint256 public constant privateAmount = 65 * M;\n    uint256 public constant publicAmount = 16 * M + 666 * K + 667;\n    uint256 public constant liqAmount = 150 * M;\n    uint256 public constant lprewardsAmount = 200 * M;\n    uint256 public constant lpgrantsAmount = 50 * M;\n    uint256 public constant ecoAmount = 100 * M;\n    uint256 public constant trademiningAmount = 200 * M;\n    uint256 public constant teamAmount = 150 * M;\n    uint256 public constant advisoryAmount = 50 * M;\n    //treasury is the rest\n    uint256 public constant treasuryAmount = 5833333;\n\n    //cliffs\n    uint256 public constant seedCliff = 0 days; //33%\n    uint256 public constant privateCliff = 0 days;\n    uint256 public constant publicCliff = 0 days;\n    uint256 public constant liqCliff = 30 days;\n    uint256 public constant lpwRewardsCliff = 30 days;\n    uint256 public constant lpgrantsCliff = 60 days;\n    uint256 public constant ecoCliff = 120 days;\n    uint256 public constant trademiningCliff = 10 days;\n    uint256 public constant teamCliff = 180 days;\n    uint256 public constant advisoryCliff = 60 days;\n    uint256 public constant treasuryCliff = 30 days;\n\n    //durations\n    uint256 public constant seedPeriods = 6;\n    uint256 public constant privatePeriods = 6;\n    uint256 public constant publicPeriods = 3;\n    uint256 public constant liqPeriods = 2;\n    uint256 public constant lprewardsPeriods = 3;\n    uint256 public constant lpgrantsPeriods = 3;\n    uint256 public constant ecoPeriods = 6;\n    uint256 public constant trademiningPeriods = 3;\n    uint256 public constant teamPeriods = 12;\n    uint256 public constant advisorsPeriods = 12;\n    uint256 public constant treasuryPeriods = 1;\n}\n",
-  "sourceMap": "117:2198:8:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;117:2198:8;;;;;;;;;;;;;;;;;",
+  "sourceMap": "117:2198:9:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;117:2198:9;;;;;;;;;;;;;;;;;",
   "sourcePath": "contracts/VestingConstants.sol",
   "type": "library"
 }

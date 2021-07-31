@@ -2,288 +2,93 @@
   "contracts": {
     "AbstractBucket": "301c13d6e6c270f381721429c87f5960ffe1fe6c",
     "MaxSupplyToken": "3b835de11a72ea08cd3ed8752177f1045fd98c4a",
-    "VegaMaster": "f3048ad7bdb6ae9204515d2a269740825dd286b6",
+    "VegaIDO": "1322579b8de576397d04501820b7daa0b068e11a",
+    "VegaMaster": "a152d902c353c347f5952d3b5c3df74b80564bf4",
     "VegaToken": "0e7e328f846b56fc6a1e2fa224f6ec858bf65321",
     "VestingBucket": "64047cc8299c080fcb89eebae4f57423f8ff5a02",
     "VestingConstants": "efcbe2661704ce24c62536bee58969901f7acdf1",
     "VestingMath": "494ac2d17348312269ed660aef73ecd4f09dc032"
   },
   "tests": {
-    "tests/test_approve.py": {
+    "tests/test_IDO.py": {
       "coverage": false,
       "isolated": [
+        "MaxSupplyToken",
+        "VegaIDO",
         "VegaToken"
       ],
-      "results": "............",
-      "sha1": "88155f3f05eafca43e2d3836cca41b02e479cef4",
-      "txhash": []
-    },
-    "tests/test_claim.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken",
-        "VestingBucket",
-        "VestingMath"
-      ],
       "results": ".",
-      "sha1": "af59924aafe68c8f2e05aa7b32edf7cbe3267d4a",
-      "txhash": []
-    },
-    "tests/test_master.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaMaster",
-        "VegaToken",
-        "VestingBucket",
-        "VestingMath"
-      ],
-      "results": "..",
-      "sha1": "770e28632bc2ffd889638140de1244c191ff3fe2",
-      "txhash": []
-    },
-    "tests/test_master_buckets.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaMaster",
-        "VegaToken",
-        "VestingBucket",
-        "VestingConstants",
-        "VestingMath"
-      ],
-      "results": ".",
-      "sha1": "cd61cc066557180c5fbbcfdf34e47624a189f21e",
-      "txhash": []
-    },
-    "tests/test_master_schedule.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaMaster",
-        "VegaToken",
-        "VestingBucket",
-        "VestingConstants",
-        "VestingMath"
-      ],
-      "results": ".",
-      "sha1": "7d69332852f2f444b8b59d2cd40ef89bfe49ec0e",
-      "txhash": []
-    },
-    "tests/test_transfer.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken"
-      ],
-      "results": ".........",
-      "sha1": "8cf1c7a0619556c4ede47647394aff90662a5e8c",
+      "sha1": "2be22631de00740c7f9d9fc473b892b6184bc1b5",
       "txhash": [
-        "9c81fd27b9bbffc0f047713603529905c8d165c1"
+        "e369e399d0cc1af456be5193c860ac924f2b5581",
+        "edece97cba2602d775a11e04488616a519903d8c"
       ]
-    },
-    "tests/test_transferFrom.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken"
-      ],
-      "results": ".................",
-      "sha1": "2633cc8fd17c7bc0a082c0507c121821d0699761",
-      "txhash": [
-        "142d4c7f4d51878b976f312b82f57dd9f8f4c471",
-        "7c20b99a4332ab016a9fb85947b3c33612444b0c",
-        "959e48af0546434f16fb8d212ae9bd8deaba9c7f",
-        "a8a975f58426d3d352e53942579fe3db55337309",
-        "d59779c45f9bb5b22664348e1e7a36f2f087c872"
-      ]
-    },
-    "tests/test_vega.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken"
-      ],
-      "results": ".",
-      "sha1": "dfa0feddcab13cac28f7e79812c01883dfffcfd8",
-      "txhash": []
-    },
-    "tests/test_vestingbucket.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken",
-        "VestingBucket",
-        "VestingMath"
-      ],
-      "results": "...........",
-      "sha1": "707b1cef61d63abd90a8baf3ea4703a57fe6cff6",
-      "txhash": [
-        "08fe598f0cf2d4a626873e980defea9e1d3e5594",
-        "11317ce1cc1b65d5a050b1aab47c1677902c84d1",
-        "abbe585adde615a1bfb1855e8555954565028b55",
-        "c0a35e426afeb88e104cf70a630dd6b6957331ad",
-        "f32337f75cc626f457b1307343516b9499cc843b",
-        "fa99e38ce7334b0ed1a2b699891c5d825183f0a1"
-      ]
-    },
-    "tests/test_vestingmath.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken",
-        "VestingMath"
-      ],
-      "results": "..",
-      "sha1": "405543b400c69f1362d747105f8dd0f0ca4bce8b",
-      "txhash": []
-    },
-    "tests/test_vestingtime.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken",
-        "VestingBucket",
-        "VestingMath"
-      ],
-      "results": ".......",
-      "sha1": "2c27302ca2f6a032fe12cd152b142d8276f27a00",
-      "txhash": []
     }
   },
   "tx": {
-    "08fe598f0cf2d4a626873e980defea9e1d3e5594": {
-      "VestingBucket": {
-        "7": [
+    "e369e399d0cc1af456be5193c860ac924f2b5581": {
+      "MaxSupplyToken": {
+        "2": [
           [
-            13
+            2
           ],
           [],
           []
         ]
-      }
-    },
-    "11317ce1cc1b65d5a050b1aab47c1677902c84d1": {
-      "VestingBucket": {
-        "7": [
-          [
-            0
-          ],
-          [
-            19,
-            20,
-            21
-          ],
-          []
-        ]
-      }
-    },
-    "142d4c7f4d51878b976f312b82f57dd9f8f4c471": {
-      "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "7c20b99a4332ab016a9fb85947b3c33612444b0c": {
-      "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "959e48af0546434f16fb8d212ae9bd8deaba9c7f": {
-      "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "9c81fd27b9bbffc0f047713603529905c8d165c1": {
-      "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "a8a975f58426d3d352e53942579fe3db55337309": {
-      "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "abbe585adde615a1bfb1855e8555954565028b55": {
-      "VestingBucket": {
-        "7": [
-          [
-            15
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "c0a35e426afeb88e104cf70a630dd6b6957331ad": {
-      "VestingBucket": {
-        "7": [
+      },
+      "VegaIDO": {
+        "5": [
           [
             0,
+            1,
+            2
+          ],
+          [
+            16
+          ],
+          [
+            14,
+            15
+          ]
+        ]
+      }
+    },
+    "edece97cba2602d775a11e04488616a519903d8c": {
+      "MaxSupplyToken": {
+        "2": [
+          [
+            1,
+            2
+          ],
+          [],
+          []
+        ]
+      },
+      "VegaIDO": {
+        "5": [
+          [
+            0,
+            1,
             2,
             3,
-            12
+            4,
+            5
           ],
           [
             19
           ],
           [
-            20,
-            21,
-            22,
-            23
+            14,
+            15,
+            16,
+            17,
+            18
           ]
         ]
       },
-      "VestingMath": {
-        "9": [
-          [
-            2,
-            6
-          ],
-          [
-            11
-          ],
-          [
-            10
-          ]
-        ]
-      }
-    },
-    "d59779c45f9bb5b22664348e1e7a36f2f087c872": {
       "VegaToken": {
-        "6": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "f32337f75cc626f457b1307343516b9499cc843b": {
-      "VestingBucket": {
         "7": [
           [],
-          [],
-          []
-        ]
-      }
-    },
-    "fa99e38ce7334b0ed1a2b699891c5d825183f0a1": {
-      "VestingBucket": {
-        "7": [
-          [
-            13
-          ],
           [],
           []
         ]
