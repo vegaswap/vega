@@ -57,12 +57,25 @@ contract VegaIDO is Ownable {
         );
 
         for (uint256 i = 0; i < addresses.length; i++) {
-            whitelistAmounts[addresses[i]] = maxInvestAmounts[i];
+            address w = addresses[i];
+            whitelistAddresses.push(w);
+            whitelistAmounts[w] = maxInvestAmounts[i];
         }
+    }
+
+    function inWhitelist(address f) private view returns (bool) {
+        for (uint256 i = 0; i < whitelistAddresses.length; i++) {
+            address w = whitelistAddresses[i];
+            if (w == f) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // participate in the funding event
     function invest(uint256 investAmount) external {
+        require(inWhitelist(msg.sender), "VegaIDO: not whitelisted");
         require(
             invested + investAmount <= cap,
             "VegaIDO: Cap for current round reached"
@@ -107,7 +120,14 @@ contract VegaIDO is Ownable {
         //emit Invested(msg.sender, investAmount);
     }
 
+    // withdraw any left over tokens
     function withDrawTokens(uint256 amount) public onlyOwner {
         vegaToken.transfer(owner(), amount);
+    }
+
+    // withdraw the funding amount
+    function withDrawFunding() public onlyOwner {
+        uint256 balance = investToken.balanceOf(msg.sender);
+        investToken.transfer(owner(), balance);
     }
 }

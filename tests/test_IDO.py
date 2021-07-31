@@ -10,7 +10,7 @@ from brownie import (
 )
 
 
-def test_basic(accounts, token):
+def test_ido(accounts, token):
     #token.approve(accounts[1], 10**19, {'from': accounts[0]})
     #assert token.allowance(accounts[0], accounts[1]) == 10**19
     vegatoken = token
@@ -30,21 +30,36 @@ def test_basic(accounts, token):
     assert ido.cap() == cap
     assert ido.askPriceMultiple() == price
 
-    with brownie.reverts("VegaIDO: Please approve amount to invest"):
-        ido.invest(100)
+    with brownie.reverts("VegaIDO: not whitelisted"):
+        ido.invest(100,{'from': a2})    
+    
+    ido.addWhiteList([a2],[8300], {'from': a})
 
-    investToken.approve(ido.address, 100, {'from': a})
+    with brownie.reverts("VegaIDO: Please approve amount to invest"):
+        ido.invest(100,{'from': a2})
+
+    investToken.approve(ido.address, 100, {'from': a2})
+
+    investToken.transfer(a2, 100, {'from': a})
 
     with brownie.reverts("VegaIDO: out of stock"):
-        ido.invest(100)
+        ido.invest(100, {'from': a2})
 
     vegatoken.transfer(ido, 8300 ,{'from': a})
     assert vegatoken.balanceOf(ido) == 8300
 
     investToken.approve(ido.address, 100, {'from': a2})
 
-    investToken.transfer(a2, 100, {'from': a})
+    #investToken.transfer(a2, 100, {'from': a})    
 
     ido.invest(100,{'from': a2})    
+
     assert vegatoken.balanceOf(a2) == 8300
+
+    #TODO
+    #withDrawTokens
+    #withDrawFunding
+
+    #TODO test whitelist
+
 
