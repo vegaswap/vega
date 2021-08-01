@@ -24,13 +24,14 @@ def test_vegamaster_basic(accounts, master, vconstants):
         vconstants.seedAmount() * (10 ** dec),
         {"from": a},
     )
+    b = VestingBucket.at(master.buckets(0))
+    x = token.balanceOf(b)
+    assert x == b.totalAmount()
 
 
 def test_vegamaster_tokens(accounts, master_allocated):
     a = accounts[0]
 
-    # assert master.vega_token == None
-    # assert master.vega_token == None
     token = VegaToken.at(master_allocated.vega_token())
     assert token != None
     dec = token.decimals()
@@ -44,6 +45,7 @@ def test_vegamaster_tokens(accounts, master_allocated):
     for i in range(n):
         b = VestingBucket.at(master_allocated.buckets(i))
         x = token.balanceOf(b)
+        assert x == b.totalAmount()
         total += x
     
     assert total == 10 ** 9 * 10 ** 18
