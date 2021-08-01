@@ -5,7 +5,7 @@ import "./IERC20.sol";
 import "./Ownable.sol";
 
 // Initial Dex Offering (IDO) contract for launching ventures
-// TODO only allow full USDT amounts
+// assumes that decimals are 18 for vega and investToken
 contract VegaIDO is Ownable {
     address public vegaTokenAddress;
     address public investTokenAddress;
@@ -23,7 +23,6 @@ contract VegaIDO is Ownable {
     address[] whitelistAddresses;
     mapping(address => uint256) whitelistAmounts;
 
-    uint256 private investTokenDecimals;
     // investors and how much they invest
     mapping(address => uint256) investors;
 
@@ -32,13 +31,11 @@ contract VegaIDO is Ownable {
     constructor(
         address _launchTokenAddress,
         address _investTokenAddress,
-        uint256 _investTokenDecimals,
         uint256 _askPriceMultiple,
         uint256 _cap
     ) {
         vegaTokenAddress = _launchTokenAddress;
         investTokenAddress = _investTokenAddress;
-        investTokenDecimals = _investTokenDecimals;
 
         investToken = IERC20(investTokenAddress);
         vegaToken = IERC20(vegaTokenAddress);
@@ -63,7 +60,7 @@ contract VegaIDO is Ownable {
         }
     }
 
-    function inWhitelist(address f) private view returns (bool) {
+    function inWhitelist(address f) public view returns (bool) {
         for (uint256 i = 0; i < whitelistAddresses.length; i++) {
             address w = whitelistAddresses[i];
             if (w == f) {
@@ -71,6 +68,10 @@ contract VegaIDO is Ownable {
             }
         }
         return false;
+    }
+
+    function wlAmount(address a) public view returns (uint256) {
+        return whitelistAmounts[a];
     }
 
     // participate in the funding event
@@ -102,7 +103,6 @@ contract VegaIDO is Ownable {
             "VegaIDO: out of stock"
         );
 
-        //safetransfer?
         // Transfer tokens from sender to this contract
         bool ts = investToken.transferFrom(
             msg.sender,
@@ -118,6 +118,11 @@ contract VegaIDO is Ownable {
         invested += investAmount;
 
         //emit Invested(msg.sender, investAmount);
+    }
+
+    function depositTokens(uint256 amount) public onlyOwner {
+        require(vegaToken.allowance(owner(), address(this)) >= amount);
+        vegaToken.transferFrom(owner(), address(this), amount);
     }
 
     // withdraw any left over tokens

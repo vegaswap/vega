@@ -267,15 +267,15 @@
         436
       ],
       "VegaToken": [
-        999
+        1088
       ]
     },
-    "id": 1000,
+    "id": 1089,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 974,
+        "id": 1063,
         "literals": [
           "solidity",
           "^",
@@ -288,10 +288,10 @@
       {
         "absolutePath": "contracts/IERC20.sol",
         "file": "./IERC20.sol",
-        "id": 975,
+        "id": 1064,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1000,
+        "scope": 1089,
         "sourceUnit": 113,
         "src": "57:22:7",
         "symbolAliases": [],
@@ -300,10 +300,10 @@
       {
         "absolutePath": "contracts/MaxSupplyToken.sol",
         "file": "./MaxSupplyToken.sol",
-        "id": 976,
+        "id": 1065,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1000,
+        "scope": 1089,
         "sourceUnit": 437,
         "src": "80:30:7",
         "symbolAliases": [],
@@ -314,13 +314,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 977,
+              "id": 1066,
               "name": "MaxSupplyToken",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 436,
               "src": "148:14:7"
             },
-            "id": 978,
+            "id": 1067,
             "nodeType": "InheritanceSpecifier",
             "src": "148:14:7"
           }
@@ -328,9 +328,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 999,
+        "id": 1088,
         "linearizedBaseContracts": [
-          999,
+          1088,
           436,
           112
         ],
@@ -341,12 +341,12 @@
           {
             "constant": true,
             "functionSelector": "32cb6b0c",
-            "id": 988,
+            "id": 1077,
             "mutability": "constant",
             "name": "MAX_SUPPLY",
             "nameLocation": "193:10:7",
             "nodeType": "VariableDeclaration",
-            "scope": 999,
+            "scope": 1088,
             "src": "169:59:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -355,7 +355,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 979,
+              "id": 1068,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "169:7:7",
@@ -369,7 +369,7 @@
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 987,
+              "id": 1076,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -379,14 +379,14 @@
                   "typeIdentifier": "t_rational_1000000000_by_1",
                   "typeString": "int_const 1000000000"
                 },
-                "id": 982,
+                "id": 1071,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "lValueRequested": false,
                 "leftExpression": {
                   "hexValue": "3130",
-                  "id": 980,
+                  "id": 1069,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -404,7 +404,7 @@
                 "operator": "**",
                 "rightExpression": {
                   "hexValue": "39",
-                  "id": 981,
+                  "id": 1070,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -433,14 +433,14 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 985,
+                    "id": 1074,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
                     "leftExpression": {
                       "hexValue": "3130",
-                      "id": 983,
+                      "id": 1072,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -457,7 +457,7 @@
                     "nodeType": "BinaryOperation",
                     "operator": "**",
                     "rightExpression": {
-                      "id": 984,
+                      "id": 1073,
                       "name": "DECIMALS",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
@@ -475,7 +475,7 @@
                     }
                   }
                 ],
-                "id": 986,
+                "id": 1075,
                 "isConstant": false,
                 "isInlineArray": false,
                 "isLValue": false,
@@ -498,29 +498,29 @@
           },
           {
             "body": {
-              "id": 997,
+              "id": 1086,
               "nodeType": "Block",
               "src": "338:2:7",
               "statements": []
             },
             "documentation": {
-              "id": 989,
+              "id": 1078,
               "nodeType": "StructuredDocumentation",
               "src": "235:36:7",
               "text": "construct token and genesis mint"
             },
-            "id": 998,
+            "id": 1087,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 992,
+                    "id": 1081,
                     "name": "MAX_SUPPLY",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 988,
+                    "referencedDeclaration": 1077,
                     "src": "305:10:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -529,7 +529,7 @@
                   },
                   {
                     "hexValue": "56656761546f6b656e",
-                    "id": 993,
+                    "id": 1082,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -545,7 +545,7 @@
                   },
                   {
                     "hexValue": "56454741",
-                    "id": 994,
+                    "id": 1083,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -560,10 +560,10 @@
                     "value": "VEGA"
                   }
                 ],
-                "id": 995,
+                "id": 1084,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 991,
+                  "id": 1080,
                   "name": "MaxSupplyToken",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 436,
@@ -577,25 +577,25 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 990,
+              "id": 1079,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "287:2:7"
             },
             "returnParameters": {
-              "id": 996,
+              "id": 1085,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "338:0:7"
             },
-            "scope": 999,
+            "scope": 1088,
             "src": "276:64:7",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 1000,
+        "scope": 1089,
         "src": "126:216:7",
         "usedErrors": []
       }

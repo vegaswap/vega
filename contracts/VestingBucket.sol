@@ -2,7 +2,6 @@
 pragma solidity ^0.8.5;
 
 import "./AbstractBucket.sol";
-import "./Ownable.sol";
 import "./VegaToken.sol";
 import "./VestingMath.sol";
 

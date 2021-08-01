@@ -60,6 +60,5 @@ def test_ido(accounts, token):
     #withDrawTokens
     #withDrawFunding
 
-    #TODO test whitelist
 
 
