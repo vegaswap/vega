@@ -26,16 +26,15 @@ def token(VegaToken, accounts):
 
 
 @pytest.fixture(scope="module")
-def master(VegaMaster, accounts):
-    master_contract = VegaMaster.deploy({"from": accounts[0]})
-    # print(master_contract.revert_msg)
-    return master_contract
-
-
-@pytest.fixture(scope="module")
 def vestingmath(VestingMath, accounts):
     vmath = VestingMath.deploy({"from": accounts[0]})
     return vmath
+
+@pytest.fixture(scope="module")
+def master(VegaMaster, vestingmath, accounts):
+    master_contract = VegaMaster.deploy({"from": accounts[0]})
+    # print(master_contract.revert_msg)
+    return master_contract
 
 
 @pytest.fixture(scope="module")
@@ -68,6 +67,7 @@ def allocate(master, token, vconstants, mainAccount):
     now = chain.time()
 
     DECIMALS = token.decimals()
+    
     master.addVestingBucket(
         now + vconstants.seedCliff(),
         "SeedFunding",
@@ -148,11 +148,13 @@ def allocate(master, token, vconstants, mainAccount):
         {"from": mainAccount},
     )
 
+    amount = vconstants.treasuryAmount()
+    #amount = restBalance
     master.addVestingBucket(
         now + vconstants.treasuryCliff(),
         "Treasury",
         vconstants.treasuryPeriods(),
-        vconstants.treasuryAmount() * (10 ** DECIMALS),
+        amount * (10 ** DECIMALS),
         {"from": mainAccount},
     )
 

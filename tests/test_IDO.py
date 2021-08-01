@@ -24,7 +24,7 @@ def test_ido(accounts, token):
 
     price = 83
     cap = 100000
-    ido = VegaIDO.deploy(vegatoken.address,investToken.address, 18, price, cap, {'from': a})
+    ido = VegaIDO.deploy(vegatoken.address,investToken.address, price, cap, {'from': a})
     assert ido
 
     assert ido.cap() == cap

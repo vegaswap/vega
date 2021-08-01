@@ -1,9 +1,29 @@
 #!/usr/bin/python3
 import brownie
 
-from brownie import VegaToken, VestingBucket, accounts
+from brownie import VegaToken, VestingBucket, accounts, chain
 
 # from ../
+
+def test_vegamaster_basic(accounts, master, vconstants):
+    a = accounts[0]
+
+    # assert master.vega_token == None
+    # assert master.vega_token == None
+    token = VegaToken.at(master.vega_token())
+    assert token != None
+    dec = token.decimals()
+    assert dec == 18
+
+    now = chain.time()
+
+    master.addVestingBucket(
+        now + vconstants.seedCliff(),
+        "SeedFunding",
+        vconstants.seedPeriods(),
+        vconstants.seedAmount() * (10 ** dec),
+        {"from": a},
+    )
 
 
 def test_vegamaster_tokens(accounts, master_allocated):
@@ -25,7 +45,10 @@ def test_vegamaster_tokens(accounts, master_allocated):
         b = VestingBucket.at(master_allocated.buckets(i))
         x = token.balanceOf(b)
         total += x
+    
     assert total == 10 ** 9 * 10 ** 18
+
+
 
     # assert master.circSupply() == 0
 

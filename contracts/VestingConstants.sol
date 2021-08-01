@@ -30,7 +30,7 @@ library VestingConstants {
     uint256 public constant advisoryAmount = 50 * M;
     //treasury is the rest
     //TODO
-    //uint256 public constant treasuryAmount = 5833333;
+    uint256 public constant treasuryAmount = 5 * M + 700 * K;
 
     //cliffs
     uint256 public constant seedCliff = 0 days; //33%
