@@ -5,6 +5,7 @@ pragma solidity ^0.8.5;
 // vesting happens linearly after cliff
 // note: due to rounding the last period might vest only small amount of tokens
 library VestingMath {
+    // a period is 30 days. no calendar math, so vesting can fall on random days in the month
     uint256 public constant DEFAULT_PERIOD = 30 days;
 
     // divide a with m and choose higher value if its round

@@ -118,7 +118,7 @@ contract MaxSupplyToken is IERC20 {
         address recipient,
         uint256 amount
     ) public virtual override returns (bool) {
-        //OZ does transfer even though check for allownace comes later
+        //OZ does transfer here even though check for allowance comes later
         _transfer(sender, recipient, amount);
 
         uint256 currentAllowance = allowances[sender][msg.sender];
@@ -127,7 +127,7 @@ contract MaxSupplyToken is IERC20 {
             "ERC20: transfer amount exceeds allowance"
         );
         //set allowance to new amount
-        //OZ unchecked
+        //Openzeppelin has unchecked here
         _approve(sender, msg.sender, currentAllowance - amount);
 
         return true;
@@ -160,7 +160,7 @@ contract MaxSupplyToken is IERC20 {
             "ERC20: transfer amount exceeds balance"
         );
 
-        //OZ unchecked
+        //Openzeppelin has unchecked here
         balances[sender] -= amount;
         balances[recipient] += amount;
 

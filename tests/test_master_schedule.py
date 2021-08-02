@@ -65,7 +65,6 @@ def test_vegamaster_tokens(accounts, master_allocated):
         assert x == b.totalAmount()
         total += x
     
-    #TODO!
     assert total == 10 ** 9 * 10 ** 18
 
 

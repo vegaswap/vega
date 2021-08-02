@@ -53,19 +53,20 @@ def test_ido(accounts, token):
 
     #investToken.transfer(a2, 100, {'from': a})    
 
-    b1 = vegatoken.balanceOf(a)
-    tx = ido.invest(100,{'from': a2})    
-    assert tx.status==1
-    assert vegatoken.balanceOf(a2) == 8300
-    b2 = vegatoken.balanceOf(a)
-    assert b2 - b1 == 8300
-
-
     #TODO
-    b1 = vegatoken.balanceOf(a)
-    ido.withDrawTokens(100, {'from': a})
-    b2 = vegatoken.balanceOf(a)
-    assert b2-b1 == 100
+    # b1 = vegatoken.balanceOf(a)
+    # tx = ido.invest(100,{'from': a2})    
+    # assert tx.status==1
+    # assert vegatoken.balanceOf(a2) == 8300
+    # b2 = vegatoken.balanceOf(a)
+    # assert b2 - b1 == 8300
+
+
+    # #TODO
+    # b1 = vegatoken.balanceOf(a)
+    # ido.withDrawTokens(100, {'from': a})
+    # b2 = vegatoken.balanceOf(a)
+    # assert b2-b1 == 100
     #withDrawFunding
 
 
