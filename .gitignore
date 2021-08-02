@@ -1,3 +1,4 @@
+build/
 .DS_STORE
 vega/tests/__pycache__
 vega/build

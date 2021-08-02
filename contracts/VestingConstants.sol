@@ -16,11 +16,10 @@ library VestingConstants {
 
     //1000M supply allocate to 11 buckets
     //total amounts, no decimals
-    //TODO await final, 50k pending
     uint256 public constant seedAmount = 12 * M + 500 * K;
     uint256 public constant privateAmount = 65 * M;
     uint256 public constant publicAmount = 16 * M + 800 * K;
-    //uint256 public constant publicAmountB = 4 * M + 200 * K;
+    uint256 public constant publicAmountB = 4 * M + 200 * K;
     uint256 public constant liqAmount = 150 * M;
     uint256 public constant lprewardsAmount = 200 * M;
     uint256 public constant lpgrantsAmount = 50 * M;
@@ -29,8 +28,7 @@ library VestingConstants {
     uint256 public constant teamAmount = 150 * M;
     uint256 public constant advisoryAmount = 50 * M;
     //treasury is the rest
-    //TODO
-    uint256 public constant treasuryAmount = 5 * M + 700 * K;
+    uint256 public constant treasuryAmount = 1 * M + 500 * K;
 
     //cliffs
     uint256 public constant seedCliff = 0 days; //33%

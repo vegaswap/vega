@@ -41,6 +41,7 @@ def test_ido(accounts, token):
     investToken.approve(ido.address, 100, {'from': a2})
 
     investToken.transfer(a2, 100, {'from': a})
+    assert investToken.balanceOf(a2) == 100
 
     with brownie.reverts("VegaIDO: out of stock"):
         ido.invest(100, {'from': a2})
@@ -52,12 +53,19 @@ def test_ido(accounts, token):
 
     #investToken.transfer(a2, 100, {'from': a})    
 
-    ido.invest(100,{'from': a2})    
-
+    b1 = vegatoken.balanceOf(a)
+    tx = ido.invest(100,{'from': a2})    
+    assert tx.status==1
     assert vegatoken.balanceOf(a2) == 8300
+    b2 = vegatoken.balanceOf(a)
+    assert b2 - b1 == 8300
+
 
     #TODO
-    #withDrawTokens
+    b1 = vegatoken.balanceOf(a)
+    ido.withDrawTokens(100, {'from': a})
+    b2 = vegatoken.balanceOf(a)
+    assert b2-b1 == 100
     #withDrawFunding
 
 

@@ -26,7 +26,7 @@ contract VegaIDO is Ownable {
     // investors and how much they invest
     mapping(address => uint256) investors;
 
-    //event Invested(address, uint) invest;
+    event Invested(address, uint256);
 
     constructor(
         address _launchTokenAddress,
@@ -43,7 +43,6 @@ contract VegaIDO is Ownable {
         cap = _cap;
     }
 
-    //TODO review
     function addWhiteList(
         address[] memory addresses,
         uint256[] memory maxInvestAmounts
@@ -117,22 +116,26 @@ contract VegaIDO is Ownable {
         investors[msg.sender] += investAmount;
         invested += investAmount;
 
-        //emit Invested(msg.sender, investAmount);
+        emit Invested(msg.sender, investAmount);
     }
 
     function depositTokens(uint256 amount) public onlyOwner {
-        require(vegaToken.allowance(owner(), address(this)) >= amount);
+        require(
+            vegaToken.allowance(owner(), address(this)) >= amount,
+            "VegaIDO: deposit failed"
+        );
         vegaToken.transferFrom(owner(), address(this), amount);
     }
 
     // withdraw any left over tokens
     function withDrawTokens(uint256 amount) public onlyOwner {
-        vegaToken.transfer(owner(), amount);
+        bool b = vegaToken.transfer(owner(), amount);
+        require(b, "VegaIDO: withdraw failed");
     }
 
     // withdraw the funding amount
     function withDrawFunding() public onlyOwner {
-        uint256 balance = investToken.balanceOf(msg.sender);
+        uint256 balance = investToken.balanceOf(address(this));
         investToken.transfer(owner(), balance);
     }
 }
