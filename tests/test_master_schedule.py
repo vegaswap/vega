@@ -18,8 +18,9 @@ def test_vegamaster_amounts(accounts, master, vconstants):
         vconstants.ecoAmount(),
         vconstants.trademiningAmount(),
         vconstants.teamAmount(),
-        vconstants.advisoryAmount()]
-    assert sum (amounts) == 0 #10**9
+        vconstants.advisoryAmount(),
+        vconstants.treasuryAmount()]
+    assert sum (amounts) == 10**9
 
 def test_vegamaster_basic(accounts, master, vconstants):
     a = accounts[0]
@@ -57,7 +58,7 @@ def test_vegamaster_tokens(accounts, master_allocated):
 
     total = 0
     n = master_allocated.bucket_num()
-    assert n == 11
+    assert n == 12
     for i in range(n):
         b = VestingBucket.at(master_allocated.buckets(i))
         x = token.balanceOf(b)
@@ -65,7 +66,7 @@ def test_vegamaster_tokens(accounts, master_allocated):
         total += x
     
     #TODO!
-    #assert total == 10 ** 9 * 10 ** 18
+    assert total == 10 ** 9 * 10 ** 18
 
 
 

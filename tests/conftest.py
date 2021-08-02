@@ -50,6 +50,7 @@ def allocate(master, token, vconstants, mainAccount):
         vconstants.seedAmount(),
         vconstants.privateAmount(),
         vconstants.publicAmount(),
+        vconstants.publicAmountB(),
         vconstants.liqAmount(),
         vconstants.lprewardsAmount(),
         vconstants.lpgrantsAmount(),
@@ -89,6 +90,14 @@ def allocate(master, token, vconstants, mainAccount):
         "PublicFunding",
         vconstants.publicPeriods(),
         vconstants.publicAmount() * (10 ** DECIMALS),
+        {"from": mainAccount},
+    )
+
+    master.addVestingBucket(
+        now + vconstants.publicCliff(),
+        "PublicFunding",
+        vconstants.publicPeriods(),
+        vconstants.publicAmountB() * (10 ** DECIMALS),
         {"from": mainAccount},
     )
 
