@@ -30,7 +30,7 @@ def process(path, source):
         pure
         returns (string memory)
     {
-        return Util.errorMessage(contractName, reason);
+        return Util.errorMessage("%s", reason);
     }
 
     function errorMessage(string memory reason, string memory data)
@@ -38,11 +38,11 @@ def process(path, source):
         pure
         returns (string memory)
     {
-        return Util.errorMessage(contractName, reason, data);
-    }'''
+        return Util.errorMessage("%s", reason, data);
+    }'''%(contractName, contractName)
 
     source = t.render(
-        header='string public constant contractName = "%s";' % contractName,
+        # header='string public constant contractName = "%s";' % contractName,
         debugfunctions=debugfunctions
     )
 

@@ -5,12 +5,12 @@ import "./VegaToken.sol";
 import "./Ownable.sol";
 import "./VestingBucket.sol";
 import "./VestingConstants.sol";
+import "./Util.sol";
 
 // VegaMaster is the main token handler
 // master distributes tokens to buckets
 // bucket allocation is defined in VestingConstants
 contract VegaMaster is Ownable {
-    {{ header }}
     VegaToken public vega_token;
     address public vega_token_address;
 
@@ -47,7 +47,7 @@ contract VegaMaster is Ownable {
         vbucket.setRefOwner(owner());
 
         vbucket.setName(name);
-        require(bucket_num < maxbuckets, "VegaMaster: bucket number too large");
+        require(bucket_num < maxbuckets, errorMessage("bucket number too large"));
         buckets[bucket_num] = address(vbucket);
         bucket_num += 1;
         transferToVested(address(vbucket), amount);
@@ -56,7 +56,7 @@ contract VegaMaster is Ownable {
     // transfer amount to vesting bucket from master
     function transferToVested(address recipient, uint256 amount) private {
         bool success = vega_token.transfer(address(recipient), amount);
-        require(success, "VegaMaster: transfer failed");
+        require(success, errorMessage("transfer failed"));
     }
 
     function maxSupply() public view returns (uint256) {

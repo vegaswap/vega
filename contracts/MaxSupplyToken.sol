@@ -2,6 +2,7 @@
 pragma solidity ^0.8.5;
 
 import "./IERC20.sol";
+import "./Util.sol";
 
 // Max Supply token
 
@@ -10,7 +11,6 @@ import "./IERC20.sol";
 // erc20 standard has no conventions for circulating supply
 // adapted from OZ
 contract MaxSupplyToken is IERC20 {
-    {{ header }}
     //original deployer, no special rights
     address private deployer;
 
@@ -127,7 +127,7 @@ contract MaxSupplyToken is IERC20 {
         uint256 currentAllowance = allowances[sender][msg.sender];
         require(
             currentAllowance >= amount,
-            "ERC20: transfer amount exceeds allowance"
+            errorMessage("transfer amount exceeds allowance")
         );
         //set allowance to new amount
         //Openzeppelin has unchecked here
@@ -155,12 +155,12 @@ contract MaxSupplyToken is IERC20 {
         address recipient,
         uint256 amount
     ) internal virtual {
-        require(sender != address(0), "ERC20: transfer from the zero address");
-        require(recipient != address(0), "ERC20: transfer to the zero address");
+        require(sender != address(0), errorMessage("transfer from the zero address"));
+        require(recipient != address(0), errorMessage("transfer to the zero address"));
 
         require(
             balances[sender] >= amount,
-            "ERC20: transfer amount exceeds balance"
+            errorMessage("transfer amount exceeds balance")
         );
 
         //Openzeppelin has unchecked here
@@ -187,8 +187,8 @@ contract MaxSupplyToken is IERC20 {
         address spender,
         uint256 amount
     ) internal virtual {
-        require(orig != address(0), "ERC20: approve from the zero address");
-        require(spender != address(0), "ERC20: approve to the zero address");
+        require(orig != address(0), errorMessage("approve from the zero address"));
+        require(spender != address(0), errorMessage("approve to the zero address"));
 
         allowances[orig][spender] = amount;
         emit Approval(orig, spender, amount);

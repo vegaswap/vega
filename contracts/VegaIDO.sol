@@ -3,13 +3,13 @@ pragma solidity ^0.8.5;
 
 import "./IERC20.sol";
 import "./Ownable.sol";
+import "./Util.sol";
 
 // import "./NRT.sol";
 
 // Initial Dex Offering (IDO) contract for launching ventures
 // assumes that decimals are 18 for vega and investToken
 contract VegaIDO is Ownable {
-    {{ header }}
     address public vegaTokenAddress;
     address public investTokenAddress;
 
@@ -57,7 +57,7 @@ contract VegaIDO is Ownable {
     ) external onlyOwner {
         require(
             addresses.length == maxInvestAmounts.length,
-            "Addresses and amounts array lengths must match"
+            errorMessage("Addresses and amounts array lengths must match")
         );
 
         for (uint256 i = 0; i < addresses.length; i++) {
@@ -83,23 +83,23 @@ contract VegaIDO is Ownable {
 
     // participate in the funding event
     function invest(uint256 investAmount) external {
-        require(inWhitelist(msg.sender), "VegaIDO: not whitelisted");
+        require(inWhitelist(msg.sender), errorMessage("not whitelisted"));
         require(
             invested + investAmount <= cap,
-            "VegaIDO: Cap for current round reached"
+            errorMessage("Cap for current round reached")
         );
         //TODO
         require(
             investAmount != whitelistAmounts[msg.sender],
-            "VegaIDO: Invest amount is not equal to the whitelist amount"
+            errorMessage("Invest amount is not equal to the whitelist amount")
         );
         require(
             investToken.allowance(msg.sender, address(this)) >= investAmount,
-            "VegaIDO: Please approve amount to invest"
+            errorMessage("Please approve amount to invest")
         );
         require(
             investToken.balanceOf(msg.sender) >= investAmount,
-            "VegaIDO: Insufficient balance to invest"
+            errorMessage("Insufficient balance to invest")
         );
         require(investors[msg.sender] == 0, "VegaIDO: Already invested");
 
@@ -107,7 +107,7 @@ contract VegaIDO is Ownable {
         uint256 buyTokenAmount = investAmount * askPriceMultiple;
         require(
             vegaToken.balanceOf(address(this)) >= buyTokenAmount,
-            "VegaIDO: out of stock"
+            errorMessage("out of stock")
         );
 
         // Transfer tokens from sender to this contract
@@ -116,10 +116,10 @@ contract VegaIDO is Ownable {
             address(this),
             investAmount
         );
-        require(ts, "VegaIDO: transfer invest tokens failed");
+        require(ts, errorMessage("transfer invest tokens failed"));
 
         bool vts = vegaToken.transfer(msg.sender, buyTokenAmount);
-        require(vts, "VegaIDO: transfer vega tokens failed");
+        require(vts, errorMessage("transfer vega tokens failed"));
 
         investors[msg.sender] += investAmount;
         invested += investAmount;
@@ -130,7 +130,7 @@ contract VegaIDO is Ownable {
     function depositTokens(uint256 amount) public onlyOwner {
         require(
             vegaToken.allowance(owner(), address(this)) >= amount,
-            "VegaIDO: deposit failed"
+            errorMessage("deposit failed")
         );
         vegaToken.transferFrom(owner(), address(this), amount);
     }
@@ -138,7 +138,7 @@ contract VegaIDO is Ownable {
     // withdraw any left over tokens
     function withDrawTokens(uint256 amount) public onlyOwner {
         bool b = vegaToken.transfer(owner(), amount);
-        require(b, "VegaIDO: withdraw failed");
+        require(b, errorMessage("withdraw failed"));
     }
 
     // withdraw the funding amount

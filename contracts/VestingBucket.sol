@@ -4,6 +4,7 @@ pragma solidity ^0.8.5;
 import "./AbstractBucket.sol";
 import "./VegaToken.sol";
 import "./VestingMath.sol";
+import "./Util.sol";
 
 // bucket with vesting of multiple addresses
 // claims and
@@ -11,7 +12,6 @@ import "./VestingMath.sol";
 // vesting in equal parts per time
 // e.g. 6 months, 1/6 equal
 contract VestingBucket is AbstractBucket {
-    {{ header }}
     //a claim towards this bucket by an addreess
     struct Claim {
         address claimAddress;
@@ -50,7 +50,7 @@ contract VestingBucket is AbstractBucket {
     ) AbstractBucket(_VEGA_TOKEN_ADDRESS) {
         require(
             _cliffTime >= block.timestamp,
-            "VESTINGBUCKET cliff must be in the future"
+            errorMessage("cliff must be in the future")
         );
         cliffTime = _cliffTime;
         numPeriods = _numPeriods;
@@ -75,13 +75,13 @@ contract VestingBucket is AbstractBucket {
         onlyRefOwner
     {
         if (claims[_claimAddress].isAdded)
-            revert("VESTINGBUCKET: claim at this address already exists");
+            revert(errorMessage("claim at this address already exists"));
 
-        require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
+        require(_claimTotalAmount > 0, errorMessage("claim can not be zero"));
 
         require(
             totalClaimAmount + _claimTotalAmount <= totalAmount,
-            "VESTINGBUCKET: can not claim more than total"
+            errorMessage("can not claim more than total")
         );
 
         //TODO! add prechecks
@@ -129,11 +129,11 @@ contract VestingBucket is AbstractBucket {
             msg.sender == _claimAddress ||
                 msg.sender == owner() ||
                 msg.sender == refOwner(),
-            "VESTINGBUCKET: can only call from claimaddress or owner"
+            errorMessage("can only call from claimaddress or owner")
         );
 
         if (!claims[_claimAddress].isAdded)
-            revert("VESTINGBUCKET: claim does not exist");
+            revert(errorMessage("claim does not exist"));
 
         Claim storage claim = claims[_claimAddress];
 
@@ -143,10 +143,10 @@ contract VestingBucket is AbstractBucket {
         uint256 totalAfterwithdraw = claim.withdrawnAmount + withdrawAmount;
         require(
             totalAfterwithdraw <= claim.claimTotalAmount,
-            "VESTINGBUCKET: can not withdraw more than total"
+            errorMessage("can not withdraw more than total")
         );
 
-        require(withdrawAmount > 0, "VESTINGBUCKET: no amount claimed");
+        require(withdrawAmount > 0, errorMessage("no amount claimed"));
 
         //edge case is handled in vesting math
         //  if (vestingSchedule.totalWithdrawnAmount + withdrawableAmount > vestingSchedule.totalAmount) {
@@ -155,7 +155,7 @@ contract VestingBucket is AbstractBucket {
 
         require(
             vega_token.transfer(_claimAddress, withdrawAmount),
-            "VESTINGBUCKET: transfer failed"
+            errorMessage("transfer failed")
         );
         emit WithdrawClaim(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
@@ -178,7 +178,7 @@ contract VestingBucket is AbstractBucket {
     function withdrawOwner(uint256 amount) public onlyRefOwner {
         //todo: could add check against existing claims
         bool transferSuccess = vega_token.transfer(msg.sender, amount);
-        require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
+        require(transferSuccess, errorMessage("withdrawOwner failed"));
         emit WithdrawOwner(amount);
     }
 
