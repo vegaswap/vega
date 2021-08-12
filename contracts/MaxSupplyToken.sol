@@ -10,6 +10,7 @@ import "./IERC20.sol";
 // erc20 standard has no conventions for circulating supply
 // adapted from OZ
 contract MaxSupplyToken is IERC20 {
+    {{ header }}
     //original deployer, no special rights
     address private deployer;
 
@@ -38,6 +39,8 @@ contract MaxSupplyToken is IERC20 {
         balances[deployer] = _MAX_SUPPLY;
         emit Transfer(address(0), deployer, _MAX_SUPPLY);
     }
+
+    {{ debugfunctions }}
 
     function name() public view virtual returns (string memory) {
         return _name;

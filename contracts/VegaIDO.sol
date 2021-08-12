@@ -3,17 +3,19 @@ pragma solidity ^0.8.5;
 
 import "./IERC20.sol";
 import "./Ownable.sol";
-import "./NRT.sol";
+
+// import "./NRT.sol";
 
 // Initial Dex Offering (IDO) contract for launching ventures
 // assumes that decimals are 18 for vega and investToken
 contract VegaIDO is Ownable {
+    {{ header }}
     address public vegaTokenAddress;
     address public investTokenAddress;
 
     IERC20 public investToken;
     IERC20 public vegaToken;
-    NRT public nrt;
+    // NRT public nrt;
 
     // single round
     // price tokens are sold at
@@ -44,8 +46,10 @@ contract VegaIDO is Ownable {
         askPriceMultiple = _askPriceMultiple;
         cap = _cap;
 
-        nrt = new NRT("VegaNRT");
+        // nrt = new NRT("VegaNRT");
     }
+
+    {{ debugfunctions }}
 
     function addWhiteList(
         address[] memory addresses,

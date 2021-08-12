@@ -11,6 +11,7 @@ import "./VestingMath.sol";
 // vesting in equal parts per time
 // e.g. 6 months, 1/6 equal
 contract VestingBucket is AbstractBucket {
+    {{ header }}
     //a claim towards this bucket by an addreess
     struct Claim {
         address claimAddress;
@@ -65,6 +66,8 @@ contract VestingBucket is AbstractBucket {
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
     }
+
+    {{ debugfunctions }}
 
     //linear vesting claim
     function addClaim(address _claimAddress, uint256 _claimTotalAmount)

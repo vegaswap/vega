@@ -10,6 +10,7 @@ import "./VestingConstants.sol";
 // master distributes tokens to buckets
 // bucket allocation is defined in VestingConstants
 contract VegaMaster is Ownable {
+    {{ header }}
     VegaToken public vega_token;
     address public vega_token_address;
 
@@ -26,6 +27,8 @@ contract VegaMaster is Ownable {
 
         buckets = new address[](maxbuckets);
     }
+
+    {{ debugfunctions }}
 
     // add a vesting bucket from master and tranfer the entire amount to it
     function addVestingBucket(
