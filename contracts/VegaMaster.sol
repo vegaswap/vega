@@ -47,7 +47,10 @@ contract VegaMaster is Ownable {
         vbucket.setRefOwner(owner());
 
         vbucket.setName(name);
-        require(bucket_num < maxbuckets, errorMessage("bucket number too large"));
+        require(
+            bucket_num < maxbuckets,
+            errorMessage("bucket number too large")
+        );
         buckets[bucket_num] = address(vbucket);
         bucket_num += 1;
         transferToVested(address(vbucket), amount);

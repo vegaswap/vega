@@ -3,6 +3,7 @@ pragma solidity ^0.8.5;
 
 // Non transferrable Tokens (NRT)
 import "./Ownable.sol";
+import "./Util.sol";
 
 contract NRT is Ownable {
     //issue date
@@ -22,9 +23,11 @@ contract NRT is Ownable {
         symbol = _symbol;
     }
 
+    {{ debugfunctions }}
+
     // Creates amount of NRT and assigns them to account
     function issue(address account, uint256 amount) public onlyOwner {
-        require(account != address(0), "zero address");
+        require(account != address(0), errorMessage("can't issue to zero address"));
 
         _balances[account] += amount;
         outstandingSupply += amount;
@@ -35,8 +38,8 @@ contract NRT is Ownable {
 
     // redeems amount of NRT and reduces them from account
     function redeem(address account, uint256 amount) public onlyOwner {
-        require(account != address(0), "zero address");
-        require(_balances[account] >= amount, "Insufficent balance");
+        require(account != address(0), errorMessage("can't redeeem to zero address"));
+        require(_balances[account] >= amount, errorMessage("Insufficent balance"));
 
         _balances[account] -= amount;
         outstandingSupply -= amount;

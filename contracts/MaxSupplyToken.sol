@@ -10,7 +10,7 @@ import "./Util.sol";
 // deployer is assumed to be a smart contract which distributes tokens programmatically
 // erc20 standard has no conventions for circulating supply
 // adapted from OZ
-contract MaxSupplyToken is IERC20 {
+abstract contract MaxSupplyToken is IERC20 {
     //original deployer, no special rights
     address private deployer;
 
@@ -155,8 +155,14 @@ contract MaxSupplyToken is IERC20 {
         address recipient,
         uint256 amount
     ) internal virtual {
-        require(sender != address(0), errorMessage("transfer from the zero address"));
-        require(recipient != address(0), errorMessage("transfer to the zero address"));
+        require(
+            sender != address(0),
+            errorMessage("transfer from the zero address")
+        );
+        require(
+            recipient != address(0),
+            errorMessage("transfer to the zero address")
+        );
 
         require(
             balances[sender] >= amount,
@@ -187,8 +193,14 @@ contract MaxSupplyToken is IERC20 {
         address spender,
         uint256 amount
     ) internal virtual {
-        require(orig != address(0), errorMessage("approve from the zero address"));
-        require(spender != address(0), errorMessage("approve to the zero address"));
+        require(
+            orig != address(0),
+            errorMessage("approve from the zero address")
+        );
+        require(
+            spender != address(0),
+            errorMessage("approve to the zero address")
+        );
 
         allowances[orig][spender] = amount;
         emit Approval(orig, spender, amount);

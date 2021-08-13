@@ -6,7 +6,7 @@ import "./VegaToken.sol";
 
 // bucket is a wrapper around a bundle of addresses which send and receives tokens
 // it represents a fraction of the supply and useful for onchain token economics
-contract AbstractBucket is RefOwnable {
+abstract contract AbstractBucket is RefOwnable {
     string public name;
     VegaToken public vega_token;
     uint256 public registerTime;
