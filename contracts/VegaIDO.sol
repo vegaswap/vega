@@ -86,7 +86,7 @@ contract VegaIDO is Ownable {
         require(inWhitelist(msg.sender), errorMessage("not whitelisted"));
         require(
             invested + investAmount <= cap,
-            errorMessage("Cap for current round reached")
+            errorMessage("Cap for current round reached", Util.uintToString(cap))
         );
         //TODO
         require(

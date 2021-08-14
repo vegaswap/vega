@@ -7,7 +7,7 @@ library Util {
         pure
         returns (string memory)
     {
-        return strConcat(contractString, " : ", reason);
+        return strConcat(contractString, ": ", reason);
     }
 
     function errorMessage(
@@ -15,7 +15,7 @@ library Util {
         string memory reason,
         string memory data
     ) public pure returns (string memory) {
-        return strConcat(contractString, " : ", reason, " : ", data);
+        return strConcat(contractString, ": ", reason, ": ", data);
     }
 
     function uintToString(uint256 v) public pure returns (string memory) {

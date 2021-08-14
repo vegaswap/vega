@@ -4,7 +4,7 @@ import pytest
 import brownie
 from brownie import (
     VegaIDO,
-    MaxSupplyToken,
+    TestToken,
     accounts,
     chain,
 )
@@ -19,8 +19,9 @@ def test_ido(accounts, token):
 
     assert vegatoken.totalSupply() == 10**9*10**18
 
-    investToken = MaxSupplyToken.deploy(1000, "Test Token", "TEST", {'from': a})
-    assert investToken.balanceOf(a) == 1000
+    # investToken = TestToken.deploy(1000, "Test Token", "TEST", {'from': a})
+    investToken = TestToken.deploy({'from': a})
+    assert investToken.balanceOf(a) == 10**9*10**18
 
     price = 83
     cap = 100000

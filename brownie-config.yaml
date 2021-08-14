@@ -24,7 +24,8 @@ networks:
             accounts: 10
             mnemonic: brownie
     bsc-test:
-        host: "https://data-seed-prebsc-1-s1.binance.org:8545/"
+        # host: "https://data-seed-prebsc-1-s1.binance.org:8545/"
+        host: https://data-seed-prebsc-1-s1.binance.org:8545
         explorer: https://testnet.bscscan.com/
     eth-mainnet:
       #gas_limit: 6721975

@@ -21,7 +21,7 @@ def isolate(fn_isolation):
 
 
 @pytest.fixture(scope="module")
-def token(VegaToken, accounts):
+def token(VegaToken, util, accounts):
     return VegaToken.deploy({"from": accounts[0]})
 
 
@@ -31,7 +31,12 @@ def vestingmath(VestingMath, accounts):
     return vmath
 
 @pytest.fixture(scope="module")
-def master(VegaMaster, vestingmath, accounts):
+def util(Util, accounts):
+    ut = Util.deploy({"from": accounts[0]})
+    return ut  
+
+@pytest.fixture(scope="module")
+def master(VegaMaster, util, vestingmath, accounts):
     master_contract = VegaMaster.deploy({"from": accounts[0]})
     # print(master_contract.revert_msg)
     return master_contract

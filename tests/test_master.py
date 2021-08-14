@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import brownie
 
-from brownie import VegaToken, AbstractBucket, accounts
+from brownie import VegaToken, accounts
 
 
 def test_vegamaster_basic(accounts, vestingmath, token, master):
