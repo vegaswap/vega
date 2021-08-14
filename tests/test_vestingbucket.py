@@ -30,7 +30,7 @@ def test_basic(accounts, vestingmath, token):
     assert token.balanceOf(vestingbucket) == 1000
 
     # cant claim more than total
-    with brownie.reverts("VESTINGBUCKET: can not claim more than total"):
+    with brownie.reverts("VestingBucket: can not claim more than total"):
         vestingbucket.addClaim(a2, 2000)
 
     vestingbucket.addClaim(a2, 1000)
@@ -71,7 +71,7 @@ def test_twoclaims(accounts, vestingmath, token):
     token.transfer(vestingbucket, 1000)
     assert token.balanceOf(vestingbucket) == 1000
     vestingbucket.addClaim(a2, 600)
-    with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
+    with brownie.reverts("VestingBucket: claim at this address already exists"):
         vestingbucket.addClaim(a2, 400)
 
     vestingbucket.addClaim(a3, 400)
@@ -121,7 +121,7 @@ def test_cliff(accounts, token):
 
     # cant withdraw while cliff
     before = token.balanceOf(vestingbucket)
-    with brownie.reverts("VESTINGBUCKET: no amount claimed"):
+    with brownie.reverts("VestingBucket: no amount claimed"):
         vestingbucket.vestClaimMax.call(a2, {"from": a2})
 
     after = token.balanceOf(vestingbucket)
@@ -226,7 +226,7 @@ def test_claimother(accounts, vestingmath, token):
 
     blackhat_account = accounts[3]
     before = token.balanceOf(vestingbucket)
-    with brownie.reverts("VESTINGBUCKET: can only call from claimaddress or owner"):
+    with brownie.reverts("VestingBucket: can only call from claimaddress or owner"):
         vestingbucket.vestClaimMax(a, {"from": blackhat_account})
 
     after = token.balanceOf(vestingbucket)
@@ -261,7 +261,7 @@ def test_claim_second(accounts, vestingmath, token):
     )
 
     vestingbucket.addClaim(a2, 2000)
-    with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
+    with brownie.reverts("VestingBucket: claim at this address already exists"):
         vestingbucket.addClaim(a2, 2000)
 
 
@@ -335,7 +335,7 @@ def test_claimbeforecliff(accounts, vestingmath, token):
 
     vestingbucket.addClaim(accounts[1], amount)
 
-    with brownie.reverts("VESTINGBUCKET: no amount claimed"):
+    with brownie.reverts("VestingBucket: no amount claimed"):
         result_vested = vestingbucket.vestClaimMax(accounts[1], {"from": a})
         assert result_vested.events != 0
 
