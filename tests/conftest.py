@@ -31,8 +31,9 @@ def vestingmath(VestingMath, accounts):
     return vmath
 
 @pytest.fixture(scope="module")
-def master(VegaMaster, vestingmath, accounts):
-    master_contract = VegaMaster.deploy({"from": accounts[0]})
+def master(VegaMaster, token, vestingmath, accounts):
+    master_contract = VegaMaster.deploy(token.address, {"from": accounts[0]})
+    token.transfer(master_contract.address, token.totalSupply())
     # print(master_contract.revert_msg)
     return master_contract
 

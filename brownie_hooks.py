@@ -8,6 +8,8 @@ from pathlib import Path
 from brownie import accounts
 from web3 import Web3
 import json
+import os
+from stat import S_IREAD, S_IRGRP, S_IROTH, S_IWUSR 
 
 contractout = ''
 global solcount, vycount
@@ -181,11 +183,18 @@ def process_source(path, source):
 
     # source = replace_template(source, contractName)    
 
+    
     fn = "%s/%s" % (contractout, path.name)
+    # filename = "path/to/file"
     # print(fn)
+    
+
+    os.chmod(fn, S_IWUSR|S_IREAD)
     with open(fn, "w") as f:
         f.write(source)
 
+    # read only file
+    os.chmod(fn, S_IREAD|S_IRGRP|S_IROTH)
     # TODO generate flat file
     # i = 0
     # for line in source.split('\n'):

@@ -17,10 +17,10 @@ contract VegaMaster is Ownable {
     uint256 public bucket_num;
     uint256 private constant maxbuckets = 30;
 
-    constructor() {
-        vega_token = new VegaToken();
+    constructor(address _vega_token_address) {
 
-        vega_token_address = address(vega_token);
+        vega_token_address = _vega_token_address;
+        vega_token = VegaToken(vega_token_address);
 
         bucket_num = 0;
 
