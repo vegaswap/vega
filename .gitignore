@@ -1,3 +1,5 @@
+scripts/
+reports/
 build/
 .DS_STORE
 vega/tests/__pycache__

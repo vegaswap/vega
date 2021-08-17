@@ -9,13 +9,16 @@ def test_endtime(accounts, vestingmath, token, master):
 
     a = accounts[0]
 
-    token = VegaToken.at(master.vega_token())
+    # token = VegaToken.at(master.vega_token())
     assert token != None
 
     DECIMALS = 18
     assert token.totalSupply() == 10 ** 9 * 10 ** DECIMALS
 
     vconstants = VestingConstants.deploy({"from": accounts[0]})
+
+    # token.approve(master.address, token.totalSupply())
+    # token.transfer(master.address, token.totalSupply())
 
     assert vconstants.seedAmount() != 0
 
