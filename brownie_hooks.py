@@ -189,12 +189,13 @@ def process_source(path, source):
     # print(fn)
     
 
-    os.chmod(fn, S_IWUSR|S_IREAD)
+    # os.chmod(fn, S_IWUSR|S_IREAD)
     with open(fn, "w") as f:
         f.write(source)
 
     # read only file
-    os.chmod(fn, S_IREAD|S_IRGRP|S_IROTH)
+    # os.chmod(fn, S_IREAD|S_IRGRP|S_IROTH)
+
     # TODO generate flat file
     # i = 0
     # for line in source.split('\n'):
