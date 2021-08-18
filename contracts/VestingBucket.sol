@@ -49,8 +49,9 @@ contract VestingBucket is AbstractBucket {
     ) AbstractBucket(_VEGA_TOKEN_ADDRESS) {
         require(
             _cliffTime >= block.timestamp,
-            "VESTINGBUCKET cliff must be in the future"
+            "VESTINGBUCKET: cliff must be in the future"
         );
+        require(_numPeriods > 0, "numPeriods must be larger than 0");
         cliffTime = _cliffTime;
         numPeriods = _numPeriods;
         totalAmount = _totalAmount;
