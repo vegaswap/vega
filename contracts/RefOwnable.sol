@@ -8,6 +8,8 @@ abstract contract RefOwnable {
     address private _owner;
     address private _refOwner;
 
+    event RefOwnerSet(address newowner);
+
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
      */
@@ -17,6 +19,7 @@ abstract contract RefOwnable {
 
     function setRefOwner(address _refowner) public onlyOwner {
         _refOwner = _refowner;
+        emit RefOwnerSet(_refOwner);
     }
 
     /**
