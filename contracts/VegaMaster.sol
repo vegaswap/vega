@@ -17,6 +17,8 @@ contract VegaMaster is Ownable {
     uint256 public bucket_num;
     uint256 private constant maxbuckets = 30;
 
+    event VestingAdded(uint256 cliffOffset, string name, uint256 periods, uint256 amount);
+
     constructor(address _vega_token_address) {
 
         vega_token_address = _vega_token_address;
@@ -48,6 +50,8 @@ contract VegaMaster is Ownable {
         buckets[bucket_num] = address(vbucket);
         bucket_num += 1;
         transferToVested(address(vbucket), amount);
+
+        emit VestingAdded(cliffOffset, name, periods, amount);
     }
 
     // transfer amount to vesting bucket from master

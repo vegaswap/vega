@@ -37,6 +37,7 @@ contract VestingBucket is AbstractBucket {
     uint256 public endTime;
 
     //TODO deposit
+    event ClaimAdded(address claimAddress, uint256 claimTotalAmount, uint256 amountPerPeriod);
     //event DepositOwner(address indexed addr, uint256 amount);
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
@@ -82,7 +83,7 @@ contract VestingBucket is AbstractBucket {
             "VESTINGBUCKET: can not claim more than total"
         );
 
-        //TODO! add prechecks
+        //TODO add prechecks
 
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
 
@@ -93,6 +94,8 @@ contract VestingBucket is AbstractBucket {
             withdrawnAmount: 0,
             isAdded: true
         });
+
+        emit ClaimAdded(_claimAddress, _claimTotalAmount, amountPerPeriod);
 
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
