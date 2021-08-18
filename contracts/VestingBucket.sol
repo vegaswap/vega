@@ -197,11 +197,12 @@ contract VestingBucket is AbstractBucket {
     }
 
     //revoke claim
-    function revokeClaim(address _claimAddress) public onlyRefOwner {
-        uint256 amount = claims[_claimAddress].claimTotalAmount;
-        claims[_claimAddress].claimTotalAmount = 0;
-        totalClaimAmount -= amount;
-    }
+    //not implemented. loss of private key on receive side is his responsibility
+    // function revokeClaim(address _claimAddress) public onlyRefOwner {
+    //     uint256 amount = claims[_claimAddress].claimTotalAmount;
+    //     claims[_claimAddress].claimTotalAmount = 0;
+    //     totalClaimAmount -= amount;
+    // }
 
     
 }
