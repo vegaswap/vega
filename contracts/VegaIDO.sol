@@ -41,6 +41,7 @@ contract VegaIDO is Ownable {
     event InvestEvent(address, uint256);
 
     constructor(address _investTokenAddress, uint256 _askpriceMultiple, uint256 _totalcap, uint256 _capPerAccount, uint256 _startTime, uint256 _endTime) {
+        require(_investTokenAddress != address(0), "_investTokenAddress: zero address");
         investTokenAddress = _investTokenAddress;
 
         investToken = IERC20(investTokenAddress);
