@@ -13,16 +13,20 @@ contract NRT is Ownable {
     uint256 public redeemedSupply;
     uint8 public constant decimals = 18;
     string public symbol;
+    string public name;
     string public bucketID;
+    uint256 public redeemdate;
 
     mapping(address => uint256) private _balances;
 
     event Issued(address account, uint256 amount);
     event Redeemed(address account, uint256 amount);
 
-    constructor(string memory _symbol, string memory _bucketID) {
+    constructor(string memory _symbol, string memory _name, string memory _bucketID, uint256 _redeemdate) {
         symbol = _symbol;
         bucketID = _bucketID;
+        name = _name;
+        redeemdate = _redeemdate;
     }
 
     // Creates amount of NRT and assigns them to account
@@ -40,6 +44,7 @@ contract NRT is Ownable {
     function redeem(address account, uint256 amount) public onlyOwner {
         require(account != address(0), "zero address");
         require(_balances[account] >= amount, "Insufficent balance");
+        require(block.timestamp > redeemdate, "not redeemable yet");
 
         _balances[account] -= amount;
         outstandingSupply -= amount;
