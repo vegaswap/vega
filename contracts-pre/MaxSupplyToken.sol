@@ -34,7 +34,6 @@ abstract contract MaxSupplyToken is IERC20 {
         // create the max supply once, all other calls are transfers
         _totalSupply = _MAX_SUPPLY;
         balances[deployer] = _MAX_SUPPLY;
-        emit Transfer(address(0), deployer, _MAX_SUPPLY);
     }
 
     function name() public view virtual returns (string memory) {
