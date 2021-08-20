@@ -24,7 +24,7 @@ def pre():
         z = f.read()
 
     config = yaml.safe_load(z)
-    contractout = config["project_structure"]["contractout"]
+    contractout = config["project_structure"]["contracts-post"]
 
 def get_contract(w3, ctr):
     with open("./build/contracts/%s.json"%ctr,"r") as f:
@@ -165,6 +165,110 @@ def replace_template(source, contractName):
     )    
     return source
 
+def get_content(fp):
+    with open(fp, "r") as f:
+        return f.read()
+
+def fetch_source_for_line(line):
+    #assume import statement like this
+    #import "./MaxSupplyToken.sol";
+    print("deal with ",line)
+    ctr = line.split('"')[1:-1]
+    ctr = "".join(ctr)
+    ctr = ctr[2:]
+    print (ctr)
+    fp = "./contracts-pre/%s"%ctr
+    z = get_content(fp)
+
+    newlines = list()
+    addedlines = z.split('\n')
+    for line in addedlines:
+        # // SPDX-License-Identifier: MIT
+        # pragma solidity ^0.8.5;
+        skip = "pragma" in line or "SPDX-License" in line
+        if not skip:
+            # print (">> add ", line)
+            newlines.append(line)
+
+    return newlines
+
+def count_import(lines):
+    i = 0
+    for line in lines:
+        if "import" in line:
+            i+=1
+            
+    return i
+
+def replace_import(lines):
+    newlines = list()
+    for line in lines:
+        if "import" in line:
+            added = fetch_source_for_line(line)
+            for line in added:
+                newlines.append(line)
+            # print (z)
+        else:
+            newlines.append(line)    
+    return newlines
+
+def remove_empty_lines(lines):
+    newlines = list()
+    # ins = False
+    stop = False
+    for line in lines:
+        if "interface" in line or "contract" in line:
+            stop = True
+        if not stop:
+            print(line)
+            isempty = (line == "")
+            if not isempty:
+                newlines.append(line)
+            else:
+                print ("skip ", line)
+        else:
+            newlines.append(line)
+    return newlines
+
+
+def write_lines(fp, lines):
+    print ("write to ",fp, len(lines))
+    lines = remove_empty_lines(lines)
+    newsrc = "\n".join(lines)
+    with open(fp, "w") as f:
+        f.write(newsrc)
+
+def gen_flatfile(contractName, source):
+    lines = source.split('\n')
+    
+    newlines = replace_import(lines)
+    print ("!! imports ", count_import(newlines))
+    print (" len: ", len(newlines))
+
+    newlines = replace_import(newlines)
+    print ("!! imports ", count_import(newlines))
+    print (" len: ", len(newlines))
+
+    
+    # print("newsrc ",len(newsrc))
+
+    fp = "./%s/%s.sol"%(contractout,contractName)
+    write_lines(fp, newlines)
+    
+
+#     #run through second time
+#     # zlines = list()
+#     # for line in newlines:
+#     #     if "import" in line:
+#     #         added = fetch_source_for_line(line)
+#     #         for line in added:
+#     #             zlines.append(added)
+#     #     print (type(line), line)
+#     #     zlines.append(line)
+
+#     # newsrc = "\n".join(zlines)
+    
+
 def process_source(path, source):
     global solcount, vycount
     contractName = str(path.name).split(".")[0]
@@ -190,17 +294,19 @@ def process_source(path, source):
     
 
     # os.chmod(fn, S_IWUSR|S_IREAD)
-    with open(fn, "w") as f:
-        f.write(source)
+    # with open(fn, "w") as f:
+    #     f.write(source)
 
     # read only file
     # os.chmod(fn, S_IREAD|S_IRGRP|S_IROTH)
 
+
     # TODO generate flat file
-    # i = 0
-    # for line in source.split('\n'):
-    #     print(i, ":", line)
-    #     i += 1
+    i = 0
+    if contractName == "VegaToken":
+        gen_flatfile(contractName, source)
+        
+    
 
     return source
 
