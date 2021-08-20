@@ -212,8 +212,28 @@ def replace_import(lines):
             newlines.append(line)    
     return newlines
 
+def remove_empty_lines(lines):
+    newlines = list()
+    # ins = False
+    stop = False
+    for line in lines:
+        if "interface" in line or "contract" in line:
+            stop = True
+        if not stop:
+            print(line)
+            isempty = (line == "")
+            if not isempty:
+                newlines.append(line)
+            else:
+                print ("skip ", line)
+        else:
+            newlines.append(line)
+    return newlines
+
+
 def write_lines(fp, lines):
     print ("write to ",fp, len(lines))
+    lines = remove_empty_lines(lines)
     newsrc = "\n".join(lines)
     with open(fp, "w") as f:
         f.write(newsrc)

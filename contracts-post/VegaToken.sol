@@ -1,8 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
-
-
-
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.
  */
@@ -35,7 +32,6 @@ interface IERC20 {
         uint256 value
     );
 }
-
 
 // Max Supply token
 // max supply is minted at genesis
@@ -216,7 +212,6 @@ abstract contract MaxSupplyToken is IERC20 {
         emit Approval(orig, spender, amount);
     }
 }
-
 
 // Vega token
 // is a max supply token
