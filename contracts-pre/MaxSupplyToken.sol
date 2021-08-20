@@ -5,24 +5,24 @@ import "./IERC20.sol";
 
 // Max Supply token
 // max supply is minted at genesis
-// deployer is assumed to be a smart contract which distributes tokens programmatically
 // erc20 standard has no conventions for circulating supply
 abstract contract MaxSupplyToken is IERC20 {
     //original deployer, no special rights
     address public deployer;
-
+    //18 decimals by default
     uint8 public constant DECIMALS = 18;
-
+    //name of the token
     string private _name;
+    //symbol of the token. it is not enforceable and registered offchain
     string private _symbol;
-
+    //map of balances
     mapping(address => uint256) private balances;
-
+    //map of allownce to other contracts
     mapping(address => mapping(address => uint256)) private allowances;
-
+    //total supply which is max supply
     uint256 private _totalSupply;
 
-    /// construct token and genesis mint
+    // construct token and genesis mint
     constructor(
         uint256 _MAX_SUPPLY,
         string memory __name,
