@@ -63,13 +63,6 @@ abstract contract MaxSupplyToken is IERC20 {
         return balances[account];
     }
 
-    /**
-     *
-     * Requirements:
-     *
-     * - `recipient` cannot be the zero address.
-     * - the caller must have a balance of at least `amount`.
-     */
     function transfer(address recipient, uint256 amount)
         public
         virtual
@@ -100,17 +93,6 @@ abstract contract MaxSupplyToken is IERC20 {
         return true;
     }
 
-    /**
-     * @dev See {IERC20-transferFrom}.
-     *
-     * Emits an {Approval} event indicating the updated allowance. This is not
-     * required by the EIP
-     *
-     * Requirements:
-     *
-     * - the caller must have allowance for ``sender``'s tokens of at least
-     * `amount`.
-     */
     function transferFrom(
         address sender,
         address recipient,
@@ -131,17 +113,6 @@ abstract contract MaxSupplyToken is IERC20 {
         return true;
     }
 
-    /**
-     * @dev Moves `amount` of tokens from `sender` to `recipient`.
-     *
-     * Emits a {Transfer} event.
-     *
-     * Requirements:
-     *
-     * - `sender` cannot be the zero address.
-     * - `recipient` cannot be the zero address.
-     * - `sender` must have a balance of at least `amount`.
-     */
     function _transfer(
         address sender,
         address recipient,
@@ -161,15 +132,6 @@ abstract contract MaxSupplyToken is IERC20 {
         emit Transfer(sender, recipient, amount);
     }
 
-    /**
-     * @dev Sets `amount` as the allowance of `spender` over the `owner` s tokens.
-     *
-     * Emits an {Approval} event.
-     *
-     * Requirements:
-     * - `owner` cannot be the zero address.
-     * - `spender` cannot be the zero address.
-     */
     function _approve(
         address orig,
         address spender,
