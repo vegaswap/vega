@@ -38,7 +38,7 @@ contract VestingBucket is AbstractBucket {
 
     //TODO deposit
     event ClaimAdded(address claimAddress, uint256 claimTotalAmount, uint256 amountPerPeriod);
-    //event DepositOwner(address indexed addr, uint256 amount);
+    event DepositOwner(address indexed addr, uint256 amount);
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
@@ -66,6 +66,17 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
+    }
+
+    function depositOwner(uint256 amount) public onlyOwner {
+        require(vega_token.allowance(msg.sender, address(this)) >= amount, "not enough allowance");
+        bool transferSuccess = vega_token.transferFrom(
+            msg.sender,
+            address(this),
+            amount
+        );
+        require(transferSuccess, "VESTINGBUCKET: deposit failed");
+        emit DepositOwner(msg.sender, amount);
     }
 
     //linear vesting claim
@@ -177,28 +188,21 @@ contract VestingBucket is AbstractBucket {
 
     //allow withdraws which are not claimed
     function withdrawOwner(uint256 amount) public onlyRefOwner {
-        //todo: could add check against existing claims
-        bool transferSuccess = vega_token.transfer(msg.sender, amount);
+        //transfer any unclaimed balances
+        uint256 bucketbalance = vega_token.balanceOf(address(this));
+        uint256 unclaimedbalance = bucketbalance - totalClaimAmount;
+        bool transferSuccess = vega_token.transfer(msg.sender, unclaimedbalance);
         require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
         emit WithdrawOwner(amount);
     }
 
-    //pro forma functions
-
-    //remove claim is not implemented, if there is issues need to use new address
-    // function removeClaim(address _claimAddress) public onlyRefOwner {
-    //     claims[_claimAddress] = zero
-    //     numClaims -= 1;
+    //revoke claim
+    //not implemented. loss of private key on receive side is his responsibility
+    // function revokeClaim(address _claimAddress) public onlyRefOwner {
+    //     uint256 amount = claims[_claimAddress].claimTotalAmount;
+    //     claims[_claimAddress].claimTotalAmount = 0;
+    //     totalClaimAmount -= amount;
     // }
 
-    // function depositOwner(uint256 amount) public onlyOwner {
-    //     //require(approve)
-    //     bool transferSuccess = vega_token.transferFrom(
-    //         msg.sender,
-    //         address(this),
-    //         amount
-    //     );
-    //     require(transferSuccess, "VESTINGBUCKET: deposit failed");
-    //     emit DepositOwner(msg.sender, amount);
-    // }
+    
 }

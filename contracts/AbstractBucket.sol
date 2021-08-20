@@ -12,6 +12,7 @@ contract AbstractBucket is RefOwnable {
     uint256 public registerTime;
 
     constructor(address _VEGA_TOKEN_ADDRESS) {
+        require(_VEGA_TOKEN_ADDRESS != address(0), "Vegatoken is zero address");
         vega_token = VegaToken(_VEGA_TOKEN_ADDRESS);
         registerTime = block.timestamp;
     }

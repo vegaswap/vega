@@ -8,7 +8,7 @@ from brownie import (
     accounts,
     chain,
 )
-
+import time
 
 def test_ido(accounts, token):
     #token.approve(accounts[1], 10**19, {'from': accounts[0]})
@@ -23,17 +23,24 @@ def test_ido(accounts, token):
     assert investToken.balanceOf(a) == 1000
 
     price = 83
-    cap = 100000
-    ido = VegaIDO.deploy(vegatoken.address,investToken.address, price, cap, {'from': a})
+    totalcap = 100000
+    capPerAccount = 1000
+    start = int(time.time())-10
+    end = start + 100000
+    # (address _investTokenAddress, uint256 _askpriceMultiple, uint256 _totalcap, uint256 _capPerAccount, uint256 _startTime, uint256 _endTime) {
+    # ido = VegaIDO.deploy(vegatoken.address,investToken.address, price, totalcap, start, end, {'from': a})
+    ido = VegaIDO.deploy(investToken.address, price, totalcap, capPerAccount, start, end, {'from': a})
     assert ido
 
-    assert ido.cap() == cap
-    assert ido.askPriceMultiple() == price
+    assert ido.totalcap() == totalcap
+    assert ido.capPerAccount() == capPerAccount
+    assert ido.askpriceMultiple() == price
 
     with brownie.reverts("VegaIDO: not whitelisted"):
         ido.invest(100,{'from': a2})    
     
-    ido.addWhiteList([a2],[8300], {'from': a})
+    # ido.addWhiteList([a2],[8300], {'from': a})
+    ido.addWhiteList([a2], {'from': a})
 
     with brownie.reverts("VegaIDO: Please approve amount to invest"):
         ido.invest(100,{'from': a2})
@@ -43,8 +50,9 @@ def test_ido(accounts, token):
     investToken.transfer(a2, 100, {'from': a})
     assert investToken.balanceOf(a2) == 100
 
-    with brownie.reverts("VegaIDO: out of stock"):
-        ido.invest(100, {'from': a2})
+    # TODO
+    # with brownie.reverts("VegaIDO: out of stock"):
+    #     ido.invest(100, {'from': a2})
 
     vegatoken.transfer(ido, 8300 ,{'from': a})
     assert vegatoken.balanceOf(ido) == 8300

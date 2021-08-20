@@ -27,20 +27,20 @@ contract VegaIDO is Ownable {
     uint256 public askpriceMultiple;
     // total amount invested
     uint256 public totalInvested;
+    mapping(address => uint256) whiteListAmounts;
     address[] public whitelistAddresses;
     uint256 public capPerAccount;
     uint256 startTime;
     uint256 endTime;
-
-
-    //mapping(address => uint256) whitelistAmounts;
 
     // investors and how much they invest
     mapping(address => uint256) investedAmounts;
 
     event InvestEvent(address, uint256);
 
+    //TODO double check arrays for instantation
     constructor(address _investTokenAddress, uint256 _askpriceMultiple, uint256 _totalcap, uint256 _capPerAccount, uint256 _startTime, uint256 _endTime) {
+        require(_investTokenAddress != address(0), "_investTokenAddress: zero address");
         investTokenAddress = _investTokenAddress;
 
         investToken = IERC20(investTokenAddress);
@@ -80,43 +80,42 @@ contract VegaIDO is Ownable {
     ) external onlyOwner {
         for (uint256 i = 0; i < addresses.length; i++) {
             address w = addresses[i];
-            whitelistAddresses.push(w);
+            // whitelistAddresses.push(w);
+            whiteListAmounts[w] = capPerAccount;
         }
     }
 
     function inWhitelist(address f) public view returns (bool) {
-        for (uint256 i = 0; i < whitelistAddresses.length; i++) {
-            address w = whitelistAddresses[i];
-            if (w == f) {
-                return true;
-            }
+        if (whiteListAmounts[f] == capPerAccount) {
+            return true; 
+        } else{
+            return false; 
         }
-        return false;
     }
 
     // participate in the funding event
     function invest(uint256 investAmount) external {
-        require(block.timestamp > startTime, "IDO not started");
-        require(block.timestamp < endTime, "IDO has ended");
-        require(inWhitelist(msg.sender), "not whitelisted");
+        require(block.timestamp > startTime, "VegaIDO: IDO not started");
+        require(block.timestamp < endTime, "VegaIDO: IDO has ended");
+        require(inWhitelist(msg.sender), "VegaIDO: not whitelisted");
         require(
             totalInvested + investAmount <= totalcap,
-                "totalcap for current round reached"
+                "VegaIDO: totalcap for current round reached"
                 // Util.uintToString(totalInvested + investAmount
         );
 
         //will be zero if first time investor
         uint256 investedAmount = investedAmounts[msg.sender];
         
-        require(investedAmount + investAmount <= capPerAccount, "more than cap invested");
+        require(investedAmount + investAmount <= capPerAccount, "VegaIDO: more than cap invested");
         
         require(
             investToken.allowance(msg.sender, address(this)) >= investAmount,
-            "Please approve amount to invest"
+            "VegaIDO: Please approve amount to invest"
         );
         require(
             investToken.balanceOf(msg.sender) >= investAmount,
-            "Insufficient balance to invest"
+            "VegaIDO: Insufficient balance to invest"
         );
         
         // Transfer tokens from sender to this contract
@@ -125,14 +124,14 @@ contract VegaIDO is Ownable {
             address(this),
             investAmount
         );
-        require(ts, "transfer invest tokens failed");
+        require(ts, "VegaIDO: transfer invest tokens failed");
 
         investedAmounts[msg.sender] += investAmount;
         totalInvested += investAmount;
 
         uint256 nrtReceived = investAmount * askpriceMultiple;
         //TODO check decimals
-        nrt.issue(msg.sender, nrtReceived);
+        // nrt.issue(msg.sender, nrtReceived);
 
         emit InvestEvent(msg.sender, investAmount);
     }
