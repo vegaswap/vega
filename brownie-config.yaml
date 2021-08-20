@@ -1,12 +1,12 @@
 # explicit structure
 project_structure:
     build: build
-    contracts: contracts
+    contracts: contracts-pre
+    contracts-post: contracts-post
     interfaces: interfaces
     reports: reports
     scripts: scripts
     tests: tests
-    contractout: contractout
 
 # enable output of development artifacts to load with react
 # dev_deployment_artifacts: true

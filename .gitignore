@@ -1,3 +1,4 @@
+contractout/
 scripts/
 reports/
 build/
@@ -13,5 +14,4 @@ vega/tests/__pycache__/
 vega/build/
 .vscode/
 *.pyc
-
 .env
