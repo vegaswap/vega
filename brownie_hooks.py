@@ -318,13 +318,10 @@ def process_source(path, source):
         gen_flatfile(contractName, source)
         
     
-    #hash VegaToken.sol
-    #hash VegaToken.sol
     hashsol = sha1sum("./contracts-post/VegaToken.sol")
     hashabi = sha1sum("./contracts-post/VegaToken.abi")
     hashbin = sha1sum("./contracts-post/VegaToken.bin")
 
-    #TODO generate markdown
     with open("./contracts-post/contracts.md","w") as f:
         # Vega contracts
         f.write("# Vega contracts\n\n")
