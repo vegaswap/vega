@@ -268,6 +268,17 @@ def gen_flatfile(contractName, source):
 
 #     # newsrc = "\n".join(zlines)
     
+import hashlib
+
+def sha1sum(filename):
+    # h  = hashlib.sha256()
+    h  = hashlib.sha1()
+    b  = bytearray(128*1024)
+    mv = memoryview(b)
+    with open(filename, 'rb', buffering=0) as f:
+        for n in iter(lambda : f.readinto(mv), 0):
+            h.update(mv[:n])
+    return h.hexdigest()
 
 def process_source(path, source):
     global solcount, vycount
@@ -307,6 +318,21 @@ def process_source(path, source):
         gen_flatfile(contractName, source)
         
     
+    #hash VegaToken.sol
+    #hash VegaToken.sol
+    hashsol = sha1sum("./contracts-post/VegaToken.sol")
+    hashabi = sha1sum("./contracts-post/VegaToken.abi")
+    hashbin = sha1sum("./contracts-post/VegaToken.bin")
+
+    #TODO generate markdown
+    with open("./contracts-post/contracts.md","w") as f:
+        # Vega contracts
+        f.write("# Vega contracts\n\n")
+        f.write("| File | sha1|\n")
+        f.write("| :--: | :--:|\n")
+        f.write("| VegaToken.sol | %s |\n"%hashsol)
+        f.write("| VegaToken.abi | %s |\n"%hashabi)
+        f.write("| VegaToken.bin | %s |\n"%hashbin)
 
     return source
 
