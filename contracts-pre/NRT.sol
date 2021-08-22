@@ -1,35 +1,38 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
-// Non transferrable Tokens (NRT)
 import "./Ownable.sol";
 
-//TODO 
+// Non transferrable Tokens (NRT)
 contract NRT is Ownable {
-    //issue date
 
-    uint256 public issuedSupply;
-    uint256 public outstandingSupply;
-    uint256 public redeemedSupply;
-    uint8 public constant decimals = 18;
     string public symbol;
     string public name;
     string public bucketID;
     uint256 public redeemdate;
+    uint256 public issuedSupply;
+    uint256 public outstandingSupply;
+    uint256 public redeemedSupply;
+    
+    uint8 public constant decimals = 18;
 
     mapping(address => uint256) private _balances;
 
     event Issued(address account, uint256 amount);
     event Redeemed(address account, uint256 amount);
 
-    constructor(string memory _symbol, string memory _name, string memory _bucketID, uint256 _redeemdate) {
+    constructor(string memory _symbol, string memory _name, string memory _bucketID) {
         symbol = _symbol;
         bucketID = _bucketID;
         name = _name;
+        redeemdate = block.timestamp;
+    }
+
+    function setRedeemDate(uint256 _redeemdate) public onlyOwner {
         redeemdate = _redeemdate;
     }
 
-    // Creates amount of NRT and assigns them to account
+    // creates amount of NRT and assigns them to account
     function issue(address account, uint256 amount) public onlyOwner {
         require(account != address(0), "zero address");
 
