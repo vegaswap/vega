@@ -36,7 +36,6 @@ contract VestingBucket is AbstractBucket {
     uint256 public bucketAmountPerPeriod;
     uint256 public endTime;
 
-    //TODO deposit
     event ClaimAdded(address claimAddress, uint256 claimTotalAmount, uint256 amountPerPeriod);
     event DepositOwner(address indexed addr, uint256 amount);
     event WithdrawClaim(address indexed addr, uint256 amount);
@@ -53,6 +52,7 @@ contract VestingBucket is AbstractBucket {
             "VESTINGBUCKET: cliff must be in the future"
         );
         require(_numPeriods > 0, "numPeriods must be larger than 0");
+        require(_numPeriods < 25, "numPeriods must be smaller than 25");
         cliffTime = _cliffTime;
         numPeriods = _numPeriods;
         totalAmount = _totalAmount;
@@ -63,6 +63,9 @@ contract VestingBucket is AbstractBucket {
             bucketAmountPerPeriod,
             _totalAmount
         );
+
+        uint256 duration = endTime - block.timestamp;
+        require (duration < 731 days, "VESTINGBUCKET: don't vest more than 2 years");
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
@@ -94,8 +97,6 @@ contract VestingBucket is AbstractBucket {
             "VESTINGBUCKET: can not claim more than total"
         );
 
-        //TODO add prechecks
-
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
 
         claims[_claimAddress] = Claim({
@@ -110,7 +111,6 @@ contract VestingBucket is AbstractBucket {
 
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
-        //amountPerPeriod: amountPerPeriod
     }
 
     function getVestedAmount(Claim memory claim) public view returns (uint256) {
