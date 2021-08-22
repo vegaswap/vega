@@ -1,10 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
-import "./Ownable.sol";
+import "./MultiOwnable.sol";
 
 // Non transferrable Tokens (NRT)
-contract NRT is Ownable {
+// NRTs are like certificates. they get issued and redeemed
+// the issue and redeem process is uncoupled from this contract
+// the owner can give other new owners the right to issue (multiowners)
+// to keep track of different issuances there is a bucket id 
+// to map to vesting schedule
+contract NRT is MultiOwnable {
 
     string public symbol;
     string public name;
@@ -28,13 +33,14 @@ contract NRT is Ownable {
         redeemdate = block.timestamp;
     }
 
-    function setRedeemDate(uint256 _redeemdate) public onlyOwner {
+    function setRedeemDate(uint256 _redeemdate) public onlyMultiOwners {
         redeemdate = _redeemdate;
     }
 
     // creates amount of NRT and assigns them to account
-    function issue(address account, uint256 amount) public onlyOwner {
+    function issue(address account, uint256 amount) public onlyMultiOwners {
         require(account != address(0), "zero address");
+        require(amount > 0, "issue amount should be larger than zero");
 
         _balances[account] += amount;
         outstandingSupply += amount;
@@ -44,7 +50,7 @@ contract NRT is Ownable {
     }
 
     // redeems amount of NRT and reduces them from account
-    function redeem(address account, uint256 amount) public onlyOwner {
+    function redeem(address account, uint256 amount) public onlyMultiOwners {
         require(account != address(0), "zero address");
         require(_balances[account] >= amount, "Insufficent balance");
         require(block.timestamp > redeemdate, "not redeemable yet");
