@@ -6,16 +6,20 @@ pragma solidity ^0.8.5;
 abstract contract MultiOwnable {
     address[] private _owners;
 
+    event OwnerAdded(address newowner);
+
     /**
      * @dev Initializes the contract setting the deployer as the initial owner
      */
     constructor() {
         _owners.push(msg.sender);
+        emit OwnerAdded(msg.sender);
     }
 
     // a current owner adds a new owner
     function addNewOwner(address f) public onlyMultiOwners {
         _owners.push(f);
+        emit OwnerAdded(msg.sender);
     }
 
     /**
