@@ -6,6 +6,7 @@ from brownie import (
     VegaToken,
     VestingMath,
     VegaMaster,
+    NRT,
     VestingConstants,
     VestingBucket,
     accounts,
@@ -23,6 +24,10 @@ def isolate(fn_isolation):
 @pytest.fixture(scope="module")
 def token(VegaToken, accounts):
     return VegaToken.deploy({"from": accounts[0]})
+
+@pytest.fixture(scope="module")
+def nrt(accounts):
+    return NRT.deploy("NRT","NRTx", "x", {"from": accounts[0]})
 
 
 @pytest.fixture(scope="module")
