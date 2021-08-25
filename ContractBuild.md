@@ -1,11 +1,11 @@
 
-Vega Contract Build Info
-========================
+Vega Contracts
+==============
 
-# Contracts
+# Contract files
 
 
-Vega Contract information  
+Vega Contract file information  
 
 |File|sha1hash|
 | :---: | :---: |
@@ -14,3 +14,12 @@ Vega Contract information
 |VegaToken.abi|a792cd3f2de3433e9928737fa97467105bc5edab|
 |NRT.abi|d87bfb249ea9fed5cf2f3ad83d20ccf762573528|
 |IERC20.abi|23ef33ccee0b780429084c5c5d239875795947cf|
+
+# Vega contracts
+
+
+Vega Contract chain information
+|Contract|address|
+| :---: | :---: |
+|NRT|0x92a9370fbb61477f2db79260197f340677264fcf|
+|VEGATOKEN|0xdfa7b5aafb1aa5c2120939bfa1413329878f340f|

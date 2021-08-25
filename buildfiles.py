@@ -27,25 +27,36 @@ def get_info(ext):
     # build_files[tok(f)] = s
     return info
 
-# xe = edn.dumps(build_files)
+import json
+
+def get_contracts():
+    with open("contracts.json","r") as f:
+        x = f.read()
+    return json.loads(x)
+
+cmap = get_contracts()
+print (cmap)
+
+clist = ["Contract", "address"]
+for k in cmap.keys():
+    clist.extend([k,cmap[k]])
+    # print (str(k),cmap[k])
+
+print (clist)
+# cmap[tok("NRT")]
 
 def write_table(mdFile, data):
     col = 2
     x = int(len(data)/col)
-    print (x)
     # mdFile.new_table(columns=2, rows=x, text=data, text_align='center')
     mdFile.new_table(columns=2, rows=x, text=data, text_align='center')
 
 
-mdFile = MdUtils(file_name='ContractBuild',title='Vega Contract Build Info')
-mdFile.new_header(level=1, title='Contracts')
-mdFile.new_paragraph("Vega Contract information")
-# list_of_strings = ["Items", "Data"]
-# r = 1
-# c = 2
-# for x in range(5):
-#     list_of_strings.extend(["Item", str(x)])
-#     r+=1
+
+mdFile = MdUtils(file_name='ContractBuild',title='Vega Contracts')
+mdFile.new_header(level=1, title='Contract files')
+mdFile.new_paragraph("Vega Contract file information")
+
 
 info = ["File", "sha1hash"]
 info += get_info(".bin")
@@ -53,6 +64,11 @@ info += get_info(".abi")
 mdFile.new_line()
 # print (c,r)
 write_table(mdFile, info)
+
+mdFile.new_header(level=1, title='Vega contracts')
+mdFile.new_paragraph("Vega Contract chain information")
+
+write_table(mdFile, clist)
 
 mdFile.create_md_file()
 
