@@ -1,7 +1,7 @@
 contractout/
 scripts/
 reports/
-build/
+build-brownie/
 .DS_STORE
 vega/tests/__pycache__
 vega/build

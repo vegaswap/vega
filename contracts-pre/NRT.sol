@@ -23,8 +23,8 @@ contract NRT is MultiOwnable {
 
     mapping(address => uint256) private _balances;
 
-    event Issued(address account, uint256 amount);
-    event Redeemed(address account, uint256 amount);
+    event Issue(address account, uint256 amount);
+    event Redeem(address account, uint256 amount);
 
     constructor(string memory _symbol, string memory _name, string memory _bucketID) {
         symbol = _symbol;
@@ -42,11 +42,12 @@ contract NRT is MultiOwnable {
         require(account != address(0), "zero address");
         require(amount > 0, "issue amount should be larger than zero");
 
+        // if (_balances[account] )
         _balances[account] += amount;
         outstandingSupply += amount;
         issuedSupply += amount;
 
-        emit Issued(account, amount);
+        emit Issue(account, amount);
     }
 
     // redeems amount of NRT and reduces them from account
@@ -59,7 +60,7 @@ contract NRT is MultiOwnable {
         outstandingSupply -= amount;
         redeemedSupply += amount;
 
-        emit Redeemed(account, amount);
+        emit Redeem(account, amount);
     }
 
     function balanceOf(address account) public view returns (uint256) {

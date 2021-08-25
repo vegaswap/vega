@@ -1,6 +1,6 @@
 # explicit structure
 project_structure:
-    build: build
+    build: build-brownie
     contracts: contracts-pre
     contracts-post: contracts-post
     interfaces: interfaces

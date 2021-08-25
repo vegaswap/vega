@@ -301,21 +301,24 @@ def process_source(path, source):
     # read only file
     # os.chmod(fn, S_IREAD|S_IRGRP|S_IROTH)
 
-    if contractName == "VegaToken":
+    if contractName == "NRT":
         gen_flatfile(contractName, source)
 
-    hashsol = sha1sum("./contracts-post/VegaToken.sol")
-    hashabi = sha1sum("./contracts-post/VegaToken.abi")
-    hashbin = sha1sum("./contracts-post/VegaToken.bin")
+    # if contractName == "VegaToken":
+    #     gen_flatfile(contractName, source)
 
-    with open("./contracts-post/contracts.md", "w") as f:
-        # Vega contracts
-        f.write("# Vega contracts\n\n")
-        f.write("| File | sha1|\n")
-        f.write("| :--: | :--:|\n")
-        f.write("| VegaToken.sol | %s |\n" % hashsol)
-        f.write("| VegaToken.abi | %s |\n" % hashabi)
-        f.write("| VegaToken.bin | %s |\n" % hashbin)
+    # hashsol = sha1sum("./contracts-post/VegaToken.sol")
+    # hashabi = sha1sum("./contracts-post/VegaToken.abi")
+    # hashbin = sha1sum("./contracts-post/VegaToken.bin")
+
+    # with open("./contracts-post/contracts.md", "w") as f:
+    #     # Vega contracts
+    #     f.write("# Vega contracts\n\n")
+    #     f.write("| File | sha1|\n")
+    #     f.write("| :--: | :--:|\n")
+    #     f.write("| VegaToken.sol | %s |\n" % hashsol)
+    #     f.write("| VegaToken.abi | %s |\n" % hashabi)
+    #     f.write("| VegaToken.bin | %s |\n" % hashbin)
 
     return source
 
