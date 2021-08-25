@@ -16,7 +16,7 @@ contract NRT is MultiOwnable {
     string public bucketID;
     uint256 public redeemdate;
     uint256 public issuedSupply;
-    uint256 public outstandingSupply;
+    uint256 public totalSupply;
     uint256 public redeemedSupply;
     
     uint8 public constant decimals = 18;
@@ -44,7 +44,7 @@ contract NRT is MultiOwnable {
 
         // if (_balances[account] )
         _balances[account] += amount;
-        outstandingSupply += amount;
+        totalSupply += amount;
         issuedSupply += amount;
 
         emit Issue(account, amount);
@@ -57,7 +57,7 @@ contract NRT is MultiOwnable {
         require(block.timestamp > redeemdate, "not redeemable yet");
 
         _balances[account] -= amount;
-        outstandingSupply -= amount;
+        totalSupply -= amount;
         redeemedSupply += amount;
 
         emit Redeem(account, amount);
