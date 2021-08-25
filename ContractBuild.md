@@ -22,5 +22,5 @@ Vega Contract file information
 Vega Contract chain information
 |Contract|address|
 | :---: | :---: |
-|NRT|0xA01925f8A4755deC70738b2d1186fd550CCdE283|
+|NRTSeed|0xA01925f8A4755deC70738b2d1186fd550CCdE283|
 |VEGATOKEN|0xdfa7b5aafb1aa5c2120939bfa1413329878f340f|
