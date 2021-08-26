@@ -16,7 +16,7 @@ Vega Contract file information
 |IERC20.abi|23ef33ccee0b780429084c5c5d239875795947cf|
 |erc20.abi|8b836f86e598ccb2d83018def0c6076a8e96f30c|
 
-# Vega contracts
+# Vega smart contracts
 
 
 Vega Contract chain information
