@@ -3,7 +3,7 @@ pragma solidity ^0.8.5;
 
 import "./AbstractBucket.sol";
 import "./VegaToken.sol";
-import "./VestingMath.sol";
+import "./IVestingMath.sol";
 
 // bucket with vesting of multiple addresses
 // claims and
@@ -41,6 +41,9 @@ contract VestingBucket is AbstractBucket {
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
+    address vmath_lib = 0x4248BfE05Bd8f0b5b4ef1Dc05019fb454dbDE0FF;
+    IVestingMath vmath = IVestingMath(vmath_lib);
+
     constructor(
         address _VEGA_TOKEN_ADDRESS,
         uint256 _cliffTime,
@@ -58,7 +61,7 @@ contract VestingBucket is AbstractBucket {
         totalAmount = _totalAmount;
 
         bucketAmountPerPeriod = totalAmount / numPeriods;
-        endTime = VestingMath.getEndTime(
+        endTime = vmath.getEndTime(
             _cliffTime,
             bucketAmountPerPeriod,
             _totalAmount
@@ -92,10 +95,16 @@ contract VestingBucket is AbstractBucket {
 
         require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
 
+        uint256 bal = vega_token.balanceOf(address(this));
+        uint256 unclaimed = totalClaimAmount - bal;
+        require(_claimTotalAmount <= unclaimed, "VESTINGBUCKET: can not claim tokens that are not deposited");
+
         require(
             totalClaimAmount + _claimTotalAmount <= totalAmount,
             "VESTINGBUCKET: can not claim more than total"
         );
+
+        
 
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
 
@@ -113,10 +122,10 @@ contract VestingBucket is AbstractBucket {
         totalClaimAmount += _claimTotalAmount;
     }
 
-    function getVestedAmount(Claim memory claim) public view returns (uint256) {
+    function getVestedAmount(Claim memory claim) public returns (uint256) {
         uint256 blocktime = block.timestamp;
         return
-            VestingMath.getVestedAmount(
+            vmath.getVestedAmount(
                 blocktime,
                 cliffTime,
                 endTime,
@@ -126,8 +135,7 @@ contract VestingBucket is AbstractBucket {
     }
 
     function getVestableAmount(address _claimAddress)
-        public
-        view
+        public        
         returns (uint256)
     {
         Claim memory claim = claims[_claimAddress];

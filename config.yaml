@@ -1,0 +1,11 @@
+builddir: /Users/ben/projects/vegaswap/repos/vega/build
+# network: BSC
+# network: ETH
+# network: BSCTEST
+network: BSC
+# accountID: 2
+accountID: contractor
+maxused: 4
+whitelist: whitelist_test.json
+
+# critical_accounts = [0, 1]
