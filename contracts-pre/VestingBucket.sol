@@ -22,6 +22,7 @@ contract VestingBucket is AbstractBucket {
     mapping(address => Claim) public claims;
     address[] public claimAddresses;
     uint256 public totalClaimAmount;
+    uint256 public openClaimAmount;
     uint256 public totalWithdrawnAmount;
 
     //unix time when vesting starts
@@ -159,6 +160,7 @@ contract VestingBucket is AbstractBucket {
 
         claimAddresses.push(_claimAddress);
         totalClaimAmount += _claimTotalAmount;
+        openClaimAmount += _claimTotalAmount;
     }
 
     function getVestableAmount(address _claimAddress)
@@ -205,6 +207,7 @@ contract VestingBucket is AbstractBucket {
         emit WithdrawClaim(claim.claimAddress, withdrawAmount);
         claim.withdrawnAmount += withdrawAmount;
         totalWithdrawnAmount += withdrawAmount;
+        openClaimAmount -=withdrawAmount;
     }
 
     //owner calls all claims
@@ -220,7 +223,8 @@ contract VestingBucket is AbstractBucket {
     function withdrawOwner(uint256 amount) public onlyRefOwner {
         //transfer any unclaimed balances
         uint256 bucketbalance = vega_token.balanceOf(address(this));
-        uint256 unclaimedbalance = bucketbalance - totalClaimAmount;
+        uint256 unclaimedbalance = bucketbalance  - openClaimAmount;
+        require(unclaimedbalance>0, "VESTINGBUCKET: no unclaimed amount to withdraw");
         bool transferSuccess = vega_token.transfer(msg.sender, unclaimedbalance);
         require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
         emit WithdrawOwner(amount);
