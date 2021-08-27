@@ -15,35 +15,37 @@ def test_basic(accounts, token):
     cliff = chain.time() + 100
     total = 1000
     period = 1
-    vestingbucket = VestingBucket.deploy(
+    bucket = VestingBucket.deploy(
         token, cliff, period, total, {"from": accounts[0]}
     )
-    assert vestingbucket.totalAmount() == total
+    assert bucket.totalAmount() == total
 
     a = accounts[0]
 
     dec = token.decimals()
     assert dec == 18
 
-    
     a2 = accounts[1]
 
     # cant claim more than total
     with brownie.reverts("VESTINGBUCKET: can not claim more than total"):
-        vestingbucket.addClaim(a2, 2000)
-
+        bucket.addClaim(a2, 2000)
 
     with brownie.reverts("VESTINGBUCKET: can not claim tokens that are not deposited"):
-        vestingbucket.addClaim(a2, 1000)
-    
+        bucket.addClaim(a2, 1000)
 
-    # token.transfer(vestingbucket, 1000)
-    # assert token.balanceOf(vestingbucket) == 1000
+    # token.transfer(bucket, 1000)
+    # assert token.balanceOf(bucket) == 1000
 
-    token.approve(vestingbucket, 1000)
-    vestingbucket.depositOwner(1000)
+    token.approve(bucket, 1000)
+    bucket.depositOwner(1000)
 
-    vestingbucket.addClaim(a2, 1000)
+    bucket.addClaim(a2, 1000)
+
+    with brownie.reverts("VESTINGBUCKET: claim at this address already exists"):
+        bucket.addClaim(a2, 1000)
+
+    assert bucket.endTime() == 0
 
     # zz = 100000
     # chain.sleep(zz)
