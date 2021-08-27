@@ -22,9 +22,10 @@ def isolate(fn_isolation):
 def token(VegaToken, accounts):
     return VegaToken.deploy({"from": accounts[0]})
 
+
 @pytest.fixture(scope="module")
 def nrt(accounts):
-    return NRT.deploy("NRT","NRTx", "x", {"from": accounts[0]})
+    return NRT.deploy("NRT", "NRTx", "x", {"from": accounts[0]})
 
 
 # def allocate(master, token, vconstants, mainAccount):
@@ -52,7 +53,7 @@ def nrt(accounts):
 #     now = chain.time()
 
 #     DECIMALS = token.decimals()
-    
+
 #     master.addVestingBucket(
 #         now + vconstants.seedCliff(),
 #         "SeedFunding",

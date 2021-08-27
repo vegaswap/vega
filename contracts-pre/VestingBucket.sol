@@ -33,6 +33,7 @@ contract VestingBucket is AbstractBucket {
     // calculated
     //how much per period. since its linear this is calculated
     uint256 public bucketAmountPerPeriod;
+    uint256 public startTime;
     uint256 public endTime;
 
     event ClaimAdded(address claimAddress, uint256 claimTotalAmount, uint256 amountPerPeriod);
@@ -68,6 +69,8 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
+        //start time is deploy time
+        startTime = block.timestamp;
     }
     
     // divide a with m and choose higher value if its round
