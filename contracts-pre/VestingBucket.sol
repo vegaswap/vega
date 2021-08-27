@@ -3,7 +3,6 @@ pragma solidity ^0.8.5;
 
 import "./AbstractBucket.sol";
 import "./VegaToken.sol";
-import "./VestingMath.sol";
 
 // bucket with vesting of multiple addresses
 // claims and
@@ -41,6 +40,8 @@ contract VestingBucket is AbstractBucket {
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
+    uint256 public constant default_period = 30 days;
+
     constructor(
         address _VEGA_TOKEN_ADDRESS,
         uint256 _cliffTime,
@@ -58,10 +59,8 @@ contract VestingBucket is AbstractBucket {
         totalAmount = _totalAmount;
 
         bucketAmountPerPeriod = totalAmount / numPeriods;
-        endTime = VestingMath.getEndTime(
-            _cliffTime,
-            bucketAmountPerPeriod,
-            _totalAmount
+        endTime = getEndTime(
+            bucketAmountPerPeriod
         );
 
         uint256 duration = endTime - block.timestamp;
@@ -69,6 +68,48 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
+    }
+    
+    // divide a with m and choose higher value if its round
+    // a > m
+    function ceildiv(uint256 a, uint256 m) public pure returns (uint256) {
+        uint256 t = a % m;
+        if (t == 0) {
+            return a / m;
+        } else {
+            return (a + (m - t)) / m;
+        }
+    }
+
+    function linearFrom(uint256 _amountPerPeriod) public view returns (uint256) {
+        return (default_period * (ceildiv(totalAmount, _amountPerPeriod)));
+    }
+
+    function getEndTime(
+        uint256 _amountPerPeriod
+    ) public view returns (uint256) {
+        return
+            cliffTime + linearFrom(_amountPerPeriod);
+    }
+
+    function getVestedAmountPeriod(
+        uint256 amountPerPeriod
+    ) private view returns (uint256) {
+        if (block.timestamp >= endTime) return totalAmount;
+
+        // returns 0 if cliffTime is not reached
+        if (block.timestamp < cliffTime) return 0;
+
+        uint256 timeSinceCliff = block.timestamp - cliffTime;
+        // at cliff, one amount is withdrawable
+        uint256 validPeriodCount = 1 + timeSinceCliff / default_period;
+        uint256 potentialReturned = validPeriodCount * amountPerPeriod;
+
+        if (potentialReturned > totalAmount) {
+            return totalAmount;
+        }
+
+        return potentialReturned;
     }
 
     function depositOwner(uint256 amount) public onlyOwner {
@@ -98,7 +139,7 @@ contract VestingBucket is AbstractBucket {
         );
 
         uint256 bal = vega_token.balanceOf(address(this));
-        uint256 unclaimed = totalClaimAmount - bal;
+        uint256 unclaimed = bal - totalClaimAmount;
         require(_claimTotalAmount <= unclaimed, "VESTINGBUCKET: can not claim tokens that are not deposited");
 
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
@@ -117,25 +158,15 @@ contract VestingBucket is AbstractBucket {
         totalClaimAmount += _claimTotalAmount;
     }
 
-    function getVestedAmount(Claim memory claim) public view returns (uint256) {
-        uint256 blocktime = block.timestamp;
-        return
-            VestingMath.getVestedAmount(
-                blocktime,
-                cliffTime,
-                endTime,
-                claim.amountPerPeriod,
-                claim.claimTotalAmount
-            );
-    }
-
     function getVestableAmount(address _claimAddress)
         public
         view
         returns (uint256)
     {
         Claim memory claim = claims[_claimAddress];
-        uint256 vestableAmount = getVestedAmount(claim);
+        uint256 vestableAmount = getVestedAmountPeriod(
+                claim.amountPerPeriod
+            );
         return vestableAmount;
     }
 
@@ -153,7 +184,7 @@ contract VestingBucket is AbstractBucket {
 
         Claim storage claim = claims[_claimAddress];
 
-        uint256 vestableAmount = getVestedAmount(claim);
+        uint256 vestableAmount = getVestedAmountPeriod(claim.amountPerPeriod);
 
         uint256 withdrawAmount = vestableAmount - claim.withdrawnAmount;
         uint256 totalAfterwithdraw = claim.withdrawnAmount + withdrawAmount;
@@ -163,11 +194,6 @@ contract VestingBucket is AbstractBucket {
         );
 
         require(withdrawAmount > 0, "VESTINGBUCKET: no amount claimed");
-
-        //edge case is handled in vesting math
-        //  if (vestingSchedule.totalWithdrawnAmount + withdrawableAmount > vestingSchedule.totalAmount) {
-        //   withdrawableAmount = vestingSchedule.totalAmount - vestingSchedule.totalWithdrawnAmount;
-        // }
 
         require(
             vega_token.transfer(_claimAddress, withdrawAmount),
@@ -183,10 +209,7 @@ contract VestingBucket is AbstractBucket {
         //for every claim
         uint256 i = 0;
         for (i = 0; i < claimAddresses.length; i++) {
-            address ca = claimAddresses[i];
-            vestClaimMax(ca);
-            //uint256 vestableAmount = getVestedAmount(claim);
-            //total += vestableAmount;
+            vestClaimMax(claimAddresses[i]);
         }
     }
 
@@ -199,14 +222,5 @@ contract VestingBucket is AbstractBucket {
         require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
         emit WithdrawOwner(amount);
     }
-
-    //revoke claim
-    //not implemented. loss of private key on receive side is his responsibility
-    // function revokeClaim(address _claimAddress) public onlyRefOwner {
-    //     uint256 amount = claims[_claimAddress].claimTotalAmount;
-    //     claims[_claimAddress].claimTotalAmount = 0;
-    //     totalClaimAmount -= amount;
-    // }
-
     
 }

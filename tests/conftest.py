@@ -4,10 +4,7 @@ import pytest
 
 from brownie import (
     VegaToken,
-    VestingMath,
-    VegaMaster,
     NRT,
-    VestingConstants,
     VestingBucket,
     accounts,
     chain,
@@ -30,148 +27,129 @@ def nrt(accounts):
     return NRT.deploy("NRT","NRTx", "x", {"from": accounts[0]})
 
 
-@pytest.fixture(scope="module")
-def vestingmath(VestingMath, accounts):
-    vmath = VestingMath.deploy({"from": accounts[0]})
-    return vmath
+# def allocate(master, token, vconstants, mainAccount):
+#     print("allocate to buckets")
 
-@pytest.fixture(scope="module")
-def master(VegaMaster, token, vestingmath, accounts):
-    master_contract = VegaMaster.deploy(token.address, {"from": accounts[0]})
-    token.transfer(master_contract.address, token.totalSupply())
-    # print(master_contract.revert_msg)
-    return master_contract
+#     amounts = [
+#         vconstants.seedAmount(),
+#         vconstants.privateAmount(),
+#         vconstants.publicAmount(),
+#         vconstants.publicAmountB(),
+#         vconstants.liqAmount(),
+#         vconstants.lprewardsAmount(),
+#         vconstants.lpgrantsAmount(),
+#         vconstants.ecoAmount(),
+#         vconstants.trademiningAmount(),
+#         vconstants.teamAmount(),
+#         vconstants.advisoryAmount(),
+#     ]
+#     # print(amounts)
+#     # print(sum(amounts))
+#     # rest = token.totalSupply() / 10 ** 18 - sum(amounts)
+#     # print("rest ", rest)
 
+#     # now = getCurrentTime
+#     now = chain.time()
 
-@pytest.fixture(scope="module")
-def vconstants(VestingConstants, accounts):
-    vconstants = VestingConstants.deploy({"from": accounts[0]})
-    return vconstants
-
-
-def allocate(master, token, vconstants, mainAccount):
-    print("allocate to buckets")
-
-    amounts = [
-        vconstants.seedAmount(),
-        vconstants.privateAmount(),
-        vconstants.publicAmount(),
-        vconstants.publicAmountB(),
-        vconstants.liqAmount(),
-        vconstants.lprewardsAmount(),
-        vconstants.lpgrantsAmount(),
-        vconstants.ecoAmount(),
-        vconstants.trademiningAmount(),
-        vconstants.teamAmount(),
-        vconstants.advisoryAmount(),
-    ]
-    # print(amounts)
-    # print(sum(amounts))
-    # rest = token.totalSupply() / 10 ** 18 - sum(amounts)
-    # print("rest ", rest)
-
-    # now = getCurrentTime
-    now = chain.time()
-
-    DECIMALS = token.decimals()
+#     DECIMALS = token.decimals()
     
-    master.addVestingBucket(
-        now + vconstants.seedCliff(),
-        "SeedFunding",
-        vconstants.seedPeriods(),
-        vconstants.seedAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.seedCliff(),
+#         "SeedFunding",
+#         vconstants.seedPeriods(),
+#         vconstants.seedAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.privateCliff(),
-        "PrivateFunding",
-        vconstants.privatePeriods(),
-        vconstants.privateAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.privateCliff(),
+#         "PrivateFunding",
+#         vconstants.privatePeriods(),
+#         vconstants.privateAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.publicCliff(),
-        "PublicFunding",
-        vconstants.publicPeriods(),
-        vconstants.publicAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.publicCliff(),
+#         "PublicFunding",
+#         vconstants.publicPeriods(),
+#         vconstants.publicAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.publicCliff(),
-        "PublicFunding",
-        vconstants.publicPeriods(),
-        vconstants.publicAmountB() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.publicCliff(),
+#         "PublicFunding",
+#         vconstants.publicPeriods(),
+#         vconstants.publicAmountB() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.liqCliff(),
-        "Liquidity",
-        vconstants.liqPeriods(),
-        vconstants.liqAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.liqCliff(),
+#         "Liquidity",
+#         vconstants.liqPeriods(),
+#         vconstants.liqAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.lpwRewardsCliff(),
-        "LPrewards",
-        vconstants.lprewardsPeriods(),
-        vconstants.lprewardsAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.lpwRewardsCliff(),
+#         "LPrewards",
+#         vconstants.lprewardsPeriods(),
+#         vconstants.lprewardsAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.lpgrantsCliff(),
-        "LPgrants",
-        vconstants.lpgrantsPeriods(),
-        vconstants.lpgrantsAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.lpgrantsCliff(),
+#         "LPgrants",
+#         vconstants.lpgrantsPeriods(),
+#         vconstants.lpgrantsAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.ecoCliff(),
-        "Ecosystem",
-        vconstants.ecoPeriods(),
-        vconstants.ecoAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.ecoCliff(),
+#         "Ecosystem",
+#         vconstants.ecoPeriods(),
+#         vconstants.ecoAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.trademiningCliff(),
-        "TradeMining",
-        vconstants.trademiningPeriods(),
-        vconstants.trademiningAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.trademiningCliff(),
+#         "TradeMining",
+#         vconstants.trademiningPeriods(),
+#         vconstants.trademiningAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.teamCliff(),
-        "Team",
-        vconstants.teamPeriods(),
-        vconstants.teamAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.teamCliff(),
+#         "Team",
+#         vconstants.teamPeriods(),
+#         vconstants.teamAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    master.addVestingBucket(
-        now + vconstants.advisoryCliff(),
-        "Advisory",
-        vconstants.advisorsPeriods(),
-        vconstants.advisoryAmount() * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     master.addVestingBucket(
+#         now + vconstants.advisoryCliff(),
+#         "Advisory",
+#         vconstants.advisorsPeriods(),
+#         vconstants.advisoryAmount() * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
-    amount = vconstants.treasuryAmount()
-    #amount = restBalance
-    master.addVestingBucket(
-        now + vconstants.treasuryCliff(),
-        "Treasury",
-        vconstants.treasuryPeriods(),
-        amount * (10 ** DECIMALS),
-        {"from": mainAccount},
-    )
+#     amount = vconstants.treasuryAmount()
+#     #amount = restBalance
+#     master.addVestingBucket(
+#         now + vconstants.treasuryCliff(),
+#         "Treasury",
+#         vconstants.treasuryPeriods(),
+#         amount * (10 ** DECIMALS),
+#         {"from": mainAccount},
+#     )
 
 
 # def mock_claims(master, token, vconstants, mainAccount):
@@ -184,8 +162,7 @@ def allocate(master, token, vconstants, mainAccount):
 
 
 @pytest.fixture(scope="module")
-def master_allocated(vestingmath, master, token, vconstants, accounts):
-    assert vestingmath != None
+def master_allocated(master, token, vconstants, accounts):
     mainAccount = accounts[0]
     # master_contract = VegaMaster.deploy({"from": mainAccount})
 
