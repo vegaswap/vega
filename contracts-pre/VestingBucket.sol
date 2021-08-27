@@ -3,7 +3,6 @@ pragma solidity ^0.8.5;
 
 import "./AbstractBucket.sol";
 import "./VegaToken.sol";
-import "./VestingMath.sol";
 
 // bucket with vesting of multiple addresses
 // claims and
@@ -41,6 +40,8 @@ contract VestingBucket is AbstractBucket {
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
+    uint256 public constant DEFAULT_PERIOD = 30 days;
+
     constructor(
         address _VEGA_TOKEN_ADDRESS,
         uint256 _cliffTime,
@@ -58,10 +59,8 @@ contract VestingBucket is AbstractBucket {
         totalAmount = _totalAmount;
 
         bucketAmountPerPeriod = totalAmount / numPeriods;
-        endTime = VestingMath.getEndTime(
-            _cliffTime,
-            bucketAmountPerPeriod,
-            _totalAmount
+        endTime = getEndTime(
+            bucketAmountPerPeriod
         );
 
         uint256 duration = endTime - block.timestamp;
@@ -69,6 +68,43 @@ contract VestingBucket is AbstractBucket {
 
         totalWithdrawnAmount = 0;
         totalClaimAmount = 0;
+    }
+    
+    // divide a with m and choose higher value if its round
+    // a > m
+    function ceildiv(uint256 a, uint256 m) public pure returns (uint256) {
+        uint256 t = a % m;
+        if (t == 0) {
+            return a / m;
+        } else {
+            return (a + (m - t)) / m;
+        }
+    }
+
+    function getEndTime(
+        uint256 _amountPerPeriod
+    ) public view returns (uint256) {
+        return
+            cliffTime + (DEFAULT_PERIOD * (ceildiv(totalAmount, _amountPerPeriod)));
+    }
+
+    function getVestedAmountPeriod(
+        uint256 amountPerPeriod
+    ) private view returns (uint256) {
+        if (block.timestamp >= endTime) return totalAmount;
+
+        // returns 0 if cliffTime is not reached
+        if (block.timestamp < cliffTime) return 0;
+
+        uint256 timeSinceCliff = block.timestamp - cliffTime;
+        uint256 validPeriodCount = timeSinceCliff / DEFAULT_PERIOD + 1; // at cliff, one amount is withdrawable
+        uint256 potentialReturned = validPeriodCount * amountPerPeriod;
+
+        if (potentialReturned > totalAmount) {
+            return totalAmount;
+        }
+
+        return potentialReturned;
     }
 
     function depositOwner(uint256 amount) public onlyOwner {
@@ -117,25 +153,15 @@ contract VestingBucket is AbstractBucket {
         totalClaimAmount += _claimTotalAmount;
     }
 
-    function getVestedAmount(Claim memory claim) public view returns (uint256) {
-        uint256 blocktime = block.timestamp;
-        return
-            VestingMath.getVestedAmount(
-                blocktime,
-                cliffTime,
-                endTime,
-                claim.amountPerPeriod,
-                claim.claimTotalAmount
-            );
-    }
-
     function getVestableAmount(address _claimAddress)
         public
         view
         returns (uint256)
     {
         Claim memory claim = claims[_claimAddress];
-        uint256 vestableAmount = getVestedAmount(claim);
+        uint256 vestableAmount = getVestedAmountPeriod(
+                claim.amountPerPeriod
+            );
         return vestableAmount;
     }
 
@@ -153,7 +179,7 @@ contract VestingBucket is AbstractBucket {
 
         Claim storage claim = claims[_claimAddress];
 
-        uint256 vestableAmount = getVestedAmount(claim);
+        uint256 vestableAmount = getVestedAmountPeriod(claim.amountPerPeriod);
 
         uint256 withdrawAmount = vestableAmount - claim.withdrawnAmount;
         uint256 totalAfterwithdraw = claim.withdrawnAmount + withdrawAmount;
