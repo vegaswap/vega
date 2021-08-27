@@ -97,6 +97,10 @@ contract VestingBucket is AbstractBucket {
             "VESTINGBUCKET: can not claim more than total"
         );
 
+        uint256 bal = vega_token.balanceOf(address(this));
+        uint256 unclaimed = totalClaimAmount - bal;
+        require(_claimTotalAmount <= unclaimed, "VESTINGBUCKET: can not claim tokens that are not deposited");
+
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
 
         claims[_claimAddress] = Claim({
