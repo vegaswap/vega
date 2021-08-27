@@ -40,7 +40,7 @@ contract VestingBucket is AbstractBucket {
     event WithdrawClaim(address indexed addr, uint256 amount);
     event WithdrawOwner(uint256 amount);
 
-    uint256 public constant DEFAULT_PERIOD = 30 days;
+    uint256 public constant default_period = 30 days;
 
     constructor(
         address _VEGA_TOKEN_ADDRESS,
@@ -85,7 +85,7 @@ contract VestingBucket is AbstractBucket {
         uint256 _amountPerPeriod
     ) public view returns (uint256) {
         return
-            cliffTime + (DEFAULT_PERIOD * (ceildiv(totalAmount, _amountPerPeriod)));
+            cliffTime + (default_period * (ceildiv(totalAmount, _amountPerPeriod)));
     }
 
     function getVestedAmountPeriod(
@@ -97,7 +97,7 @@ contract VestingBucket is AbstractBucket {
         if (block.timestamp < cliffTime) return 0;
 
         uint256 timeSinceCliff = block.timestamp - cliffTime;
-        uint256 validPeriodCount = timeSinceCliff / DEFAULT_PERIOD + 1; // at cliff, one amount is withdrawable
+        uint256 validPeriodCount = timeSinceCliff / default_period + 1; // at cliff, one amount is withdrawable
         uint256 potentialReturned = validPeriodCount * amountPerPeriod;
 
         if (potentialReturned > totalAmount) {
