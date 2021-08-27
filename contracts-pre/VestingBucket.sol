@@ -81,11 +81,15 @@ contract VestingBucket is AbstractBucket {
         }
     }
 
+    function linearFrom(uint256 _amountPerPeriod) public view returns (uint256) {
+        return (default_period * (ceildiv(totalAmount, _amountPerPeriod)));
+    }
+
     function getEndTime(
         uint256 _amountPerPeriod
     ) public view returns (uint256) {
         return
-            cliffTime + (default_period * (ceildiv(totalAmount, _amountPerPeriod)));
+            cliffTime + linearFrom(_amountPerPeriod);
     }
 
     function getVestedAmountPeriod(
@@ -98,7 +102,7 @@ contract VestingBucket is AbstractBucket {
 
         uint256 timeSinceCliff = block.timestamp - cliffTime;
         // at cliff, one amount is withdrawable
-        uint256 validPeriodCount = timeSinceCliff / default_period + 1;
+        uint256 validPeriodCount = 1 + timeSinceCliff / default_period;
         uint256 potentialReturned = validPeriodCount * amountPerPeriod;
 
         if (potentialReturned > totalAmount) {
@@ -135,7 +139,7 @@ contract VestingBucket is AbstractBucket {
         );
 
         uint256 bal = vega_token.balanceOf(address(this));
-        uint256 unclaimed = totalClaimAmount - bal;
+        uint256 unclaimed = bal - totalClaimAmount;
         require(_claimTotalAmount <= unclaimed, "VESTINGBUCKET: can not claim tokens that are not deposited");
 
         uint256 amountPerPeriod = _claimTotalAmount / numPeriods;
