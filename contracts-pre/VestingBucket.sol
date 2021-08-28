@@ -224,7 +224,7 @@ contract VestingBucket is AbstractBucket {
         //transfer any unclaimed balances
         uint256 bucketbalance = vega_token.balanceOf(address(this));
         uint256 unclaimedbalance = bucketbalance  - openClaimAmount;
-        require(unclaimedbalance>0, "VESTINGBUCKET: no unclaimed amount to withdraw");
+        require(amount <= unclaimedbalance, "VESTINGBUCKET: can't withdraw claimed tokens");
         bool transferSuccess = vega_token.transfer(msg.sender, unclaimedbalance);
         require(transferSuccess, "VESTINGBUCKET: withdrawOwner failed");
         emit WithdrawOwner(amount);
