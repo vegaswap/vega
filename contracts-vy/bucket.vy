@@ -1,11 +1,22 @@
 # @version ^0.2.14
+# a vesting bucket
+# a bucket is a wrapper over an account with access control
+# vesting occurs linearly over time
+# the owner deposits funds upfront and adds claims
 
+from vyper.interfaces import ERC20
+
+# from Token import *
+
+# name of the bucket
 name: String[15]
+owner: address
+vegaToken: address
 # VegaToken: public vega_token
 registerTime: uint256
-# string[100]
+# time variables
 days: constant(uint256) = 86400
-DEFAULT_PERIOD: constant(uint256) = 30 * days
+default_period: constant(uint256) = 30 * days
 cliffTime: uint256
 endTime: uint256
 totalAmount: uint256
@@ -13,25 +24,33 @@ numPeriods: uint256
 initialized: bool
 totalWithdrawnAmount: uint256
 totalClaimAmount: uint256
-owner: address
-
 # Events
 # event TokenExchange:
 #     buyer: indexed(address)
+
+event DepositOwner:
+    owner: address
+    amount: uint256
+
+event WithdrawOwner:
+    owner: address
+    amount: uint256
 
 
 @external
 def __init__(
     _name: String[15],
-    _VEGA_TOKEN_ADDRESS: address,
+    _vegaToken: address,
     _cliffTime: uint256,
     _numPeriods: uint256,
     _totalAmount: uint256,
 ):
-    assert _VEGA_TOKEN_ADDRESS != ZERO_ADDRESS, "Vegatoken is zero address"
-    assert _cliffTime >= block.timestamp, "VESTINGBUCKET: cliff must be in the future"
-    assert _numPeriods > 0, "numPeriods must be larger than 0"
-    assert _numPeriods < 25, "numPeriods must be smaller than 25"
+    assert _vegaToken != ZERO_ADDRESS, "BUCKET: Vegatoken is zero address"
+    assert _cliffTime >= block.timestamp, "BUCKET: cliff must be in the future"
+    assert _numPeriods > 0, "BUCKET: numPeriods must be larger than 0"
+    assert _numPeriods < 25, "BUCKET: numPeriods must be smaller than 25"
+    # ERC20(_VEGA_TOKEN_ADDRESS
+    self.vegaToken = _vegaToken
     self.name = _name
     # vega_token = VegaToken(_VEGA_TOKEN_ADDRESS)
     self.registerTime = block.timestamp
@@ -58,12 +77,15 @@ def ceildiv(a: uint256, m: uint256) -> uint256:
 @external
 def initialize():
     bucketAmountPerPeriod: uint256 = self.totalAmount / self.numPeriods
-    duration: uint256 = DEFAULT_PERIOD * (
+    duration: uint256 = default_period * (
         self.ceildiv(self.totalAmount, bucketAmountPerPeriod)
     )
     self.endTime = self.cliffTime + duration
-    assert duration < 731 * days, "VESTINGBUCKET: don't vest more than 2 years"
+    assert duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.initialized = True
+
+
+# vesting math
 
 
 @internal
@@ -71,7 +93,7 @@ def linearFrom(
     _amountPerPeriod: uint256,
     _totalAmount: uint256,
 ) -> uint256:
-    return DEFAULT_PERIOD * (self.ceildiv(self.totalAmount, _amountPerPeriod))
+    return default_period * (self.ceildiv(self.totalAmount, _amountPerPeriod))
 
 
 @internal
@@ -93,10 +115,11 @@ def getVestedAmountPeriodI(
         return 0
 
     timeSinceCliff: uint256 = block.timestamp - self.cliffTime
-    # // at cliff, one amount is withdrawable
-    validPeriodCount: uint256 = timeSinceCliff / DEFAULT_PERIOD + 1
+    # at cliff, one amount is withdrawable
+    validPeriodCount: uint256 = 1 + timeSinceCliff / default_period
     potentialReturned: uint256 = validPeriodCount * amountPerPeriod
 
+    #TOTAL?
     if potentialReturned > self.totalAmount:
         return self.totalAmount
 
@@ -104,36 +127,29 @@ def getVestedAmountPeriodI(
 
 
 @external
-def getVestedAmountPeriod(
-    amountPerPeriod: uint256,
-) -> uint256:
+def getVestedAmountPeriod(amountPerPeriod: uint256) -> uint256:
     return self.getVestedAmountPeriodI(amountPerPeriod)
 
 
 @external
 def depositOwner(amount: uint256):
-    assert msg.sender == self.owner, "not the owner"
-    
-    # require(vega_token.allowance(msg.sender, address(this)) >= amount, "not enough allowance");
-    # bool transferSuccess = vega_token.transferFrom(
-    #         msg.sender,
-    #         address(this),
-    #         amount
-    #     );
-    #     require(transferSuccess, "VESTINGBUCKET: deposit failed");
-    #     emit DepositOwner(msg.sender, amount);
+    assert msg.sender == self.owner, "BUCKET: not the owner"
+    assert ERC20(self.vegaToken).allowance(msg.sender, self) >= amount, "BUCKET: not enough allowance"
+
+    assert ERC20(self.vegaToken).balanceOf(msg.sender) >= amount, "BUCKET: not enough balance"
+    transferSuccess: bool = ERC20(self.vegaToken).transferFrom(msg.sender, self, amount)
+    assert transferSuccess, "BUCKET: deposit failed"
+    log DepositOwner(msg.sender, amount)
+
+@external
+def withdrawOwner(amount: uint256): 
+    # public onlyRefOwner
+    assert msg.sender == self.owner, "BUCKET: not the owner"
+    bucketbalance: uint256 = ERC20(self.vegaToken).balanceOf(self)
+    unclaimedbalance: uint256 = bucketbalance - self.totalClaimAmount
+    assert amount <= unclaimedbalance, "BUCKET: can't withdraw claimed amounts"
+    transferSuccess: bool = ERC20(self.vegaToken).transfer(msg.sender, amount)
+    assert transferSuccess, "BUCKET: withdraw failed"
+    log WithdrawOwner(msg.sender, amount)
 
 
-# def addClaim(address _claimAddress, uint256 _claimTotalAmount)
-# def getVestedAmount(Claim memory claim) public view returns (uint256) :
-# def getVestableAmount(address _claimAddress)
-# def vestClaimMax(address _claimAddress) public :
-# def allClaim() public onlyRefOwner :
-# def withdrawOwner(uint256 amount) public onlyRefOwner :
-# def revokeClaim(address _claimAddress) public onlyRefOwner :
-
-# struct Claim
-# mapping(address => Claim) public claims;
-# address[] public claimAddresses;
-# uint256 public totalClaimAmount;
-# uint256 public totalWithdrawnAmount;
