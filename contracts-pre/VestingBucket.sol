@@ -179,6 +179,7 @@ contract VestingBucket is AbstractBucket {
 
     //vest the claim. this vests the maximum possible
     function vestClaimMax(address _claimAddress) public {
+        //balance check
         require(
             msg.sender == _claimAddress ||
                 msg.sender == owner() ||
