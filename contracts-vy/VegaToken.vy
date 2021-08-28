@@ -27,7 +27,7 @@ balanceOf: public(HashMap[address, uint256])
 allowances: public(HashMap[address, HashMap[address, uint256]])
 # By declaring `totalSupply` as public, we automatically create the `totalSupply()` getter
 totalSupply: public(uint256)
-minter: address
+deployer: address
 
 @external
 def __init__():
@@ -36,9 +36,10 @@ def __init__():
     self.symbol = "Vega"
     self.decimals = 18
 
+    #assign max supply, no more minting after that
     self.balanceOf[msg.sender] = 10**9 * 10**self.decimals
     self.totalSupply = self.balanceOf[msg.sender]
-    self.minter = msg.sender
+    self.deployer = msg.sender
     # log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 
 
@@ -89,7 +90,6 @@ def approve(_spender : address, _value : uint256) -> bool:
     @param _value The amount of tokens to be spent
     @return bool success
     """
-    assert _value == 0 or self.allowances[msg.sender][_spender] == 0
     self.allowances[msg.sender][_spender] = _value
     log Approval(msg.sender, _spender, _value)
     return True

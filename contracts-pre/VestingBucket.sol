@@ -163,6 +163,8 @@ contract VestingBucket is AbstractBucket {
         openClaimAmount += _claimTotalAmount;
     }
 
+    //top up claim
+
     function getVestableAmount(address _claimAddress)
         public
         view

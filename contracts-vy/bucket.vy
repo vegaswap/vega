@@ -16,16 +16,28 @@ registerTime: uint256
 # time variables
 days: constant(uint256) = 86400
 default_period: constant(uint256) = 30 * days
-cliffTime: uint256
-endTime: uint256
-totalAmount: uint256
-numPeriods: uint256
-initialized: bool
-totalWithdrawnAmount: uint256
-totalClaimAmount: uint256
-# Events
-# event TokenExchange:
-#     buyer: indexed(address)
+cliffTime: public(uint256)
+endTime: public(uint256)
+totalAmount: public(uint256)
+numPeriods: public(uint256)
+initialized: public(bool)
+openClaimAmount: public(uint256)
+totalWithdrawnAmount: public(uint256)
+totalClaimAmount: public(uint256)
+
+struct Claim:
+    claimAddress: address 
+    claimTotalAmount: uint256 
+    amountPerPeriod: uint256 
+    withdrawnAmount: uint256 
+    isAdded: bool 
+
+claims: public(HashMap[address, Claim])
+
+event ClaimAdded:
+    claimAddress: address
+    claimTotalAmount: uint256
+    amountPerPeriod: uint256
 
 event DepositOwner:
     owner: address
@@ -48,10 +60,8 @@ def __init__(
     assert _cliffTime >= block.timestamp, "BUCKET: cliff must be in the future"
     assert _numPeriods > 0, "BUCKET: numPeriods must be larger than 0"
     assert _numPeriods < 25, "BUCKET: numPeriods must be smaller than 25"
-    # ERC20(_VEGA_TOKEN_ADDRESS
     self.vegaToken = _vegaToken
     self.name = _name
-    # vega_token = VegaToken(_VEGA_TOKEN_ADDRESS)
     self.registerTime = block.timestamp
     self.cliffTime = _cliffTime
     self.numPeriods = _numPeriods
@@ -64,6 +74,7 @@ def __init__(
     # self.endTime = self.getEndTime(bucketAmountPerPeriod)
 
 
+#div if even otherwise
 @internal
 def ceildiv(a: uint256, m: uint256) -> uint256:
     t: uint256 = a % m
@@ -151,4 +162,41 @@ def withdrawOwner(amount: uint256):
     assert transferSuccess, "BUCKET: withdraw failed"
     log WithdrawOwner(msg.sender, amount)
 
+
+@external
+def addClaim(_claimAddress: address , _claimTotalAmount: uint256):
+    #requires
+    # if (claims[_claimAddress].isAdded)
+    #         revert("VESTINGBUCKET: claim at this address already exists");
+
+    #     require(_claimTotalAmount > 0, "VESTINGBUCKET: claim can not be zero");
+
+    #     require(
+    #         totalClaimAmount + _claimTotalAmount <= totalAmount,
+    #         "VESTINGBUCKET: can not claim more than total"
+    #     );
+
+    #     uint256 bal = vega_token.balanceOf(address(this));
+    #     uint256 unclaimed = bal - totalClaimAmount;
+    #     require(_claimTotalAmount <= unclaimed, "VESTINGBUCKET: can not claim tokens that are not deposited");
+
+
+    amountPerPeriod: uint256 = _claimTotalAmount / self.numPeriods
+    existclaim: Claim = self.claims[msg.sender]
+    assert existclaim == empty(Claim), "VESTINGBUCKET: claim at this address already exists"
+    self.claims[msg.sender] = Claim({
+        claimAddress: _claimAddress,
+        amountPerPeriod: amountPerPeriod,
+        claimTotalAmount: _claimTotalAmount,
+        withdrawnAmount: 0,
+        isAdded: True
+    })
+    # self.claims[msg.sender] = 1
+
+
+    # claimAddresses.push(_claimAddress);
+    self.totalClaimAmount += _claimTotalAmount
+    self.openClaimAmount += _claimTotalAmount
+
+    log ClaimAdded(_claimAddress, _claimTotalAmount, amountPerPeriod)
 

@@ -162,5 +162,6 @@ def test_transfer_event_fires(accounts, token):
     token.approve(accounts[1], amount, {"from": accounts[0]})
     tx = token.transferFrom(accounts[0], accounts[2], amount, {"from": accounts[1]})
 
-    assert len(tx.events) == 2
+    assert len(tx.events) == 1
+    # assert len(tx.events) == 2
     assert tx.events["Transfer"].values() == [accounts[0], accounts[2], amount]
