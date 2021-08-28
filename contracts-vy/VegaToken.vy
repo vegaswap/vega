@@ -1,3 +1,5 @@
+# Vega token has max supply
+
 from vyper.interfaces import ERC20
 
 implements: ERC20
@@ -27,17 +29,15 @@ allowances: public(HashMap[address, HashMap[address, uint256]])
 totalSupply: public(uint256)
 minter: address
 
-
 @external
-def __init__(
-    _name: String[64], _symbol: String[32], _decimals: uint256, _supply: uint256
-):
-    init_supply: uint256 = _supply * 10 ** _decimals
-    self.name = _name
-    self.symbol = _symbol
-    self.decimals = _decimals
-    self.balanceOf[msg.sender] = init_supply
-    self.totalSupply = init_supply
+def __init__():
+    # _name: String[64], _symbol: String[32], _decimals: uint256, _max_supply: uint256    
+    self.name = "VegaToken"
+    self.symbol = "Vega"
+    self.decimals = 18
+
+    self.balanceOf[msg.sender] = 10**9 * 10**self.decimals
+    self.totalSupply = self.balanceOf[msg.sender]
     self.minter = msg.sender
     # log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 

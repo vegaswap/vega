@@ -1,12 +1,11 @@
-# @version ^0.2.14
+# @version ^0.2.15
+
 # a vesting bucket
 # a bucket is a wrapper over an account with access control
 # vesting occurs linearly over time
 # the owner deposits funds upfront and adds claims
 
 from vyper.interfaces import ERC20
-
-# from Token import *
 
 # name of the bucket
 name: String[15]
