@@ -19,7 +19,7 @@ def __init__():
     self.owner = msg.sender
 
 @external
-def add(addr: address, amount: uint256):
+def addItem(addr: address, amount: uint256):
     assert msg.sender == self.owner
     self.addresses[self.count] = addr
     self.amounts[self.count] = amount

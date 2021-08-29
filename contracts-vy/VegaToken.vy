@@ -33,7 +33,7 @@ def __init__():
     self.decimals = 18
 
     #assign max supply, no more minting after that
-    uint256: init_supply = 10**9 * 10**self.decimals
+    init_supply: uint256 = 10**9 * 10**self.decimals
     self.balanceOf[msg.sender] = init_supply
     self.totalSupply = init_supply
     #calcuating circulation needs to be done externally
