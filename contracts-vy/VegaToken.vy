@@ -18,16 +18,11 @@ name: public(String[64])
 symbol: public(String[32])
 decimals: public(uint256)
 
-# NOTE: By declaring `balanceOf` as public, vyper automatically generates a 'balanceOf()' getter
-#       method to allow access to account balances.
-#       The _KeyType will become a required parameter for the getter and it will return _ValueType.
-#       See: https://vyper.readthedocs.io/en/v0.1.0-beta.8/types.html?highlight=getter#mappings
+# vyper automatically generates getters
 balanceOf: public(HashMap[address, uint256])
-# By declaring `allowance` as public, vyper automatically generates the `allowance()` getter
 allowances: public(HashMap[address, HashMap[address, uint256]])
-# By declaring `totalSupply` as public, we automatically create the `totalSupply()` getter
 totalSupply: public(uint256)
-deployer: address
+deployer: public(address)
 
 @external
 def __init__():
@@ -37,11 +32,20 @@ def __init__():
     self.decimals = 18
 
     #assign max supply, no more minting after that
-    self.balanceOf[msg.sender] = 10**9 * 10**self.decimals
-    self.totalSupply = self.balanceOf[msg.sender]
+    uint256: init_supply = 10**9 * 10**self.decimals
+    self.balanceOf[msg.sender] = init_supply
+    self.totalSupply = init_supply
     self.deployer = msg.sender
-    # log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
+    log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 
+@internal
+def swap(_from : address, _to : address, _value : uint256):
+    # vyper does not allow underflows
+    # so the following subtraction would revert on insufficient balance
+    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
+    self.balanceOf[_from] -= _value
+    self.balanceOf[_to] += _value
+    log Transfer(_from, _to, _value)
 
 @external
 def transfer(_to : address, _value : uint256) -> bool:
@@ -53,10 +57,7 @@ def transfer(_to : address, _value : uint256) -> bool:
     @param _value The amount to be transferred
     @return bool success
     """
-    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
-    self.balanceOf[msg.sender] -= _value
-    self.balanceOf[_to] += _value
-    log Transfer(msg.sender, _to, _value)
+    self.swap(msg.sender, _to, _value)    
     return True
 
 
@@ -69,13 +70,8 @@ def transferFrom(_from : address, _to : address, _value : uint256) -> bool:
      @param _value uint256 the amount of tokens to be transferred
      @return bool success
     """
-    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
-    # NOTE: vyper does not allow underflows
-    #       so the following subtraction would revert on insufficient balance
-    self.balanceOf[_from] -= _value
-    self.balanceOf[_to] += _value
+    self.swap(_from, _to, _value)
     self.allowances[_from][msg.sender] -= _value
-    log Transfer(_from, _to, _value)
     return True
 
 
