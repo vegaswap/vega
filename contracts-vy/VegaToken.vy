@@ -1,3 +1,5 @@
+# Vega token has max supply
+
 from vyper.interfaces import ERC20
 
 implements: ERC20
@@ -16,31 +18,37 @@ name: public(String[64])
 symbol: public(String[32])
 decimals: public(uint256)
 
-# NOTE: By declaring `balanceOf` as public, vyper automatically generates a 'balanceOf()' getter
-#       method to allow access to account balances.
-#       The _KeyType will become a required parameter for the getter and it will return _ValueType.
-#       See: https://vyper.readthedocs.io/en/v0.1.0-beta.8/types.html?highlight=getter#mappings
+# vyper automatically generates getters
 balanceOf: public(HashMap[address, uint256])
-# By declaring `allowance` as public, vyper automatically generates the `allowance()` getter
 allowances: public(HashMap[address, HashMap[address, uint256]])
-# By declaring `totalSupply` as public, we automatically create the `totalSupply()` getter
 totalSupply: public(uint256)
-minter: address
-
+circulatingSupply: public(uint256)
+deployer: public(address)
 
 @external
-def __init__(
-    _name: String[64], _symbol: String[32], _decimals: uint256, _supply: uint256
-):
-    init_supply: uint256 = _supply * 10 ** _decimals
-    self.name = _name
-    self.symbol = _symbol
-    self.decimals = _decimals
+def __init__():
+    # _name: String[64], _symbol: String[32], _decimals: uint256, _max_supply: uint256    
+    self.name = "VegaToken"
+    self.symbol = "Vega"
+    self.decimals = 18
+
+    #assign max supply, no more minting after that
+    uint256: init_supply = 10**9 * 10**self.decimals
     self.balanceOf[msg.sender] = init_supply
     self.totalSupply = init_supply
-    self.minter = msg.sender
-    # log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
+    #calcuating circulation needs to be done externally
+    self.circulatingSupply = 0
+    self.deployer = msg.sender
+    log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 
+@internal
+def swap(_from : address, _to : address, _value : uint256):
+    # vyper does not allow underflows
+    # so the following subtraction would revert on insufficient balance
+    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
+    self.balanceOf[_from] -= _value
+    self.balanceOf[_to] += _value
+    log Transfer(_from, _to, _value)
 
 @external
 def transfer(_to : address, _value : uint256) -> bool:
@@ -52,10 +60,7 @@ def transfer(_to : address, _value : uint256) -> bool:
     @param _value The amount to be transferred
     @return bool success
     """
-    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
-    self.balanceOf[msg.sender] -= _value
-    self.balanceOf[_to] += _value
-    log Transfer(msg.sender, _to, _value)
+    self.swap(msg.sender, _to, _value)    
     return True
 
 
@@ -68,13 +73,8 @@ def transferFrom(_from : address, _to : address, _value : uint256) -> bool:
      @param _value uint256 the amount of tokens to be transferred
      @return bool success
     """
-    assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
-    # NOTE: vyper does not allow underflows
-    #       so the following subtraction would revert on insufficient balance
-    self.balanceOf[_from] -= _value
-    self.balanceOf[_to] += _value
+    self.swap(_from, _to, _value)
     self.allowances[_from][msg.sender] -= _value
-    log Transfer(_from, _to, _value)
     return True
 
 
@@ -104,3 +104,8 @@ def allowance(_owner : address, _spender : address) -> uint256:
     @return uint256 specifying the amount of tokens still available for the spender
     """
     return self.allowances[_owner][_spender]
+
+@external
+def setCirculatingSupply(_circulatingSupply: uint256):
+    assert msg.sender == self.deployer, "only deployer"
+    self.circulatingSupply = _circulatingSupply

@@ -1,7 +1,8 @@
 # explicit structure
 project_structure:
     build: build-brownie
-    contracts: contracts-pre
+    # contracts: contracts-pre
+    contracts: contracts-vy
     contracts-post: contracts-post
     interfaces: interfaces
     reports: reports
@@ -54,11 +55,11 @@ networks:
 
 compiler:
     evm_version: null
-    solc:
-        version: 0.8.5
-        optimizer:
-            enabled: true
-            runs: 200
-        remappings: null
-    # vyper:
-    #     version: null
+    # solc:
+    #     version: 0.8.5
+    #     optimizer:
+    #         enabled: true
+    #         runs: 200
+    #     remappings: null
+    vyper:
+        version: 0.2.15
