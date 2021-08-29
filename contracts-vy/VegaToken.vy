@@ -22,6 +22,7 @@ decimals: public(uint256)
 balanceOf: public(HashMap[address, uint256])
 allowances: public(HashMap[address, HashMap[address, uint256]])
 totalSupply: public(uint256)
+circulatingSupply: public(uint256)
 deployer: public(address)
 
 @external
@@ -35,6 +36,8 @@ def __init__():
     uint256: init_supply = 10**9 * 10**self.decimals
     self.balanceOf[msg.sender] = init_supply
     self.totalSupply = init_supply
+    #calcuating circulation needs to be done externally
+    self.circulatingSupply = 0
     self.deployer = msg.sender
     log Transfer(ZERO_ADDRESS, msg.sender, init_supply)
 
@@ -86,6 +89,7 @@ def approve(_spender : address, _value : uint256) -> bool:
     @param _value The amount of tokens to be spent
     @return bool success
     """
+    assert _value == 0 or self.allowances[msg.sender][_spender] == 0
     self.allowances[msg.sender][_spender] = _value
     log Approval(msg.sender, _spender, _value)
     return True
@@ -100,3 +104,8 @@ def allowance(_owner : address, _spender : address) -> uint256:
     @return uint256 specifying the amount of tokens still available for the spender
     """
     return self.allowances[_owner][_spender]
+
+@external
+def setCirculatingSupply(_circulatingSupply: uint256):
+    assert msg.sender == self.deployer, "only deployer"
+    self.circulatingSupply = _circulatingSupply

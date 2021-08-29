@@ -44,10 +44,10 @@ def __init__():
 def issue(addr: address, amount: uint256):
     # could check if address already there and make list unique
     assert self.balances[addr]==0
-    assert msg.sender == owner
-    self.balances[addr] += amount
-    self.addresses[count] = addr
-    self.amounts[count] = amount
+    assert msg.sender == self.owner
+    self.balances[addr] = amount
+    self.addresses[self.count] = addr
+    self.amounts[self.count] = amount
     self.count += 1
 
 
@@ -55,9 +55,9 @@ def issue(addr: address, amount: uint256):
 def redeem(addr: address, amount: uint256):
     self.balances[addr] -= amount
 
-# @external
-# def redeem():
+@external
+def balanceOf(addr: address) -> uint256:
+    return self.balances[addr]
 
-# def balanceOf():
 
 
