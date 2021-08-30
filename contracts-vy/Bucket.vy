@@ -33,7 +33,6 @@ duration: public(uint256)
 endTime: public(uint256)
 totalAmount: public(uint256)
 numPeriods: public(uint256)
-amountPerPeriod: public(uint256)
 initialized: public(bool)
 openClaimAmount: public(uint256)
 totalWithdrawnAmount: public(uint256)
@@ -44,7 +43,7 @@ claimCount: public(uint256)
 struct Claim:
     claimAddress: address
     claimTotalAmount: uint256
-    amountPerPeriod: uint256
+    amountPeriod: uint256
     withdrawnAmount: uint256
     isAdded: bool
 
@@ -91,7 +90,6 @@ def __init__(
     self.cliffTime = _cliffTime
     self.numPeriods = _numPeriods
     self.totalAmount = _totalAmount
-    self.amountPerPeriod = self.totalAmount / self.numPeriods
     self.totalWithdrawnAmount = 0
     self.totalClaimAmount = 0
     self.initialized = False
@@ -112,7 +110,8 @@ def ceildiv(a: uint256, m: uint256) -> uint256:
 
 @external
 def initialize():
-    self.duration = self.period * self.ceildiv(self.totalAmount, self.amountPerPeriod)
+    amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
+    self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
     self.initialized = True
@@ -162,7 +161,7 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
-    return self.currentPeriod() * claim.amountPerPeriod
+    return self.currentPeriod() * claim.amountPeriod
 
 
 @external
@@ -229,13 +228,13 @@ def _addClaim(_claimAddress: address, _claimTotalAmount: uint256):
         _claimTotalAmount <= unclaimed
     ), "BUCKET: can not claim tokens that are not deposited"
 
-    _amountPerPeriod: uint256 = _claimTotalAmount / self.numPeriods
+    _amountPeriod: uint256 = _claimTotalAmount / self.numPeriods
     existclaim: Claim = self.claims[_claimAddress]
     assert existclaim == empty(Claim), "BUCKET: claim at this address already exists"
     self.claims[_claimAddress] = Claim(
         {
             claimAddress: _claimAddress,
-            amountPerPeriod: _amountPerPeriod,
+            amountPeriod: _amountPeriod,
             claimTotalAmount: _claimTotalAmount,
             withdrawnAmount: 0,
             isAdded: True,
