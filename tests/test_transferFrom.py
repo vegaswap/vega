@@ -2,9 +2,9 @@
 # import brownie
 
 
-# def test_sender_balance_decreases(accounts, token):
-#     sender_balance = token.balanceOf(accounts[0])
-#     amount = sender_balance // 4
+def test_sender_balance_decreases(token, accounts, transactor):
+    sender_balance = token.f.balanceOf(accounts[0]).call()
+    amount = sender_balance
 
 #     token.approve(accounts[1], amount, {"from": accounts[0]})
 #     token.transferFrom(accounts[0], accounts[2], amount, {"from": accounts[1]})
