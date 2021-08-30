@@ -1,0 +1,68 @@
+builddir: "./build"
+
+
+# # explicit structure
+# project_structure:
+#     build: build-brownie
+#     # contracts: contracts-pre
+#     contracts: contracts-vy
+#     contracts-post: contracts-post
+#     interfaces: interfaces
+#     reports: reports
+#     scripts: scripts
+#     tests: tests
+
+# # enable output of development artifacts to load with react
+# # dev_deployment_artifacts: true
+
+
+
+# networks:
+#     default: development
+
+#     development:
+#         host: https://127.0.0.1:8545
+        
+#         gas_limit: max
+#         gas_buffer: 1
+#         gas_price: 0
+#         reverting_tx_gas_limit: max
+#         #reverting_tx_gas_limit: 6721975
+#         #persist: false
+#         default_contract_owner: true
+#         chainid: 1337
+#         test_rpc:
+#             cmd: ganache-cli
+#             port: 8545
+#             gas_limit: 6721975
+#             accounts: 10
+#             #evm_version: istanbul
+#             mnemonic: brownie
+#         #brownie networks add live private host=https://127.0.0.1:8545 chainid=1337
+#     bsctest:
+#         id: bsc-test
+#         chainid: 97
+#         host: https://data-seed-prebsc-1-s1.binance.org:8545
+#         explorer: https://api-testnet.bscscan.com/api
+
+#     # bsc-main:
+#     #   host: "https://bsc-dataseed.binance.org"
+#     #   cmd_settings:
+#     #         unlock:
+#     #             - 0x1c2Cf4798F4281Dde81ef73caa846c8253DA31a4
+#     # #     gas_limit: max
+#     # #     gas_buffer: 1
+#     # #     gas_price: 0
+#     # #     reverting_tx_gas_limit: max
+#     # #     default_contract_owner: true
+
+# compiler:
+#     evm_version: null
+#     # solc:
+#     #     version: 0.8.5
+#     #     optimizer:
+#     #         enabled: true
+#     #         runs: 200
+#     #     remappings: null
+#     vyper:
+#         version: 0.2.15

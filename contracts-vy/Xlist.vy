@@ -13,10 +13,12 @@ owner: address
 addresses: public(address[100])
 amounts: public(uint256[100])
 
+
 @external
 def __init__():
     self.count = 0
     self.owner = msg.sender
+
 
 @external
 def addItem(addr: address, amount: uint256):
@@ -26,5 +28,11 @@ def addItem(addr: address, amount: uint256):
     self.count += 1
 
 
+@external
+def getAddress(i: uint256) -> address:
+    return self.addresses[i]
 
 
+@external
+def getAmount(i: uint256) -> uint256:
+    return self.amounts[i]

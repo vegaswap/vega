@@ -1,18 +1,17 @@
-# Non transferrable Tokens (NRT)
-# NRTs are like certificates. they get issued and redeemed
+# Non transferrable Certicates (NTC)
+# NTCs are certificates. they get issued and redeemed
 # the issue and redeem process is uncoupled from this contract
 # the owner can give other new owners the right to issue (multiowners)
-# to keep track of different issuances there is a bucket id 
+# to keep track of different issuances there is a bucket id
 # to map to vesting schedule
 
+event Issue:
+    receiver: indexed(address)
+    amount: uint256
 
-# event Issue:
-#     receiver: indexed(address)
-#     amount: uint256
-
-# event Redeem:
-#     redeemer: indexed(address)
-#     amount: uint256
+event Redeem:
+    redeemer: indexed(address)
+    amount: uint256
 
 name: public(String[64])
 symbol: public(String[32])
@@ -31,19 +30,21 @@ owner: address
 addresses: public(address[100])
 amounts: public(uint256[100])
 
+
 @external
 def __init__():
-    # _name: String[64], _symbol: String[32], _decimals: uint256, _max_supply: uint256    
+    # _name: String[64], _symbol: String[32], _decimals: uint256, _max_supply: uint256
     # self.name = "NRT"
     # self.symbol = "VegaNRT"
     # self.decimals = 18
     self.count = 0
     self.owner = msg.sender
 
+
 @external
 def issue(addr: address, amount: uint256):
     # could check if address already there and make list unique
-    assert self.balances[addr]==0
+    assert self.balances[addr] == 0
     assert msg.sender == self.owner
     self.balances[addr] = amount
     self.addresses[self.count] = addr
@@ -55,9 +56,7 @@ def issue(addr: address, amount: uint256):
 def redeem(addr: address, amount: uint256):
     self.balances[addr] -= amount
 
+
 @external
 def balanceOf(addr: address) -> uint256:
     return self.balances[addr]
-
-
-
