@@ -1,14 +1,16 @@
 # #!/usr/bin/python3
 # import brownie
 
+from setup_tests import *
 
-# def test_sender_balance_decreases(accounts, token):
-#     sender_balance = token.balanceOf(accounts[0])
-#     amount = sender_balance // 4
+def test_sender_balance_decreases(token, accounts, transactor):
+    sender_balance = token.f.balanceOf(accounts[0].address).call()
+    amount = sender_balance 
 
-#     token.transfer(accounts[1], amount, {"from": accounts[0]})
+    f = token.f.transfer(accounts[1].address, amount) #, {"from": accounts[0]})
+    transactor.buildpush(f, accounts[0])
 
-#     assert token.balanceOf(accounts[0]) == sender_balance - amount
+    assert token.f.balanceOf(accounts[0].address).call() == sender_balance - amount
 
 
 # def test_receiver_balance_increases(accounts, token):
