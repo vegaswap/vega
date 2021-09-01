@@ -3,6 +3,7 @@
 import pytest
 from brownie import chain, VegaToken, Bucket, Xlist
 
+
 @pytest.fixture(scope="function", autouse=True)
 def isolate(fn_isolation):
     # perform a chain rewind after completing each test, to ensure proper isolation
@@ -12,18 +13,22 @@ def isolate(fn_isolation):
 
 @pytest.fixture(scope="module")
 def token(VegaToken, accounts):
-    return VegaToken.deploy({'from': accounts[0]})
+    return VegaToken.deploy({"from": accounts[0]})
+
 
 @pytest.fixture(scope="module")
 def basicbucket(token, accounts):
-    t= chain.time()
-    cliff = t+100
+    t = chain.time()
+    cliff = t + 100
     nump = 10
     total = 100
     p = 1
-    bucket = Bucket.deploy("Somebucket", token.address, cliff, nump, total, p,{"from": accounts[0]})
+    bucket = Bucket.deploy(
+        "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
     bucket.initialize()
     return bucket
+
 
 @pytest.fixture(scope="module")
 def xlist(accounts):
