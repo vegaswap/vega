@@ -1,136 +1,20 @@
 {
   "contracts": {
-    "Bucket": "830a0b9f7d8ea83012ddc0cf039d918b4625109d",
+    "Bucket": "dee6cf353e7b086d7a00781a0157668c238ffd9b",
     "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d",
     "Xlist": "f974c14477fc218a2431e46aceb4db965c89fc05"
   },
   "tests": {
-    "tests/test_approve.py": {
+    "tests/test_bucket.py": {
       "coverage": false,
       "isolated": [
+        "Bucket",
         "VegaToken"
       ],
-      "results": "............",
-      "sha1": "dde829113fc190177f342801de60cb69252fff7f",
+      "results": ".",
+      "sha1": "1ed308b5daa951c1ab69f56490d9a9f51832732f",
       "txhash": []
-    },
-    "tests/test_transfer.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken"
-      ],
-      "results": ".........",
-      "sha1": "fa54943e15f067aac195dcda3b15701076aebcdc",
-      "txhash": [
-        "73d8ef495f85a9a0e8f6b10efd8f90e6a27ca1ed"
-      ]
-    },
-    "tests/test_transferFrom.py": {
-      "coverage": false,
-      "isolated": [
-        "VegaToken"
-      ],
-      "results": ".................",
-      "sha1": "51e5f61ecb52b04c221e815a4378ef312d59a5d9",
-      "txhash": [
-        "021dd15482252fc804c41a178c74497b05404f33",
-        "5d2b4869f1dc494a1e83c4cf94b1fda6e9f0efc4",
-        "663c180798175ca45831bf63f8f542c213f5c103",
-        "c472037438557c111af88acc5ff322b2f893e622",
-        "ea6f40085292a371cd3f5b5b0fef5d00415d4f9e"
-      ]
     }
   },
-  "tx": {
-    "021dd15482252fc804c41a178c74497b05404f33": {
-      "VegaToken": {
-        "0": [
-          [
-            2,
-            3,
-            12,
-            13,
-            14,
-            15
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "5d2b4869f1dc494a1e83c4cf94b1fda6e9f0efc4": {
-      "VegaToken": {
-        "0": [
-          [
-            2,
-            12,
-            13
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "663c180798175ca45831bf63f8f542c213f5c103": {
-      "VegaToken": {
-        "0": [
-          [
-            2,
-            3,
-            12,
-            13,
-            14,
-            15
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "73d8ef495f85a9a0e8f6b10efd8f90e6a27ca1ed": {
-      "VegaToken": {
-        "0": [
-          [
-            0,
-            12,
-            13
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "c472037438557c111af88acc5ff322b2f893e622": {
-      "VegaToken": {
-        "0": [
-          [
-            2,
-            3,
-            12,
-            13,
-            14,
-            15
-          ],
-          [],
-          []
-        ]
-      }
-    },
-    "ea6f40085292a371cd3f5b5b0fef5d00415d4f9e": {
-      "VegaToken": {
-        "0": [
-          [
-            2,
-            3,
-            12,
-            13,
-            14,
-            15
-          ],
-          [],
-          []
-        ]
-      }
-    }
-  }
+  "tx": {}
 }
