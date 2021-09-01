@@ -44,15 +44,17 @@ def test_claim_list_many(token, claimlist, accounts):
 
     # assert bucket.blockts() == int(chain.time())
     # assert bucket.blockts() == 100
-    x = bucket.blockts()
-    assert type(x) == brownie.network.transaction.TransactionReceipt
-    assert x.timestamp == chain.time()
-    assert x.status == 1
+    # x = bucket.blockts()
+    # assert type(x) == brownie.network.transaction.TransactionReceipt
+    # assert x.timestamp == chain.time()
+    # assert x.status == 1
 
-    assert bucket.blockts.call() == chain.time()
+    # # chain.sleep(10)
 
-    x = bucket.getVestableAmount(accounts[0])
-    assert type(x) == brownie.network.transaction.TransactionReceipt
+    # assert bucket.blockts.call() == chain.time()
+
+    # x = bucket.getVestableAmount(accounts[0])
+    # assert type(x) == brownie.network.transaction.TransactionReceipt
     # endin = chain.time() - bucket.endTime()
     # assert  -  == 100
 

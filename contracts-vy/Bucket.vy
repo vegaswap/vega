@@ -71,8 +71,9 @@ event WithdrawClaim:
     amount: uint256
 
 #tmp debug
-event SLog:
-    lg: String[100]
+event XLog:
+    logstring: String[10]
+    amount: uint256
 
 
 @external
@@ -156,28 +157,19 @@ def withdrawOwner(amount: uint256):
     assert transferSuccess, "BUCKET: withdraw failed"
     log WithdrawOwner(msg.sender, amount)
 
-#TMP
-@external
-def blockts() -> uint256:
-    return block.timestamp
-
-#TMP
-@external
-def foo() -> uint256:
-    return 42
 
 @internal
 def _getVestableAmount(_claimAddress: address) -> uint256:
-    # log SLog("test")
-    # log SLog(address)
     claim: Claim = self.claims[_claimAddress]
-
     if block.timestamp < self.cliffTime:
         return 0
 
+    log XLog("C", claim.claimTotalAmount)
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
+    log XLog("G", self.currentPeriod())
+    log XLog("H", claim.amountPeriod)
     return self.currentPeriod() * claim.amountPeriod
 
 
@@ -194,7 +186,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
         return amount
 
 @internal
-def _vestClaimMax(_claimAddress: address) -> uint256:
+def _vestClaimMax(_claimAddress: address):
     assert self.claims[_claimAddress].isAdded, "BUCKET: claim does not exist"
 
     claim: Claim = self.claims[_claimAddress]
@@ -220,7 +212,6 @@ def _vestClaimMax(_claimAddress: address) -> uint256:
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
     self.openClaimAmount -= withdrawAmount
-    return withdrawAmount
 
 @external
 def vestClaimMax(_claimAddress: address):
@@ -259,8 +250,8 @@ def _addClaim(_claimAddress: address, _claimTotalAmount: uint256):
         }
     )
 
-    self.claimCount += 1
     self.claim_addresses[self.claimCount] = _claimAddress
+    self.claimCount += 1
 
     self.totalClaimAmount += _claimTotalAmount
     self.openClaimAmount += _claimTotalAmount
