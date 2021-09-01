@@ -15,6 +15,8 @@ def isolate(fn_isolation):
 def token(VegaToken, accounts):
     return VegaToken.deploy({"from": accounts[0]})
 
+days = 86400
+default_period = 30 * days
 
 @pytest.fixture(scope="module")
 def basicbucket(token, accounts):
@@ -28,6 +30,20 @@ def basicbucket(token, accounts):
     )
     bucket.initialize()
     return bucket
+
+@pytest.fixture(scope="module")
+def realbucket(token, accounts):
+    t = chain.time()
+    cliff = t + 100
+    nump = 10
+    total = 100
+    p = default_period
+    bucket = Bucket.deploy(
+        "Realbucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
+    bucket.initialize()
+    return bucket
+
 
 
 @pytest.fixture(scope="module")
