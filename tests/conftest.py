@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import pytest
-from brownie import chain, VegaToken, Bucket, Xlist
+from brownie import chain, VegaToken, Bucket, ClaimList
 
 
 @pytest.fixture(scope="function", autouse=True)
@@ -36,7 +36,7 @@ def realbucket(token, accounts):
     t = chain.time()
     cliff = t + 100
     nump = 10
-    total = 100
+    total = 1000
     p = default_period
     bucket = Bucket.deploy(
         "Realbucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
@@ -47,5 +47,5 @@ def realbucket(token, accounts):
 
 
 @pytest.fixture(scope="module")
-def xlist(accounts):
-    return Xlist.deploy({"from": accounts[0]})
+def claimlist(accounts):
+    return ClaimList.deploy({"from": accounts[0]})

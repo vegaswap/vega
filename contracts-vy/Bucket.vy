@@ -8,11 +8,11 @@
 from vyper.interfaces import ERC20
 
 
-interface XList:
-    def getAddress(i: uint256) -> address:
+interface ClaimList:
+    def addresses(i: uint256) -> address:
         nonpayable
 
-    def getAmount(i: uint256) -> uint256:
+    def amounts(i: uint256) -> uint256:
         nonpayable
 
     def count() -> uint256:
@@ -272,8 +272,8 @@ def vestAll():
 @external
 def addClaimsBatch(list_addr: address):
     for i in range(0, 1000):
-        amount: uint256 = XList(list_addr).getAmount(i)
+        amount: uint256 = ClaimList(list_addr).amounts(i)
         if amount > 0:
-            self._addClaim(XList(list_addr).getAddress(i), amount)
+            self._addClaim(ClaimList(list_addr).addresses(i), amount)
         else:
             return

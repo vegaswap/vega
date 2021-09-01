@@ -1,18 +1,19 @@
 {
   "contracts": {
-    "Bucket": "dee6cf353e7b086d7a00781a0157668c238ffd9b",
-    "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d",
-    "Xlist": "f974c14477fc218a2431e46aceb4db965c89fc05"
+    "Bucket": "f0c89af37f2a0f4bcb5229492fd80c9af1be3c24",
+    "ClaimList": "3f501dc789b190b454b962ad91ef38aea887ad3b",
+    "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d"
   },
   "tests": {
-    "tests/test_bucket.py": {
+    "tests/test_bucket_claimlist.py": {
       "coverage": false,
       "isolated": [
         "Bucket",
+        "ClaimList",
         "VegaToken"
       ],
       "results": ".",
-      "sha1": "1ed308b5daa951c1ab69f56490d9a9f51832732f",
+      "sha1": "36eb2f87ed0ec9a8e3a79270b1531e877f4bf31b",
       "txhash": []
     }
   },
