@@ -1,3 +1,5 @@
+# @version ^0.2.15
+
 # Vega token has max supply
 # cross chain mint and burn
 
@@ -96,7 +98,7 @@ def approve(_spender: address, _value: uint256) -> bool:
     @param _value The amount of tokens to be spent
     @return bool success
     """
-    assert _value == 0 or self.allowances[msg.sender][_spender] == 0
+    # assert _value == 0 or self.allowances[msg.sender][_spender] == 0
     self.allowances[msg.sender][_spender] = _value
     log Approval(msg.sender, _spender, _value)
     return True

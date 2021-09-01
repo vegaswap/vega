@@ -22,9 +22,9 @@ interface XList:
 # original deployer
 owner: address
 # name of the bucket
-name: String[15]
+name: public(String[15])
 vegaToken: address
-registerTime: uint256
+registerTime: public(uint256)
 days: constant(uint256) = 86400
 default_period: constant(uint256) = 30 * days
 period: public(uint256)
@@ -110,6 +110,8 @@ def ceildiv(a: uint256, m: uint256) -> uint256:
 
 @external
 def initialize():
+    assert msg.sender == self.owner, "BUCKET: not the owner"
+    assert not self.initialized
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
     self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"

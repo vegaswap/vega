@@ -1,3 +1,4 @@
+# @version ^0.2.15
 # a simple arraylist of address and amounts
 
 name: public(String[64])
