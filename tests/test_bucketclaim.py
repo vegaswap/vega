@@ -4,8 +4,10 @@ import pytest
 from brownie import chain
 import brownie
 
+
 def within(a, b):
     assert abs(a - b) < 5
+
 
 def test_claim(token, realbucket, accounts):
     token.approve(realbucket, 1000, {"from": accounts[0]})
@@ -13,6 +15,7 @@ def test_claim(token, realbucket, accounts):
 
     with brownie.reverts("BUCKET: can not claim tokens that are not deposited"):
         realbucket.addClaim(accounts[1], 100)
+
 
 def test_claim(token, realbucket, accounts):
     token.approve(realbucket, 1000, {"from": accounts[0]})
@@ -37,4 +40,3 @@ def test_claim(token, realbucket, accounts):
         realbucket.withdrawOwner(1)
 
     assert realbucket.totalClaimAmount() == 1000
-

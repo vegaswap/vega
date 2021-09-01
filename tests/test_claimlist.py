@@ -4,8 +4,10 @@ import pytest
 from brownie import chain
 import brownie
 
+
 def within(a, b):
     assert abs(a - b) < 5
+
 
 def test_list(token, realbucket, claimlist, accounts):
     # token.approve(realbucket, 1000, {"from": accounts[0]})
@@ -21,5 +23,3 @@ def test_list(token, realbucket, claimlist, accounts):
     assert claimlist.count() == 2
     assert claimlist.amounts(1) == 500
     assert claimlist.addresses(1) == accounts[1]
-    
-

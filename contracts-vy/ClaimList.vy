@@ -27,4 +27,3 @@ def addItem(addr: address, amount: uint256):
     self.addresses[self.count] = addr
     self.amounts[self.count] = amount
     self.count += 1
-

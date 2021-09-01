@@ -4,6 +4,7 @@ import pytest
 from brownie import chain
 import brownie
 
+
 def within(a, b):
     assert abs(a - b) < 5
 
@@ -43,23 +44,27 @@ def test_deposit(token, realbucket, accounts):
     assert token.balanceOf(realbucket) == 1000
     realbucket.withdrawOwner(1000)
 
+
 def test_depositwithdraw(token, realbucket, accounts):
     token.approve(realbucket, 1000, {"from": accounts[0]})
     realbucket.depositOwner(1000)
     assert token.balanceOf(realbucket) == 1000
-    realbucket.withdrawOwner(1000)    
+    realbucket.withdrawOwner(1000)
     assert token.balanceOf(realbucket) == 0
+
 
 def test_depositallownace(token, realbucket, accounts):
     with brownie.reverts():
         realbucket.depositOwner(1000)
 
+
 def test_withdrawfail(token, realbucket, accounts):
     with brownie.reverts():
-        realbucket.withdrawOwner(1000)    
+        realbucket.withdrawOwner(1000)
+
 
 def test_withdraw(token, realbucket, accounts):
     token.approve(realbucket, 1000, {"from": accounts[0]})
     realbucket.depositOwner(1000)
     with brownie.reverts():
-        realbucket.withdrawOwner(1000, {"from": accounts[1]})    
+        realbucket.withdrawOwner(1000, {"from": accounts[1]})

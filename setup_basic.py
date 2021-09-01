@@ -1,7 +1,7 @@
 import sys
-
+import time
 sys.path.insert(0, "../transactor")
-
+from datetime import datetime, date
 
 from eth_account import Account, account
 from web3 import Web3
@@ -88,71 +88,151 @@ def token(a, transactor):
     ctr = transactor.load_contract(cta, transactor.get_contract(ctrname).abi)
     return ctr
 
+def deploy_token():
+    a = accounts()
+    tr = get_transactor(a)
+    vtoken = token(a, tr)
+
+def deploy_bucket(tr, vtoken, a):
+    bucket_ctr = tr.get_ctr("Bucket")
+    import time
+    t = int(time.time())
+    d = date(2021,9,2)
+    unixtime = time.mktime(d.timetuple())
+    # cliff = t+1000
+    cliff = int(unixtime)
+    print(cliff)
+    num = 1
+    total = 100
+    p = 1
+    cargs = ("BasicBucket", vtoken.address, cliff, num, total, p)
+    dtx = tr.get_deploy_tx(bucket_ctr, cargs=cargs)
+    tx_receipt = signpush_deploy(tr, a[0], dtx)
+    cta = tx_receipt["contractAddress"]
+    return cta
+
+def increase_chaintime(seconds):
+    # t = int(time.time())
+    # 1630489405
+    # ganache-cli -m vega --time '2021-09-01T15:53:00+00:0'
+    try:
+        method = "evm_increaseTime"
+        # method = "evm_setTime"
+        # start = 10000
+        # args = [seconds]
+        args = [seconds]
+        response = tr.w3.provider.make_request(method, args)  # type: ignore
+        print(response)
+    except Exception as e:
+        print(">> ",e)
+        pass
+
+def get_ts(ts):
+    tsf = datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    return tsf
+
+def deposittokens():
+    txp = tr.get_tx_params(200000)
+    print("approve ", bucket.address)
+    tx = vtoken.f.approve(bucket.address, 1000).buildTransaction(txp)
+    signpush(tr, a[0], tx)
+
+    #NOT WORKING?
+    print(vtoken.f.allowance(a[0].address, bucket.address).call())
+    txp = tr.get_tx_params(200000)
+    tx = bucket.f.depositOwner(100).buildTransaction(txp)
+    signpush(tr, a[0], tx)
+    print(vtoken.f.balanceOf(a[0].address).call())
+    print(vtoken.f.balanceOf(bucket.address).call())    
+
 a = accounts()
 tr = get_transactor(a)
 vtoken = token(a, tr)
+# cta = deploy_bucket(tr, vtoken, a)
+# cta = deploy_bucket(tr, vtoken, a)
+cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
+# cta = "0x2766EdFD8d91Bc23e3456C3AF9Cf74de4AebD956"
+bucket_ctr = tr.get_ctr("Bucket")
+bucket = tr.load_contract(cta, bucket_ctr.abi)
 
-# bucket_ctr = tr.get_ctr("Bucket")
-# import time
-# t = int(time.time())
-# cliff = t+1
-# num = 1
-# total =100
-# p = 1
-# cargs = ("BasicBucket", vtoken.address, cliff, num, total, p)
-# dtx = tr.get_deploy_tx(bucket_ctr, cargs=cargs)
-# tx_receipt = signpush_deploy(tr, a[0], dtx)
-# cta = tx_receipt["contractAddress"]
+txp = tr.get_tx_params(200000)
+tx = bucket.functions.initialize().buildTransaction(txp)
+signpush(tr, a[0], tx)
 
-# bucket = tr.load_contract(cta, bucket_ctr.abi)
-# txp = tr.get_tx_params(200000)
-# tx = bucket.functions.initialize().buildTransaction(txp)
-# signpush(tr, a[0], tx)
-# print(bucket.functions.name().call())
-# # print(bucket.functions.currentPeriod().call())
+print(bucket.functions.name().call())
+print("total claim ",bucket.f.totalClaimAmount().call())
+print("openClaimAmount  ",bucket.f.openClaimAmount().call())
 
-# txp = tr.get_tx_params(200000)
-# tx = vtoken.f.approve(bucket.address, 1000).buildTransaction(txp)
-# signpush(tr, a[0], tx)
-# # print(bucket.functions.currentPeriod().call())
+# deposittokens()
 
-# txp = tr.get_tx_params(200000)
-# tx = bucket.f.depositOwner(1000).buildTransaction(txp)
-# signpush(tr, a[0], tx)
-
-# print(vtoken.f.balanceOf(bucket.address).call())
-
-# txp = tr.get_tx_params(200000)
+txp = tr.get_tx_params(200000)
 # tx = bucket.f.addClaim(a[0].address, 100).buildTransaction(txp)
 # signpush(tr, a[0], tx)
 
-# print(bucket.f.totalClaimAmount().call())
+print(bucket.f.totalClaimAmount().call())
+print(bucket.f.openClaimAmount().call())
+print(bucket.f.totalWithdrawnAmount().call())
 
-import time
-t = time.time()
-try:
-    method = "evm_increaseTime"
-    method = "evm_setTime"
-    start = t
-    print(start)
-    # seconds = 100000
-    # args = [seconds]
-    args = [start]
-    response = tr.w3.provider.make_request(method, args)  # type: ignore
-except Exception as e:
-    print(e)
-    pass
+print(bucket.f.getVestableAmount(a[0].address).call())
 
-last_height = tr.w3.eth.block_number
-print("last_height ",last_height)
-# block = web3.eth.get_block(last_height - height_buffer)
-block = tr.w3.eth.get_block(last_height)
-print("ts: ",block.timestamp)
-    # if "result" in response:
-        # return response["result"]
-# except (AttributeError, RequestsConnectionError):
-#         raise RPCRequestError("Web3 is not connected.")
-#     raise RPCRequestError(response["error"]["message"])
+day = 86400*30
+# increase_chaintime(day)
+
+def currentPeriod() -> int:
+    # blocktimestamp = 1630511586
+    blocktimestamp = bucket.f.blockts().call()
+    cliffTime = bucket.f.cliffTime().call()
+    timeSinceCliff: int = blocktimestamp - cliffTime
+    print(blocktimestamp)
+    print(timeSinceCliff)
+    
+    # at cliff, one amount is withdrawable
+    default_period = 1
+    validPeriodCount: int = 1 + timeSinceCliff / default_period
+    print("validPeriodCount ", validPeriodCount)
+    # return validPeriodCount * claim.amountPeriod
+
+    return validPeriodCount
 
 
-# bucket = token(a, tr)
+
+currentPeriod()
+
+print("end time",bucket.f.endTime().call())
+print("initialized",bucket.f.initialized().call())
+print(bucket.f.getVestableAmount(a[0].address).call())
+ 
+c = bucket.f.claims(a[0].address).call()
+print("withdraw ", c[3])
+
+# txp = tr.get_tx_params(200000)
+# tx = bucket.f.vestClaimMax(a[0].address).buildTransaction(txp)
+# signpush(tr, a[0], tx)
+
+txp = tr.get_tx_params(200000)
+print(a[0].address)
+txp = tr.get_tx_params(200000)
+tx = bucket.f.zzz().buildTransaction(txp)
+# .call()
+signpush(tr, a[0], tx)
+
+
+# cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
+# print("bucket at ", cta)
+# 
+# txp = tr.get_tx_params(200000)
+
+
+
+# print("balance ",vtoken.f.balanceOf(cta).call())
+# print(bucket.address)
+
+
+# last_height = tr.w3.eth.block_number
+# block = tr.w3.eth.get_block(last_height)
+# print(get_ts(block.timestamp))
+# increase_chaintime(day)
+
+# last_height = tr.w3.eth.block_number
+# block = tr.w3.eth.get_block(last_height)
+# print(get_ts(block.timestamp))

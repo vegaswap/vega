@@ -40,6 +40,7 @@ totalClaimAmount: public(uint256)
 claim_addresses: public(address[1000])
 claimCount: public(uint256)
 
+
 struct Claim:
     claimAddress: address
     claimTotalAmount: uint256
@@ -70,10 +71,6 @@ event WithdrawClaim:
     claimAddress: address
     amount: uint256
 
-#tmp debug
-event XLog:
-    logstring: String[10]
-    amount: uint256
 
 
 @external
@@ -164,12 +161,9 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp < self.cliffTime:
         return 0
 
-    log XLog("C", claim.claimTotalAmount)
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
-    log XLog("G", self.currentPeriod())
-    log XLog("H", claim.amountPeriod)
     return self.currentPeriod() * claim.amountPeriod
 
 
@@ -184,6 +178,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
         return cap
     else:
         return amount
+
 
 @internal
 def _vestClaimMax(_claimAddress: address):
@@ -212,6 +207,7 @@ def _vestClaimMax(_claimAddress: address):
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
     self.openClaimAmount -= withdrawAmount
+
 
 @external
 def vestClaimMax(_claimAddress: address):

@@ -1,0 +1,337 @@
+{
+  "contracts": {
+    "Bucket": "3c93a140ad7ffedae24d7f7989e4b4d9c1bde05c",
+    "ClaimList": "3f501dc789b190b454b962ad91ef38aea887ad3b",
+    "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d"
+  },
+  "tests": {
+    "tests/test_approve.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": "............",
+      "sha1": "d0529a7a4c16cca5d189c92f60b844e7433fa577",
+      "txhash": []
+    },
+    "tests/test_bucket.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".......",
+      "sha1": "bbefe7a4bfe85278cded63e079d469c022f162f4",
+      "txhash": [
+        "1b61442e7730ae66f8e9db4e93dec3de4a65042d",
+        "360b188975511c53e58a2ebe21c830e78b1a8836",
+        "3a26d16b4e30da43a512f69b9dd6278e949030f4"
+      ]
+    },
+    "tests/test_bucket_claimlist.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": "..",
+      "sha1": "6541fbf22ef3b554defdb1259c14fe9422005f41",
+      "txhash": []
+    },
+    "tests/test_bucketclaim.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "8baa274e1bf44b520b9fa7f31602765dc9ac9d19",
+      "txhash": [
+        "04675d779e023d65a80ebe51d2a035b13f9476eb",
+        "3208468eb4dd883c2b11896bb1d38ab3bff84dbf",
+        "d9c1df93e52c3473e1f330c2893a8f2d5697af81"
+      ]
+    },
+    "tests/test_claimlist.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "df33291f916207463c5a0baaf557cdfca2c04890",
+      "txhash": []
+    },
+    "tests/test_transfer.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": ".........",
+      "sha1": "050bdec6a86918336faf3ddd213a5940e727da30",
+      "txhash": [
+        "9de8e9f98e38ae7c42cbbd77b6eba727374f5c58"
+      ]
+    },
+    "tests/test_transferFrom.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": ".................",
+      "sha1": "90a935bd3ecb0e73fc621ed615149d37e95cf3db",
+      "txhash": [
+        "01f268066e020833b0ee1ffc521e20f0268b2ea5",
+        "2150a75a7e1e8be839a08f0309aaf5c0630dc164",
+        "41c7c40273167054f9caf1ca7f06d5dd4a0b2387",
+        "5c5ecb1f96677b44bad4cddbbfce14070eb5078c",
+        "ff6ec0b8db09b6ed5afc700a979be3c168de1c79"
+      ]
+    },
+    "tests/test_vest.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "2220f6319deb079e42a30a7b353a078e6716c671",
+      "txhash": []
+    },
+    "tests/test_vestall.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "59cee043a2e55ba9744f420f0bb6f29a3b357872",
+      "txhash": []
+    }
+  },
+  "tx": {
+    "01f268066e020833b0ee1ffc521e20f0268b2ea5": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "04675d779e023d65a80ebe51d2a035b13f9476eb": {
+      "Bucket": {
+        "0": [
+          [
+            20,
+            22,
+            23,
+            24
+          ],
+          [
+            25
+          ],
+          [
+            21
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "1b61442e7730ae66f8e9db4e93dec3de4a65042d": {
+      "Bucket": {
+        "0": [
+          [
+            20,
+            22,
+            23,
+            24
+          ],
+          [
+            25
+          ],
+          [
+            21
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "2150a75a7e1e8be839a08f0309aaf5c0630dc164": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            12,
+            13
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "3208468eb4dd883c2b11896bb1d38ab3bff84dbf": {
+      "Bucket": {
+        "0": [
+          [
+            20,
+            22,
+            23,
+            24
+          ],
+          [
+            25
+          ],
+          [
+            21
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "360b188975511c53e58a2ebe21c830e78b1a8836": {
+      "Bucket": {
+        "0": [
+          [
+            10,
+            12
+          ],
+          [
+            13
+          ],
+          [
+            11
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [
+            8
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "3a26d16b4e30da43a512f69b9dd6278e949030f4": {
+      "Bucket": {
+        "0": [
+          [
+            20
+          ],
+          [
+            21
+          ],
+          []
+        ]
+      }
+    },
+    "41c7c40273167054f9caf1ca7f06d5dd4a0b2387": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "5c5ecb1f96677b44bad4cddbbfce14070eb5078c": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "9de8e9f98e38ae7c42cbbd77b6eba727374f5c58": {
+      "VegaToken": {
+        "0": [
+          [
+            0,
+            12,
+            13
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "d9c1df93e52c3473e1f330c2893a8f2d5697af81": {
+      "Bucket": {
+        "0": [
+          [
+            35,
+            37,
+            81
+          ],
+          [
+            82
+          ],
+          [
+            36
+          ]
+        ]
+      }
+    },
+    "ff6ec0b8db09b6ed5afc700a979be3c168de1c79": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    }
+  }
+}

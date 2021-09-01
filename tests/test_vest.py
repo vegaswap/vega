@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 from brownie.network.state import TxHistory
@@ -6,6 +5,7 @@ import pytest
 from brownie import chain, Bucket
 import brownie
 import time
+
 
 def test_claim_list_many(token, claimlist, accounts):
     t = chain.time()
@@ -21,7 +21,7 @@ def test_claim_list_many(token, claimlist, accounts):
     token.approve(bucket, 1000, {"from": accounts[0]})
     bucket.depositOwner(1000)
 
-    # claimlist.addItem(accounts[0], 100)    
+    # claimlist.addItem(accounts[0], 100)
     # bucket.addClaimsBatch(claimlist)
     bucket.addClaim(accounts[0], 100)
 
@@ -58,14 +58,11 @@ def test_claim_list_many(token, claimlist, accounts):
     # endin = chain.time() - bucket.endTime()
     # assert  -  == 100
 
-    
-
     # x = bucket.vestClaimMax(accounts[0])
     # assert x == 100
 
     # c = bucket.claims(accounts[0])
     # assert c == (accounts[0], 100, 100, 0, True)
-
 
     # token.approve(realbucket, 10000, {"from": accounts[0]})
     # assert token.allowance(accounts[0], realbucket) == 10000
@@ -74,12 +71,12 @@ def test_claim_list_many(token, claimlist, accounts):
 
     # for i in range(10):
     #     claimlist.addItem(accounts[i], 100)
-    
+
     # realbucket.addClaimsBatch(claimlist)
 
     # assert realbucket.openClaimAmount() == 1000
 
-    # 
+    #
 
     # assert realbucket.openClaimAmount() == 1000
     # # assert realbucket.openClaimAmount() == 0
