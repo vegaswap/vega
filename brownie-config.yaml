@@ -1,34 +1,16 @@
-# change the build directory to be within react's scope
-#project_structure:
-#    build: client/src/artifacts
-
-
-# enable output of development artifacts to load with react
-# dev_deployment_artifacts: true
-
-# exclude SafeMath when calculating test coverage
-# https://eth-brownie.readthedocs.io/en/v1.10.3/config.html#exclude_paths
-# reports:
-#   exclude_contracts:
-#     - SafeMath
 
 project_structure:
     build: build
+    build: brownie-build
     contracts: contracts-vy
     interfaces: interfaces
     reports: reports
     scripts: scripts
     tests: tests
 
-# dependencies:
-#   - OpenZeppelin/openzeppelin-contracts@4.1.0
-#   - OpenZeppelin/openzeppelin-contracts-upgradeable@4.1.0
-
-#dev_deployment_artifacts: true
-
 networks:
     default: development
-    #default: bsc-main #mainnet
+    #default: bsc-main
     development:
         host: https://127.0.0.1:8545
         
@@ -48,38 +30,26 @@ networks:
             #evm_version: istanbul
             mnemonic: brownie
         #brownie networks add live private host=https://127.0.0.1:8545 chainid=1337
-    mainnet:
+    eth-mainnet:
       #gas_limit: 6721975
       #gas_price: 0
-      host: https://mainnet.infura.io/v3/066b2424ab354312844ee4c302b3fdfd
-      #export WEB3_INFURA_PROJECT_ID=066b2424ab354312844ee4c302b3fdfd
+      host: https://mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID
 
     # bsc-main:
     #   host: "https://bsc-dataseed.binance.org"
-    #   cmd_settings:
-    #         unlock:
-    #             - 0x1c2Cf4798F4281Dde81ef73caa846c8253DA31a4
     # #     gas_limit: max
     # #     gas_buffer: 1
     # #     gas_price: 0
     # #     reverting_tx_gas_limit: max
     # #     default_contract_owner: true
-    # cmd_settings:
-    #   mnemonic: hill law jazz limb penalty escape public dish stand bracket blue jar
-    # live:
-    #     gas_limit: auto
-    #     gas_buffer: 1.1
-    #     gas_price: auto
-    #     reverting_tx_gas_limit: false
-    #     default_contract_owner: false
 
-# compiler:
-#     evm_version: null
-#     solc:
-#         version: 0.8.5
-#         optimizer:
-#             enabled: true
-#             runs: 200
-#         remappings: null
-#     vyper:
-#         version: null
+compiler:
+    evm_version: null
+    # solc:
+    #     version: 0.8.5
+    #     optimizer:
+    #         enabled: true
+    #         runs: 200
+    #     remappings: null
+    vyper:
+        version: 0.2.15

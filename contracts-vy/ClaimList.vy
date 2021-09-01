@@ -27,13 +27,3 @@ def addItem(addr: address, amount: uint256):
     self.addresses[self.count] = addr
     self.amounts[self.count] = amount
     self.count += 1
-
-
-@external
-def getAddress(i: uint256) -> address:
-    return self.addresses[i]
-
-
-@external
-def getAmount(i: uint256) -> uint256:
-    return self.amounts[i]

@@ -8,11 +8,11 @@
 from vyper.interfaces import ERC20
 
 
-interface XList:
-    def getAddress(i: uint256) -> address:
+interface ClaimList:
+    def addresses(i: uint256) -> address:
         nonpayable
 
-    def getAmount(i: uint256) -> uint256:
+    def amounts(i: uint256) -> uint256:
         nonpayable
 
     def count() -> uint256:
@@ -39,6 +39,7 @@ totalWithdrawnAmount: public(uint256)
 totalClaimAmount: public(uint256)
 claim_addresses: public(address[1000])
 claimCount: public(uint256)
+
 
 struct Claim:
     claimAddress: address
@@ -69,6 +70,7 @@ event ClaimAdded:
 event WithdrawClaim:
     claimAddress: address
     amount: uint256
+
 
 
 @external
@@ -156,7 +158,6 @@ def withdrawOwner(amount: uint256):
 @internal
 def _getVestableAmount(_claimAddress: address) -> uint256:
     claim: Claim = self.claims[_claimAddress]
-
     if block.timestamp < self.cliffTime:
         return 0
 
@@ -177,6 +178,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
         return cap
     else:
         return amount
+
 
 @internal
 def _vestClaimMax(_claimAddress: address):
@@ -205,6 +207,7 @@ def _vestClaimMax(_claimAddress: address):
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
     self.openClaimAmount -= withdrawAmount
+
 
 @external
 def vestClaimMax(_claimAddress: address):
@@ -243,8 +246,8 @@ def _addClaim(_claimAddress: address, _claimTotalAmount: uint256):
         }
     )
 
-    self.claimCount += 1
     self.claim_addresses[self.claimCount] = _claimAddress
+    self.claimCount += 1
 
     self.totalClaimAmount += _claimTotalAmount
     self.openClaimAmount += _claimTotalAmount
@@ -272,8 +275,8 @@ def vestAll():
 @external
 def addClaimsBatch(list_addr: address):
     for i in range(0, 1000):
-        amount: uint256 = XList(list_addr).getAmount(i)
+        amount: uint256 = ClaimList(list_addr).amounts(i)
         if amount > 0:
-            self._addClaim(XList(list_addr).getAddress(i), amount)
+            self._addClaim(ClaimList(list_addr).addresses(i), amount)
         else:
             return
