@@ -1,3 +1,0 @@
-vyper
-web3.py
-blackadder
