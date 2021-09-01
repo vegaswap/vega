@@ -1,90 +1,80 @@
-# #!/usr/bin/python3
-# import brownie
-
-from setup_tests import *
-
-def test_sender_balance_decreases(token, accounts, transactor):
-    sender_balance = token.f.balanceOf(accounts[0].address).call()
-    amount = sender_balance 
-
-    f = token.f.transfer(accounts[1].address, amount) #, {"from": accounts[0]})
-    transactor.buildpush(f, accounts[0])
-
-    assert token.f.balanceOf(accounts[0].address).call() == sender_balance - amount
+#!/usr/bin/python3
+import brownie
 
 
-def test_receiver_balance_increases(token,accounts, transactor):
-    receiver_balance = token.f.balanceOf(accounts[1].address).call()
-    amount = token.f.balanceOf(accounts[0].address).call()
+def test_sender_balance_decreases(accounts, token):
+    sender_balance = token.balanceOf(accounts[0])
+    amount = sender_balance // 4
 
-    f = token.f.transfer(accounts[1].address, amount)
-    transactor.buildpush(f, accounts[0])
+    token.transfer(accounts[1], amount, {'from': accounts[0]})
 
-    assert token.f.balanceOf(accounts[1].address).call() == receiver_balance + amount
-
-
-def test_total_supply_not_affected(accounts, token, transactor):
-    total_supply = token.f.totalSupply().call()
-    amount = token.f.balanceOf(accounts[0].address).call()
-
-    f = token.f.transfer(accounts[1].address, amount)
-    transactor.buildpush(f, accounts[0])
-
-    assert token.f.totalSupply().call() == total_supply
+    assert token.balanceOf(accounts[0]) == sender_balance - amount
 
 
-# def test_returns_true(accounts, token):
-#     amount = token.balanceOf(accounts[0])
-#     tx = token.transfer(accounts[1], amount, {"from": accounts[0]})
+def test_receiver_balance_increases(accounts, token):
+    receiver_balance = token.balanceOf(accounts[1])
+    amount = token.balanceOf(accounts[0]) // 4
 
-#     assert tx.return_value is True
+    token.transfer(accounts[1], amount, {'from': accounts[0]})
 
-
-def test_transfer_full_balance(accounts, token, transactor):
-    amount = token.f.balanceOf(accounts[0].address).call()
-    receiver_balance = token.f.balanceOf(accounts[1].address).call()
-
-    f = token.f.transfer(accounts[1].address, amount)
-    transactor.buildpush(f, accounts[0])
-
-    assert token.f.balanceOf(accounts[0].address).call() == 0
-    assert token.f.balanceOf(accounts[1].address).call() == receiver_balance + amount
+    assert token.balanceOf(accounts[1]) == receiver_balance + amount
 
 
-def test_transfer_zero_tokens(accounts, token, transactor):
-    sender_balance = token.f.balanceOf(accounts[0].address).call()
-    receiver_balance = token.f.balanceOf(accounts[1].address).call()
+def test_total_supply_not_affected(accounts, token):
+    total_supply = token.totalSupply()
+    amount = token.balanceOf(accounts[0])
 
-    f = token.f.transfer(accounts[1].address, 0)
-    transactor.buildpush(f, accounts[0])
+    token.transfer(accounts[1], amount, {'from': accounts[0]})
 
-    assert token.f.balanceOf(accounts[0].address).call() == sender_balance
-    assert token.f.balanceOf(accounts[1].address).call() == receiver_balance
+    assert token.totalSupply() == total_supply
 
 
-def test_transfer_to_self(accounts, token, transactor):
-    sender_balance = token.f.balanceOf(accounts[0].address).call()
-    amount = sender_balance
+def test_returns_true(accounts, token):
+    amount = token.balanceOf(accounts[0])
+    tx = token.transfer(accounts[1], amount, {'from': accounts[0]})
 
-    f = token.f.transfer(accounts[0].address, amount)
-    transactor.buildpush(f, accounts[0])
-
-    assert token.f.balanceOf(accounts[0].address).call() == sender_balance
+    assert tx.return_value is True
 
 
-def test_insufficient_balance(accounts, token, transactor):
-    balance = token.f.balanceOf(accounts[0].address).call()
+def test_transfer_full_balance(accounts, token):
+    amount = token.balanceOf(accounts[0])
+    receiver_balance = token.balanceOf(accounts[1])
 
-    # with brownie.reverts():
-    f = token.f.transfer(accounts[1].address, balance + 1)
-    #TODO
-    # txr = transactor.buildpush(f, accounts[0])
-    # assert txr
+    token.transfer(accounts[1], amount, {'from': accounts[0]})
 
-#TODO
-# def test_transfer_event_fires(accounts, token):
-#     amount = token.balanceOf(accounts[0])
-#     tx = token.transfer(accounts[1], amount, {"from": accounts[0]})
+    assert token.balanceOf(accounts[0]) == 0
+    assert token.balanceOf(accounts[1]) == receiver_balance + amount
 
-#     assert len(tx.events) == 1
-#     assert tx.events["Transfer"].values() == [accounts[0], accounts[1], amount]
+
+def test_transfer_zero_tokens(accounts, token):
+    sender_balance = token.balanceOf(accounts[0])
+    receiver_balance = token.balanceOf(accounts[1])
+
+    token.transfer(accounts[1], 0, {'from': accounts[0]})
+
+    assert token.balanceOf(accounts[0]) == sender_balance
+    assert token.balanceOf(accounts[1]) == receiver_balance
+
+
+def test_transfer_to_self(accounts, token):
+    sender_balance = token.balanceOf(accounts[0])
+    amount = sender_balance // 4
+
+    token.transfer(accounts[0], amount, {'from': accounts[0]})
+
+    assert token.balanceOf(accounts[0]) == sender_balance
+
+
+def test_insufficient_balance(accounts, token):
+    balance = token.balanceOf(accounts[0])
+
+    with brownie.reverts():
+        token.transfer(accounts[1], balance + 1, {'from': accounts[0]})
+
+
+def test_transfer_event_fires(accounts, token):
+    amount = token.balanceOf(accounts[0])
+    tx = token.transfer(accounts[1], amount, {'from': accounts[0]})
+
+    assert len(tx.events) == 1
+    assert tx.events["Transfer"].values() == [accounts[0], accounts[1], amount]
