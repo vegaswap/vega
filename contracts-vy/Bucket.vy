@@ -71,6 +71,9 @@ event WithdrawClaim:
     claimAddress: address
     amount: uint256
 
+event Slog:
+    foo: String[20]
+    amount: uint256
 
 
 @external
@@ -187,16 +190,22 @@ def _vestClaimMax(_claimAddress: address):
     claim: Claim = self.claims[_claimAddress]
 
     vestableAmount: uint256 = self._getVestableAmount(_claimAddress)
+    log Slog("vestableAmount", vestableAmount)
     vestableAmount = self.capat(vestableAmount, claim.claimTotalAmount)
+    log Slog("cap", vestableAmount)
 
+    assert vestableAmount >= claim.withdrawnAmount, "BUCKET: no vestable amount"
     withdrawAmount: uint256 = vestableAmount - claim.withdrawnAmount
+    log Slog("withdrawmount", withdrawAmount)
     totalAfterwithdraw: uint256 = claim.withdrawnAmount + withdrawAmount
+    log Slog("totalAfterwithdraw", totalAfterwithdraw)
 
     assert (
         totalAfterwithdraw <= claim.claimTotalAmount
     ), "BUCKET: can not withdraw more than total"
 
     assert withdrawAmount > 0, "BUCKET: no amount claimed"
+    
 
     assert ERC20(self.vegaToken).transfer(
         _claimAddress, withdrawAmount
