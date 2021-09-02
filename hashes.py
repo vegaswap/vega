@@ -12,7 +12,8 @@ def sha1sum(filename):
 
 def show_hash(f):
     hashx = sha1sum(f)
-    print(f, hashx)
+    x = f.split("/")[-1]
+    print(x, hashx)
 
 # hashvy = sha1sum("./contracts-vy/VegaToken.vy")
 # hashabi = sha1sum("./build/VegaToken.abi")
