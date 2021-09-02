@@ -1,66 +1,99 @@
 #!/usr/bin/python3
 
+# from tests.conftest import claimlist
 import pytest
-from brownie import chain, VegaToken, Bucket
+from brownie import chain, Bucket, ClaimList
 import brownie
-import time
 
 
-def within(a, b):
-    assert abs(a - b) < 5
+def test_claim_list(token, realbucket, claimlist, accounts):
+    token.approve(realbucket, 1000, {"from": accounts[0]})
+    assert token.allowance(accounts[0], realbucket) == 1000
+
+    realbucket.depositOwner(1000)
+
+    claimlist.addItem(accounts[0], 100)
+
+    realbucket.addClaimsBatch(claimlist)
+
+    assert realbucket.openClaimAmount() == 100
 
 
-def test_claim(accounts):
+def test_claim_list_manylist(token, accounts):
+    t = chain.time()
+    cliff = t + 1
+    nump = 1
+    total = 1000
+    p = 1
+    clist = ClaimList.deploy({"from": accounts[0]})
+    bucket = Bucket.deploy(
+        "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
+    bucket.initialize()
+    # -- deposit 1000
+    token.approve(bucket, 1000, {"from": accounts[0]})
+    bucket.depositOwner(1000)
+    assert bucket.openClaimAmount() == 0
 
-    token = VegaToken.deploy({"from": accounts[0]})
-    t = int(chain.time())
+    for i in range(1, 10):
+        clist.addItem(accounts[i], 100)
+    bucket.addClaimsBatch(clist)
+    assert bucket.openClaimAmount() == 900
     day = 86400
-    
-    # cliff = t + 100  # day
-    # nump = 1
-    # total = 1000
-    # p = 1
+    chain.sleep(day * 1000)
+    # -- vestall
+    bucket.vestAll()
+    assert bucket.openClaimAmount() == 0
+    tb = 0
+    for i in range(1, 10):
+        x = token.balanceOf(accounts[i])
+        assert x == 100
+        tb += x
 
-    # bucket = Bucket.deploy(
-    #     "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
-    # )
-    # bucket.initialize()
-    # assert bucket.name() == "Somebucket"
+    # -- 900 vested
+    assert tb == 900
+    # -- 100 left
+    assert token.balanceOf(bucket) == 100
 
-    # token.approve(bucket, 1500, {"from": accounts[0]})
 
-    # bucket.depositOwner(1500)
+def test_claim_list_many(token, accounts):
+    t = chain.time()
+    cliff = t + 1
+    nump = 10
+    total = 1000
+    days = 86400
+    default_period = 30 * days
+    p = default_period
+    bucket = Bucket.deploy(
+        "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
+    bucket.initialize()
+    # -- deposit 1000
+    token.approve(bucket, 1000, {"from": accounts[0]})
+    bucket.depositOwner(1000)
+    assert bucket.openClaimAmount() == 0
 
-    # bucket.addClaim(accounts[1], 200)
-    # assert bucket.totalClaimAmount() == 200
-    # assert bucket.openClaimAmount() == 200
+    for i in range(1, 10):
+        bucket.addClaim(accounts[i], 100)
 
-    # bucket.addClaim(accounts[2], 300)
-    # assert bucket.totalClaimAmount() == 500
-    # assert bucket.openClaimAmount() == 500
-    # bucket.addClaim(accounts[3], 500)
-    # assert bucket.totalClaimAmount() == 1000
-    # assert bucket.openClaimAmount() == 1000
+    assert bucket.openClaimAmount() == 900
 
-    # chain.sleep(day * 10)
+    # for x in range(0,nump):
+    for x in range(0,nump):
+        chain.sleep(days)
+        bucket.vestAll()
+        assert bucket.openClaimAmount() == 900 - (x+1)*90
+        tb = 0
+        for i in range(1, 10):
+            b = token.balanceOf(accounts[i])
+            assert b == (x+1)*10
+            tb += b
+        assert tb == (x+1)*90
 
-    # assert bucket.claimCount() == 3
-    # assert bucket.claim_addresses(0) == accounts[1]
-    # assert bucket.claim_addresses(1) == accounts[2]
-    # assert bucket.claim_addresses(2) == accounts[3]
+    #     tb += x
 
-    # assert bucket.openClaimAmount() == 1000
-    # with brownie.reverts():
-    #     bucket.withdrawOwner(1000)
+    # # -- 900 vested
+    # assert tb == 1000
+    # # -- 100 left
+    # assert token.balanceOf(bucket) == 0
 
-    # bucket.vestAll()
-
-    # # assert bucket.totalClaimAmount() == 1000
-    # assert bucket.openClaimAmount() == 0
-
-    # b1 = token.balanceOf(accounts[0])
-    # bucket.withdrawOwner(500)
-    # b2 = token.balanceOf(accounts[0])
-    # assert b2-b1==500
-
-    # # assert bucket.getVestableAmount(accounts[1])==10

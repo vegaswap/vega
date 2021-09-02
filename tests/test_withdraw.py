@@ -60,6 +60,6 @@ def test_claim(accounts):
     b1 = token.balanceOf(accounts[0])
     bucket.withdrawOwner(500)
     b2 = token.balanceOf(accounts[0])
-    assert b2-b1==500
+    assert b2 - b1 == 500
 
     # assert bucket.getVestableAmount(accounts[1])==10

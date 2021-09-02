@@ -19,7 +19,7 @@ def test_claim_list(token, realbucket, claimlist, accounts):
     assert realbucket.openClaimAmount() == 100
 
 
-def test_claim_list_many(token, accounts):
+def test_claim_list_manylist(token, accounts):
     t = chain.time()
     cliff = t + 1
     nump = 1
@@ -30,6 +30,7 @@ def test_claim_list_many(token, accounts):
         "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
     )
     bucket.initialize()
+    # -- deposit 1000
     token.approve(bucket, 1000, {"from": accounts[0]})
     bucket.depositOwner(1000)
     assert bucket.openClaimAmount() == 0
@@ -40,6 +41,7 @@ def test_claim_list_many(token, accounts):
     assert bucket.openClaimAmount() == 900
     day = 86400
     chain.sleep(day * 1000)
+    # -- vestall
     bucket.vestAll()
     assert bucket.openClaimAmount() == 0
     tb = 0
@@ -48,26 +50,49 @@ def test_claim_list_many(token, accounts):
         assert x == 100
         tb += x
 
+    # -- 900 vested
     assert tb == 900
+    # -- 100 left
+    assert token.balanceOf(bucket) == 100
 
 
-# def test_claim_list_many(token, realbucket, claimlist, accounts):
-#     token.approve(realbucket, 10000, {"from": accounts[0]})
-#     assert token.allowance(accounts[0], realbucket) == 10000
+def test_claim_list_many(token, accounts):
+    t = chain.time()
+    cliff = t + 1
+    nump = 1
+    total = 1000
+    p = 1
+    bucket = Bucket.deploy(
+        "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
+    bucket.initialize()
+    # -- deposit 1000
+    token.approve(bucket, 1000, {"from": accounts[0]})
+    bucket.depositOwner(1000)
+    assert bucket.openClaimAmount() == 0
 
-#     realbucket.depositOwner(10000)
+    bucket.addClaim(accounts[1], 200)
+    for i in range(2, 10):
+        bucket.addClaim(accounts[i], 100)
 
-#     for i in range(10):
-#         claimlist.addItem(accounts[i], 100)
+    assert bucket.openClaimAmount() == 1000
+    day = 86400
+    chain.sleep(day * 1000)
+    # -- vestall
+    bucket.vestAll()
+    assert bucket.openClaimAmount() == 0
+    tb = 0
+    x = token.balanceOf(accounts[1])
+    assert x == 200
+    tb += x
 
-#     realbucket.addClaimsBatch(claimlist)
-# realbucket.vestAll()
-#     assert realbucket.openClaimAmount() == 1000
+    for i in range(2, 10):
+        x = token.balanceOf(accounts[i])
+        assert x == 100
+        tb += x
 
-#
+    # -- 900 vested
+    assert tb == 1000
+    # -- 100 left
+    assert token.balanceOf(bucket) == 0
 
-#     day = 86400
-#     chain.sleep(day*1000)
-
-#     assert realbucket.openClaimAmount() == 0
-#     # assert realbucket.openClaimAmount() == 0
