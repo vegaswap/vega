@@ -8,11 +8,11 @@
 from vyper.interfaces import ERC20
 
 
-interface XList:
-    def getAddress(i: uint256) -> address:
+interface ClaimList:
+    def addresses(i: uint256) -> address:
         nonpayable
 
-    def getAmount(i: uint256) -> uint256:
+    def amounts(i: uint256) -> uint256:
         nonpayable
 
     def count() -> uint256:
@@ -22,9 +22,9 @@ interface XList:
 # original deployer
 owner: address
 # name of the bucket
-name: String[15]
+name: public(String[15])
 vegaToken: address
-registerTime: uint256
+registerTime: public(uint256)
 days: constant(uint256) = 86400
 default_period: constant(uint256) = 30 * days
 period: public(uint256)
@@ -33,7 +33,6 @@ duration: public(uint256)
 endTime: public(uint256)
 totalAmount: public(uint256)
 numPeriods: public(uint256)
-amountPerPeriod: public(uint256)
 initialized: public(bool)
 openClaimAmount: public(uint256)
 totalWithdrawnAmount: public(uint256)
@@ -41,10 +40,11 @@ totalClaimAmount: public(uint256)
 claim_addresses: public(address[1000])
 claimCount: public(uint256)
 
+
 struct Claim:
     claimAddress: address
     claimTotalAmount: uint256
-    amountPerPeriod: uint256
+    amountPeriod: uint256
     withdrawnAmount: uint256
     isAdded: bool
 
@@ -71,6 +71,10 @@ event WithdrawClaim:
     claimAddress: address
     amount: uint256
 
+event Slog:
+    foo: String[20]
+    amount: uint256
+
 
 @external
 def __init__(
@@ -91,7 +95,6 @@ def __init__(
     self.cliffTime = _cliffTime
     self.numPeriods = _numPeriods
     self.totalAmount = _totalAmount
-    self.amountPerPeriod = self.totalAmount / self.numPeriods
     self.totalWithdrawnAmount = 0
     self.totalClaimAmount = 0
     self.initialized = False
@@ -112,7 +115,11 @@ def ceildiv(a: uint256, m: uint256) -> uint256:
 
 @external
 def initialize():
-    self.duration = self.period * self.ceildiv(self.totalAmount, self.amountPerPeriod)
+    assert msg.sender == self.owner, "BUCKET: not the owner"
+    assert not self.initialized
+    amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
+    #actual periods
+    self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
     self.initialized = True
@@ -155,14 +162,16 @@ def withdrawOwner(amount: uint256):
 @internal
 def _getVestableAmount(_claimAddress: address) -> uint256:
     claim: Claim = self.claims[_claimAddress]
-
     if block.timestamp < self.cliffTime:
         return 0
 
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
-    return self.currentPeriod() * claim.amountPerPeriod
+    # if self.currentPeriod() > self.numPeriods-5:
+    #     return claim.claimTotalAmount
+
+    return self.currentPeriod() * claim.amountPeriod
 
 
 @external
@@ -177,6 +186,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
     else:
         return amount
 
+
 @internal
 def _vestClaimMax(_claimAddress: address):
     assert self.claims[_claimAddress].isAdded, "BUCKET: claim does not exist"
@@ -184,16 +194,25 @@ def _vestClaimMax(_claimAddress: address):
     claim: Claim = self.claims[_claimAddress]
 
     vestableAmount: uint256 = self._getVestableAmount(_claimAddress)
+    log Slog("vestableAmount", vestableAmount)
     vestableAmount = self.capat(vestableAmount, claim.claimTotalAmount)
+    log Slog("cap", vestableAmount)
 
+    assert vestableAmount >= claim.withdrawnAmount, "BUCKET: no vestable amount"
     withdrawAmount: uint256 = vestableAmount - claim.withdrawnAmount
+    log Slog("withdrawmount", withdrawAmount)
     totalAfterwithdraw: uint256 = claim.withdrawnAmount + withdrawAmount
+    log Slog("totalAfterwithdraw", totalAfterwithdraw)
 
     assert (
         totalAfterwithdraw <= claim.claimTotalAmount
     ), "BUCKET: can not withdraw more than total"
 
     assert withdrawAmount > 0, "BUCKET: no amount claimed"
+    
+    rest: uint256 = claim.claimTotalAmount - totalAfterwithdraw    
+    if rest == 1:
+        withdrawAmount+=1
 
     assert ERC20(self.vegaToken).transfer(
         _claimAddress, withdrawAmount
@@ -201,9 +220,14 @@ def _vestClaimMax(_claimAddress: address):
 
     log WithdrawClaim(claim.claimAddress, withdrawAmount)
 
+    # assert self.openClaimAmount >= withdrawAmount, concat("no amount left to claim", withdrawAmount)
+    log Slog("openClaimAmount", self.openClaimAmount)
+    assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
+
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
     self.openClaimAmount -= withdrawAmount
+
 
 @external
 def vestClaimMax(_claimAddress: address):
@@ -229,21 +253,21 @@ def _addClaim(_claimAddress: address, _claimTotalAmount: uint256):
         _claimTotalAmount <= unclaimed
     ), "BUCKET: can not claim tokens that are not deposited"
 
-    _amountPerPeriod: uint256 = _claimTotalAmount / self.numPeriods
+    _amountPeriod: uint256 = _claimTotalAmount / self.numPeriods
     existclaim: Claim = self.claims[_claimAddress]
     assert existclaim == empty(Claim), "BUCKET: claim at this address already exists"
     self.claims[_claimAddress] = Claim(
         {
             claimAddress: _claimAddress,
-            amountPerPeriod: _amountPerPeriod,
+            amountPeriod: _amountPeriod,
             claimTotalAmount: _claimTotalAmount,
             withdrawnAmount: 0,
             isAdded: True,
         }
     )
 
-    self.claimCount += 1
     self.claim_addresses[self.claimCount] = _claimAddress
+    self.claimCount += 1
 
     self.totalClaimAmount += _claimTotalAmount
     self.openClaimAmount += _claimTotalAmount
@@ -271,8 +295,8 @@ def vestAll():
 @external
 def addClaimsBatch(list_addr: address):
     for i in range(0, 1000):
-        amount: uint256 = XList(list_addr).getAmount(i)
+        amount: uint256 = ClaimList(list_addr).amounts(i)
         if amount > 0:
-            self._addClaim(XList(list_addr).getAddress(i), amount)
+            self._addClaim(ClaimList(list_addr).addresses(i), amount)
         else:
             return
