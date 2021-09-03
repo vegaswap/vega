@@ -1,0 +1,406 @@
+{
+  "contracts": {
+    "Bucket": "39b45e0bf06f8aee74d4b220307e89211a029916",
+    "ClaimList": "3f501dc789b190b454b962ad91ef38aea887ad3b",
+    "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d"
+  },
+  "tests": {
+    "tests/test_approve.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": "............",
+      "sha1": "d0529a7a4c16cca5d189c92f60b844e7433fa577",
+      "txhash": []
+    },
+    "tests/test_bucket.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".......",
+      "sha1": "bbefe7a4bfe85278cded63e079d469c022f162f4",
+      "txhash": [
+        "2a0cc4685322b317cb47a510120e71d3b6252aba",
+        "3d7644b7ba50a096e7df9d224f471e5be0828940",
+        "3f9519237818a7f41a27dc12517f197ef067c55d"
+      ]
+    },
+    "tests/test_bucket_claimlist.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": "...",
+      "sha1": "6ab6b639764b2beb12f0bf790de3377e6b85ab1d",
+      "txhash": []
+    },
+    "tests/test_bucketclaim.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "8baa274e1bf44b520b9fa7f31602765dc9ac9d19",
+      "txhash": [
+        "3207881d46f89c3be06879676e4757a18f5754fd",
+        "771d3aa6a701463f0eb34f5e8c26d383114ad301",
+        "aa9dbdeebc808f92b53ef71452ec062de31cf29f"
+      ]
+    },
+    "tests/test_claimlist.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "df33291f916207463c5a0baaf557cdfca2c04890",
+      "txhash": []
+    },
+    "tests/test_maxclaim.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "847e601a89dd35f4e78b9ed20913158a6ad67ade",
+      "txhash": []
+    },
+    "tests/test_realdata.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": "..",
+      "sha1": "eea2f478289b12da8364a6cd4ce57b956f97eb6d",
+      "txhash": []
+    },
+    "tests/test_transfer.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": ".........",
+      "sha1": "050bdec6a86918336faf3ddd213a5940e727da30",
+      "txhash": [
+        "1f70353d17b52f72cfff439179c898d859c3d0e6"
+      ]
+    },
+    "tests/test_transferFrom.py": {
+      "coverage": false,
+      "isolated": [
+        "VegaToken"
+      ],
+      "results": ".................",
+      "sha1": "90a935bd3ecb0e73fc621ed615149d37e95cf3db",
+      "txhash": [
+        "46044d72d73c79369906e83ba2bcb10b5e9c8233",
+        "603db701094dffa573b6c1c91b7881fa5bd2a05f",
+        "bd5bc41c144a159490fe163491035822ec0705ee",
+        "cb5e91c6a27de8934d8a8df8d16203a959d67ce6",
+        "fe590c50d0bb5117a7f0e20e1bbe038083fe150f"
+      ]
+    },
+    "tests/test_vest.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "2220f6319deb079e42a30a7b353a078e6716c671",
+      "txhash": []
+    },
+    "tests/test_vestall.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "59cee043a2e55ba9744f420f0bb6f29a3b357872",
+      "txhash": []
+    },
+    "tests/test_vesttime.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "c61a894a3c2e770b8f30041a422fdb6b7a8a5d99",
+      "txhash": []
+    },
+    "tests/test_withdraw.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "VegaToken"
+      ],
+      "results": ".",
+      "sha1": "7acc01742c1a491b770bf77cba269dfb3f5c263b",
+      "txhash": [
+        "2a448c8fe391beb5082cb483966eafef7a62b5e6"
+      ]
+    }
+  },
+  "tx": {
+    "1f70353d17b52f72cfff439179c898d859c3d0e6": {
+      "VegaToken": {
+        "0": [
+          [
+            0,
+            12,
+            13
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "2a0cc4685322b317cb47a510120e71d3b6252aba": {
+      "Bucket": {
+        "0": [
+          [
+            19,
+            21,
+            22,
+            23
+          ],
+          [
+            24
+          ],
+          [
+            20
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "2a448c8fe391beb5082cb483966eafef7a62b5e6": {
+      "Bucket": {
+        "0": [
+          [
+            19,
+            21,
+            22,
+            23
+          ],
+          [
+            24
+          ],
+          [
+            20
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "3207881d46f89c3be06879676e4757a18f5754fd": {
+      "Bucket": {
+        "0": [
+          [
+            19,
+            21,
+            22,
+            23
+          ],
+          [
+            24
+          ],
+          [
+            20
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "3d7644b7ba50a096e7df9d224f471e5be0828940": {
+      "Bucket": {
+        "0": [
+          [
+            9,
+            11
+          ],
+          [
+            12
+          ],
+          [
+            10
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [
+            8
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "3f9519237818a7f41a27dc12517f197ef067c55d": {
+      "Bucket": {
+        "0": [
+          [
+            19
+          ],
+          [
+            20
+          ],
+          []
+        ]
+      }
+    },
+    "46044d72d73c79369906e83ba2bcb10b5e9c8233": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "603db701094dffa573b6c1c91b7881fa5bd2a05f": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "771d3aa6a701463f0eb34f5e8c26d383114ad301": {
+      "Bucket": {
+        "0": [
+          [
+            19,
+            21,
+            22,
+            23
+          ],
+          [
+            24
+          ],
+          [
+            20
+          ]
+        ]
+      },
+      "VegaToken": {
+        "0": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "aa9dbdeebc808f92b53ef71452ec062de31cf29f": {
+      "Bucket": {
+        "0": [
+          [
+            34,
+            36,
+            85
+          ],
+          [
+            86
+          ],
+          [
+            35
+          ]
+        ]
+      }
+    },
+    "bd5bc41c144a159490fe163491035822ec0705ee": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "cb5e91c6a27de8934d8a8df8d16203a959d67ce6": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    "fe590c50d0bb5117a7f0e20e1bbe038083fe150f": {
+      "VegaToken": {
+        "0": [
+          [
+            2,
+            12,
+            13
+          ],
+          [],
+          []
+        ]
+      }
+    }
+  }
+}
