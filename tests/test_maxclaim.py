@@ -31,12 +31,31 @@ def test_claim_list_many(token, accounts):
     print(bucket.openClaimAmount())
     chain.sleep(days*30*(nump-1))
     bucket.vestClaimMax(accounts[1])
-    print("before last ",token.balanceOf(accounts[1]))
+    bal1 = token.balanceOf(accounts[1])
+    assert bal1 == 90
+    print("before last ",)
     chain.sleep(days*1)
-    bucket.vestClaimMax(accounts[1])
+
+    # assert bucket.claims(accounts[1]).withdrawAmount == 0
+
+    claim = bucket.claims(accounts[1])
+    assert claim == (accounts[1], 101, 10, 90, True)
+
+    chain.sleep(days*100)
+    tx = bucket.vestClaimMax(accounts[1])
+    assert tx.events["Slog"][0]["amount"] == 101
+    assert tx.events["Slog"][1]["amount"] == 101
+    assert tx.events["Slog"][2]["amount"] == 90
+    assert tx.events["Slog"][3]["amount"] == 11
+    assert tx.events["Slog"][4]["amount"] == 101
     bal = token.balanceOf(accounts[1])
+    #BUG doesnt vest 101
+    claim = bucket.claims(accounts[1])
+    assert claim == (accounts[1], 101, 10, 101, True)
     # print("?? ",)
-    assert bal <= claimAmount
+    assert bal == claimAmount
+
+    # assert bal == claimAmount
 
     # t = chain.time()
     # cliff = t + 1

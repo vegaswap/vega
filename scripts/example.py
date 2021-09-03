@@ -30,6 +30,7 @@ def main():
     chain.sleep(days*1)
     bucket.vestClaimMax(accounts[1])
     print("?? ",token.balanceOf(accounts[1]))
+    
     # chain.sleep(days*30*1)
     # bucket.vestClaimMax(accounts[1])
     # print("?? ",token.balanceOf(accounts[1]))
