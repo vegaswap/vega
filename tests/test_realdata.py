@@ -139,30 +139,33 @@ def test_claim_list_odd(token, accounts):
             tb += b
         assert tb == (x+1)*81
 
-    for x in range(nump,nump+1):
+    assert bucket.openClaimAmount() == 0
+
+    # for x in range(nump,nump+1):
         
-        chain.sleep(days)
-        with brownie.reverts():
-            tx = bucket.vestAll()        
-            #??
-            assert False
-            # assert tx.events.keys() == None
-            assert tx.events["Slog"][0]["foo"] == "vestableAmount"
-            assert tx.events["Slog"][0]["amount"] == 9
-            assert tx.events["Slog"][1]["foo"] == "cap"
-            assert tx.events["Slog"][2]["foo"] == "withdrawmount"
-            assert tx.events["Slog"][3]["foo"] == "totalAfterwithdraw"
-            assert tx.events["Slog"][3]["amount"] == 90
+    #     chain.sleep(days)
+    #     assert bucket.openClaimAmount() ==11
+    #     # with brownie.reverts():
+    #     tx = bucket.vestAll()        
+    #     #??
+    #     # assert False
+    #     # assert tx.events.keys() == None
+    #     assert tx.events["Slog"][0]["foo"] == "vestableAmount"
+    #     assert tx.events["Slog"][0]["amount"] == 9
+    #     assert tx.events["Slog"][1]["foo"] == "cap"
+    #     assert tx.events["Slog"][2]["foo"] == "withdrawmount"
+    #     assert tx.events["Slog"][3]["foo"] == "totalAfterwithdraw"
+    #     assert tx.events["Slog"][3]["amount"] == 90
 
-            assert tx.events["WithdrawClaim"][0]["amount"] == 99
+    #     assert tx.events["WithdrawClaim"][0]["amount"] == 99
 
-        # assert bucket.openClaimAmount() == 819 - (x+1)*90
-        tb = 0
-        for i in range(1, 10):
-            b = token.balanceOf(accounts[i])
-            assert b == (x+1)*9
-            tb += b
-        assert tb == (x+1)*81
+    #     # assert bucket.openClaimAmount() == 819 - (x+1)*90
+    #     tb = 0
+    #     for i in range(1, 10):
+    #         b = token.balanceOf(accounts[i])
+    #         assert b == (x+1)*9
+    #         tb += b
+    #     assert tb == (x+1)*81
 
     
 

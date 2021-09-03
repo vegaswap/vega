@@ -118,6 +118,7 @@ def initialize():
     assert msg.sender == self.owner, "BUCKET: not the owner"
     assert not self.initialized
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
+    #actual periods
     self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
@@ -167,6 +168,9 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
+    # if self.currentPeriod() > self.numPeriods-5:
+    #     return claim.claimTotalAmount
+
     return self.currentPeriod() * claim.amountPeriod
 
 
@@ -206,12 +210,19 @@ def _vestClaimMax(_claimAddress: address):
 
     assert withdrawAmount > 0, "BUCKET: no amount claimed"
     
+    rest: uint256 = claim.claimTotalAmount - totalAfterwithdraw    
+    if rest == 1:
+        withdrawAmount+=1
 
     assert ERC20(self.vegaToken).transfer(
         _claimAddress, withdrawAmount
     ), "BUCKET: transfer failed"
 
     log WithdrawClaim(claim.claimAddress, withdrawAmount)
+
+    # assert self.openClaimAmount >= withdrawAmount, concat("no amount left to claim", withdrawAmount)
+    log Slog("openClaimAmount", self.openClaimAmount)
+    assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
 
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
