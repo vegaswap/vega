@@ -95,4 +95,3 @@ def test_claim_list_many(token, accounts):
     assert tb == 1000
     # -- 100 left
     assert token.balanceOf(bucket) == 0
-

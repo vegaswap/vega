@@ -42,20 +42,15 @@ def test_claim(accounts):
     assert bucket.totalClaimAmount() == 1000
     assert bucket.openClaimAmount() == 1000
 
-    chain.sleep(day * 10)
-
     assert bucket.claimCount() == 3
     assert bucket.claim_addresses(0) == accounts[1]
     assert bucket.claim_addresses(1) == accounts[2]
     assert bucket.claim_addresses(2) == accounts[3]
 
     assert bucket.openClaimAmount() == 1000
-    # TODO
-    # tx = bucket.vestAll()
-    # import pdb
-    # pdb.set_trace()
+    assert bucket.totalClaimAmount() == 1000
+    chain.sleep(day * 10)
+    tx = bucket.vestAll()
 
-    # assert bucket.totalClaimAmount() == 1000
-    # assert bucket.openClaimAmount() == 0
-
-    # assert bucket.getVestableAmount(accounts[1])==10
+    assert bucket.totalClaimAmount() == 1000
+    assert bucket.openClaimAmount() == 0
