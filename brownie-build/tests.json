@@ -1,6 +1,6 @@
 {
   "contracts": {
-    "Bucket": "9d572266d822b08054b0740a4dad92bc5760430f",
+    "Bucket": "8c977cec11b50c09ea1c56dcf64ee50f9a453f6f",
     "ClaimList": "3f501dc789b190b454b962ad91ef38aea887ad3b",
     "VegaToken": "8df0c4119022da08e4aa291cb0e305a605faa56d"
   },
@@ -71,7 +71,7 @@
         "VegaToken"
       ],
       "results": ".",
-      "sha1": "847e601a89dd35f4e78b9ed20913158a6ad67ade",
+      "sha1": "5ac013443c83e6c07c284d59fd31acb388ede620",
       "txhash": []
     },
     "tests/test_transfer.py": {
@@ -335,10 +335,10 @@
           [
             34,
             36,
-            88
+            81
           ],
           [
-            89
+            82
           ],
           [
             35
