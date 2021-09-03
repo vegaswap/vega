@@ -71,6 +71,9 @@ event WithdrawClaim:
     claimAddress: address
     amount: uint256
 
+event Slog:
+    foo: String[20]
+    amount: uint256
 
 
 @external
@@ -115,6 +118,7 @@ def initialize():
     assert msg.sender == self.owner, "BUCKET: not the owner"
     assert not self.initialized
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
+    #actual periods
     self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
@@ -164,6 +168,9 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
 
+    # if self.currentPeriod() > self.numPeriods-5:
+    #     return claim.claimTotalAmount
+
     return self.currentPeriod() * claim.amountPeriod
 
 
@@ -187,22 +194,35 @@ def _vestClaimMax(_claimAddress: address):
     claim: Claim = self.claims[_claimAddress]
 
     vestableAmount: uint256 = self._getVestableAmount(_claimAddress)
+    log Slog("vestableAmount", vestableAmount)
     vestableAmount = self.capat(vestableAmount, claim.claimTotalAmount)
+    log Slog("cap", vestableAmount)
 
+    assert vestableAmount >= claim.withdrawnAmount, "BUCKET: no vestable amount"
     withdrawAmount: uint256 = vestableAmount - claim.withdrawnAmount
+    log Slog("withdrawmount", withdrawAmount)
     totalAfterwithdraw: uint256 = claim.withdrawnAmount + withdrawAmount
+    log Slog("totalAfterwithdraw", totalAfterwithdraw)
 
     assert (
         totalAfterwithdraw <= claim.claimTotalAmount
     ), "BUCKET: can not withdraw more than total"
 
     assert withdrawAmount > 0, "BUCKET: no amount claimed"
+    
+    rest: uint256 = claim.claimTotalAmount - totalAfterwithdraw    
+    if rest == 1:
+        withdrawAmount+=1
 
     assert ERC20(self.vegaToken).transfer(
         _claimAddress, withdrawAmount
     ), "BUCKET: transfer failed"
 
     log WithdrawClaim(claim.claimAddress, withdrawAmount)
+
+    # assert self.openClaimAmount >= withdrawAmount, concat("no amount left to claim", withdrawAmount)
+    log Slog("openClaimAmount", self.openClaimAmount)
+    assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
 
     claim.withdrawnAmount += withdrawAmount
     self.totalWithdrawnAmount += withdrawAmount
