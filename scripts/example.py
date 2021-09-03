@@ -28,6 +28,30 @@ def runall():
         "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
     )
     bucket.initialize()
+    print(bucket.openClaimAmount())
+
+    token.approve(bucket, 1000, {"from": accounts[0]})
+    bucket.depositOwner(1000)
+
+    for i in range(1, 10):
+        bucket.addClaim(accounts[i], 101)
+
+    print(bucket.openClaimAmount())
+    chain.sleep(days*30*(nump-1))
+    bucket.vestClaimMax(accounts[1])
+    print("before last ",token.balanceOf(accounts[1]))
+    chain.sleep(days*1)
+    bucket.vestClaimMax(accounts[1])
+    print("?? ",token.balanceOf(accounts[1]))
+    
+    # chain.sleep(days*30*1)
+    # bucket.vestClaimMax(accounts[1])
+    # print("?? ",token.balanceOf(accounts[1]))
+    # babi = bucket.abi
+    # hs = hashlib.sha1(str(babi).encode('utf-8')).hexdigest()
+    # print(hs)
+
+    # Contract.from_abi("Token", "0x79447c97b6543F6eFBC91613C655977806CB18b0", abi)
     # bucket = Bucket.at("0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a")
     print(bucket.name())
     print(bucket.cliffTime())

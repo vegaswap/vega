@@ -10,39 +10,37 @@ import time
 def test_claim_list_many(token, claimlist, accounts):
     t = chain.time()
     cliff = t + 1
-    nump = 1
-    total = 100
-    p = 1
+    nump = 2
+    total = 101
+    days = 86400
+    default_period = 30 * days
     bucket = Bucket.deploy(
-        "Realbucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+        "Realbucket", token.address, cliff, nump, total, default_period, {"from": accounts[0]}
     )
     bucket.initialize()
 
-    token.approve(bucket, 1000, {"from": accounts[0]})
-    bucket.depositOwner(1000)
+    token.approve(bucket, 101, {"from": accounts[0]})
+    bucket.depositOwner(101)
 
-    # claimlist.addItem(accounts[0], 100)
-    # bucket.addClaimsBatch(claimlist)
-    bucket.addClaim(accounts[0], 100)
+    assert token.balanceOf(bucket) == 101
+
+    bucket.addClaim(accounts[0], 101)
 
     c = bucket.claims(accounts[0])
-    assert c == (accounts[0], 100, 100, 0, True)
+    assert c == (accounts[0], 101, 50, 0, True)
 
-    chain.sleep(1000)
+    chain.sleep(default_period)
 
-    assert bucket.openClaimAmount() == 100
+    assert bucket.openClaimAmount() == 101
 
-    # bucket.vestAll()
-
-    #TODO
-    # BUG!
-    # assert bucket.openClaimAmount() == 0
 
     assert bucket.cliffTime() == cliff
     assert bucket.endTime() > cliff
-    assert bucket.endTime() - bucket.registerTime() == 2
-    assert bucket.duration() == 1
-
+    # assert bucket.endTime() - bucket.registerTime() == 2
+    assert bucket.duration() == default_period*2
+    
+    #TODO
+    # bucket.vestAll()
     # assert bucket.blockts() == int(chain.time())
     # assert bucket.blockts() == 100
     # x = bucket.blockts()
