@@ -45,7 +45,7 @@ def test_claim_list_many(token, accounts):
     tx = bucket.vestClaimMax(accounts[1])
     assert tx.events["WithdrawClaim"][0]["claimAddress"] == accounts[1]
     assert tx.events["WithdrawClaim"][0]["amount"] == 11
-    
+
     claim = bucket.claims(accounts[1])
     assert claim == (accounts[1], 101, 10, 101, True)
 
@@ -59,43 +59,55 @@ def test_claim_list_many(token, accounts):
     assert claim == (accounts[1], 101, 10, 101, True)
     assert bal == claimAmount
 
-    #TODO
-    # t = chain.time()
-    # cliff = t + 1
-    # nump = 10
-    # total = 1000
-    # days = 86400
-    # default_period = 30 * days
-    # p = default_period
-    # bucket = Bucket.deploy(
-    #     "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
-    # )
-    # bucket.initialize()
+def test_claim_list_many_list(token, accounts):
+    
+    t = chain.time()
+    cliff = t + 100
+    nump = 10
+    total = 1050
+    days = 86400
+    default_period = 30 * days
+    p = default_period
+    bucket = Bucket.deploy(
+        "Somebucket", token.address, cliff, nump, total, p, {"from": accounts[0]}
+    )
+    bucket.initialize()
+
     # # -- deposit 1000
-    # token.approve(bucket, 1000, {"from": accounts[0]})
-    # bucket.depositOwner(1000)
-    # assert bucket.openClaimAmount() == 0
+    token.approve(bucket, 1000, {"from": accounts[0]})
+    bucket.depositOwner(1000)
+    assert bucket.openClaimAmount() == 0
 
-    # for i in range(1, 10):
-    #     bucket.addClaim(accounts[i], 100)
+    clist = ClaimList.deploy({"from": accounts[0]})
 
-    # assert bucket.openClaimAmount() == 900
+    for i in range(1, 10):
+        clist.addItem(accounts[i], 100)
 
-    # assert bucket.duration() ==10*default_period
-    # assert bucket.endTime() == bucket.cliffTime() + 10*default_period
+    bucket.addClaimsBatch(clist)
+    assert bucket.openClaimAmount() == 900
+        
+    assert bucket.duration() ==10*default_period
+    assert bucket.endTime() == bucket.cliffTime() + 10*default_period
 
-    # for x in range(0,nump):
-    #     chain.sleep(days)
-    #     bucket.vestAll()
-    #     assert bucket.openClaimAmount() == 900 - (x+1)*90
-    #     tb = 0
-    #     for i in range(1, 10):
-    #         b = token.balanceOf(accounts[i])
-    #         assert b == (x+1)*10
-    #         tb += b
-    #     assert tb == (x+1)*90
+    for x in range(0,nump):
+        chain.sleep(default_period)
+        bucket.vestAll()
+        assert bucket.openClaimAmount() == 900 - (x+1)*90
+        tb = 0
+        for i in range(1, 10):
+            b = token.balanceOf(accounts[i])
+            assert b == (x+1)*10
+            tb += b
+        assert tb == (x+1)*90
 
-    # assert bucket.openClaimAmount() == 0
+    assert bucket.openClaimAmount() == 0
 
-    # assert token.balanceOf(bucket) == 100
+    tb = 0
+    for i in range(1, 10):
+        b = token.balanceOf(accounts[i])
+        assert b == (x+1)*10
+        tb += b
+    assert tb == 900
+
+    assert token.balanceOf(bucket) == 100
 

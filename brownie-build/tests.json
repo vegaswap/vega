@@ -68,10 +68,11 @@
       "coverage": false,
       "isolated": [
         "Bucket",
+        "ClaimList",
         "VegaToken"
       ],
-      "results": ".",
-      "sha1": "5ac013443c83e6c07c284d59fd31acb388ede620",
+      "results": "..",
+      "sha1": "3bfd1c635a6183d6d43f979ce6a14df79b6ade63",
       "txhash": []
     },
     "tests/test_transfer.py": {
