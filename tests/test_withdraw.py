@@ -54,12 +54,9 @@ def test_claim(accounts):
 
     bucket.vestAll()
 
-    # assert bucket.totalClaimAmount() == 1000
     assert bucket.openClaimAmount() == 0
 
     b1 = token.balanceOf(accounts[0])
     bucket.withdrawOwner(500)
     b2 = token.balanceOf(accounts[0])
     assert b2 - b1 == 500
-
-    # assert bucket.getVestableAmount(accounts[1])==10

@@ -49,6 +49,7 @@ def test_claim_list_many(token, accounts):
     # assert tx.events["Slog"][3]["amount"] == 11
     # assert tx.events["Slog"][4]["amount"] == 101
     bal = token.balanceOf(accounts[1])
+    #TODO
     #BUG doesnt vest 101
     claim = bucket.claims(accounts[1])
     assert claim == (accounts[1], 101, 10, 101, True)
