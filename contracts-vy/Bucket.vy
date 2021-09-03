@@ -120,7 +120,7 @@ def initialize():
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
     #actual periods
     # self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
-    self.duration = self.period * self.numPeriods
+    self.duration = self.period * self.numPeriods    
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
     self.initialized = True
@@ -184,6 +184,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
     else:
         return amount
 
+
 @internal
 def _vestClaimMax(_claimAddress: address):
     #can pass claim as struct (_claim: Claim)
@@ -220,6 +221,10 @@ def _vestClaimMax(_claimAddress: address):
     assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
 
     self.claims[_claimAddress].withdrawnAmount += withdrawAmount
+    # assert self.openClaimAmount >= withdrawAmount, concat("no amount left to claim", withdrawAmount)
+    log Slog("openClaimAmount", self.openClaimAmount)
+    assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
+
     self.totalWithdrawnAmount += withdrawAmount
     self.openClaimAmount -= withdrawAmount
 

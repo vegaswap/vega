@@ -37,6 +37,7 @@ def get_contract(w3, ctr):
 
 
 
+
 def pre_hook():
     print(">>>>> START <<<<<<")
     # pre()
@@ -57,9 +58,11 @@ def post_hook():
     print("processed %i vyper contracts" % vycount)
 
 
+
 def get_content(fp):
     with open(fp, "r") as f:
         return f.read()
+
 
 
 
@@ -70,6 +73,7 @@ def count_import(lines):
             i += 1
 
     return i
+
 
 
 def sha1sum(filename):
