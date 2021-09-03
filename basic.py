@@ -96,8 +96,7 @@ def deploy_token():
 def deploy_bucket(tr, vtoken, a):
     bucket_ctr = tr.get_ctr("Bucket")
     import time
-    t = int(time.time())
-    d = date(2021,9,2)
+    d = date(2021,9,4)
     unixtime = time.mktime(d.timetuple())
     # cliff = t+1000
     cliff = int(unixtime)
@@ -145,39 +144,6 @@ def deposittokens():
     print(vtoken.f.balanceOf(a[0].address).call())
     print(vtoken.f.balanceOf(bucket.address).call())    
 
-a = accounts()
-tr = get_transactor(a)
-vtoken = token(a, tr)
-# cta = deploy_bucket(tr, vtoken, a)
-# cta = deploy_bucket(tr, vtoken, a)
-cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
-# cta = "0x2766EdFD8d91Bc23e3456C3AF9Cf74de4AebD956"
-bucket_ctr = tr.get_ctr("Bucket")
-bucket = tr.load_contract(cta, bucket_ctr.abi)
-
-txp = tr.get_tx_params(200000)
-tx = bucket.functions.initialize().buildTransaction(txp)
-signpush(tr, a[0], tx)
-
-print(bucket.functions.name().call())
-print("total claim ",bucket.f.totalClaimAmount().call())
-print("openClaimAmount  ",bucket.f.openClaimAmount().call())
-
-# deposittokens()
-
-txp = tr.get_tx_params(200000)
-# tx = bucket.f.addClaim(a[0].address, 100).buildTransaction(txp)
-# signpush(tr, a[0], tx)
-
-print(bucket.f.totalClaimAmount().call())
-print(bucket.f.openClaimAmount().call())
-print(bucket.f.totalWithdrawnAmount().call())
-
-print(bucket.f.getVestableAmount(a[0].address).call())
-
-day = 86400*30
-# increase_chaintime(day)
-
 def currentPeriod() -> int:
     # blocktimestamp = 1630511586
     blocktimestamp = bucket.f.blockts().call()
@@ -195,44 +161,76 @@ def currentPeriod() -> int:
     return validPeriodCount
 
 
+if __name__=="__main__":
 
-currentPeriod()
+    a = accounts()
+    tr = get_transactor(a)
+    vtoken = token(a, tr)
+    cta = deploy_bucket(tr, vtoken, a)
+    # cta = deploy_bucket(tr, vtoken, a)
+    # cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
+    # cta = "0x2766EdFD8d91Bc23e3456C3AF9Cf74de4AebD956"
+    bucket_ctr = tr.get_ctr("Bucket")
+    bucket = tr.load_contract(cta, bucket_ctr.abi)
 
-print("end time",bucket.f.endTime().call())
-print("initialized",bucket.f.initialized().call())
-print(bucket.f.getVestableAmount(a[0].address).call())
- 
-c = bucket.f.claims(a[0].address).call()
-print("withdraw ", c[3])
+    txp = tr.get_tx_params(200000)
+    tx = bucket.functions.initialize().buildTransaction(txp)
+    signpush(tr, a[0], tx)
 
-# txp = tr.get_tx_params(200000)
-# tx = bucket.f.vestClaimMax(a[0].address).buildTransaction(txp)
-# signpush(tr, a[0], tx)
+    print(bucket.functions.name().call())
+    print("total claim ",bucket.f.totalClaimAmount().call())
+    print("openClaimAmount  ",bucket.f.openClaimAmount().call())
 
-txp = tr.get_tx_params(200000)
-print(a[0].address)
-txp = tr.get_tx_params(200000)
-tx = bucket.f.zzz().buildTransaction(txp)
-# .call()
-signpush(tr, a[0], tx)
+    # deposittokens()
+
+    txp = tr.get_tx_params(200000)
+    # tx = bucket.f.addClaim(a[0].address, 100).buildTransaction(txp)
+    # signpush(tr, a[0], tx)
+
+    print(bucket.f.totalClaimAmount().call())
+    print(bucket.f.openClaimAmount().call())
+    print(bucket.f.totalWithdrawnAmount().call())
+
+    print(bucket.f.getVestableAmount(a[0].address).call())
+
+    # day = 86400*30
+    # # increase_chaintime(day)
+
+    # currentPeriod()
+
+    # print("end time",bucket.f.endTime().call())
+    # print("initialized",bucket.f.initialized().call())
+    # print(bucket.f.getVestableAmount(a[0].address).call())
+    
+    # c = bucket.f.claims(a[0].address).call()
+    # print("withdraw ", c[3])
+
+    # txp = tr.get_tx_params(200000)
+    # tx = bucket.f.vestClaimMax(a[0].address).buildTransaction(txp)
+    # signpush(tr, a[0], tx)
+
+    # txp = tr.get_tx_params(200000)
+    # print(a[0].address)
+    # txp = tr.get_tx_params(200000)
+    # signpush(tr, a[0], tx)
 
 
-# cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
-# print("bucket at ", cta)
-# 
-# txp = tr.get_tx_params(200000)
+    # cta = "0x5c609Db3A64Fd1bD5d4dA467963090f88BE2574a"
+    # print("bucket at ", cta)
+    # 
+    # txp = tr.get_tx_params(200000)
 
 
 
-# print("balance ",vtoken.f.balanceOf(cta).call())
-# print(bucket.address)
+    # print("balance ",vtoken.f.balanceOf(cta).call())
+    # print(bucket.address)
 
 
-# last_height = tr.w3.eth.block_number
-# block = tr.w3.eth.get_block(last_height)
-# print(get_ts(block.timestamp))
-# increase_chaintime(day)
+    # last_height = tr.w3.eth.block_number
+    # block = tr.w3.eth.get_block(last_height)
+    # print(get_ts(block.timestamp))
+    # increase_chaintime(day)
 
-# last_height = tr.w3.eth.block_number
-# block = tr.w3.eth.get_block(last_height)
-# print(get_ts(block.timestamp))
+    # last_height = tr.w3.eth.block_number
+    # block = tr.w3.eth.get_block(last_height)
+    # print(get_ts(block.timestamp))

@@ -119,18 +119,11 @@ def initialize():
     assert not self.initialized
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
     #actual periods
-    self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
+    # self.duration = self.period * self.ceildiv(self.totalAmount, amountPerPeriod)
+    self.duration = self.period * self.numPeriods
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
     self.initialized = True
-
-
-@internal
-def currentPeriod() -> uint256:
-    timeSinceCliff: uint256 = block.timestamp - self.cliffTime
-    # at cliff, one amount is withdrawable
-    validPeriodCount: uint256 = 1 + timeSinceCliff / default_period
-    return validPeriodCount
 
 
 @external
@@ -158,6 +151,12 @@ def withdrawOwner(amount: uint256):
     assert transferSuccess, "BUCKET: withdraw failed"
     log WithdrawOwner(msg.sender, amount)
 
+@internal
+def currentPeriod() -> uint256:
+    timeSinceCliff: uint256 = block.timestamp - self.cliffTime
+    # at cliff, one amount is withdrawable
+    validPeriodCount: uint256 = 1 + timeSinceCliff / default_period
+    return validPeriodCount
 
 @internal
 def _getVestableAmount(_claimAddress: address) -> uint256:
@@ -167,6 +166,14 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
 
     if block.timestamp >= self.endTime:
         return claim.claimTotalAmount
+
+    # if block.timestamp >= self.endTime - self.period:
+    #     #REST
+    #     # total: uint256 = claim.claimTotalAmount
+    #     # before: uint256 = self.currentPeriod() * claim.amountPeriod
+    #     # return total 
+    #     x: uint256 = 5
+    #     return x + self.currentPeriod() * claim.amountPeriod
 
     # if self.currentPeriod() > self.numPeriods-5:
     #     return claim.claimTotalAmount
@@ -189,6 +196,7 @@ def capat(amount: uint256, cap: uint256) -> uint256:
 
 @internal
 def _vestClaimMax(_claimAddress: address):
+    #can pass claim as struct (_claim: Claim)
     assert self.claims[_claimAddress].isAdded, "BUCKET: claim does not exist"
 
     claim: Claim = self.claims[_claimAddress]
