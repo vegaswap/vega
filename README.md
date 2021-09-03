@@ -1,13 +1,7 @@
-# vegaswap contracts
+# Vegaswap contracts
 
-python 3.9.6
+vegaswap.io
 
-requirements.txt
+```brownie test```
 
-Vyper version 0.2.15+commit.31dd776
-
-./compile.sh
-
-## lint
-
-blackadder --fast --include '\.vy$' .
+```brownie run scripts/example.py```

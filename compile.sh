@@ -2,11 +2,11 @@
 sudo rm build/*.*
 cd contracts-vy
 
-vyper Bucket.vy -f abi > ../build/Bucket.abi
-vyper Bucket.vy -f bytecode > ../build/Bucket.bin
+vyper Bucket.vy -o ../build -f abi
+vyper Bucket.vy -o ../build -f bytecode
 
-vyper VegaToken.vy -f abi > ../build/VegaToken.abi
-vyper VegaToken.vy -f bytecode > ../build/VegaToken.bin
+vyper VegaToken.vy -o ../build -f abi
+vyper VegaToken.vy -o ../build -f bytecode
 
-vyper Xlist.vy -f abi > ../build/Xlist.abi
-vyper Xlist.vy -f bytecode > ../build/Xlist.bin
+vyper Claimlist.vy -o ../build -f abi
+vyper Claimlist.vy -o ../build -f bytecode

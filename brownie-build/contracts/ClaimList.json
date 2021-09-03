@@ -1,0 +1,4073 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "gas": 108932,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "addItem",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "gas": 7448,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 6501,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1178,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1208,
+      "inputs": [],
+      "name": "issuedSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1238,
+      "inputs": [],
+      "name": "count",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1313,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "uint256"
+        }
+      ],
+      "name": "addresses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "gas": 1343,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "uint256"
+        }
+      ],
+      "name": "amounts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "contracts-vy/ClaimList.vy"
+  },
+  "ast": {
+    "ast_type": "Module",
+    "body": [
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Subscript",
+              "col_offset": 13,
+              "end_col_offset": 23,
+              "end_lineno": 4,
+              "lineno": 4,
+              "node_id": 7,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 13,
+                "end_col_offset": 23,
+                "end_lineno": 4,
+                "lineno": 4,
+                "node_id": 12,
+                "src": "77:10:1",
+                "value": {
+                  "ast_type": "Int",
+                  "col_offset": 20,
+                  "end_col_offset": 22,
+                  "end_lineno": 4,
+                  "lineno": 4,
+                  "node_id": 10,
+                  "src": "84:2:1",
+                  "value": 64
+                }
+              },
+              "src": "77:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 13,
+                "end_col_offset": 19,
+                "end_lineno": 4,
+                "id": "String",
+                "lineno": 4,
+                "node_id": 8,
+                "src": "77:6:1"
+              }
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 6,
+          "end_col_offset": 24,
+          "end_lineno": 4,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 6,
+            "end_col_offset": 12,
+            "end_lineno": 4,
+            "id": "public",
+            "lineno": 4,
+            "node_id": 5,
+            "src": "70:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 4,
+          "node_id": 4,
+          "src": "70:18:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 24,
+        "end_lineno": 4,
+        "lineno": 4,
+        "node_id": 1,
+        "simple": 1,
+        "src": "64:24:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 4,
+          "end_lineno": 4,
+          "id": "name",
+          "lineno": 4,
+          "node_id": 2,
+          "src": "64:4:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Subscript",
+              "col_offset": 15,
+              "end_col_offset": 25,
+              "end_lineno": 5,
+              "lineno": 5,
+              "node_id": 19,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 15,
+                "end_col_offset": 25,
+                "end_lineno": 5,
+                "lineno": 5,
+                "node_id": 24,
+                "src": "104:10:1",
+                "value": {
+                  "ast_type": "Int",
+                  "col_offset": 22,
+                  "end_col_offset": 24,
+                  "end_lineno": 5,
+                  "lineno": 5,
+                  "node_id": 22,
+                  "src": "111:2:1",
+                  "value": 32
+                }
+              },
+              "src": "104:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 15,
+                "end_col_offset": 21,
+                "end_lineno": 5,
+                "id": "String",
+                "lineno": 5,
+                "node_id": 20,
+                "src": "104:6:1"
+              }
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 8,
+          "end_col_offset": 26,
+          "end_lineno": 5,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 8,
+            "end_col_offset": 14,
+            "end_lineno": 5,
+            "id": "public",
+            "lineno": 5,
+            "node_id": 17,
+            "src": "97:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 5,
+          "node_id": 16,
+          "src": "97:18:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 26,
+        "end_lineno": 5,
+        "lineno": 5,
+        "node_id": 13,
+        "simple": 1,
+        "src": "89:26:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 6,
+          "end_lineno": 5,
+          "id": "symbol",
+          "lineno": 5,
+          "node_id": 14,
+          "src": "89:6:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 17,
+              "end_col_offset": 24,
+              "end_lineno": 6,
+              "id": "uint256",
+              "lineno": 6,
+              "node_id": 31,
+              "src": "133:7:1"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 10,
+          "end_col_offset": 25,
+          "end_lineno": 6,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 10,
+            "end_col_offset": 16,
+            "end_lineno": 6,
+            "id": "public",
+            "lineno": 6,
+            "node_id": 29,
+            "src": "126:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 6,
+          "node_id": 28,
+          "src": "126:15:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 25,
+        "end_lineno": 6,
+        "lineno": 6,
+        "node_id": 25,
+        "simple": 1,
+        "src": "116:25:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 8,
+          "end_lineno": 6,
+          "id": "decimals",
+          "lineno": 6,
+          "node_id": 26,
+          "src": "116:8:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 21,
+              "end_col_offset": 28,
+              "end_lineno": 7,
+              "id": "uint256",
+              "lineno": 7,
+              "node_id": 39,
+              "src": "163:7:1"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 14,
+          "end_col_offset": 29,
+          "end_lineno": 7,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 14,
+            "end_col_offset": 20,
+            "end_lineno": 7,
+            "id": "public",
+            "lineno": 7,
+            "node_id": 37,
+            "src": "156:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 7,
+          "node_id": 36,
+          "src": "156:15:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 29,
+        "end_lineno": 7,
+        "lineno": 7,
+        "node_id": 33,
+        "simple": 1,
+        "src": "142:29:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 12,
+          "end_lineno": 7,
+          "id": "issuedSupply",
+          "lineno": 7,
+          "node_id": 34,
+          "src": "142:12:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "ast_type": "Name",
+          "col_offset": 10,
+          "end_col_offset": 17,
+          "end_lineno": 11,
+          "id": "address",
+          "lineno": 11,
+          "node_id": 44,
+          "src": "210:7:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 17,
+        "end_lineno": 11,
+        "lineno": 11,
+        "node_id": 41,
+        "simple": 1,
+        "src": "200:17:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 8,
+          "end_lineno": 11,
+          "id": "deployer",
+          "lineno": 11,
+          "node_id": 42,
+          "src": "200:8:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Name",
+              "col_offset": 14,
+              "end_col_offset": 21,
+              "end_lineno": 12,
+              "id": "uint256",
+              "lineno": 12,
+              "node_id": 52,
+              "src": "232:7:1"
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 7,
+          "end_col_offset": 22,
+          "end_lineno": 12,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 7,
+            "end_col_offset": 13,
+            "end_lineno": 12,
+            "id": "public",
+            "lineno": 12,
+            "node_id": 50,
+            "src": "225:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 12,
+          "node_id": 49,
+          "src": "225:15:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 22,
+        "end_lineno": 12,
+        "lineno": 12,
+        "node_id": 46,
+        "simple": 1,
+        "src": "218:22:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 5,
+          "end_lineno": 12,
+          "id": "count",
+          "lineno": 12,
+          "node_id": 47,
+          "src": "218:5:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "ast_type": "Name",
+          "col_offset": 7,
+          "end_col_offset": 14,
+          "end_lineno": 13,
+          "id": "address",
+          "lineno": 13,
+          "node_id": 57,
+          "src": "248:7:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 14,
+        "end_lineno": 13,
+        "lineno": 13,
+        "node_id": 54,
+        "simple": 1,
+        "src": "241:14:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 5,
+          "end_lineno": 13,
+          "id": "owner",
+          "lineno": 13,
+          "node_id": 55,
+          "src": "241:5:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Subscript",
+              "col_offset": 18,
+              "end_col_offset": 30,
+              "end_lineno": 14,
+              "lineno": 14,
+              "node_id": 65,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 18,
+                "end_col_offset": 30,
+                "end_lineno": 14,
+                "lineno": 14,
+                "node_id": 70,
+                "src": "274:12:1",
+                "value": {
+                  "ast_type": "Int",
+                  "col_offset": 26,
+                  "end_col_offset": 29,
+                  "end_lineno": 14,
+                  "lineno": 14,
+                  "node_id": 68,
+                  "src": "282:3:1",
+                  "value": 100
+                }
+              },
+              "src": "274:12:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 18,
+                "end_col_offset": 25,
+                "end_lineno": 14,
+                "id": "address",
+                "lineno": 14,
+                "node_id": 66,
+                "src": "274:7:1"
+              }
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 11,
+          "end_col_offset": 31,
+          "end_lineno": 14,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 11,
+            "end_col_offset": 17,
+            "end_lineno": 14,
+            "id": "public",
+            "lineno": 14,
+            "node_id": 63,
+            "src": "267:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 14,
+          "node_id": 62,
+          "src": "267:20:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 31,
+        "end_lineno": 14,
+        "lineno": 14,
+        "node_id": 59,
+        "simple": 1,
+        "src": "256:31:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 9,
+          "end_lineno": 14,
+          "id": "addresses",
+          "lineno": 14,
+          "node_id": 60,
+          "src": "256:9:1"
+        },
+        "value": null
+      },
+      {
+        "annotation": {
+          "args": [
+            {
+              "ast_type": "Subscript",
+              "col_offset": 16,
+              "end_col_offset": 28,
+              "end_lineno": 15,
+              "lineno": 15,
+              "node_id": 77,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 16,
+                "end_col_offset": 28,
+                "end_lineno": 15,
+                "lineno": 15,
+                "node_id": 82,
+                "src": "304:12:1",
+                "value": {
+                  "ast_type": "Int",
+                  "col_offset": 24,
+                  "end_col_offset": 27,
+                  "end_lineno": 15,
+                  "lineno": 15,
+                  "node_id": 80,
+                  "src": "312:3:1",
+                  "value": 100
+                }
+              },
+              "src": "304:12:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 16,
+                "end_col_offset": 23,
+                "end_lineno": 15,
+                "id": "uint256",
+                "lineno": 15,
+                "node_id": 78,
+                "src": "304:7:1"
+              }
+            }
+          ],
+          "ast_type": "Call",
+          "col_offset": 9,
+          "end_col_offset": 29,
+          "end_lineno": 15,
+          "func": {
+            "ast_type": "Name",
+            "col_offset": 9,
+            "end_col_offset": 15,
+            "end_lineno": 15,
+            "id": "public",
+            "lineno": 15,
+            "node_id": 75,
+            "src": "297:6:1"
+          },
+          "keyword": null,
+          "keywords": [],
+          "lineno": 15,
+          "node_id": 74,
+          "src": "297:20:1"
+        },
+        "ast_type": "AnnAssign",
+        "col_offset": 0,
+        "end_col_offset": 29,
+        "end_lineno": 15,
+        "lineno": 15,
+        "node_id": 71,
+        "simple": 1,
+        "src": "288:29:1",
+        "target": {
+          "ast_type": "Name",
+          "col_offset": 0,
+          "end_col_offset": 7,
+          "end_lineno": 15,
+          "id": "amounts",
+          "lineno": 15,
+          "node_id": 72,
+          "src": "288:7:1"
+        },
+        "value": null
+      },
+      {
+        "args": {
+          "args": [],
+          "ast_type": "arguments",
+          "col_offset": 0,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 3,
+          "end_lineno": 19,
+          "lineno": 19,
+          "node_id": 84,
+          "src": "330:3:1"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 18,
+            "end_lineno": 20,
+            "lineno": 20,
+            "node_id": 85,
+            "src": "350:14:1",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "count",
+              "col_offset": 4,
+              "end_col_offset": 14,
+              "end_lineno": 20,
+              "lineno": 20,
+              "node_id": 86,
+              "src": "350:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 20,
+                "id": "self",
+                "lineno": 20,
+                "node_id": 87,
+                "src": "350:4:1"
+              }
+            },
+            "value": {
+              "ast_type": "Int",
+              "col_offset": 17,
+              "end_col_offset": 18,
+              "end_lineno": 20,
+              "lineno": 20,
+              "node_id": 90,
+              "src": "363:1:1",
+              "value": 0
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 27,
+            "end_lineno": 21,
+            "lineno": 21,
+            "node_id": 91,
+            "src": "369:23:1",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "owner",
+              "col_offset": 4,
+              "end_col_offset": 14,
+              "end_lineno": 21,
+              "lineno": 21,
+              "node_id": 92,
+              "src": "369:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 21,
+                "id": "self",
+                "lineno": 21,
+                "node_id": 93,
+                "src": "369:4:1"
+              }
+            },
+            "value": {
+              "ast_type": "Attribute",
+              "attr": "sender",
+              "col_offset": 17,
+              "end_col_offset": 27,
+              "end_lineno": 21,
+              "lineno": 21,
+              "node_id": 96,
+              "src": "382:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 17,
+                "end_col_offset": 20,
+                "end_lineno": 21,
+                "id": "msg",
+                "lineno": 21,
+                "node_id": 97,
+                "src": "382:3:1"
+              }
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 18,
+            "id": "external",
+            "lineno": 18,
+            "node_id": 100,
+            "src": "321:8:1"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 27,
+        "end_lineno": 21,
+        "lineno": 19,
+        "name": "__init__",
+        "node_id": 83,
+        "pos": null,
+        "returns": null,
+        "src": "330:62:1"
+      },
+      {
+        "args": {
+          "args": [
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 18,
+                "end_col_offset": 25,
+                "end_lineno": 25,
+                "id": "address",
+                "lineno": 25,
+                "node_id": 105,
+                "src": "423:7:1"
+              },
+              "arg": "addr",
+              "ast_type": "arg",
+              "col_offset": 12,
+              "end_col_offset": 25,
+              "end_lineno": 25,
+              "lineno": 25,
+              "node_id": 104,
+              "src": "417:13:1"
+            },
+            {
+              "annotation": {
+                "ast_type": "Name",
+                "col_offset": 35,
+                "end_col_offset": 42,
+                "end_lineno": 25,
+                "id": "uint256",
+                "lineno": 25,
+                "node_id": 108,
+                "src": "440:7:1"
+              },
+              "arg": "amount",
+              "ast_type": "arg",
+              "col_offset": 27,
+              "end_col_offset": 42,
+              "end_lineno": 25,
+              "lineno": 25,
+              "node_id": 107,
+              "src": "432:15:1"
+            }
+          ],
+          "ast_type": "arguments",
+          "col_offset": 12,
+          "default": null,
+          "defaults": [],
+          "end_col_offset": 42,
+          "end_lineno": 25,
+          "lineno": 25,
+          "node_id": 103,
+          "src": "417:30:1"
+        },
+        "ast_type": "FunctionDef",
+        "body": [
+          {
+            "ast_type": "Assert",
+            "col_offset": 4,
+            "end_col_offset": 35,
+            "end_lineno": 26,
+            "lineno": 26,
+            "msg": null,
+            "node_id": 110,
+            "src": "454:31:1",
+            "test": {
+              "ast_type": "Compare",
+              "col_offset": 11,
+              "end_col_offset": 35,
+              "end_lineno": 26,
+              "left": {
+                "ast_type": "Attribute",
+                "attr": "sender",
+                "col_offset": 11,
+                "end_col_offset": 21,
+                "end_lineno": 26,
+                "lineno": 26,
+                "node_id": 112,
+                "src": "461:10:1",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 11,
+                  "end_col_offset": 14,
+                  "end_lineno": 26,
+                  "id": "msg",
+                  "lineno": 26,
+                  "node_id": 113,
+                  "src": "461:3:1"
+                }
+              },
+              "lineno": 26,
+              "node_id": 111,
+              "op": {
+                "ast_type": "Eq",
+                "col_offset": 11,
+                "end_col_offset": 35,
+                "end_lineno": 26,
+                "lineno": 26,
+                "node_id": 116,
+                "src": "461:24:1"
+              },
+              "right": {
+                "ast_type": "Attribute",
+                "attr": "owner",
+                "col_offset": 25,
+                "end_col_offset": 35,
+                "end_lineno": 26,
+                "lineno": 26,
+                "node_id": 117,
+                "src": "475:10:1",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 25,
+                  "end_col_offset": 29,
+                  "end_lineno": 26,
+                  "id": "self",
+                  "lineno": 26,
+                  "node_id": 118,
+                  "src": "475:4:1"
+                }
+              },
+              "src": "461:24:1"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 37,
+            "end_lineno": 27,
+            "lineno": 27,
+            "node_id": 121,
+            "src": "490:33:1",
+            "target": {
+              "ast_type": "Subscript",
+              "col_offset": 4,
+              "end_col_offset": 30,
+              "end_lineno": 27,
+              "lineno": 27,
+              "node_id": 122,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 4,
+                "end_col_offset": 30,
+                "end_lineno": 27,
+                "lineno": 27,
+                "node_id": 132,
+                "src": "490:26:1",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "count",
+                  "col_offset": 19,
+                  "end_col_offset": 29,
+                  "end_lineno": 27,
+                  "lineno": 27,
+                  "node_id": 127,
+                  "src": "505:10:1",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 19,
+                    "end_col_offset": 23,
+                    "end_lineno": 27,
+                    "id": "self",
+                    "lineno": 27,
+                    "node_id": 128,
+                    "src": "505:4:1"
+                  }
+                }
+              },
+              "src": "490:26:1",
+              "value": {
+                "ast_type": "Attribute",
+                "attr": "addresses",
+                "col_offset": 4,
+                "end_col_offset": 18,
+                "end_lineno": 27,
+                "lineno": 27,
+                "node_id": 123,
+                "src": "490:14:1",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 4,
+                  "end_col_offset": 8,
+                  "end_lineno": 27,
+                  "id": "self",
+                  "lineno": 27,
+                  "node_id": 124,
+                  "src": "490:4:1"
+                }
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 33,
+              "end_col_offset": 37,
+              "end_lineno": 27,
+              "id": "addr",
+              "lineno": 27,
+              "node_id": 133,
+              "src": "519:4:1"
+            }
+          },
+          {
+            "ast_type": "Assign",
+            "col_offset": 4,
+            "end_col_offset": 37,
+            "end_lineno": 28,
+            "lineno": 28,
+            "node_id": 135,
+            "src": "528:33:1",
+            "target": {
+              "ast_type": "Subscript",
+              "col_offset": 4,
+              "end_col_offset": 28,
+              "end_lineno": 28,
+              "lineno": 28,
+              "node_id": 136,
+              "slice": {
+                "ast_type": "Index",
+                "col_offset": 4,
+                "end_col_offset": 28,
+                "end_lineno": 28,
+                "lineno": 28,
+                "node_id": 146,
+                "src": "528:24:1",
+                "value": {
+                  "ast_type": "Attribute",
+                  "attr": "count",
+                  "col_offset": 17,
+                  "end_col_offset": 27,
+                  "end_lineno": 28,
+                  "lineno": 28,
+                  "node_id": 141,
+                  "src": "541:10:1",
+                  "value": {
+                    "ast_type": "Name",
+                    "col_offset": 17,
+                    "end_col_offset": 21,
+                    "end_lineno": 28,
+                    "id": "self",
+                    "lineno": 28,
+                    "node_id": 142,
+                    "src": "541:4:1"
+                  }
+                }
+              },
+              "src": "528:24:1",
+              "value": {
+                "ast_type": "Attribute",
+                "attr": "amounts",
+                "col_offset": 4,
+                "end_col_offset": 16,
+                "end_lineno": 28,
+                "lineno": 28,
+                "node_id": 137,
+                "src": "528:12:1",
+                "value": {
+                  "ast_type": "Name",
+                  "col_offset": 4,
+                  "end_col_offset": 8,
+                  "end_lineno": 28,
+                  "id": "self",
+                  "lineno": 28,
+                  "node_id": 138,
+                  "src": "528:4:1"
+                }
+              }
+            },
+            "value": {
+              "ast_type": "Name",
+              "col_offset": 31,
+              "end_col_offset": 37,
+              "end_lineno": 28,
+              "id": "amount",
+              "lineno": 28,
+              "node_id": 147,
+              "src": "555:6:1"
+            }
+          },
+          {
+            "ast_type": "AugAssign",
+            "col_offset": 4,
+            "end_col_offset": 19,
+            "end_lineno": 29,
+            "lineno": 29,
+            "node_id": 149,
+            "op": {
+              "ast_type": "Add",
+              "col_offset": 4,
+              "end_col_offset": 19,
+              "end_lineno": 29,
+              "lineno": 29,
+              "node_id": 154,
+              "src": "566:15:1"
+            },
+            "src": "566:15:1",
+            "target": {
+              "ast_type": "Attribute",
+              "attr": "count",
+              "col_offset": 4,
+              "end_col_offset": 14,
+              "end_lineno": 29,
+              "lineno": 29,
+              "node_id": 150,
+              "src": "566:10:1",
+              "value": {
+                "ast_type": "Name",
+                "col_offset": 4,
+                "end_col_offset": 8,
+                "end_lineno": 29,
+                "id": "self",
+                "lineno": 29,
+                "node_id": 151,
+                "src": "566:4:1"
+              }
+            },
+            "value": {
+              "ast_type": "Int",
+              "col_offset": 18,
+              "end_col_offset": 19,
+              "end_lineno": 29,
+              "lineno": 29,
+              "node_id": 155,
+              "src": "580:1:1",
+              "value": 1
+            }
+          }
+        ],
+        "col_offset": 0,
+        "decorator_list": [
+          {
+            "ast_type": "Name",
+            "col_offset": 1,
+            "end_col_offset": 9,
+            "end_lineno": 24,
+            "id": "external",
+            "lineno": 24,
+            "node_id": 156,
+            "src": "396:8:1"
+          }
+        ],
+        "doc_string": null,
+        "end_col_offset": 19,
+        "end_lineno": 29,
+        "lineno": 25,
+        "name": "addItem",
+        "node_id": 102,
+        "pos": null,
+        "returns": null,
+        "src": "405:176:1"
+      }
+    ],
+    "col_offset": 0,
+    "doc_string": null,
+    "end_col_offset": 19,
+    "end_lineno": 29,
+    "lineno": 1,
+    "name": "contracts-vy/ClaimList.vy",
+    "node_id": 0,
+    "src": "0:581:1"
+  },
+  "bytecode": "0x6000600a5533600b5561026e56600436101561000d57610256565b600035601c526000513461025c576390e74bab8114156100825760043560a01c61025c57600b5433141561025c576004356001600a54606481101561025c5702600c01556024356001600a54606481101561025c570260700155600a80546001818183011061025c5780820190509050815550005b6306fdde0381141561011f57600080610180602082540161012060006003818352015b826101205160200211156100b8576100da565b61012051850154610120516020028501525b81516001018083528114156100a5575b50505050505061018051806101a001818260206001820306601f82010390500336823750506020610160526040610180510160206001820306601f8201039050610160f35b6395d89b418114156101bc57600480610180602082540161012060006002818352015b8261012051602002111561015557610177565b61012051850154610120516020028501525b8151600101808352811415610142575b50505050505061018051806101a001818260206001820306601f82010390500336823750506020610160526040610180510160206001820306601f8201039050610160f35b63313ce5678114156101d45760075460005260206000f35b636291f5728114156101ec5760085460005260206000f35b6306661abd81141561020457600a5460005260206000f35b63edf26d9b81141561022c576001600435606481101561025c5702600c015460005260206000f35b6345f0a44f811415610254576001600435606481101561025c57026070015460005260206000f35b505b60006000fd5b600080fd5b61000d61026e0361000d60003961000d61026e036000f3",
+  "bytecodeSha1": "3f501dc789b190b454b962ad91ef38aea887ad3b",
+  "compiler": {
+    "evm_version": "istanbul",
+    "version": "0.2.15"
+  },
+  "contractName": "ClaimList",
+  "coverageMap": {
+    "branches": {
+      "0": {}
+    },
+    "statements": {
+      "0": {
+        "ClaimList.addItem": {
+          "0": [
+            454,
+            485
+          ],
+          "1": [
+            490,
+            523
+          ],
+          "2": [
+            528,
+            561
+          ],
+          "3": [
+            566,
+            581
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [],
+  "deployedBytecode": "0x600436101561000d57610256565b600035601c526000513461025c576390e74bab8114156100825760043560a01c61025c57600b5433141561025c576004356001600a54606481101561025c5702600c01556024356001600a54606481101561025c570260700155600a80546001818183011061025c5780820190509050815550005b6306fdde0381141561011f57600080610180602082540161012060006003818352015b826101205160200211156100b8576100da565b61012051850154610120516020028501525b81516001018083528114156100a5575b50505050505061018051806101a001818260206001820306601f82010390500336823750506020610160526040610180510160206001820306601f8201039050610160f35b6395d89b418114156101bc57600480610180602082540161012060006002818352015b8261012051602002111561015557610177565b61012051850154610120516020028501525b8151600101808352811415610142575b50505050505061018051806101a001818260206001820306601f82010390500336823750506020610160526040610180510160206001820306601f8201039050610160f35b63313ce5678114156101d45760075460005260206000f35b636291f5728114156101ec5760085460005260206000f35b6306661abd81141561020457600a5460005260206000f35b63edf26d9b81141561022c576001600435606481101561025c5702600c015460005260206000f35b6345f0a44f811415610254576001600435606481101561025c57026070015460005260206000f35b505b60006000fd5b600080fd",
+  "deployedSourceMap": "-1:-1:1:-;;;;;:::-;;:::-;:::-;;;;;;;;;:::-;405:176;;;;;:::-;-1:-1;;;;405:176;:::-;475:10;461:24;:10;:24;454:31;;:::-;519:4;-1:-1;490:26;505:10;490:26;;;;;;:::-;;:14;:26;:33;555:6;-1:-1;528:24;541:10;528:24;;;;;;:::-;;:12;:24;:33;566:10;;;580:1;566:15;;;;-1:-1;566:15;:::-;;;;;;;;;;;405:176;:::-;70:18;;;;;:::-;-1:-1;70:18;;;;;;;;;;;;;:::-;;;;;;;;;:::-;;:::-;:::-;;;;;;;;;;;;;:::-;;;;;;;;;;;;:::-;:::-;;;;;;;-1:-1;;;;;;;;;;;;;;;;;;;;;;;70:18;;;;;;;;-1:-1;;;;;;;;;;;70:18;;:::-;97;;;;;:::-;-1:-1;97:18;;;;;;;;;;;;;:::-;;;;;;;;;:::-;;:::-;:::-;;;;;;;;;;;;;:::-;;;;;;;;;;;;:::-;:::-;;;;;;;-1:-1;;;;;;;;;;;;;;;;;;;;;;;97:18;;;;;;;;-1:-1;;;;;;;;;;;97:18;;:::-;126:15;;;;;:::-;-1:-1;126:15;;;;;;:::-;156;;;;;:::-;-1:-1;156:15;;;;;;:::-;225;;;;;:::-;-1:-1;225:15;;;;;;:::-;267:20;;;;;:::-;-1:-1;;;;;;;;:::-;;;;267:20;;;;;;:::-;297;;;;;:::-;-1:-1;;;;;;;;:::-;;;;297:20;;;;;;:::-;-1:-1;:::-;;;;:::-;;;;",
+  "language": "Vyper",
+  "natspec": {
+    "methods": {}
+  },
+  "offset": [
+    0,
+    582
+  ],
+  "opcodes": "PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH2 0x0D JUMPI PUSH2 0x256 JUMP JUMPDEST PUSH1 0x0 CALLDATALOAD PUSH1 0x1C MSTORE PUSH1 0x0 MLOAD CALLVALUE PUSH2 0x25C JUMPI PUSH4 0x90E74BAB DUP2 EQ ISZERO PUSH2 0x082 JUMPI PUSH1 0x4 CALLDATALOAD PUSH1 0xA0 SHR PUSH2 0x25C JUMPI PUSH1 0xB SLOAD CALLER EQ ISZERO PUSH2 0x25C JUMPI PUSH1 0x4 CALLDATALOAD PUSH1 0x1 PUSH1 0xA SLOAD PUSH1 0x64 DUP2 LT ISZERO PUSH2 0x25C JUMPI MUL PUSH1 0xC ADD SSTORE PUSH1 0x24 CALLDATALOAD PUSH1 0x1 PUSH1 0xA SLOAD PUSH1 0x64 DUP2 LT ISZERO PUSH2 0x25C JUMPI MUL PUSH1 0x70 ADD SSTORE PUSH1 0xA DUP1 SLOAD PUSH1 0x1 DUP2 DUP2 DUP4 ADD LT PUSH2 0x25C JUMPI DUP1 DUP3 ADD SWAP1 POP SWAP1 POP DUP2 SSTORE POP STOP JUMPDEST PUSH4 0x6FDDE3 DUP2 EQ ISZERO PUSH2 0x11F JUMPI PUSH1 0x0 DUP1 PUSH2 0x180 PUSH1 0x20 DUP3 SLOAD ADD PUSH2 0x120 PUSH1 0x0 PUSH1 0x3 DUP2 DUP4 MSTORE ADD JUMPDEST DUP3 PUSH2 0x120 MLOAD PUSH1 0x20 MUL GT ISZERO PUSH2 0x0B8 JUMPI PUSH2 0x0DA JUMP JUMPDEST PUSH2 0x120 MLOAD DUP6 ADD SLOAD PUSH2 0x120 MLOAD PUSH1 0x20 MUL DUP6 ADD MSTORE JUMPDEST DUP2 MLOAD PUSH1 0x1 ADD DUP1 DUP4 MSTORE DUP2 EQ ISZERO PUSH2 0x0A5 JUMPI JUMPDEST POP POP POP POP POP POP PUSH2 0x180 MLOAD DUP1 PUSH2 0x1A0 ADD DUP2 DUP3 PUSH1 0x20 PUSH1 0x1 DUP3 SUB MOD PUSH1 0x1F DUP3 ADD SUB SWAP1 POP SUB CALLDATASIZE DUP3 CALLDATACOPY POP POP PUSH1 0x20 PUSH2 0x160 MSTORE PUSH1 0x40 PUSH2 0x180 MLOAD ADD PUSH1 0x20 PUSH1 0x1 DUP3 SUB MOD PUSH1 0x1F DUP3 ADD SUB SWAP1 POP PUSH2 0x160 RETURN JUMPDEST PUSH4 0x95D89B41 DUP2 EQ ISZERO PUSH2 0x1BC JUMPI PUSH1 0x4 DUP1 PUSH2 0x180 PUSH1 0x20 DUP3 SLOAD ADD PUSH2 0x120 PUSH1 0x0 PUSH1 0x2 DUP2 DUP4 MSTORE ADD JUMPDEST DUP3 PUSH2 0x120 MLOAD PUSH1 0x20 MUL GT ISZERO PUSH2 0x155 JUMPI PUSH2 0x177 JUMP JUMPDEST PUSH2 0x120 MLOAD DUP6 ADD SLOAD PUSH2 0x120 MLOAD PUSH1 0x20 MUL DUP6 ADD MSTORE JUMPDEST DUP2 MLOAD PUSH1 0x1 ADD DUP1 DUP4 MSTORE DUP2 EQ ISZERO PUSH2 0x142 JUMPI JUMPDEST POP POP POP POP POP POP PUSH2 0x180 MLOAD DUP1 PUSH2 0x1A0 ADD DUP2 DUP3 PUSH1 0x20 PUSH1 0x1 DUP3 SUB MOD PUSH1 0x1F DUP3 ADD SUB SWAP1 POP SUB CALLDATASIZE DUP3 CALLDATACOPY POP POP PUSH1 0x20 PUSH2 0x160 MSTORE PUSH1 0x40 PUSH2 0x180 MLOAD ADD PUSH1 0x20 PUSH1 0x1 DUP3 SUB MOD PUSH1 0x1F DUP3 ADD SUB SWAP1 POP PUSH2 0x160 RETURN JUMPDEST PUSH4 0x313CE567 DUP2 EQ ISZERO PUSH2 0x1D4 JUMPI PUSH1 0x7 SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST PUSH4 0x6291F572 DUP2 EQ ISZERO PUSH2 0x1EC JUMPI PUSH1 0x8 SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST PUSH4 0x6661ABD DUP2 EQ ISZERO PUSH2 0x24 JUMPI PUSH1 0xA SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST PUSH4 0xEDF26D9B DUP2 EQ ISZERO PUSH2 0x22C JUMPI PUSH1 0x1 PUSH1 0x4 CALLDATALOAD PUSH1 0x64 DUP2 LT ISZERO PUSH2 0x25C JUMPI MUL PUSH1 0xC ADD SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST PUSH4 0x45F0A44F DUP2 EQ ISZERO PUSH2 0x254 JUMPI PUSH1 0x1 PUSH1 0x4 CALLDATALOAD PUSH1 0x64 DUP2 LT ISZERO PUSH2 0x25C JUMPI MUL PUSH1 0x70 ADD SLOAD PUSH1 0x0 MSTORE PUSH1 0x20 PUSH1 0x0 RETURN JUMPDEST POP JUMPDEST PUSH1 0x0 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 DUP1 REVERT",
+  "pcMap": {
+    "0": {
+      "offset": [
+        0,
+        581
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "2": {
+      "op": "CALLDATASIZE"
+    },
+    "3": {
+      "op": "LT"
+    },
+    "4": {
+      "op": "ISZERO"
+    },
+    "5": {
+      "op": "PUSH2",
+      "value": "0x0D"
+    },
+    "8": {
+      "op": "JUMPI"
+    },
+    "9": {
+      "op": "PUSH2",
+      "value": "0x256"
+    },
+    "12": {
+      "op": "JUMP"
+    },
+    "13": {
+      "op": "JUMPDEST"
+    },
+    "14": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "16": {
+      "op": "CALLDATALOAD"
+    },
+    "17": {
+      "op": "PUSH1",
+      "value": "0x1C"
+    },
+    "19": {
+      "op": "MSTORE"
+    },
+    "20": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "22": {
+      "op": "MLOAD"
+    },
+    "23": {
+      "op": "CALLVALUE"
+    },
+    "24": {
+      "op": "PUSH2",
+      "value": "0x25C"
+    },
+    "27": {
+      "dev": "Cannot send ether to nonpayable function",
+      "offset": [
+        0,
+        0
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "28": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x90E74BAB"
+    },
+    "33": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "34": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "35": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "36": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x082"
+    },
+    "39": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "40": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "42": {
+      "op": "CALLDATALOAD"
+    },
+    "43": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "45": {
+      "op": "SHR"
+    },
+    "46": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x25C"
+    },
+    "49": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "50": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        475,
+        485
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 0,
+      "value": "0xB"
+    },
+    "52": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        461,
+        485
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "53": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        461,
+        471
+      ],
+      "op": "CALLER",
+      "path": "0"
+    },
+    "54": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        461,
+        485
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "55": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        454,
+        485
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "56": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        454,
+        485
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x25C"
+    },
+    "59": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        454,
+        485
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "60": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        519,
+        523
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 1,
+      "value": "0x4"
+    },
+    "62": {
+      "op": "CALLDATALOAD"
+    },
+    "63": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "65": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        505,
+        515
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xA"
+    },
+    "67": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "68": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x64"
+    },
+    "70": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "71": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "72": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "73": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x25C"
+    },
+    "76": {
+      "dev": "Index out of range",
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "77": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "78": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        504
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xC"
+    },
+    "80": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        516
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "81": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        490,
+        523
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "82": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        555,
+        561
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 2,
+      "value": "0x24"
+    },
+    "84": {
+      "op": "CALLDATALOAD"
+    },
+    "85": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "87": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        541,
+        551
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xA"
+    },
+    "89": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "90": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x64"
+    },
+    "92": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "93": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "LT",
+      "path": "0"
+    },
+    "94": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "95": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x25C"
+    },
+    "98": {
+      "dev": "Index out of range",
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "99": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "100": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        540
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x70"
+    },
+    "102": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        552
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "103": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        528,
+        561
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "104": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        576
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 3,
+      "value": "0xA"
+    },
+    "106": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        576
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "107": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        576
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "108": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        580,
+        581
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "110": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "111": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "112": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "113": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "114": {
+      "op": "LT"
+    },
+    "115": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x25C"
+    },
+    "118": {
+      "dev": "Integer overflow",
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "119": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "120": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "121": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "122": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "123": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "124": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "125": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "126": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "127": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "128": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        566,
+        581
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "129": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "130": {
+      "fn": "ClaimList.addItem",
+      "offset": [
+        405,
+        581
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "131": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x6FDDE3"
+    },
+    "136": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "137": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "138": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "139": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x11F"
+    },
+    "142": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "143": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "145": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "146": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x180"
+    },
+    "149": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "151": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "152": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "153": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "154": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "157": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "159": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x3"
+    },
+    "161": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "162": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "163": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "164": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "165": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "166": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "167": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "170": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "171": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "173": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "174": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "GT",
+      "path": "0"
+    },
+    "175": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "176": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0B8"
+    },
+    "179": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "180": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0DA"
+    },
+    "183": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "184": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "185": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "188": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "189": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "190": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "191": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "192": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "195": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "196": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "198": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "199": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "200": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "201": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "202": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "203": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "204": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "205": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "207": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "208": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "209": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "210": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "211": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "212": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "213": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "214": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x0A5"
+    },
+    "217": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "218": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "219": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "220": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "221": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "222": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "223": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "224": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "225": {
+      "op": "PUSH2",
+      "value": "0x180"
+    },
+    "228": {
+      "op": "MLOAD"
+    },
+    "229": {
+      "op": "DUP1"
+    },
+    "230": {
+      "op": "PUSH2",
+      "value": "0x1A0"
+    },
+    "233": {
+      "op": "ADD"
+    },
+    "234": {
+      "op": "DUP2"
+    },
+    "235": {
+      "op": "DUP3"
+    },
+    "236": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "238": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "240": {
+      "op": "DUP3"
+    },
+    "241": {
+      "op": "SUB"
+    },
+    "242": {
+      "op": "MOD"
+    },
+    "243": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "245": {
+      "op": "DUP3"
+    },
+    "246": {
+      "op": "ADD"
+    },
+    "247": {
+      "op": "SUB"
+    },
+    "248": {
+      "op": "SWAP1"
+    },
+    "249": {
+      "op": "POP"
+    },
+    "250": {
+      "op": "SUB"
+    },
+    "251": {
+      "op": "CALLDATASIZE"
+    },
+    "252": {
+      "op": "DUP3"
+    },
+    "253": {
+      "op": "CALLDATACOPY"
+    },
+    "254": {
+      "op": "POP"
+    },
+    "255": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "256": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "258": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x160"
+    },
+    "261": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "262": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "264": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x180"
+    },
+    "267": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "268": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "269": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "271": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "273": {
+      "op": "DUP3"
+    },
+    "274": {
+      "op": "SUB"
+    },
+    "275": {
+      "op": "MOD"
+    },
+    "276": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "278": {
+      "op": "DUP3"
+    },
+    "279": {
+      "op": "ADD"
+    },
+    "280": {
+      "op": "SUB"
+    },
+    "281": {
+      "op": "SWAP1"
+    },
+    "282": {
+      "op": "POP"
+    },
+    "283": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x160"
+    },
+    "286": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "287": {
+      "offset": [
+        70,
+        88
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "288": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x95D89B41"
+    },
+    "293": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "294": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "295": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "296": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1BC"
+    },
+    "299": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "300": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "302": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "303": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x180"
+    },
+    "306": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "308": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "309": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "310": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "311": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "314": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "316": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x2"
+    },
+    "318": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "319": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "320": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "321": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "322": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "323": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "324": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "327": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "328": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "330": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "331": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "GT",
+      "path": "0"
+    },
+    "332": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "333": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x155"
+    },
+    "336": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "337": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x177"
+    },
+    "340": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "341": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "342": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "345": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "346": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "347": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "348": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "349": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x120"
+    },
+    "352": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "353": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "355": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MUL",
+      "path": "0"
+    },
+    "356": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "357": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "358": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "359": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "360": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "361": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "362": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "364": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "365": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "366": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "367": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "368": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "369": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "370": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "371": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x142"
+    },
+    "374": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "375": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "376": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "377": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "378": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "379": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "380": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "381": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "382": {
+      "op": "PUSH2",
+      "value": "0x180"
+    },
+    "385": {
+      "op": "MLOAD"
+    },
+    "386": {
+      "op": "DUP1"
+    },
+    "387": {
+      "op": "PUSH2",
+      "value": "0x1A0"
+    },
+    "390": {
+      "op": "ADD"
+    },
+    "391": {
+      "op": "DUP2"
+    },
+    "392": {
+      "op": "DUP3"
+    },
+    "393": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "395": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "397": {
+      "op": "DUP3"
+    },
+    "398": {
+      "op": "SUB"
+    },
+    "399": {
+      "op": "MOD"
+    },
+    "400": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "402": {
+      "op": "DUP3"
+    },
+    "403": {
+      "op": "ADD"
+    },
+    "404": {
+      "op": "SUB"
+    },
+    "405": {
+      "op": "SWAP1"
+    },
+    "406": {
+      "op": "POP"
+    },
+    "407": {
+      "op": "SUB"
+    },
+    "408": {
+      "op": "CALLDATASIZE"
+    },
+    "409": {
+      "op": "DUP3"
+    },
+    "410": {
+      "op": "CALLDATACOPY"
+    },
+    "411": {
+      "op": "POP"
+    },
+    "412": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "413": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "415": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x160"
+    },
+    "418": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "419": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "421": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x180"
+    },
+    "424": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "425": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "426": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "428": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "430": {
+      "op": "DUP3"
+    },
+    "431": {
+      "op": "SUB"
+    },
+    "432": {
+      "op": "MOD"
+    },
+    "433": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "435": {
+      "op": "DUP3"
+    },
+    "436": {
+      "op": "ADD"
+    },
+    "437": {
+      "op": "SUB"
+    },
+    "438": {
+      "op": "SWAP1"
+    },
+    "439": {
+      "op": "POP"
+    },
+    "440": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x160"
+    },
+    "443": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "444": {
+      "offset": [
+        97,
+        115
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "445": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x313CE567"
+    },
+    "450": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "451": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "452": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "453": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1D4"
+    },
+    "456": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "457": {
+      "op": "PUSH1",
+      "value": "0x7"
+    },
+    "459": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "460": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "462": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "463": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "465": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "467": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "468": {
+      "offset": [
+        126,
+        141
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "469": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x6291F572"
+    },
+    "474": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "475": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "476": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "477": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x1EC"
+    },
+    "480": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "481": {
+      "op": "PUSH1",
+      "value": "0x8"
+    },
+    "483": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "484": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "486": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "487": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "489": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "491": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "492": {
+      "offset": [
+        156,
+        171
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "493": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x6661ABD"
+    },
+    "498": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "499": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "500": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "501": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x24"
+    },
+    "504": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "505": {
+      "op": "PUSH1",
+      "value": "0xA"
+    },
+    "507": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "508": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "510": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "511": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "513": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "515": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "516": {
+      "offset": [
+        225,
+        240
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "517": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xEDF26D9B"
+    },
+    "522": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "523": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "524": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "525": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x22C"
+    },
+    "528": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "529": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "531": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "533": {
+      "op": "CALLDATALOAD"
+    },
+    "534": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "536": {
+      "op": "DUP2"
+    },
+    "537": {
+      "op": "LT"
+    },
+    "538": {
+      "op": "ISZERO"
+    },
+    "539": {
+      "op": "PUSH2",
+      "value": "0x25C"
+    },
+    "542": {
+      "op": "JUMPI"
+    },
+    "543": {
+      "op": "MUL"
+    },
+    "544": {
+      "op": "PUSH1",
+      "value": "0xC"
+    },
+    "546": {
+      "op": "ADD"
+    },
+    "547": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "548": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "550": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "551": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "553": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "555": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "556": {
+      "offset": [
+        267,
+        287
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "557": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x45F0A44F"
+    },
+    "562": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "563": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "564": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "565": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x254"
+    },
+    "568": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "569": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "571": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "573": {
+      "op": "CALLDATALOAD"
+    },
+    "574": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "576": {
+      "op": "DUP2"
+    },
+    "577": {
+      "op": "LT"
+    },
+    "578": {
+      "op": "ISZERO"
+    },
+    "579": {
+      "op": "PUSH2",
+      "value": "0x25C"
+    },
+    "582": {
+      "op": "JUMPI"
+    },
+    "583": {
+      "op": "MUL"
+    },
+    "584": {
+      "op": "PUSH1",
+      "value": "0x70"
+    },
+    "586": {
+      "op": "ADD"
+    },
+    "587": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "588": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "590": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "591": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "593": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "595": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "RETURN",
+      "path": "0"
+    },
+    "596": {
+      "offset": [
+        297,
+        317
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "597": {
+      "op": "POP"
+    },
+    "598": {
+      "op": "JUMPDEST"
+    },
+    "599": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "601": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "603": {
+      "op": "REVERT"
+    },
+    "604": {
+      "op": "JUMPDEST"
+    },
+    "605": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "607": {
+      "op": "DUP1"
+    },
+    "608": {
+      "op": "REVERT",
+      "optimizer_revert": true
+    }
+  },
+  "sha1": "02eb0769227766b800159d68acb301bfb36f8ea3",
+  "source": "# @version ^0.2.15\n# a simple arraylist of address and amounts\n\nname: public(String[64])\nsymbol: public(String[32])\ndecimals: public(uint256)\nissuedSupply: public(uint256)\n\n# string public bucketID;\n\ndeployer: address\ncount: public(uint256)\nowner: address\naddresses: public(address[100])\namounts: public(uint256[100])\n\n\n@external\ndef __init__():\n    self.count = 0\n    self.owner = msg.sender\n\n\n@external\ndef addItem(addr: address, amount: uint256):\n    assert msg.sender == self.owner\n    self.addresses[self.count] = addr\n    self.amounts[self.count] = amount\n    self.count += 1\n",
+  "sourceMap": "",
+  "sourcePath": "contracts-vy/ClaimList.vy",
+  "type": "contract"
+}
