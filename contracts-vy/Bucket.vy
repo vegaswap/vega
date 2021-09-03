@@ -168,17 +168,6 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp >= self.endTime - default_period:
         return claim.claimTotalAmount
 
-    # if block.timestamp >= self.endTime - self.period:
-    #     #REST
-    #     # total: uint256 = claim.claimTotalAmount
-    #     # before: uint256 = self.currentPeriod() * claim.amountPeriod
-    #     # return total 
-    #     x: uint256 = 5
-    #     return x + self.currentPeriod() * claim.amountPeriod
-
-    # if self.currentPeriod() > self.numPeriods-5:
-    #     return claim.claimTotalAmount
-
     return self.currentPeriod() * claim.amountPeriod
 
 
@@ -201,18 +190,18 @@ def _vestClaimMax(_claimAddress: address):
     assert self.claims[_claimAddress].isAdded, "BUCKET: claim does not exist"
 
     vestableAmount: uint256 = self._getVestableAmount(_claimAddress)
-    log Slog("vestableAmount", vestableAmount)
+    # log Slog("vestableAmount", vestableAmount)
     assert vestableAmount <= self.claims[_claimAddress].claimTotalAmount, "BUCKET: claim more than total"
     vestableAmount = self.capat(vestableAmount, self.claims[_claimAddress].claimTotalAmount)
-    log Slog("cap", vestableAmount)
+    # log Slog("cap", vestableAmount)
 
     assert vestableAmount >= self.claims[_claimAddress].withdrawnAmount, "BUCKET: no vestable amount"
-    log Slog("withdrawnAmount", self.claims[_claimAddress].withdrawnAmount)
+    # log Slog("withdrawnAmount", self.claims[_claimAddress].withdrawnAmount)
     
     withdrawAmount: uint256 = vestableAmount - self.claims[_claimAddress].withdrawnAmount
-    log Slog("withdrawmount", withdrawAmount)
+    # log Slog("withdrawmount", withdrawAmount)
     totalAfterwithdraw: uint256 = self.claims[_claimAddress].withdrawnAmount + withdrawAmount
-    log Slog("totalAfterwithdraw", totalAfterwithdraw)
+    # log Slog("totalAfterwithdraw", totalAfterwithdraw)
 
     assert (
         totalAfterwithdraw <= self.claims[_claimAddress].claimTotalAmount
@@ -227,7 +216,7 @@ def _vestClaimMax(_claimAddress: address):
     log WithdrawClaim(self.claims[_claimAddress].claimAddress, withdrawAmount)
 
     # assert self.openClaimAmount >= withdrawAmount, concat("no amount left to claim", withdrawAmount)
-    log Slog("openClaimAmount", self.openClaimAmount)
+    # log Slog("openClaimAmount", self.openClaimAmount)
     assert self.openClaimAmount >= withdrawAmount, "no amount left to claim"
 
     self.claims[_claimAddress].withdrawnAmount += withdrawAmount
