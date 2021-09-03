@@ -165,11 +165,8 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
     if block.timestamp < self.cliffTime:
         return 0
 
-    if block.timestamp >= self.endTime:
+    if block.timestamp > self.endTime - default_period:
         return claim.claimTotalAmount
-
-    # if self.currentPeriod() > self.numPeriods-5:
-    #     return claim.claimTotalAmount
 
     return self.currentPeriod() * claim.amountPeriod
 
