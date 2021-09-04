@@ -2,8 +2,10 @@ days: int = 86400
 default_period: int = 30 * days
 import math
 
+
 def ceildiv(a: int, m: int) -> int:
     return math.ceil(a / m)
+
 
 class Bucket:
     def __init__(
@@ -21,7 +23,6 @@ class Bucket:
         # at cliff, one amount is withdrawable
         validPeriodCount: int = 1 + timeSinceCliff / self.period
         return int(validPeriodCount)
-
 
 
 totalAmount = 1000 + 9
