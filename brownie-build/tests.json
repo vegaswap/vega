@@ -64,6 +64,17 @@
       "sha1": "df33291f916207463c5a0baaf557cdfca2c04890",
       "txhash": []
     },
+    "tests/test_complex.py": {
+      "coverage": false,
+      "isolated": [
+        "Bucket",
+        "ClaimList",
+        "VegaToken"
+      ],
+      "results": "....",
+      "sha1": "2cbc8aa31db2582e37a7d28d9242e931a28d1d9c",
+      "txhash": []
+    },
     "tests/test_maxclaim.py": {
       "coverage": false,
       "isolated": [
@@ -75,15 +86,13 @@
       "sha1": "3bfd1c635a6183d6d43f979ce6a14df79b6ade63",
       "txhash": []
     },
-    "tests/test_realdata.py": {
+    "tests/test_real.py": {
       "coverage": false,
       "isolated": [
-        "Bucket",
-        "ClaimList",
         "VegaToken"
       ],
-      "results": "...",
-      "sha1": "1fd5d871a19aaa3c0fa84e3041ad8ecb80f19e58",
+      "results": ".",
+      "sha1": "f45c167a18fb81793107713de56603ce65974e04",
       "txhash": []
     },
     "tests/test_transfer.py": {
