@@ -151,7 +151,7 @@ def _getVestableAmount(_claimAddress: address) -> uint256:
         return 0
 
     # in the final period the amount to be vested is the total
-    # X | X | rest
+    # X | X | X | rest
     if block.timestamp >= self.endTime - self.period:
         return claim.claimTotalAmount
 
