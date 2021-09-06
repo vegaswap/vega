@@ -14,7 +14,6 @@ registerTime: public(uint256)
 days: constant(uint256) = 86400
 unlockTime: public(uint256)
 lockDuration: public(uint256)
-totalAmount: public(uint256)
 
 event DepositOwner:
     amount: uint256
