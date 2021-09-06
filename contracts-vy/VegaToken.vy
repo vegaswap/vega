@@ -36,7 +36,7 @@ deployer: public(address)
 def __init__():
     # _name: String[64], _symbol: String[32], _decimals: uint256, _max_supply: uint256
     self.name = "VegaToken"
-    self.symbol = "Vega"
+    self.symbol = "VGA"
     self.decimals = 18
 
     # assign max supply, no more minting after that
