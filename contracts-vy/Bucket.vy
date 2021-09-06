@@ -104,7 +104,6 @@ def initialize():
     assert msg.sender == self.owner, "BUCKET: not the owner"
     assert not self.initialized
     amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
-    #duration is example periods given
     self.duration = self.period * self.numPeriods    
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
     self.endTime = self.cliffTime + self.duration
