@@ -28,11 +28,9 @@ event WithdrawOwner:
 def __init__(
     _name: String[15],
     _vegaToken: address,
-    _lockDuration: uint256,
-    _totalAmount: uint256
+    _lockDuration: uint256
 ):
     assert _vegaToken != ZERO_ADDRESS, "BUCKET: Vegatoken is zero address"
-    assert _unlockTime >= block.timestamp, "BUCKET: cliff must be in the future"
 
     self.vegaToken = _vegaToken
     self.name = _name
@@ -40,14 +38,12 @@ def __init__(
     self.owner = msg.sender
     assert _lockDuration < 90 * days, "BUCKET: don't lock for more than 90 days"
     self.lockDuration = _lockDuration
-    self.unlockTime = block.timestamp + _unlockDuration
-    self.totalAmount = _totalAmount
+    self.unlockTime = block.timestamp + _lockDuration
 
 
 @external
 def depositOwner(amount: uint256):
     assert msg.sender == self.owner, "BUCKET: not the owner"
-    assert amount == self.totalAmount, "BUCKET: wrong amount"
     assert (
         ERC20(self.vegaToken).allowance(msg.sender, self) >= amount
     ), "BUCKET: not enough allowance"
@@ -60,7 +56,7 @@ def depositOwner(amount: uint256):
     log DepositOwner(amount)
 
 @external
-def unlockMax():
+def unlock():
     assert msg.sender == self.owner, "BUCKET: not the owner"
     assert block.timestamp > self.unlockTime, "BUCKET: not unlock time yet"
     bucketbalance: uint256 = ERC20(self.vegaToken).balanceOf(self)
