@@ -51,8 +51,7 @@ def __init__():
 
 @internal
 def swap(_from: address, _to: address, _value: uint256):
-    # vyper does not allow underflows
-    # so the following subtraction would revert on insufficient balance
+    # NOTE: revert on insufficient balance
     assert _to != ZERO_ADDRESS  # dev: transfers to 0x0 are not allowed
     self.balanceOf[_from] -= _value
     self.balanceOf[_to] += _value
@@ -83,6 +82,7 @@ def transferFrom(_from: address, _to: address, _value: uint256) -> bool:
     @return bool success
     """
     self.swap(_from, _to, _value)
+    # NOTE: reverts on insufficient allowance
     self.allowances[_from][msg.sender] -= _value
     return True
 

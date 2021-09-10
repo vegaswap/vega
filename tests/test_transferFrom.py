@@ -164,3 +164,6 @@ def test_transfer_event_fires(accounts, token):
 
     assert len(tx.events) == 1
     assert tx.events["Transfer"].values() == [accounts[0], accounts[2], amount]
+
+
+# def test_transfer_other(accounts, token):

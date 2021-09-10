@@ -103,9 +103,9 @@ def initialize():
     # init the bucket variables
     assert msg.sender == self.owner, "BUCKET: not the owner"
     assert not self.initialized
-    amountPerPeriod: uint256 = self.totalAmount / self.numPeriods
     self.duration = self.period * self.numPeriods    
     assert self.duration < 731 * days, "BUCKET: don't vest more than 2 years"
+    # assert self.duration > 29 * days, "BUCKET: vest at least 30 days"
     self.endTime = self.cliffTime + self.duration
     self.initialized = True
 
@@ -113,6 +113,7 @@ def initialize():
 @external
 def depositOwner(amount: uint256):
     assert msg.sender == self.owner, "BUCKET: not the owner"
+    assert self.initialized, "BUCKET: not initialized"
     assert (
         ERC20(self.vegaToken).allowance(msg.sender, self) >= amount
     ), "BUCKET: not enough allowance"

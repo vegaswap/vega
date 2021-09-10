@@ -78,3 +78,20 @@ def test_transfer_event_fires(accounts, token):
 
     assert len(tx.events) == 1
     assert tx.events["Transfer"].values() == [accounts[0], accounts[1], amount]
+
+def test_othercall(accounts, token):
+    amount = token.balanceOf(accounts[0])
+
+    try:
+        token.swap(accounts[0], accounts[1], amount, {"from": accounts[0]})
+        assert False
+    except:
+        assert True
+
+    try:
+        token.swap(accounts[0], accounts[1], amount, {"from": accounts[1]})
+        assert False
+    except:
+        assert True
+
+
