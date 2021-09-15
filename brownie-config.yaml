@@ -2,7 +2,7 @@
 project_structure:
     build: build
     build: brownie-build
-    contracts: contracts-vy
+    contracts: contracts
     interfaces: interfaces
     reports: reports
     scripts: scripts
