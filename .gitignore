@@ -1,0 +1,13 @@
+scripts/
+brownie-build
+reports/
+build-brownie/
+.DS_STORE
+activate/
+bin/
+env/
+lib/
+venv/
+.vscode/
+*.pyc
+.env
